@@ -1,0 +1,59 @@
+Golisopod-Mega @ Golisopodite
+Ability: Battle Armor
+Level: 50
+EVs: 32 HP / 32 Atk / 2 SpD
+Brave Nature
+- First Impression
+- Iron Head
+- Close Combat
+- Rock Slide
+
+Farigiraf @ Sitrus Berry
+Ability: Armor Tail
+Level: 50
+EVs: 29 HP / 21 Def / 16 SpD
+Sassy Nature
+- Trick Room
+- Psychic
+- Helping Hand
+- Protect
+
+Sinistcha @ Colbur Berry
+Ability: Heatproof
+Level: 50
+EVs: 32 HP / 14 Def / 20 SpD
+Relaxed Nature
+- Matcha Gotcha
+- Rage Powder
+- Trick Room
+- Protect
+
+Tyranitar @ Life Orb
+Ability: Sand Stream
+Level: 50
+EVs: 32 HP / 32 Atk / 2 SpD
+Brave Nature
+- Rock Slide
+- Crunch
+- Low Kick
+- Protect
+
+Primarina @ Expert Belt
+Ability: Liquid Voice
+Level: 50
+EVs: 32 HP / 32 SpA / 2 SpD
+Quiet Nature
+- Hyper Voice
+- Moonblast
+- Icy Wind
+- Protect
+
+Azumarill @ Mystic Water
+Ability: Huge Power
+Level: 50
+EVs: 32 HP / 32 Atk / 2 SpD
+Brave Nature
+- Aqua Jet
+- Play Rough
+- Liquidation
+- Protect

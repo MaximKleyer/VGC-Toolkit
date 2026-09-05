@@ -1,0 +1,5 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+json5>=0.9          # ingestion scripts only (parsing JS data files)
+pytest>=8.0         # dev
+httpx>=0.27         # dev (FastAPI test client)

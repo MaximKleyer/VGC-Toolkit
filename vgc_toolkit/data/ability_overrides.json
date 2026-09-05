@@ -1,0 +1,9 @@
+{
+ "_comment": "User-set abilities for forms whose Champions ability is not announced yet. Edited via PUT /api/pokemon/{id}/abilities in the UI; an empty list (or removing the key) restores what pokedex.json ships.",
+ "baxcalibur-mega": [
+  "Thermal Exchange"
+ ],
+ "golisopod-mega": [
+  "Battle Armor"
+ ]
+}

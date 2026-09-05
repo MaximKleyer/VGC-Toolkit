@@ -1,0 +1,7874 @@
+{
+ "info": {
+  "label": "2026-08 ladder 1760+",
+  "regulation": "M-B",
+  "sources": [
+   {
+    "metagame": "gen9championsvgc2026regmb",
+    "cutoff": 1760,
+    "battles": 1269250
+   },
+   {
+    "metagame": "gen9championsvgc2026regmbbo3",
+    "cutoff": 1760,
+    "battles": 179434
+   }
+  ]
+ },
+ "pokemon": {
+  "kingambit": {
+   "name": "Kingambit",
+   "usage": 48.29,
+   "sets": [
+    {
+     "name": "Chople Berry Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 32,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 1,
+      "spe": 1
+     },
+     "item": "Chople Berry",
+     "ability": "Defiant",
+     "moves": [
+      "Sucker Punch",
+      "Kowtow Cleave",
+      "Protect",
+      "Iron Head"
+     ],
+     "weight": 0.573
+    },
+    {
+     "name": "Black Glasses Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 32,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 2,
+      "spe": 0
+     },
+     "item": "Black Glasses",
+     "ability": "Defiant",
+     "moves": [
+      "Sucker Punch",
+      "Kowtow Cleave",
+      "Protect",
+      "Iron Head"
+     ],
+     "weight": 0.298
+    },
+    {
+     "name": "Life Orb Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Life Orb",
+     "ability": "Defiant",
+     "moves": [
+      "Sucker Punch",
+      "Kowtow Cleave",
+      "Protect",
+      "Iron Head"
+     ],
+     "weight": 0.128
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0842
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0841
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0808
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.0615
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0584
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0575
+    },
+    {
+     "pokemon_id": "floette-eternal-mega",
+     "share": 0.0555
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0471
+    },
+    {
+     "pokemon_id": "sylveon",
+     "share": 0.0435
+    },
+    {
+     "pokemon_id": "delphox-mega",
+     "share": 0.0408
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.0385
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.0305
+    }
+   ]
+  },
+  "incineroar": {
+   "name": "Incineroar",
+   "usage": 34.64,
+   "sets": [
+    {
+     "name": "Sitrus Berry Impish",
+     "alignment": "Impish",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 20,
+      "spa": 0,
+      "spd": 12,
+      "spe": 2
+     },
+     "item": "Sitrus Berry",
+     "ability": "Intimidate",
+     "moves": [
+      "Fake Out",
+      "Parting Shot",
+      "Flare Blitz",
+      "Throat Chop"
+     ],
+     "weight": 0.412
+    },
+    {
+     "name": "Passho Berry Careful",
+     "alignment": "Careful",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 20,
+      "spa": 0,
+      "spd": 14,
+      "spe": 0
+     },
+     "item": "Passho Berry",
+     "ability": "Intimidate",
+     "moves": [
+      "Fake Out",
+      "Parting Shot",
+      "Flare Blitz",
+      "Throat Chop"
+     ],
+     "weight": 0.298
+    },
+    {
+     "name": "Chople Berry Careful",
+     "alignment": "Careful",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 1,
+      "spa": 0,
+      "spd": 10,
+      "spe": 23
+     },
+     "item": "Chople Berry",
+     "ability": "Intimidate",
+     "moves": [
+      "Fake Out",
+      "Parting Shot",
+      "Flare Blitz",
+      "Throat Chop"
+     ],
+     "weight": 0.29
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0919
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0812
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0804
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0606
+    },
+    {
+     "pokemon_id": "delphox-mega",
+     "share": 0.0513
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0507
+    },
+    {
+     "pokemon_id": "floette-eternal-mega",
+     "share": 0.0411
+    },
+    {
+     "pokemon_id": "blastoise-mega",
+     "share": 0.0387
+    },
+    {
+     "pokemon_id": "sylveon",
+     "share": 0.0357
+    },
+    {
+     "pokemon_id": "venusaur",
+     "share": 0.0332
+    },
+    {
+     "pokemon_id": "gengar-mega",
+     "share": 0.0315
+    },
+    {
+     "pokemon_id": "toxapex",
+     "share": 0.0215
+    }
+   ]
+  },
+  "garchomp": {
+   "name": "Garchomp",
+   "usage": 33.77,
+   "sets": [
+    {
+     "name": "Life Orb Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Life Orb",
+     "ability": "Rough Skin",
+     "moves": [
+      "Dragon Claw",
+      "Earthquake",
+      "Rock Slide",
+      "Protect"
+     ],
+     "weight": 0.599
+    },
+    {
+     "name": "Choice Scarf Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Choice Scarf",
+     "ability": "Rough Skin",
+     "moves": [
+      "Dragon Claw",
+      "Earthquake",
+      "Rock Slide",
+      "Protect"
+     ],
+     "weight": 0.22
+    },
+    {
+     "name": "Sitrus Berry Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 6,
+      "atk": 28,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Sitrus Berry",
+     "ability": "Rough Skin",
+     "moves": [
+      "Dragon Claw",
+      "Earthquake",
+      "Rock Slide",
+      "Protect"
+     ],
+     "weight": 0.181
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.1317
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.1161
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.0944
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0893
+    },
+    {
+     "pokemon_id": "floette-eternal-mega",
+     "share": 0.0657
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.062
+    },
+    {
+     "pokemon_id": "sylveon",
+     "share": 0.0586
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0332
+    },
+    {
+     "pokemon_id": "venusaur",
+     "share": 0.0326
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.0263
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.0251
+    },
+    {
+     "pokemon_id": "aerodactyl-mega",
+     "share": 0.0235
+    }
+   ]
+  },
+  "basculegion-m": {
+   "name": "Basculegion",
+   "usage": 32.59,
+   "sets": [
+    {
+     "name": "Choice Scarf Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Choice Scarf",
+     "ability": "Adaptability",
+     "moves": [
+      "Last Respects",
+      "Aqua Jet",
+      "Wave Crash",
+      "Protect"
+     ],
+     "weight": 0.506
+    },
+    {
+     "name": "Life Orb Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Life Orb",
+     "ability": "Adaptability",
+     "moves": [
+      "Last Respects",
+      "Aqua Jet",
+      "Wave Crash",
+      "Protect"
+     ],
+     "weight": 0.258
+    },
+    {
+     "name": "Mystic Water Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 0,
+      "atk": 32,
+      "def": 2,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Mystic Water",
+     "ability": "Adaptability",
+     "moves": [
+      "Last Respects",
+      "Aqua Jet",
+      "Wave Crash",
+      "Protect"
+     ],
+     "weight": 0.236
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.1247
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.1038
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0927
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0862
+    },
+    {
+     "pokemon_id": "floette-eternal-mega",
+     "share": 0.0751
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.071
+    },
+    {
+     "pokemon_id": "froslass-mega",
+     "share": 0.0307
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.022
+    },
+    {
+     "pokemon_id": "dragonite-mega",
+     "share": 0.0206
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0204
+    },
+    {
+     "pokemon_id": "scovillain-mega",
+     "share": 0.02
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.0187
+    }
+   ]
+  },
+  "sneasler": {
+   "name": "Sneasler",
+   "usage": 30.82,
+   "sets": [
+    {
+     "name": "Focus Sash Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Unburden",
+     "moves": [
+      "Close Combat",
+      "Fake Out",
+      "Dire Claw",
+      "Protect"
+     ],
+     "weight": 0.739
+    },
+    {
+     "name": "White Herb Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "White Herb",
+     "ability": "Unburden",
+     "moves": [
+      "Close Combat",
+      "Fake Out",
+      "Dire Claw",
+      "Protect"
+     ],
+     "weight": 0.142
+    },
+    {
+     "name": "Life Orb Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 0,
+      "atk": 32,
+      "def": 2,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Life Orb",
+     "ability": "Unburden",
+     "moves": [
+      "Close Combat",
+      "Fake Out",
+      "Dire Claw",
+      "Protect"
+     ],
+     "weight": 0.12
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.132
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0914
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0793
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0748
+    },
+    {
+     "pokemon_id": "delphox-mega",
+     "share": 0.0597
+    },
+    {
+     "pokemon_id": "blastoise-mega",
+     "share": 0.05
+    },
+    {
+     "pokemon_id": "floette-eternal-mega",
+     "share": 0.0394
+    },
+    {
+     "pokemon_id": "froslass-mega",
+     "share": 0.0393
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0354
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.0267
+    },
+    {
+     "pokemon_id": "dragonite-mega",
+     "share": 0.0231
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0202
+    }
+   ]
+  },
+  "charizard-mega-y": {
+   "name": "Mega Charizard Y",
+   "usage": 29.49,
+   "sets": [
+    {
+     "name": "Charizardite Y Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 2,
+      "spa": 32,
+      "spd": 0,
+      "spe": 0
+     },
+     "item": "Charizardite Y",
+     "ability": "Drought",
+     "moves": [
+      "Heat Wave",
+      "Protect",
+      "Weather Ball",
+      "Solar Beam"
+     ],
+     "weight": 0.358
+    },
+    {
+     "name": "Charizardite Y Modest #2",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 22,
+      "atk": 0,
+      "def": 20,
+      "spa": 11,
+      "spd": 0,
+      "spe": 13
+     },
+     "item": "Charizardite Y",
+     "ability": "Drought",
+     "moves": [
+      "Heat Wave",
+      "Protect",
+      "Weather Ball",
+      "Solar Beam"
+     ],
+     "weight": 0.357
+    },
+    {
+     "name": "Charizardite Y Modest #3",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 30,
+      "atk": 0,
+      "def": 31,
+      "spa": 1,
+      "spd": 0,
+      "spe": 4
+     },
+     "item": "Charizardite Y",
+     "ability": "Drought",
+     "moves": [
+      "Heat Wave",
+      "Protect",
+      "Weather Ball",
+      "Solar Beam"
+     ],
+     "weight": 0.285
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.1524
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.1016
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0969
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0959
+    },
+    {
+     "pokemon_id": "floette-eternal-mega",
+     "share": 0.0651
+    },
+    {
+     "pokemon_id": "sylveon",
+     "share": 0.063
+    },
+    {
+     "pokemon_id": "venusaur",
+     "share": 0.0595
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.059
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.0279
+    },
+    {
+     "pokemon_id": "aerodactyl-mega",
+     "share": 0.0256
+    },
+    {
+     "pokemon_id": "archaludon",
+     "share": 0.0244
+    },
+    {
+     "pokemon_id": "toxapex",
+     "share": 0.024
+    }
+   ]
+  },
+  "sinistcha": {
+   "name": "Sinistcha",
+   "usage": 25.31,
+   "sets": [
+    {
+     "name": "Colbur Berry Bold",
+     "alignment": "Bold",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 14,
+      "spa": 0,
+      "spd": 20,
+      "spe": 0
+     },
+     "item": "Colbur Berry",
+     "ability": "Hospitality",
+     "moves": [
+      "Matcha Gotcha",
+      "Rage Powder",
+      "Protect",
+      "Trick Room"
+     ],
+     "weight": 0.586
+    },
+    {
+     "name": "Kasib Berry Bold",
+     "alignment": "Bold",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 4,
+      "spa": 0,
+      "spd": 30,
+      "spe": 0
+     },
+     "item": "Kasib Berry",
+     "ability": "Hospitality",
+     "moves": [
+      "Matcha Gotcha",
+      "Rage Powder",
+      "Protect",
+      "Trick Room"
+     ],
+     "weight": 0.288
+    },
+    {
+     "name": "Sitrus Berry Bold",
+     "alignment": "Bold",
+     "spread": {
+      "hp": 29,
+      "atk": 0,
+      "def": 15,
+      "spa": 0,
+      "spd": 22,
+      "spe": 0
+     },
+     "item": "Sitrus Berry",
+     "ability": "Hospitality",
+     "moves": [
+      "Matcha Gotcha",
+      "Rage Powder",
+      "Protect",
+      "Trick Room"
+     ],
+     "weight": 0.126
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.1255
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0971
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0907
+    },
+    {
+     "pokemon_id": "delphox-mega",
+     "share": 0.0752
+    },
+    {
+     "pokemon_id": "blastoise-mega",
+     "share": 0.0596
+    },
+    {
+     "pokemon_id": "floette-eternal-mega",
+     "share": 0.0422
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.0327
+    },
+    {
+     "pokemon_id": "milotic",
+     "share": 0.0284
+    },
+    {
+     "pokemon_id": "tyranitar-mega",
+     "share": 0.0251
+    },
+    {
+     "pokemon_id": "excadrill",
+     "share": 0.0248
+    },
+    {
+     "pokemon_id": "gholdengo",
+     "share": 0.0247
+    },
+    {
+     "pokemon_id": "raichu-mega-y",
+     "share": 0.0188
+    }
+   ]
+  },
+  "whimsicott": {
+   "name": "Whimsicott",
+   "usage": 24.54,
+   "sets": [
+    {
+     "name": "Focus Sash Timid",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Prankster",
+     "moves": [
+      "Tailwind",
+      "Moonblast",
+      "Encore",
+      "Protect"
+     ],
+     "weight": 0.78
+    },
+    {
+     "name": "Occa Berry Timid",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 0,
+      "atk": 0,
+      "def": 2,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Occa Berry",
+     "ability": "Prankster",
+     "moves": [
+      "Tailwind",
+      "Moonblast",
+      "Encore",
+      "Protect"
+     ],
+     "weight": 0.147
+    },
+    {
+     "name": "Mental Herb Bold",
+     "alignment": "Bold",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 17,
+      "spa": 2,
+      "spd": 15,
+      "spe": 0
+     },
+     "item": "Mental Herb",
+     "ability": "Prankster",
+     "moves": [
+      "Tailwind",
+      "Moonblast",
+      "Encore",
+      "Protect"
+     ],
+     "weight": 0.073
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.1378
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.13
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.1212
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.1207
+    },
+    {
+     "pokemon_id": "floette-eternal-mega",
+     "share": 0.0937
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.0435
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0343
+    },
+    {
+     "pokemon_id": "glimmora",
+     "share": 0.0239
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0226
+    },
+    {
+     "pokemon_id": "delphox-mega",
+     "share": 0.0179
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.0175
+    },
+    {
+     "pokemon_id": "gholdengo",
+     "share": 0.0165
+    }
+   ]
+  },
+  "sylveon": {
+   "name": "Sylveon",
+   "usage": 19.1,
+   "sets": [
+    {
+     "name": "Fairy Feather Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 21,
+      "atk": 0,
+      "def": 25,
+      "spa": 13,
+      "spd": 0,
+      "spe": 7
+     },
+     "item": "Fairy Feather",
+     "ability": "Pixilate",
+     "moves": [
+      "Hyper Voice",
+      "Quick Attack",
+      "Detect",
+      "Hyper Beam"
+     ],
+     "weight": 0.424
+    },
+    {
+     "name": "Fairy Feather Modest #2",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 13,
+      "atk": 0,
+      "def": 22,
+      "spa": 23,
+      "spd": 0,
+      "spe": 8
+     },
+     "item": "Fairy Feather",
+     "ability": "Pixilate",
+     "moves": [
+      "Hyper Voice",
+      "Quick Attack",
+      "Detect",
+      "Hyper Beam"
+     ],
+     "weight": 0.343
+    },
+    {
+     "name": "Fairy Feather Modest #3",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 9,
+      "atk": 0,
+      "def": 22,
+      "spa": 20,
+      "spd": 0,
+      "spe": 15
+     },
+     "item": "Fairy Feather",
+     "ability": "Pixilate",
+     "moves": [
+      "Hyper Voice",
+      "Quick Attack",
+      "Detect",
+      "Hyper Beam"
+     ],
+     "weight": 0.233
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.11
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.1034
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0953
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.0928
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0648
+    },
+    {
+     "pokemon_id": "raichu-mega-y",
+     "share": 0.0636
+    },
+    {
+     "pokemon_id": "aerodactyl-mega",
+     "share": 0.0532
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.0528
+    },
+    {
+     "pokemon_id": "venusaur",
+     "share": 0.0458
+    },
+    {
+     "pokemon_id": "arcanine-hisui",
+     "share": 0.0439
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0298
+    },
+    {
+     "pokemon_id": "toxapex",
+     "share": 0.0281
+    }
+   ]
+  },
+  "floette-eternal-mega": {
+   "name": "Mega Floette Eternal",
+   "usage": 19.1,
+   "sets": [
+    {
+     "name": "Floettite Timid",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Floettite",
+     "ability": "Fairy Aura",
+     "moves": [
+      "Protect",
+      "Dazzling Gleam",
+      "Moonblast",
+      "Light of Ruin"
+     ],
+     "weight": 0.561
+    },
+    {
+     "name": "Floettite Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Floettite",
+     "ability": "Fairy Aura",
+     "moves": [
+      "Protect",
+      "Dazzling Gleam",
+      "Moonblast",
+      "Light of Ruin"
+     ],
+     "weight": 0.249
+    },
+    {
+     "name": "Floettite Modest #3",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 8,
+      "atk": 0,
+      "def": 1,
+      "spa": 25,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Floettite",
+     "ability": "Fairy Aura",
+     "moves": [
+      "Protect",
+      "Dazzling Gleam",
+      "Moonblast",
+      "Light of Ruin"
+     ],
+     "weight": 0.19
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.1423
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.1285
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.1207
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.1162
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.1006
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0745
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0654
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0561
+    },
+    {
+     "pokemon_id": "delphox-mega",
+     "share": 0.029
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.013
+    },
+    {
+     "pokemon_id": "dragonite-mega",
+     "share": 0.0088
+    },
+    {
+     "pokemon_id": "garchomp-mega",
+     "share": 0.0077
+    }
+   ]
+  },
+  "farigiraf": {
+   "name": "Farigiraf",
+   "usage": 18.02,
+   "sets": [
+    {
+     "name": "Sitrus Berry Calm",
+     "alignment": "Calm",
+     "spread": {
+      "hp": 29,
+      "atk": 0,
+      "def": 21,
+      "spa": 0,
+      "spd": 16,
+      "spe": 0
+     },
+     "item": "Sitrus Berry",
+     "ability": "Armor Tail",
+     "moves": [
+      "Trick Room",
+      "Psychic",
+      "Helping Hand",
+      "Protect"
+     ],
+     "weight": 0.443
+    },
+    {
+     "name": "Colbur Berry Quiet",
+     "alignment": "Quiet",
+     "spread": {
+      "hp": 29,
+      "atk": 0,
+      "def": 21,
+      "spa": 0,
+      "spd": 16,
+      "spe": 0
+     },
+     "item": "Colbur Berry",
+     "ability": "Armor Tail",
+     "moves": [
+      "Trick Room",
+      "Psychic",
+      "Helping Hand",
+      "Protect"
+     ],
+     "weight": 0.378
+    },
+    {
+     "name": "Sitrus Berry Sassy",
+     "alignment": "Sassy",
+     "spread": {
+      "hp": 29,
+      "atk": 0,
+      "def": 12,
+      "spa": 0,
+      "spd": 25,
+      "spe": 0
+     },
+     "item": "Sitrus Berry",
+     "ability": "Armor Tail",
+     "moves": [
+      "Trick Room",
+      "Psychic",
+      "Helping Hand",
+      "Protect"
+     ],
+     "weight": 0.179
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.1043
+    },
+    {
+     "pokemon_id": "sylveon",
+     "share": 0.0999
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.0661
+    },
+    {
+     "pokemon_id": "raichu-mega-y",
+     "share": 0.0576
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.047
+    },
+    {
+     "pokemon_id": "arcanine-hisui",
+     "share": 0.0455
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0455
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0384
+    },
+    {
+     "pokemon_id": "torkoal",
+     "share": 0.0383
+    },
+    {
+     "pokemon_id": "aerodactyl-mega",
+     "share": 0.037
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0275
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0256
+    }
+   ]
+  },
+  "staraptor-mega": {
+   "name": "Mega Staraptor",
+   "usage": 16.31,
+   "sets": [
+    {
+     "name": "Staraptite Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 29,
+      "atk": 1,
+      "def": 0,
+      "spa": 0,
+      "spd": 4,
+      "spe": 32
+     },
+     "item": "Staraptite",
+     "ability": "Contrary",
+     "moves": [
+      "Close Combat",
+      "Protect",
+      "Brave Bird",
+      "Tailwind"
+     ],
+     "weight": 0.398
+    },
+    {
+     "name": "Staraptite Jolly #2",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 15,
+      "atk": 19,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Staraptite",
+     "ability": "Contrary",
+     "moves": [
+      "Close Combat",
+      "Protect",
+      "Brave Bird",
+      "Tailwind"
+     ],
+     "weight": 0.366
+    },
+    {
+     "name": "Staraptite Jolly #3",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Staraptite",
+     "ability": "Contrary",
+     "moves": [
+      "Close Combat",
+      "Protect",
+      "Brave Bird",
+      "Tailwind"
+     ],
+     "weight": 0.235
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0907
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.0724
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.0635
+    },
+    {
+     "pokemon_id": "raichu-mega-y",
+     "share": 0.0628
+    },
+    {
+     "pokemon_id": "sylveon",
+     "share": 0.0624
+    },
+    {
+     "pokemon_id": "arcanine-hisui",
+     "share": 0.0566
+    },
+    {
+     "pokemon_id": "gholdengo",
+     "share": 0.0564
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0521
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0501
+    },
+    {
+     "pokemon_id": "excadrill",
+     "share": 0.0375
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0364
+    },
+    {
+     "pokemon_id": "milotic",
+     "share": 0.0354
+    }
+   ]
+  },
+  "delphox-mega": {
+   "name": "Mega Delphox",
+   "usage": 12.5,
+   "sets": [
+    {
+     "name": "Delphoxite Timid",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 15,
+      "atk": 0,
+      "def": 19,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Delphoxite",
+     "ability": "Levitate",
+     "moves": [
+      "Protect",
+      "Heat Wave",
+      "Nasty Plot",
+      "Psychic"
+     ],
+     "weight": 0.702
+    },
+    {
+     "name": "Delphoxite Timid #2",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 15,
+      "atk": 0,
+      "def": 19,
+      "spa": 3,
+      "spd": 0,
+      "spe": 29
+     },
+     "item": "Delphoxite",
+     "ability": "Levitate",
+     "moves": [
+      "Protect",
+      "Heat Wave",
+      "Nasty Plot",
+      "Psychic"
+     ],
+     "weight": 0.16
+    },
+    {
+     "name": "Delphoxite Timid #3",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 13,
+      "atk": 0,
+      "def": 12,
+      "spa": 18,
+      "spd": 0,
+      "spe": 23
+     },
+     "item": "Delphoxite",
+     "ability": "Levitate",
+     "moves": [
+      "Protect",
+      "Heat Wave",
+      "Nasty Plot",
+      "Psychic"
+     ],
+     "weight": 0.138
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.1569
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.1515
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.1474
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.1425
+    },
+    {
+     "pokemon_id": "blastoise-mega",
+     "share": 0.0961
+    },
+    {
+     "pokemon_id": "floette-eternal-mega",
+     "share": 0.0436
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0428
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.0338
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.0308
+    },
+    {
+     "pokemon_id": "glimmora",
+     "share": 0.0256
+    },
+    {
+     "pokemon_id": "maushold",
+     "share": 0.0172
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0097
+    }
+   ]
+  },
+  "raichu-mega-y": {
+   "name": "Mega Raichu Y",
+   "usage": 11.14,
+   "sets": [
+    {
+     "name": "Raichunite Y Timid",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 11,
+      "spa": 0,
+      "spd": 0,
+      "spe": 23
+     },
+     "item": "Raichunite Y",
+     "ability": "No Guard",
+     "moves": [
+      "Zap Cannon",
+      "Protect",
+      "Fake Out",
+      "Focus Blast"
+     ],
+     "weight": 0.338
+    },
+    {
+     "name": "Raichunite Y Timid #2",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 30,
+      "atk": 0,
+      "def": 13,
+      "spa": 0,
+      "spd": 0,
+      "spe": 23
+     },
+     "item": "Raichunite Y",
+     "ability": "No Guard",
+     "moves": [
+      "Zap Cannon",
+      "Protect",
+      "Fake Out",
+      "Focus Blast"
+     ],
+     "weight": 0.334
+    },
+    {
+     "name": "Raichunite Y Timid #3",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 0,
+      "spa": 2,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Raichunite Y",
+     "ability": "No Guard",
+     "moves": [
+      "Zap Cannon",
+      "Protect",
+      "Fake Out",
+      "Focus Blast"
+     ],
+     "weight": 0.328
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.1281
+    },
+    {
+     "pokemon_id": "sylveon",
+     "share": 0.1095
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.0915
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.0911
+    },
+    {
+     "pokemon_id": "arcanine-hisui",
+     "share": 0.0771
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0516
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.044
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0377
+    },
+    {
+     "pokemon_id": "ninetales-alola",
+     "share": 0.0312
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0227
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.0223
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0221
+    }
+   ]
+  },
+  "blastoise-mega": {
+   "name": "Mega Blastoise",
+   "usage": 10.32,
+   "sets": [
+    {
+     "name": "Blastoisinite Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Blastoisinite",
+     "ability": "Mega Launcher",
+     "moves": [
+      "Dark Pulse",
+      "Water Spout",
+      "Protect",
+      "Shell Smash"
+     ],
+     "weight": 0.733
+    },
+    {
+     "name": "Blastoisinite Modest #2",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 31,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 3
+     },
+     "item": "Blastoisinite",
+     "ability": "Mega Launcher",
+     "moves": [
+      "Dark Pulse",
+      "Water Spout",
+      "Protect",
+      "Shell Smash"
+     ],
+     "weight": 0.146
+    },
+    {
+     "name": "Blastoisinite Modest #3",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 1,
+      "atk": 0,
+      "def": 1,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Blastoisinite",
+     "ability": "Mega Launcher",
+     "moves": [
+      "Dark Pulse",
+      "Water Spout",
+      "Protect",
+      "Shell Smash"
+     ],
+     "weight": 0.121
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.1512
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.1487
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.1322
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.124
+    },
+    {
+     "pokemon_id": "delphox-mega",
+     "share": 0.1193
+    },
+    {
+     "pokemon_id": "maushold",
+     "share": 0.0288
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.0275
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0273
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.0252
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0189
+    },
+    {
+     "pokemon_id": "meowscarada",
+     "share": 0.0172
+    },
+    {
+     "pokemon_id": "staraptor",
+     "share": 0.0123
+    }
+   ]
+  },
+  "archaludon": {
+   "name": "Archaludon",
+   "usage": 10.06,
+   "sets": [
+    {
+     "name": "Leftovers Bold",
+     "alignment": "Bold",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 1,
+      "spa": 1,
+      "spd": 29,
+      "spe": 3
+     },
+     "item": "Leftovers",
+     "ability": "Stamina",
+     "moves": [
+      "Electro Shot",
+      "Flash Cannon",
+      "Protect",
+      "Dragon Pulse"
+     ],
+     "weight": 0.389
+    },
+    {
+     "name": "Leftovers Bold #2",
+     "alignment": "Bold",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 1,
+      "spa": 1,
+      "spd": 32,
+      "spe": 0
+     },
+     "item": "Leftovers",
+     "ability": "Stamina",
+     "moves": [
+      "Electro Shot",
+      "Flash Cannon",
+      "Protect",
+      "Dragon Pulse"
+     ],
+     "weight": 0.329
+    },
+    {
+     "name": "Leftovers Timid",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Leftovers",
+     "ability": "Stamina",
+     "moves": [
+      "Electro Shot",
+      "Flash Cannon",
+      "Protect",
+      "Dragon Pulse"
+     ],
+     "weight": 0.282
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "pelipper",
+     "share": 0.1351
+    },
+    {
+     "pokemon_id": "swampert-mega",
+     "share": 0.1282
+    },
+    {
+     "pokemon_id": "grimmsnarl",
+     "share": 0.0896
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0714
+    },
+    {
+     "pokemon_id": "venusaur",
+     "share": 0.0528
+    },
+    {
+     "pokemon_id": "politoed",
+     "share": 0.0496
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0483
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0454
+    },
+    {
+     "pokemon_id": "gengar-mega",
+     "share": 0.0426
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0362
+    },
+    {
+     "pokemon_id": "vivillon",
+     "share": 0.0325
+    },
+    {
+     "pokemon_id": "sableye",
+     "share": 0.0201
+    }
+   ]
+  },
+  "venusaur": {
+   "name": "Venusaur",
+   "usage": 9.84,
+   "sets": [
+    {
+     "name": "Life Orb Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Life Orb",
+     "ability": "Chlorophyll",
+     "moves": [
+      "Protect",
+      "Sludge Bomb",
+      "Earth Power",
+      "Leaf Storm"
+     ],
+     "weight": 0.868
+    },
+    {
+     "name": "Focus Sash Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 0,
+      "atk": 0,
+      "def": 2,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Chlorophyll",
+     "moves": [
+      "Protect",
+      "Sludge Bomb",
+      "Earth Power",
+      "Leaf Storm"
+     ],
+     "weight": 0.067
+    },
+    {
+     "name": "Life Orb Timid",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Life Orb",
+     "ability": "Chlorophyll",
+     "moves": [
+      "Protect",
+      "Sludge Bomb",
+      "Earth Power",
+      "Leaf Storm"
+     ],
+     "weight": 0.064
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.18
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.1181
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.1136
+    },
+    {
+     "pokemon_id": "sylveon",
+     "share": 0.0904
+    },
+    {
+     "pokemon_id": "toxapex",
+     "share": 0.0668
+    },
+    {
+     "pokemon_id": "grimmsnarl",
+     "share": 0.056
+    },
+    {
+     "pokemon_id": "archaludon",
+     "share": 0.0528
+    },
+    {
+     "pokemon_id": "pelipper",
+     "share": 0.0508
+    },
+    {
+     "pokemon_id": "swampert-mega",
+     "share": 0.0438
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.027
+    },
+    {
+     "pokemon_id": "torkoal",
+     "share": 0.0188
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0179
+    }
+   ]
+  },
+  "pelipper": {
+   "name": "Pelipper",
+   "usage": 8.14,
+   "sets": [
+    {
+     "name": "Sitrus Berry Timid",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Sitrus Berry",
+     "ability": "Drizzle",
+     "moves": [
+      "Hurricane",
+      "Weather Ball",
+      "Tailwind",
+      "Wide Guard"
+     ],
+     "weight": 0.483
+    },
+    {
+     "name": "Focus Sash Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Drizzle",
+     "moves": [
+      "Hurricane",
+      "Weather Ball",
+      "Tailwind",
+      "Wide Guard"
+     ],
+     "weight": 0.308
+    },
+    {
+     "name": "Choice Scarf Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 1,
+      "spa": 5,
+      "spd": 17,
+      "spe": 11
+     },
+     "item": "Choice Scarf",
+     "ability": "Drizzle",
+     "moves": [
+      "Hurricane",
+      "Weather Ball",
+      "Tailwind",
+      "Wide Guard"
+     ],
+     "weight": 0.209
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "archaludon",
+     "share": 0.1674
+    },
+    {
+     "pokemon_id": "swampert-mega",
+     "share": 0.1262
+    },
+    {
+     "pokemon_id": "grimmsnarl",
+     "share": 0.1116
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0773
+    },
+    {
+     "pokemon_id": "venusaur",
+     "share": 0.0646
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0554
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0476
+    },
+    {
+     "pokemon_id": "venusaur-mega",
+     "share": 0.0217
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0209
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0185
+    },
+    {
+     "pokemon_id": "metagross-mega",
+     "share": 0.0181
+    },
+    {
+     "pokemon_id": "sableye",
+     "share": 0.0158
+    }
+   ]
+  },
+  "aerodactyl-mega": {
+   "name": "Mega Aerodactyl",
+   "usage": 7.57,
+   "sets": [
+    {
+     "name": "Aerodactylite Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 16,
+      "atk": 18,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Aerodactylite",
+     "ability": "Tough Claws",
+     "moves": [
+      "Rock Slide",
+      "Dual Wingbeat",
+      "Tailwind",
+      "Ice Fang"
+     ],
+     "weight": 0.459
+    },
+    {
+     "name": "Aerodactylite Jolly #2",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Aerodactylite",
+     "ability": "Tough Claws",
+     "moves": [
+      "Rock Slide",
+      "Dual Wingbeat",
+      "Tailwind",
+      "Ice Fang"
+     ],
+     "weight": 0.395
+    },
+    {
+     "name": "Aerodactylite Jolly #3",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 17,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 17
+     },
+     "item": "Aerodactylite",
+     "ability": "Tough Claws",
+     "moves": [
+      "Rock Slide",
+      "Dual Wingbeat",
+      "Tailwind",
+      "Ice Fang"
+     ],
+     "weight": 0.146
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.1461
+    },
+    {
+     "pokemon_id": "sylveon",
+     "share": 0.1344
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.1041
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0967
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.086
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0579
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0562
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0441
+    },
+    {
+     "pokemon_id": "raichu-mega-y",
+     "share": 0.0236
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0228
+    },
+    {
+     "pokemon_id": "kommo-o",
+     "share": 0.0216
+    },
+    {
+     "pokemon_id": "venusaur",
+     "share": 0.0183
+    }
+   ]
+  },
+  "froslass-mega": {
+   "name": "Mega Froslass",
+   "usage": 7.4,
+   "sets": [
+    {
+     "name": "Froslassite Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 12,
+      "atk": 0,
+      "def": 1,
+      "spa": 20,
+      "spd": 1,
+      "spe": 32
+     },
+     "item": "Froslassite",
+     "ability": "Snow Warning",
+     "moves": [
+      "Blizzard",
+      "Protect",
+      "Shadow Ball",
+      "Aurora Veil"
+     ],
+     "weight": 0.41
+    },
+    {
+     "name": "Froslassite Timid",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Froslassite",
+     "ability": "Snow Warning",
+     "moves": [
+      "Blizzard",
+      "Protect",
+      "Shadow Ball",
+      "Aurora Veil"
+     ],
+     "weight": 0.385
+    },
+    {
+     "name": "Froslassite Timid #3",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 12,
+      "atk": 0,
+      "def": 1,
+      "spa": 20,
+      "spd": 1,
+      "spe": 32
+     },
+     "item": "Froslassite",
+     "ability": "Snow Warning",
+     "moves": [
+      "Blizzard",
+      "Protect",
+      "Shadow Ball",
+      "Aurora Veil"
+     ],
+     "weight": 0.205
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.1641
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.1637
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.135
+    },
+    {
+     "pokemon_id": "scovillain-mega",
+     "share": 0.072
+    },
+    {
+     "pokemon_id": "lycanroc-dusk",
+     "share": 0.0674
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0593
+    },
+    {
+     "pokemon_id": "dragonite-mega",
+     "share": 0.057
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0206
+    },
+    {
+     "pokemon_id": "arcanine-hisui",
+     "share": 0.0177
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.014
+    },
+    {
+     "pokemon_id": "primarina",
+     "share": 0.0123
+    },
+    {
+     "pokemon_id": "dragonite",
+     "share": 0.009
+    }
+   ]
+  },
+  "swampert-mega": {
+   "name": "Mega Swampert",
+   "usage": 7.39,
+   "sets": [
+    {
+     "name": "Swampertite Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Swampertite",
+     "ability": "Swift Swim",
+     "moves": [
+      "Protect",
+      "Wave Crash",
+      "Earthquake",
+      "Ice Punch"
+     ],
+     "weight": 0.674
+    },
+    {
+     "name": "Swampertite Adamant #2",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 17,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 17
+     },
+     "item": "Swampertite",
+     "ability": "Swift Swim",
+     "moves": [
+      "Protect",
+      "Wave Crash",
+      "Earthquake",
+      "Ice Punch"
+     ],
+     "weight": 0.167
+    },
+    {
+     "name": "Swampertite Adamant #3",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 18,
+      "atk": 30,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 18
+     },
+     "item": "Swampertite",
+     "ability": "Swift Swim",
+     "moves": [
+      "Protect",
+      "Wave Crash",
+      "Earthquake",
+      "Ice Punch"
+     ],
+     "weight": 0.16
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "archaludon",
+     "share": 0.1739
+    },
+    {
+     "pokemon_id": "pelipper",
+     "share": 0.1381
+    },
+    {
+     "pokemon_id": "grimmsnarl",
+     "share": 0.0925
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0659
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0638
+    },
+    {
+     "pokemon_id": "gengar-mega",
+     "share": 0.0589
+    },
+    {
+     "pokemon_id": "politoed",
+     "share": 0.0589
+    },
+    {
+     "pokemon_id": "venusaur",
+     "share": 0.0588
+    },
+    {
+     "pokemon_id": "vivillon",
+     "share": 0.0526
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0361
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0229
+    },
+    {
+     "pokemon_id": "sableye",
+     "share": 0.0163
+    }
+   ]
+  },
+  "gholdengo": {
+   "name": "Gholdengo",
+   "usage": 7.35,
+   "sets": [
+    {
+     "name": "Life Orb Timid",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Life Orb",
+     "ability": "Good as Gold",
+     "moves": [
+      "Shadow Ball",
+      "Make It Rain",
+      "Protect",
+      "Nasty Plot"
+     ],
+     "weight": 0.409
+    },
+    {
+     "name": "Choice Scarf Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Choice Scarf",
+     "ability": "Good as Gold",
+     "moves": [
+      "Shadow Ball",
+      "Make It Rain",
+      "Protect",
+      "Nasty Plot"
+     ],
+     "weight": 0.355
+    },
+    {
+     "name": "Focus Sash Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 27,
+      "atk": 0,
+      "def": 13,
+      "spa": 0,
+      "spd": 16,
+      "spe": 10
+     },
+     "item": "Focus Sash",
+     "ability": "Good as Gold",
+     "moves": [
+      "Shadow Ball",
+      "Make It Rain",
+      "Protect",
+      "Nasty Plot"
+     ],
+     "weight": 0.237
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.1252
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0833
+    },
+    {
+     "pokemon_id": "milotic",
+     "share": 0.0674
+    },
+    {
+     "pokemon_id": "excadrill",
+     "share": 0.0668
+    },
+    {
+     "pokemon_id": "tyranitar-mega",
+     "share": 0.0625
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.0535
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0478
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0334
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0285
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0256
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.0249
+    },
+    {
+     "pokemon_id": "tyranitar",
+     "share": 0.0237
+    }
+   ]
+  },
+  "grimmsnarl": {
+   "name": "Grimmsnarl",
+   "usage": 6.72,
+   "sets": [
+    {
+     "name": "Light Clay Sassy",
+     "alignment": "Sassy",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 19,
+      "spa": 0,
+      "spd": 15,
+      "spe": 0
+     },
+     "item": "Light Clay",
+     "ability": "Prankster",
+     "moves": [
+      "Parting Shot",
+      "Light Screen",
+      "Reflect",
+      "Spirit Break"
+     ],
+     "weight": 0.459
+    },
+    {
+     "name": "Black Glasses Careful",
+     "alignment": "Careful",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 19,
+      "spa": 0,
+      "spd": 15,
+      "spe": 0
+     },
+     "item": "Black Glasses",
+     "ability": "Prankster",
+     "moves": [
+      "Parting Shot",
+      "Light Screen",
+      "Reflect",
+      "Spirit Break"
+     ],
+     "weight": 0.288
+    },
+    {
+     "name": "Light Clay Careful",
+     "alignment": "Careful",
+     "spread": {
+      "hp": 31,
+      "atk": 0,
+      "def": 20,
+      "spa": 0,
+      "spd": 15,
+      "spe": 0
+     },
+     "item": "Light Clay",
+     "ability": "Prankster",
+     "moves": [
+      "Parting Shot",
+      "Light Screen",
+      "Reflect",
+      "Spirit Break"
+     ],
+     "weight": 0.253
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "archaludon",
+     "share": 0.1332
+    },
+    {
+     "pokemon_id": "pelipper",
+     "share": 0.1331
+    },
+    {
+     "pokemon_id": "swampert-mega",
+     "share": 0.1021
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0998
+    },
+    {
+     "pokemon_id": "venusaur",
+     "share": 0.0832
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0444
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0407
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.0293
+    },
+    {
+     "pokemon_id": "venusaur-mega",
+     "share": 0.0238
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0215
+    },
+    {
+     "pokemon_id": "metagross-mega",
+     "share": 0.0179
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0172
+    }
+   ]
+  },
+  "gengar-mega": {
+   "name": "Mega Gengar",
+   "usage": 6.4,
+   "sets": [
+    {
+     "name": "Gengarite Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 30,
+      "atk": 0,
+      "def": 1,
+      "spa": 1,
+      "spd": 28,
+      "spe": 6
+     },
+     "item": "Gengarite",
+     "ability": "Shadow Tag",
+     "moves": [
+      "Protect",
+      "Shadow Ball",
+      "Sludge Bomb",
+      "Perish Song"
+     ],
+     "weight": 0.447
+    },
+    {
+     "name": "Gengarite Modest #2",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 20,
+      "atk": 0,
+      "def": 4,
+      "spa": 10,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Gengarite",
+     "ability": "Shadow Tag",
+     "moves": [
+      "Protect",
+      "Shadow Ball",
+      "Sludge Bomb",
+      "Perish Song"
+     ],
+     "weight": 0.384
+    },
+    {
+     "name": "Gengarite Timid",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Gengarite",
+     "ability": "Shadow Tag",
+     "moves": [
+      "Protect",
+      "Shadow Ball",
+      "Sludge Bomb",
+      "Perish Song"
+     ],
+     "weight": 0.168
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.1701
+    },
+    {
+     "pokemon_id": "politoed",
+     "share": 0.0776
+    },
+    {
+     "pokemon_id": "swampert-mega",
+     "share": 0.0684
+    },
+    {
+     "pokemon_id": "archaludon",
+     "share": 0.0669
+    },
+    {
+     "pokemon_id": "ninetales-alola",
+     "share": 0.0643
+    },
+    {
+     "pokemon_id": "vivillon",
+     "share": 0.0639
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0608
+    },
+    {
+     "pokemon_id": "dragonite",
+     "share": 0.0539
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0386
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0294
+    },
+    {
+     "pokemon_id": "swampert",
+     "share": 0.0284
+    },
+    {
+     "pokemon_id": "kommo-o",
+     "share": 0.0278
+    }
+   ]
+  },
+  "ninetales-alola": {
+   "name": "Ninetales-Alola",
+   "usage": 6.18,
+   "sets": [
+    {
+     "name": "Choice Scarf Timid",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 1,
+      "atk": 0,
+      "def": 1,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Choice Scarf",
+     "ability": "Snow Warning",
+     "moves": [
+      "Blizzard",
+      "Freeze-Dry",
+      "Encore",
+      "Protect"
+     ],
+     "weight": 0.373
+    },
+    {
+     "name": "Never-Melt Ice Timid",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 1,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 1,
+      "spe": 32
+     },
+     "item": "Never-Melt Ice",
+     "ability": "Snow Warning",
+     "moves": [
+      "Blizzard",
+      "Freeze-Dry",
+      "Encore",
+      "Protect"
+     ],
+     "weight": 0.368
+    },
+    {
+     "name": "Focus Sash Timid",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Snow Warning",
+     "moves": [
+      "Blizzard",
+      "Freeze-Dry",
+      "Encore",
+      "Protect"
+     ],
+     "weight": 0.259
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.118
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0963
+    },
+    {
+     "pokemon_id": "gengar-mega",
+     "share": 0.0687
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.062
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0614
+    },
+    {
+     "pokemon_id": "raichu-mega-y",
+     "share": 0.0539
+    },
+    {
+     "pokemon_id": "dragonite",
+     "share": 0.0484
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0325
+    },
+    {
+     "pokemon_id": "swampert",
+     "share": 0.0283
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.028
+    },
+    {
+     "pokemon_id": "primarina",
+     "share": 0.027
+    },
+    {
+     "pokemon_id": "kommo-o",
+     "share": 0.0267
+    }
+   ]
+  },
+  "arcanine-hisui": {
+   "name": "Arcanine-Hisui",
+   "usage": 5.99,
+   "sets": [
+    {
+     "name": "Focus Sash Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Rock Head",
+     "moves": [
+      "Flare Blitz",
+      "Protect",
+      "Head Smash",
+      "Extreme Speed"
+     ],
+     "weight": 0.602
+    },
+    {
+     "name": "White Herb Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 1,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 1,
+      "spe": 32
+     },
+     "item": "White Herb",
+     "ability": "Rock Head",
+     "moves": [
+      "Flare Blitz",
+      "Protect",
+      "Head Smash",
+      "Extreme Speed"
+     ],
+     "weight": 0.33
+    },
+    {
+     "name": "Focus Sash Jolly #3",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 0,
+      "atk": 32,
+      "def": 1,
+      "spa": 0,
+      "spd": 1,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Rock Head",
+     "moves": [
+      "Flare Blitz",
+      "Protect",
+      "Head Smash",
+      "Extreme Speed"
+     ],
+     "weight": 0.068
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.1655
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.1515
+    },
+    {
+     "pokemon_id": "raichu-mega-y",
+     "share": 0.1436
+    },
+    {
+     "pokemon_id": "sylveon",
+     "share": 0.1403
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.1347
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0229
+    },
+    {
+     "pokemon_id": "froslass-mega",
+     "share": 0.0226
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0176
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0171
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.017
+    },
+    {
+     "pokemon_id": "gholdengo",
+     "share": 0.0154
+    },
+    {
+     "pokemon_id": "dragonite-mega",
+     "share": 0.0139
+    }
+   ]
+  },
+  "milotic": {
+   "name": "Milotic",
+   "usage": 5.89,
+   "sets": [
+    {
+     "name": "Leftovers Calm",
+     "alignment": "Calm",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 27,
+      "spa": 0,
+      "spd": 5,
+      "spe": 2
+     },
+     "item": "Leftovers",
+     "ability": "Competitive",
+     "moves": [
+      "Protect",
+      "Scald",
+      "Icy Wind",
+      "Ice Beam"
+     ],
+     "weight": 0.382
+    },
+    {
+     "name": "Sitrus Berry Calm",
+     "alignment": "Calm",
+     "spread": {
+      "hp": 20,
+      "atk": 0,
+      "def": 20,
+      "spa": 4,
+      "spd": 8,
+      "spe": 14
+     },
+     "item": "Sitrus Berry",
+     "ability": "Competitive",
+     "moves": [
+      "Protect",
+      "Scald",
+      "Icy Wind",
+      "Ice Beam"
+     ],
+     "weight": 0.373
+    },
+    {
+     "name": "Leftovers Calm #3",
+     "alignment": "Calm",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 13,
+      "spa": 5,
+      "spd": 2,
+      "spe": 14
+     },
+     "item": "Leftovers",
+     "ability": "Competitive",
+     "moves": [
+      "Protect",
+      "Scald",
+      "Icy Wind",
+      "Ice Beam"
+     ],
+     "weight": 0.245
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.1214
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.0985
+    },
+    {
+     "pokemon_id": "excadrill",
+     "share": 0.0859
+    },
+    {
+     "pokemon_id": "gholdengo",
+     "share": 0.0848
+    },
+    {
+     "pokemon_id": "tyranitar-mega",
+     "share": 0.0843
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0545
+    },
+    {
+     "pokemon_id": "raichu-mega-y",
+     "share": 0.0378
+    },
+    {
+     "pokemon_id": "ceruledge",
+     "share": 0.0285
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0266
+    },
+    {
+     "pokemon_id": "venusaur-mega",
+     "share": 0.0241
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0217
+    },
+    {
+     "pokemon_id": "ninetales-alola",
+     "share": 0.0198
+    }
+   ]
+  },
+  "maushold": {
+   "name": "Maushold",
+   "usage": 5.13,
+   "sets": [
+    {
+     "name": "Chople Berry Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Chople Berry",
+     "ability": "Friend Guard",
+     "moves": [
+      "Protect",
+      "Follow Me",
+      "Super Fang",
+      "Population Bomb"
+     ],
+     "weight": 0.533
+    },
+    {
+     "name": "Wide Lens Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 2,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Wide Lens",
+     "ability": "Friend Guard",
+     "moves": [
+      "Protect",
+      "Follow Me",
+      "Super Fang",
+      "Population Bomb"
+     ],
+     "weight": 0.245
+    },
+    {
+     "name": "Focus Sash Timid",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 2,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Friend Guard",
+     "moves": [
+      "Protect",
+      "Follow Me",
+      "Super Fang",
+      "Population Bomb"
+     ],
+     "weight": 0.222
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0862
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0664
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0663
+    },
+    {
+     "pokemon_id": "blastoise-mega",
+     "share": 0.0581
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.046
+    },
+    {
+     "pokemon_id": "delphox-mega",
+     "share": 0.0418
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0389
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.0378
+    },
+    {
+     "pokemon_id": "gardevoir-mega",
+     "share": 0.0344
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.0301
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0273
+    },
+    {
+     "pokemon_id": "kommo-o",
+     "share": 0.0226
+    }
+   ]
+  },
+  "scovillain-mega": {
+   "name": "Mega Scovillain",
+   "usage": 4.84,
+   "sets": [
+    {
+     "name": "Scovillainite Bold",
+     "alignment": "Bold",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 15,
+      "spa": 0,
+      "spd": 15,
+      "spe": 4
+     },
+     "item": "Scovillainite",
+     "ability": "Spicy Spray",
+     "moves": [
+      "Protect",
+      "Rage Powder",
+      "Overheat",
+      "Giga Drain"
+     ],
+     "weight": 0.45
+    },
+    {
+     "name": "Scovillainite Bold #2",
+     "alignment": "Bold",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 15,
+      "spa": 0,
+      "spd": 19,
+      "spe": 0
+     },
+     "item": "Scovillainite",
+     "ability": "Spicy Spray",
+     "moves": [
+      "Protect",
+      "Rage Powder",
+      "Overheat",
+      "Giga Drain"
+     ],
+     "weight": 0.311
+    },
+    {
+     "name": "Scovillainite Bold #3",
+     "alignment": "Bold",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 25,
+      "spa": 0,
+      "spd": 5,
+      "spe": 4
+     },
+     "item": "Scovillainite",
+     "ability": "Spicy Spray",
+     "moves": [
+      "Protect",
+      "Rage Powder",
+      "Overheat",
+      "Giga Drain"
+     ],
+     "weight": 0.239
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.1353
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.1237
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.1165
+    },
+    {
+     "pokemon_id": "froslass-mega",
+     "share": 0.1074
+    },
+    {
+     "pokemon_id": "lycanroc-dusk",
+     "share": 0.0961
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.0311
+    },
+    {
+     "pokemon_id": "archaludon",
+     "share": 0.0261
+    },
+    {
+     "pokemon_id": "gholdengo",
+     "share": 0.022
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.0211
+    },
+    {
+     "pokemon_id": "sylveon",
+     "share": 0.0191
+    },
+    {
+     "pokemon_id": "pelipper",
+     "share": 0.0176
+    },
+    {
+     "pokemon_id": "tyranitar",
+     "share": 0.0166
+    }
+   ]
+  },
+  "dragonite-mega": {
+   "name": "Mega Dragonite",
+   "usage": 4.54,
+   "sets": [
+    {
+     "name": "Dragoninite Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Dragoninite",
+     "ability": "Multiscale",
+     "moves": [
+      "Dragon Pulse",
+      "Protect",
+      "Heat Wave",
+      "Tailwind"
+     ],
+     "weight": 0.734
+    },
+    {
+     "name": "Dragoninite Modest #2",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 1,
+      "atk": 0,
+      "def": 1,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Dragoninite",
+     "ability": "Multiscale",
+     "moves": [
+      "Dragon Pulse",
+      "Protect",
+      "Heat Wave",
+      "Tailwind"
+     ],
+     "weight": 0.18
+    },
+    {
+     "name": "Dragoninite Modest #3",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 1,
+      "spa": 30,
+      "spd": 1,
+      "spe": 32
+     },
+     "item": "Dragoninite",
+     "ability": "Multiscale",
+     "moves": [
+      "Dragon Pulse",
+      "Protect",
+      "Heat Wave",
+      "Tailwind"
+     ],
+     "weight": 0.086
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.1596
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.1537
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.1469
+    },
+    {
+     "pokemon_id": "froslass-mega",
+     "share": 0.0924
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0743
+    },
+    {
+     "pokemon_id": "floette-eternal-mega",
+     "share": 0.0326
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.0309
+    },
+    {
+     "pokemon_id": "sylveon",
+     "share": 0.0267
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0224
+    },
+    {
+     "pokemon_id": "aerodactyl-mega",
+     "share": 0.0198
+    },
+    {
+     "pokemon_id": "arcanine-hisui",
+     "share": 0.0173
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0145
+    }
+   ]
+  },
+  "excadrill": {
+   "name": "Excadrill",
+   "usage": 4.48,
+   "sets": [
+    {
+     "name": "Focus Sash Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Sand Rush",
+     "moves": [
+      "Iron Head",
+      "Protect",
+      "Rock Slide",
+      "High Horsepower"
+     ],
+     "weight": 0.655
+    },
+    {
+     "name": "Life Orb Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 0,
+      "atk": 32,
+      "def": 2,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Life Orb",
+     "ability": "Sand Rush",
+     "moves": [
+      "Iron Head",
+      "Protect",
+      "Rock Slide",
+      "High Horsepower"
+     ],
+     "weight": 0.198
+    },
+    {
+     "name": "Focus Sash Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Sand Rush",
+     "moves": [
+      "Iron Head",
+      "Protect",
+      "Rock Slide",
+      "High Horsepower"
+     ],
+     "weight": 0.148
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.1377
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.136
+    },
+    {
+     "pokemon_id": "tyranitar-mega",
+     "share": 0.135
+    },
+    {
+     "pokemon_id": "milotic",
+     "share": 0.1107
+    },
+    {
+     "pokemon_id": "gholdengo",
+     "share": 0.1088
+    },
+    {
+     "pokemon_id": "tyranitar",
+     "share": 0.0596
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.022
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0214
+    },
+    {
+     "pokemon_id": "metagross-mega",
+     "share": 0.0163
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0161
+    },
+    {
+     "pokemon_id": "venusaur-mega",
+     "share": 0.0138
+    },
+    {
+     "pokemon_id": "floette-eternal-mega",
+     "share": 0.011
+    }
+   ]
+  },
+  "toxapex": {
+   "name": "Toxapex",
+   "usage": 4.44,
+   "sets": [
+    {
+     "name": "Leftovers Bold",
+     "alignment": "Bold",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 18,
+      "spa": 0,
+      "spd": 16,
+      "spe": 0
+     },
+     "item": "Leftovers",
+     "ability": "Regenerator",
+     "moves": [
+      "Toxic",
+      "Infestation",
+      "Baneful Bunker",
+      "Wide Guard"
+     ],
+     "weight": 0.699
+    },
+    {
+     "name": "Leftovers Bold #2",
+     "alignment": "Bold",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 15,
+      "spa": 0,
+      "spd": 19,
+      "spe": 0
+     },
+     "item": "Leftovers",
+     "ability": "Regenerator",
+     "moves": [
+      "Toxic",
+      "Infestation",
+      "Baneful Bunker",
+      "Wide Guard"
+     ],
+     "weight": 0.189
+    },
+    {
+     "name": "Leftovers Bold #3",
+     "alignment": "Bold",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 8,
+      "spa": 0,
+      "spd": 26,
+      "spe": 0
+     },
+     "item": "Leftovers",
+     "ability": "Regenerator",
+     "moves": [
+      "Toxic",
+      "Infestation",
+      "Baneful Bunker",
+      "Wide Guard"
+     ],
+     "weight": 0.112
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.1688
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.1624
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.1591
+    },
+    {
+     "pokemon_id": "venusaur",
+     "share": 0.1466
+    },
+    {
+     "pokemon_id": "sylveon",
+     "share": 0.1221
+    },
+    {
+     "pokemon_id": "annihilape",
+     "share": 0.0182
+    },
+    {
+     "pokemon_id": "froslass-mega",
+     "share": 0.0127
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0119
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0116
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0115
+    },
+    {
+     "pokemon_id": "grimmsnarl",
+     "share": 0.0087
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.0082
+    }
+   ]
+  },
+  "torkoal": {
+   "name": "Torkoal",
+   "usage": 4.36,
+   "sets": [
+    {
+     "name": "Charcoal Quiet",
+     "alignment": "Quiet",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 2,
+      "spe": 0
+     },
+     "item": "Charcoal",
+     "ability": "Drought",
+     "moves": [
+      "Eruption",
+      "Protect",
+      "Weather Ball",
+      "Heat Wave"
+     ],
+     "weight": 0.675
+    },
+    {
+     "name": "Charcoal Quiet #2",
+     "alignment": "Quiet",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 1,
+      "spa": 32,
+      "spd": 1,
+      "spe": 0
+     },
+     "item": "Charcoal",
+     "ability": "Drought",
+     "moves": [
+      "Eruption",
+      "Protect",
+      "Weather Ball",
+      "Heat Wave"
+     ],
+     "weight": 0.225
+    },
+    {
+     "name": "Charcoal Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 2,
+      "spe": 0
+     },
+     "item": "Charcoal",
+     "ability": "Drought",
+     "moves": [
+      "Eruption",
+      "Protect",
+      "Weather Ball",
+      "Heat Wave"
+     ],
+     "weight": 0.1
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.1625
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0596
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0588
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.0465
+    },
+    {
+     "pokemon_id": "venusaur",
+     "share": 0.0439
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0412
+    },
+    {
+     "pokemon_id": "mawile-mega",
+     "share": 0.0332
+    },
+    {
+     "pokemon_id": "sylveon",
+     "share": 0.0296
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0277
+    },
+    {
+     "pokemon_id": "kangaskhan-mega",
+     "share": 0.0258
+    },
+    {
+     "pokemon_id": "pyroar-mega",
+     "share": 0.0241
+    },
+    {
+     "pokemon_id": "vivillon",
+     "share": 0.0194
+    }
+   ]
+  },
+  "tyranitar-mega": {
+   "name": "Mega Tyranitar",
+   "usage": 4.32,
+   "sets": [
+    {
+     "name": "Tyranitarite Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 17,
+      "atk": 18,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 31
+     },
+     "item": "Tyranitarite",
+     "ability": "Sand Stream",
+     "moves": [
+      "Rock Slide",
+      "Protect",
+      "Knock Off",
+      "Low Kick"
+     ],
+     "weight": 0.459
+    },
+    {
+     "name": "Tyranitarite Jolly #2",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Tyranitarite",
+     "ability": "Sand Stream",
+     "moves": [
+      "Rock Slide",
+      "Protect",
+      "Knock Off",
+      "Low Kick"
+     ],
+     "weight": 0.282
+    },
+    {
+     "name": "Tyranitarite Jolly #3",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 17,
+      "atk": 17,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Tyranitarite",
+     "ability": "Sand Stream",
+     "moves": [
+      "Rock Slide",
+      "Protect",
+      "Knock Off",
+      "Low Kick"
+     ],
+     "weight": 0.259
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.1449
+    },
+    {
+     "pokemon_id": "excadrill",
+     "share": 0.1399
+    },
+    {
+     "pokemon_id": "milotic",
+     "share": 0.1123
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.1113
+    },
+    {
+     "pokemon_id": "gholdengo",
+     "share": 0.1053
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0299
+    },
+    {
+     "pokemon_id": "corviknight",
+     "share": 0.0234
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0225
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0194
+    },
+    {
+     "pokemon_id": "rotom-wash",
+     "share": 0.0141
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.0117
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0115
+    }
+   ]
+  },
+  "kommo-o": {
+   "name": "Kommo-o",
+   "usage": 4.11,
+   "sets": [
+    {
+     "name": "Life Orb Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Life Orb",
+     "ability": "Soundproof",
+     "moves": [
+      "Clanging Scales",
+      "Protect",
+      "Aura Sphere",
+      "Vacuum Wave"
+     ],
+     "weight": 0.567
+    },
+    {
+     "name": "Leftovers Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 10,
+      "atk": 0,
+      "def": 1,
+      "spa": 28,
+      "spd": 1,
+      "spe": 26
+     },
+     "item": "Leftovers",
+     "ability": "Soundproof",
+     "moves": [
+      "Clanging Scales",
+      "Protect",
+      "Aura Sphere",
+      "Vacuum Wave"
+     ],
+     "weight": 0.244
+    },
+    {
+     "name": "Life Orb Modest #3",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 1,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 1,
+      "spe": 32
+     },
+     "item": "Life Orb",
+     "ability": "Soundproof",
+     "moves": [
+      "Clanging Scales",
+      "Protect",
+      "Aura Sphere",
+      "Vacuum Wave"
+     ],
+     "weight": 0.188
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0949
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0875
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0765
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0492
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.0491
+    },
+    {
+     "pokemon_id": "gengar-mega",
+     "share": 0.0447
+    },
+    {
+     "pokemon_id": "ninetales-alola",
+     "share": 0.0399
+    },
+    {
+     "pokemon_id": "aerodactyl-mega",
+     "share": 0.0381
+    },
+    {
+     "pokemon_id": "vivillon",
+     "share": 0.0311
+    },
+    {
+     "pokemon_id": "glimmora-mega",
+     "share": 0.0292
+    },
+    {
+     "pokemon_id": "maushold",
+     "share": 0.027
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0245
+    }
+   ]
+  },
+  "glimmora": {
+   "name": "Glimmora",
+   "usage": 3.67,
+   "sets": [
+    {
+     "name": "Focus Sash Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Toxic Debris",
+     "moves": [
+      "Power Gem",
+      "Earth Power",
+      "Spiky Shield",
+      "Sludge Bomb"
+     ],
+     "weight": 0.46
+    },
+    {
+     "name": "Focus Sash Timid",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 1,
+      "atk": 0,
+      "def": 1,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Toxic Debris",
+     "moves": [
+      "Power Gem",
+      "Earth Power",
+      "Spiky Shield",
+      "Sludge Bomb"
+     ],
+     "weight": 0.305
+    },
+    {
+     "name": "Focus Sash Modest #3",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 1,
+      "atk": 0,
+      "def": 1,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Toxic Debris",
+     "moves": [
+      "Power Gem",
+      "Earth Power",
+      "Spiky Shield",
+      "Sludge Bomb"
+     ],
+     "weight": 0.235
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.1565
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.1472
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.141
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.1126
+    },
+    {
+     "pokemon_id": "delphox-mega",
+     "share": 0.0889
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0589
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0465
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0141
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0102
+    },
+    {
+     "pokemon_id": "gholdengo",
+     "share": 0.0099
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.0094
+    },
+    {
+     "pokemon_id": "annihilape",
+     "share": 0.0075
+    }
+   ]
+  },
+  "politoed": {
+   "name": "Politoed",
+   "usage": 3.49,
+   "sets": [
+    {
+     "name": "Sitrus Berry Calm",
+     "alignment": "Calm",
+     "spread": {
+      "hp": 31,
+      "atk": 0,
+      "def": 23,
+      "spa": 0,
+      "spd": 12,
+      "spe": 0
+     },
+     "item": "Sitrus Berry",
+     "ability": "Drizzle",
+     "moves": [
+      "Protect",
+      "Weather Ball",
+      "Perish Song",
+      "Encore"
+     ],
+     "weight": 0.575
+    },
+    {
+     "name": "Life Orb Calm",
+     "alignment": "Calm",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 24,
+      "spa": 0,
+      "spd": 7,
+      "spe": 3
+     },
+     "item": "Life Orb",
+     "ability": "Drizzle",
+     "moves": [
+      "Protect",
+      "Weather Ball",
+      "Perish Song",
+      "Encore"
+     ],
+     "weight": 0.239
+    },
+    {
+     "name": "Leftovers Calm",
+     "alignment": "Calm",
+     "spread": {
+      "hp": 31,
+      "atk": 0,
+      "def": 24,
+      "spa": 1,
+      "spd": 7,
+      "spe": 3
+     },
+     "item": "Leftovers",
+     "ability": "Drizzle",
+     "moves": [
+      "Protect",
+      "Weather Ball",
+      "Perish Song",
+      "Encore"
+     ],
+     "weight": 0.186
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.1488
+    },
+    {
+     "pokemon_id": "archaludon",
+     "share": 0.1431
+    },
+    {
+     "pokemon_id": "gengar-mega",
+     "share": 0.1427
+    },
+    {
+     "pokemon_id": "swampert-mega",
+     "share": 0.1256
+    },
+    {
+     "pokemon_id": "vivillon",
+     "share": 0.1152
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0269
+    },
+    {
+     "pokemon_id": "kommo-o",
+     "share": 0.0246
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.0214
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.0212
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0183
+    },
+    {
+     "pokemon_id": "dragonite-mega",
+     "share": 0.0168
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0129
+    }
+   ]
+  },
+  "dragonite": {
+   "name": "Dragonite",
+   "usage": 3.46,
+   "sets": [
+    {
+     "name": "Life Orb Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 29,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 5
+     },
+     "item": "Life Orb",
+     "ability": "Inner Focus",
+     "moves": [
+      "Extreme Speed",
+      "Dragon Claw",
+      "Protect",
+      "Superpower"
+     ],
+     "weight": 0.469
+    },
+    {
+     "name": "Dragon Fang Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Dragon Fang",
+     "ability": "Inner Focus",
+     "moves": [
+      "Extreme Speed",
+      "Dragon Claw",
+      "Protect",
+      "Superpower"
+     ],
+     "weight": 0.412
+    },
+    {
+     "name": "Life Orb Adamant #3",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 23,
+      "atk": 30,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 13
+     },
+     "item": "Life Orb",
+     "ability": "Inner Focus",
+     "moves": [
+      "Extreme Speed",
+      "Dragon Claw",
+      "Protect",
+      "Superpower"
+     ],
+     "weight": 0.119
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.1259
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.1142
+    },
+    {
+     "pokemon_id": "gengar-mega",
+     "share": 0.0998
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0839
+    },
+    {
+     "pokemon_id": "ninetales-alola",
+     "share": 0.082
+    },
+    {
+     "pokemon_id": "swampert",
+     "share": 0.0463
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.033
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0273
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0272
+    },
+    {
+     "pokemon_id": "gholdengo",
+     "share": 0.0224
+    },
+    {
+     "pokemon_id": "floette-eternal-mega",
+     "share": 0.0206
+    },
+    {
+     "pokemon_id": "sylveon",
+     "share": 0.02
+    }
+   ]
+  },
+  "metagross-mega": {
+   "name": "Mega Metagross",
+   "usage": 3.42,
+   "sets": [
+    {
+     "name": "Metagrossite Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Metagrossite",
+     "ability": "Tough Claws",
+     "moves": [
+      "Psychic Fangs",
+      "Protect",
+      "Iron Head",
+      "Ice Punch"
+     ],
+     "weight": 0.665
+    },
+    {
+     "name": "Metagrossite Jolly #2",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 18,
+      "atk": 23,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 25
+     },
+     "item": "Metagrossite",
+     "ability": "Tough Claws",
+     "moves": [
+      "Psychic Fangs",
+      "Protect",
+      "Iron Head",
+      "Ice Punch"
+     ],
+     "weight": 0.182
+    },
+    {
+     "name": "Metagrossite Jolly #3",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 2,
+      "atk": 21,
+      "def": 11,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Metagrossite",
+     "ability": "Tough Claws",
+     "moves": [
+      "Psychic Fangs",
+      "Protect",
+      "Iron Head",
+      "Ice Punch"
+     ],
+     "weight": 0.152
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0668
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.0559
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.052
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0467
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0458
+    },
+    {
+     "pokemon_id": "pelipper",
+     "share": 0.042
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0388
+    },
+    {
+     "pokemon_id": "archaludon",
+     "share": 0.0352
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0337
+    },
+    {
+     "pokemon_id": "grimmsnarl",
+     "share": 0.0337
+    },
+    {
+     "pokemon_id": "hydreigon",
+     "share": 0.0326
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0323
+    }
+   ]
+  },
+  "vivillon": {
+   "name": "Vivillon",
+   "usage": 3.35,
+   "sets": [
+    {
+     "name": "Focus Sash Timid",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Compound Eyes",
+     "moves": [
+      "Rage Powder",
+      "Sleep Powder",
+      "Hurricane",
+      "Protect"
+     ],
+     "weight": 0.683
+    },
+    {
+     "name": "Choice Scarf Timid",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 0,
+      "atk": 0,
+      "def": 1,
+      "spa": 32,
+      "spd": 1,
+      "spe": 32
+     },
+     "item": "Choice Scarf",
+     "ability": "Compound Eyes",
+     "moves": [
+      "Rage Powder",
+      "Sleep Powder",
+      "Hurricane",
+      "Protect"
+     ],
+     "weight": 0.212
+    },
+    {
+     "name": "Focus Sash Timid #3",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 0,
+      "atk": 0,
+      "def": 2,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Compound Eyes",
+     "moves": [
+      "Rage Powder",
+      "Sleep Powder",
+      "Hurricane",
+      "Protect"
+     ],
+     "weight": 0.106
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.1576
+    },
+    {
+     "pokemon_id": "gengar-mega",
+     "share": 0.1214
+    },
+    {
+     "pokemon_id": "politoed",
+     "share": 0.1189
+    },
+    {
+     "pokemon_id": "swampert-mega",
+     "share": 0.1163
+    },
+    {
+     "pokemon_id": "archaludon",
+     "share": 0.0968
+    },
+    {
+     "pokemon_id": "kommo-o",
+     "share": 0.038
+    },
+    {
+     "pokemon_id": "blastoise-mega",
+     "share": 0.0322
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.0302
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0286
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0249
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.023
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0206
+    }
+   ]
+  },
+  "rotom-wash": {
+   "name": "Wash Rotom",
+   "usage": 3.07,
+   "sets": [
+    {
+     "name": "Sitrus Berry Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 4,
+      "spa": 8,
+      "spd": 16,
+      "spe": 6
+     },
+     "item": "Sitrus Berry",
+     "ability": "Levitate",
+     "moves": [
+      "Hydro Pump",
+      "Thunderbolt",
+      "Will-O-Wisp",
+      "Protect"
+     ],
+     "weight": 0.519
+    },
+    {
+     "name": "Leftovers Bold",
+     "alignment": "Bold",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 23,
+      "spa": 1,
+      "spd": 3,
+      "spe": 7
+     },
+     "item": "Leftovers",
+     "ability": "Levitate",
+     "moves": [
+      "Hydro Pump",
+      "Thunderbolt",
+      "Will-O-Wisp",
+      "Protect"
+     ],
+     "weight": 0.293
+    },
+    {
+     "name": "Choice Scarf Timid",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Choice Scarf",
+     "ability": "Levitate",
+     "moves": [
+      "Hydro Pump",
+      "Thunderbolt",
+      "Will-O-Wisp",
+      "Protect"
+     ],
+     "weight": 0.188
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.1017
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0912
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0825
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0726
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0618
+    },
+    {
+     "pokemon_id": "gardevoir-mega",
+     "share": 0.0507
+    },
+    {
+     "pokemon_id": "aerodactyl-mega",
+     "share": 0.0361
+    },
+    {
+     "pokemon_id": "kommo-o",
+     "share": 0.0314
+    },
+    {
+     "pokemon_id": "tyranitar-mega",
+     "share": 0.0274
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.023
+    },
+    {
+     "pokemon_id": "excadrill",
+     "share": 0.0193
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.0182
+    }
+   ]
+  },
+  "tyranitar": {
+   "name": "Tyranitar",
+   "usage": 3.03,
+   "sets": [
+    {
+     "name": "Choice Scarf Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Choice Scarf",
+     "ability": "Sand Stream",
+     "moves": [
+      "Rock Slide",
+      "Knock Off",
+      "Low Kick",
+      "Protect"
+     ],
+     "weight": 0.541
+    },
+    {
+     "name": "Chople Berry Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 0,
+      "atk": 32,
+      "def": 2,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Chople Berry",
+     "ability": "Sand Stream",
+     "moves": [
+      "Rock Slide",
+      "Knock Off",
+      "Low Kick",
+      "Protect"
+     ],
+     "weight": 0.256
+    },
+    {
+     "name": "Focus Sash Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 13,
+      "atk": 26,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 27
+     },
+     "item": "Focus Sash",
+     "ability": "Sand Stream",
+     "moves": [
+      "Rock Slide",
+      "Knock Off",
+      "Low Kick",
+      "Protect"
+     ],
+     "weight": 0.202
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.0925
+    },
+    {
+     "pokemon_id": "excadrill",
+     "share": 0.0849
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0649
+    },
+    {
+     "pokemon_id": "gholdengo",
+     "share": 0.0602
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0588
+    },
+    {
+     "pokemon_id": "garchomp-mega",
+     "share": 0.0475
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.0407
+    },
+    {
+     "pokemon_id": "corviknight",
+     "share": 0.0384
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0371
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.0347
+    },
+    {
+     "pokemon_id": "scovillain-mega",
+     "share": 0.031
+    },
+    {
+     "pokemon_id": "metagross-mega",
+     "share": 0.0278
+    }
+   ]
+  },
+  "mawile-mega": {
+   "name": "Mega Mawile",
+   "usage": 2.95,
+   "sets": [
+    {
+     "name": "Mawilite Brave",
+     "alignment": "Brave",
+     "spread": {
+      "hp": 32,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 2,
+      "spe": 0
+     },
+     "item": "Mawilite",
+     "ability": "Huge Power",
+     "moves": [
+      "Play Rough",
+      "Sucker Punch",
+      "Protect",
+      "Iron Head"
+     ],
+     "weight": 0.497
+    },
+    {
+     "name": "Mawilite Brave #2",
+     "alignment": "Brave",
+     "spread": {
+      "hp": 32,
+      "atk": 32,
+      "def": 2,
+      "spa": 0,
+      "spd": 0,
+      "spe": 0
+     },
+     "item": "Mawilite",
+     "ability": "Huge Power",
+     "moves": [
+      "Play Rough",
+      "Sucker Punch",
+      "Protect",
+      "Iron Head"
+     ],
+     "weight": 0.291
+    },
+    {
+     "name": "Mawilite Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 32,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 2,
+      "spe": 0
+     },
+     "item": "Mawilite",
+     "ability": "Huge Power",
+     "moves": [
+      "Play Rough",
+      "Sucker Punch",
+      "Protect",
+      "Iron Head"
+     ],
+     "weight": 0.212
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.1188
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0647
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0629
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0497
+    },
+    {
+     "pokemon_id": "torkoal",
+     "share": 0.0496
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0401
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0354
+    },
+    {
+     "pokemon_id": "blastoise-mega",
+     "share": 0.0354
+    },
+    {
+     "pokemon_id": "staraptor",
+     "share": 0.0342
+    },
+    {
+     "pokemon_id": "dragapult",
+     "share": 0.0271
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.0244
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0201
+    }
+   ]
+  },
+  "lycanroc-dusk": {
+   "name": "Lycanroc-Dusk",
+   "usage": 2.85,
+   "sets": [
+    {
+     "name": "Focus Sash Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 1,
+      "atk": 32,
+      "def": 1,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Tough Claws",
+     "moves": [
+      "Accelerock",
+      "Close Combat",
+      "Protect",
+      "Rock Slide"
+     ],
+     "weight": 0.44
+    },
+    {
+     "name": "Focus Sash Adamant #2",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Tough Claws",
+     "moves": [
+      "Accelerock",
+      "Close Combat",
+      "Protect",
+      "Rock Slide"
+     ],
+     "weight": 0.325
+    },
+    {
+     "name": "Focus Sash Adamant #3",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 0,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 2,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Tough Claws",
+     "moves": [
+      "Accelerock",
+      "Close Combat",
+      "Protect",
+      "Rock Slide"
+     ],
+     "weight": 0.236
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.1754
+    },
+    {
+     "pokemon_id": "froslass-mega",
+     "share": 0.1697
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.1696
+    },
+    {
+     "pokemon_id": "scovillain-mega",
+     "share": 0.1616
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.1613
+    },
+    {
+     "pokemon_id": "venusaur-mega",
+     "share": 0.0165
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0165
+    },
+    {
+     "pokemon_id": "milotic",
+     "share": 0.0117
+    },
+    {
+     "pokemon_id": "corviknight",
+     "share": 0.0116
+    },
+    {
+     "pokemon_id": "ninetales-alola",
+     "share": 0.0083
+    },
+    {
+     "pokemon_id": "raichu-mega-y",
+     "share": 0.0072
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.0058
+    }
+   ]
+  },
+  "venusaur-mega": {
+   "name": "Mega Venusaur",
+   "usage": 2.82,
+   "sets": [
+    {
+     "name": "Venusaurite Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 30,
+      "atk": 0,
+      "def": 0,
+      "spa": 18,
+      "spd": 0,
+      "spe": 18
+     },
+     "item": "Venusaurite",
+     "ability": "Thick Fat",
+     "moves": [
+      "Sludge Bomb",
+      "Earth Power",
+      "Protect",
+      "Giga Drain"
+     ],
+     "weight": 0.507
+    },
+    {
+     "name": "Venusaurite Modest #2",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 2,
+      "spa": 22,
+      "spd": 1,
+      "spe": 9
+     },
+     "item": "Venusaurite",
+     "ability": "Thick Fat",
+     "moves": [
+      "Sludge Bomb",
+      "Earth Power",
+      "Protect",
+      "Giga Drain"
+     ],
+     "weight": 0.25
+    },
+    {
+     "name": "Venusaurite Modest #3",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 0,
+      "spa": 28,
+      "spd": 3,
+      "spe": 3
+     },
+     "item": "Venusaurite",
+     "ability": "Thick Fat",
+     "moves": [
+      "Sludge Bomb",
+      "Earth Power",
+      "Protect",
+      "Giga Drain"
+     ],
+     "weight": 0.242
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0723
+    },
+    {
+     "pokemon_id": "archaludon",
+     "share": 0.0648
+    },
+    {
+     "pokemon_id": "pelipper",
+     "share": 0.0632
+    },
+    {
+     "pokemon_id": "grimmsnarl",
+     "share": 0.0562
+    },
+    {
+     "pokemon_id": "milotic",
+     "share": 0.0511
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0464
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0439
+    },
+    {
+     "pokemon_id": "swampert-mega",
+     "share": 0.0337
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.0312
+    },
+    {
+     "pokemon_id": "ninetales-alola",
+     "share": 0.0289
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.0255
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.025
+    }
+   ]
+  },
+  "primarina": {
+   "name": "Primarina",
+   "usage": 2.81,
+   "sets": [
+    {
+     "name": "Leftovers Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 21,
+      "atk": 0,
+      "def": 17,
+      "spa": 4,
+      "spd": 0,
+      "spe": 24
+     },
+     "item": "Leftovers",
+     "ability": "Liquid Voice",
+     "moves": [
+      "Hyper Voice",
+      "Protect",
+      "Moonblast",
+      "Calm Mind"
+     ],
+     "weight": 0.468
+    },
+    {
+     "name": "Sitrus Berry Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 15,
+      "spa": 4,
+      "spd": 0,
+      "spe": 15
+     },
+     "item": "Sitrus Berry",
+     "ability": "Liquid Voice",
+     "moves": [
+      "Hyper Voice",
+      "Protect",
+      "Moonblast",
+      "Calm Mind"
+     ],
+     "weight": 0.361
+    },
+    {
+     "name": "Life Orb Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 22,
+      "atk": 0,
+      "def": 25,
+      "spa": 4,
+      "spd": 0,
+      "spe": 15
+     },
+     "item": "Life Orb",
+     "ability": "Liquid Voice",
+     "moves": [
+      "Hyper Voice",
+      "Protect",
+      "Moonblast",
+      "Calm Mind"
+     ],
+     "weight": 0.17
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.1066
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0901
+    },
+    {
+     "pokemon_id": "raichu-mega-y",
+     "share": 0.0898
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.087
+    },
+    {
+     "pokemon_id": "ninetales-alola",
+     "share": 0.0589
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.043
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.0391
+    },
+    {
+     "pokemon_id": "froslass-mega",
+     "share": 0.0303
+    },
+    {
+     "pokemon_id": "arcanine-hisui",
+     "share": 0.0241
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0221
+    },
+    {
+     "pokemon_id": "scovillain-mega",
+     "share": 0.0206
+    },
+    {
+     "pokemon_id": "dragonite-mega",
+     "share": 0.02
+    }
+   ]
+  },
+  "gardevoir-mega": {
+   "name": "Mega Gardevoir",
+   "usage": 2.59,
+   "sets": [
+    {
+     "name": "Gardevoirite Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 22,
+      "spa": 6,
+      "spd": 1,
+      "spe": 5
+     },
+     "item": "Gardevoirite",
+     "ability": "Pixilate",
+     "moves": [
+      "Hyper Voice",
+      "Protect",
+      "Psychic",
+      "Trick Room"
+     ],
+     "weight": 0.568
+    },
+    {
+     "name": "Gardevoirite Modest #2",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 18,
+      "spa": 5,
+      "spd": 0,
+      "spe": 11
+     },
+     "item": "Gardevoirite",
+     "ability": "Pixilate",
+     "moves": [
+      "Hyper Voice",
+      "Protect",
+      "Psychic",
+      "Trick Room"
+     ],
+     "weight": 0.254
+    },
+    {
+     "name": "Gardevoirite Modest #3",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Gardevoirite",
+     "ability": "Pixilate",
+     "moves": [
+      "Hyper Voice",
+      "Protect",
+      "Psychic",
+      "Trick Room"
+     ],
+     "weight": 0.178
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.1495
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0996
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0883
+    },
+    {
+     "pokemon_id": "maushold",
+     "share": 0.0788
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0719
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0692
+    },
+    {
+     "pokemon_id": "rotom-wash",
+     "share": 0.0604
+    },
+    {
+     "pokemon_id": "kommo-o",
+     "share": 0.0446
+    },
+    {
+     "pokemon_id": "talonflame",
+     "share": 0.0426
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0236
+    },
+    {
+     "pokemon_id": "vivillon",
+     "share": 0.0203
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.0187
+    }
+   ]
+  },
+  "aerodactyl": {
+   "name": "Aerodactyl",
+   "usage": 2.49,
+   "sets": [
+    {
+     "name": "Focus Sash Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Unnerve",
+     "moves": [
+      "Rock Slide",
+      "Tailwind",
+      "Dual Wingbeat",
+      "Wide Guard"
+     ],
+     "weight": 0.832
+    },
+    {
+     "name": "Focus Sash Jolly #2",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 0,
+      "atk": 32,
+      "def": 2,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Unnerve",
+     "moves": [
+      "Rock Slide",
+      "Tailwind",
+      "Dual Wingbeat",
+      "Wide Guard"
+     ],
+     "weight": 0.124
+    },
+    {
+     "name": "Focus Sash Jolly #3",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 0,
+      "atk": 32,
+      "def": 1,
+      "spa": 0,
+      "spd": 1,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Unnerve",
+     "moves": [
+      "Rock Slide",
+      "Tailwind",
+      "Dual Wingbeat",
+      "Wide Guard"
+     ],
+     "weight": 0.044
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.1156
+    },
+    {
+     "pokemon_id": "sylveon",
+     "share": 0.1003
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0802
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0778
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0577
+    },
+    {
+     "pokemon_id": "venusaur",
+     "share": 0.0516
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.0474
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0316
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0292
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0261
+    },
+    {
+     "pokemon_id": "mawile-mega",
+     "share": 0.0184
+    },
+    {
+     "pokemon_id": "raichu-mega-y",
+     "share": 0.017
+    }
+   ]
+  },
+  "annihilape": {
+   "name": "Annihilape",
+   "usage": 2.25,
+   "sets": [
+    {
+     "name": "Focus Sash Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Defiant",
+     "moves": [
+      "Protect",
+      "Close Combat",
+      "Phantom Force",
+      "Rage Fist"
+     ],
+     "weight": 0.5
+    },
+    {
+     "name": "Choice Scarf Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 0,
+      "atk": 32,
+      "def": 1,
+      "spa": 0,
+      "spd": 1,
+      "spe": 32
+     },
+     "item": "Choice Scarf",
+     "ability": "Defiant",
+     "moves": [
+      "Protect",
+      "Close Combat",
+      "Phantom Force",
+      "Rage Fist"
+     ],
+     "weight": 0.276
+    },
+    {
+     "name": "Leftovers Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Leftovers",
+     "ability": "Defiant",
+     "moves": [
+      "Protect",
+      "Close Combat",
+      "Phantom Force",
+      "Rage Fist"
+     ],
+     "weight": 0.224
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0781
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0591
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0537
+    },
+    {
+     "pokemon_id": "venusaur",
+     "share": 0.0457
+    },
+    {
+     "pokemon_id": "pelipper",
+     "share": 0.0392
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0388
+    },
+    {
+     "pokemon_id": "toxapex",
+     "share": 0.0385
+    },
+    {
+     "pokemon_id": "maushold",
+     "share": 0.0384
+    },
+    {
+     "pokemon_id": "archaludon",
+     "share": 0.036
+    },
+    {
+     "pokemon_id": "grimmsnarl",
+     "share": 0.035
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.0293
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.0278
+    }
+   ]
+  },
+  "ceruledge": {
+   "name": "Ceruledge",
+   "usage": 2.15,
+   "sets": [
+    {
+     "name": "Colbur Berry Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 31,
+      "atk": 25,
+      "def": 10,
+      "spa": 0,
+      "spd": 0,
+      "spe": 0
+     },
+     "item": "Colbur Berry",
+     "ability": "Flash Fire",
+     "moves": [
+      "Bitter Blade",
+      "Shadow Sneak",
+      "Protect",
+      "Bulk Up"
+     ],
+     "weight": 0.539
+    },
+    {
+     "name": "Life Orb Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 32,
+      "atk": 15,
+      "def": 14,
+      "spa": 0,
+      "spd": 1,
+      "spe": 4
+     },
+     "item": "Life Orb",
+     "ability": "Flash Fire",
+     "moves": [
+      "Bitter Blade",
+      "Shadow Sneak",
+      "Protect",
+      "Bulk Up"
+     ],
+     "weight": 0.253
+    },
+    {
+     "name": "Leftovers Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 31,
+      "atk": 28,
+      "def": 6,
+      "spa": 0,
+      "spd": 1,
+      "spe": 0
+     },
+     "item": "Leftovers",
+     "ability": "Flash Fire",
+     "moves": [
+      "Bitter Blade",
+      "Shadow Sneak",
+      "Protect",
+      "Bulk Up"
+     ],
+     "weight": 0.207
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "raichu-mega-y",
+     "share": 0.0904
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0809
+    },
+    {
+     "pokemon_id": "milotic",
+     "share": 0.0768
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0661
+    },
+    {
+     "pokemon_id": "ninetales-alola",
+     "share": 0.0579
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.0572
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.052
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.0352
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0345
+    },
+    {
+     "pokemon_id": "floette-eternal-mega",
+     "share": 0.0341
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0252
+    },
+    {
+     "pokemon_id": "maushold",
+     "share": 0.0234
+    }
+   ]
+  },
+  "corviknight": {
+   "name": "Corviknight",
+   "usage": 2.09,
+   "sets": [
+    {
+     "name": "Leftovers Impish",
+     "alignment": "Impish",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 5,
+      "spa": 0,
+      "spd": 26,
+      "spe": 3
+     },
+     "item": "Leftovers",
+     "ability": "Mirror Armor",
+     "moves": [
+      "Brave Bird",
+      "Tailwind",
+      "Iron Head",
+      "Protect"
+     ],
+     "weight": 0.595
+    },
+    {
+     "name": "Sitrus Berry Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 27,
+      "atk": 23,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 16
+     },
+     "item": "Sitrus Berry",
+     "ability": "Mirror Armor",
+     "moves": [
+      "Brave Bird",
+      "Tailwind",
+      "Iron Head",
+      "Protect"
+     ],
+     "weight": 0.219
+    },
+    {
+     "name": "Occa Berry Impish",
+     "alignment": "Impish",
+     "spread": {
+      "hp": 32,
+      "atk": 13,
+      "def": 21,
+      "spa": 0,
+      "spd": 0,
+      "spe": 0
+     },
+     "item": "Occa Berry",
+     "ability": "Mirror Armor",
+     "moves": [
+      "Brave Bird",
+      "Tailwind",
+      "Iron Head",
+      "Protect"
+     ],
+     "weight": 0.186
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.061
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0559
+    },
+    {
+     "pokemon_id": "tyranitar",
+     "share": 0.0556
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0519
+    },
+    {
+     "pokemon_id": "tyranitar-mega",
+     "share": 0.0509
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0494
+    },
+    {
+     "pokemon_id": "garchomp-mega",
+     "share": 0.0491
+    },
+    {
+     "pokemon_id": "raichu-mega-y",
+     "share": 0.0421
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.038
+    },
+    {
+     "pokemon_id": "milotic",
+     "share": 0.03
+    },
+    {
+     "pokemon_id": "sylveon",
+     "share": 0.029
+    },
+    {
+     "pokemon_id": "venusaur-mega",
+     "share": 0.024
+    }
+   ]
+  },
+  "talonflame": {
+   "name": "Talonflame",
+   "usage": 1.95,
+   "sets": [
+    {
+     "name": "Sharp Beak Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Sharp Beak",
+     "ability": "Gale Wings",
+     "moves": [
+      "Tailwind",
+      "Protect",
+      "Flare Blitz",
+      "Dual Wingbeat"
+     ],
+     "weight": 0.86
+    },
+    {
+     "name": "Life Orb Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Life Orb",
+     "ability": "Gale Wings",
+     "moves": [
+      "Tailwind",
+      "Protect",
+      "Flare Blitz",
+      "Dual Wingbeat"
+     ],
+     "weight": 0.085
+    },
+    {
+     "name": "Focus Sash Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 6,
+      "atk": 29,
+      "def": 3,
+      "spa": 0,
+      "spd": 0,
+      "spe": 28
+     },
+     "item": "Focus Sash",
+     "ability": "Gale Wings",
+     "moves": [
+      "Tailwind",
+      "Protect",
+      "Flare Blitz",
+      "Dual Wingbeat"
+     ],
+     "weight": 0.055
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0898
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0776
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0662
+    },
+    {
+     "pokemon_id": "maushold",
+     "share": 0.0504
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0471
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0446
+    },
+    {
+     "pokemon_id": "gardevoir-mega",
+     "share": 0.0423
+    },
+    {
+     "pokemon_id": "floette-eternal-mega",
+     "share": 0.0404
+    },
+    {
+     "pokemon_id": "froslass-mega",
+     "share": 0.0277
+    },
+    {
+     "pokemon_id": "kommo-o",
+     "share": 0.0274
+    },
+    {
+     "pokemon_id": "glimmora-mega",
+     "share": 0.0228
+    },
+    {
+     "pokemon_id": "rotom-wash",
+     "share": 0.0184
+    }
+   ]
+  },
+  "meowscarada": {
+   "name": "Meowscarada",
+   "usage": 1.9,
+   "sets": [
+    {
+     "name": "Focus Sash Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 0,
+      "atk": 32,
+      "def": 2,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Overgrow",
+     "moves": [
+      "Flower Trick",
+      "Knock Off",
+      "Protect",
+      "Sucker Punch"
+     ],
+     "weight": 0.658
+    },
+    {
+     "name": "Choice Scarf Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Choice Scarf",
+     "ability": "Overgrow",
+     "moves": [
+      "Flower Trick",
+      "Knock Off",
+      "Protect",
+      "Sucker Punch"
+     ],
+     "weight": 0.233
+    },
+    {
+     "name": "Life Orb Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Life Orb",
+     "ability": "Overgrow",
+     "moves": [
+      "Flower Trick",
+      "Knock Off",
+      "Protect",
+      "Sucker Punch"
+     ],
+     "weight": 0.109
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.1095
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.1083
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.1025
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0974
+    },
+    {
+     "pokemon_id": "blastoise-mega",
+     "share": 0.0894
+    },
+    {
+     "pokemon_id": "raichu-mega-y",
+     "share": 0.0404
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.0284
+    },
+    {
+     "pokemon_id": "primarina",
+     "share": 0.0268
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0259
+    },
+    {
+     "pokemon_id": "gholdengo",
+     "share": 0.0243
+    },
+    {
+     "pokemon_id": "aerodactyl-mega",
+     "share": 0.0221
+    },
+    {
+     "pokemon_id": "blaziken-mega",
+     "share": 0.0167
+    }
+   ]
+  },
+  "sableye": {
+   "name": "Sableye",
+   "usage": 1.89,
+   "sets": [
+    {
+     "name": "Light Clay Calm",
+     "alignment": "Calm",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 9,
+      "spa": 0,
+      "spd": 25,
+      "spe": 0
+     },
+     "item": "Light Clay",
+     "ability": "Prankster",
+     "moves": [
+      "Encore",
+      "Light Screen",
+      "Rain Dance",
+      "Reflect"
+     ],
+     "weight": 0.415
+    },
+    {
+     "name": "Roseli Berry Calm",
+     "alignment": "Calm",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 2,
+      "spa": 0,
+      "spd": 32,
+      "spe": 0
+     },
+     "item": "Roseli Berry",
+     "ability": "Prankster",
+     "moves": [
+      "Encore",
+      "Light Screen",
+      "Rain Dance",
+      "Reflect"
+     ],
+     "weight": 0.315
+    },
+    {
+     "name": "BrightPowder Careful",
+     "alignment": "Careful",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 9,
+      "spa": 0,
+      "spd": 25,
+      "spe": 0
+     },
+     "item": "BrightPowder",
+     "ability": "Prankster",
+     "moves": [
+      "Encore",
+      "Light Screen",
+      "Rain Dance",
+      "Reflect"
+     ],
+     "weight": 0.271
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "archaludon",
+     "share": 0.1083
+    },
+    {
+     "pokemon_id": "pelipper",
+     "share": 0.0733
+    },
+    {
+     "pokemon_id": "swampert-mega",
+     "share": 0.0634
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0593
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0539
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0343
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0309
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0294
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.0262
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0235
+    },
+    {
+     "pokemon_id": "delphox-mega",
+     "share": 0.0224
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0211
+    }
+   ]
+  },
+  "hydreigon": {
+   "name": "Hydreigon",
+   "usage": 1.78,
+   "sets": [
+    {
+     "name": "Choice Scarf Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Choice Scarf",
+     "ability": "Levitate",
+     "moves": [
+      "Dark Pulse",
+      "Draco Meteor",
+      "Earth Power",
+      "Snarl"
+     ],
+     "weight": 0.728
+    },
+    {
+     "name": "Life Orb Timid",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Life Orb",
+     "ability": "Levitate",
+     "moves": [
+      "Dark Pulse",
+      "Draco Meteor",
+      "Earth Power",
+      "Snarl"
+     ],
+     "weight": 0.216
+    },
+    {
+     "name": "Haban Berry Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 8,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 26
+     },
+     "item": "Haban Berry",
+     "ability": "Levitate",
+     "moves": [
+      "Dark Pulse",
+      "Draco Meteor",
+      "Earth Power",
+      "Snarl"
+     ],
+     "weight": 0.056
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "metagross-mega",
+     "share": 0.0626
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0605
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0508
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0462
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.04
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0363
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0313
+    },
+    {
+     "pokemon_id": "gholdengo",
+     "share": 0.0311
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.026
+    },
+    {
+     "pokemon_id": "raichu-mega-y",
+     "share": 0.0252
+    },
+    {
+     "pokemon_id": "toxapex",
+     "share": 0.024
+    },
+    {
+     "pokemon_id": "sylveon",
+     "share": 0.0234
+    }
+   ]
+  },
+  "garchomp-mega": {
+   "name": "Mega Garchomp",
+   "usage": 1.76,
+   "sets": [
+    {
+     "name": "Garchompite Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 10,
+      "atk": 0,
+      "def": 0,
+      "spa": 30,
+      "spd": 0,
+      "spe": 26
+     },
+     "item": "Garchompite",
+     "ability": "Sand Force",
+     "moves": [
+      "Protect",
+      "Rock Slide",
+      "Earthquake",
+      "Stomping Tantrum"
+     ],
+     "weight": 0.41
+    },
+    {
+     "name": "Garchompite Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Garchompite",
+     "ability": "Sand Force",
+     "moves": [
+      "Protect",
+      "Rock Slide",
+      "Earthquake",
+      "Stomping Tantrum"
+     ],
+     "weight": 0.337
+    },
+    {
+     "name": "Garchompite Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 15,
+      "atk": 21,
+      "def": 1,
+      "spa": 0,
+      "spd": 25,
+      "spe": 4
+     },
+     "item": "Garchompite",
+     "ability": "Sand Force",
+     "moves": [
+      "Protect",
+      "Rock Slide",
+      "Earthquake",
+      "Stomping Tantrum"
+     ],
+     "weight": 0.254
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.1408
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.1202
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.1007
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.093
+    },
+    {
+     "pokemon_id": "floette-eternal-mega",
+     "share": 0.084
+    },
+    {
+     "pokemon_id": "tyranitar",
+     "share": 0.0783
+    },
+    {
+     "pokemon_id": "corviknight",
+     "share": 0.0559
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0509
+    },
+    {
+     "pokemon_id": "gholdengo",
+     "share": 0.0151
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.0139
+    },
+    {
+     "pokemon_id": "sylveon",
+     "share": 0.0111
+    },
+    {
+     "pokemon_id": "milotic",
+     "share": 0.0099
+    }
+   ]
+  },
+  "blaziken-mega": {
+   "name": "Mega Blaziken",
+   "usage": 1.42,
+   "sets": [
+    {
+     "name": "Blazikenite Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Blazikenite",
+     "ability": "Speed Boost",
+     "moves": [
+      "Close Combat",
+      "Flare Blitz",
+      "Rock Slide",
+      "Detect"
+     ],
+     "weight": 0.729
+    },
+    {
+     "name": "Blazikenite Adamant #2",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 12,
+      "atk": 22,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Blazikenite",
+     "ability": "Speed Boost",
+     "moves": [
+      "Close Combat",
+      "Flare Blitz",
+      "Rock Slide",
+      "Detect"
+     ],
+     "weight": 0.182
+    },
+    {
+     "name": "Blazikenite Adamant #3",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 12,
+      "atk": 30,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 24
+     },
+     "item": "Blazikenite",
+     "ability": "Speed Boost",
+     "moves": [
+      "Close Combat",
+      "Flare Blitz",
+      "Rock Slide",
+      "Detect"
+     ],
+     "weight": 0.089
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.154
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0879
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0666
+    },
+    {
+     "pokemon_id": "ninetales-alola",
+     "share": 0.061
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0558
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.0473
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0418
+    },
+    {
+     "pokemon_id": "froslass-mega",
+     "share": 0.0414
+    },
+    {
+     "pokemon_id": "dragonite",
+     "share": 0.0411
+    },
+    {
+     "pokemon_id": "sylveon",
+     "share": 0.0336
+    },
+    {
+     "pokemon_id": "venusaur-mega",
+     "share": 0.0331
+    },
+    {
+     "pokemon_id": "gholdengo",
+     "share": 0.0256
+    }
+   ]
+  },
+  "glimmora-mega": {
+   "name": "Mega Glimmora",
+   "usage": 1.31,
+   "sets": [
+    {
+     "name": "Glimmoranite Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Glimmoranite",
+     "ability": "Adaptability",
+     "moves": [
+      "Power Gem",
+      "Sludge Bomb",
+      "Earth Power",
+      "Spiky Shield"
+     ],
+     "weight": 0.476
+    },
+    {
+     "name": "Glimmoranite Modest #2",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 1,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 1,
+      "spe": 32
+     },
+     "item": "Glimmoranite",
+     "ability": "Adaptability",
+     "moves": [
+      "Power Gem",
+      "Sludge Bomb",
+      "Earth Power",
+      "Spiky Shield"
+     ],
+     "weight": 0.271
+    },
+    {
+     "name": "Glimmoranite Timid",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 1,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 1,
+      "spe": 32
+     },
+     "item": "Glimmoranite",
+     "ability": "Adaptability",
+     "moves": [
+      "Power Gem",
+      "Sludge Bomb",
+      "Earth Power",
+      "Spiky Shield"
+     ],
+     "weight": 0.254
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.148
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.1402
+    },
+    {
+     "pokemon_id": "ninetales-alola",
+     "share": 0.1024
+    },
+    {
+     "pokemon_id": "kommo-o",
+     "share": 0.0912
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0789
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0389
+    },
+    {
+     "pokemon_id": "talonflame",
+     "share": 0.0347
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.0274
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.027
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0267
+    },
+    {
+     "pokemon_id": "froslass-mega",
+     "share": 0.0267
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0209
+    }
+   ]
+  },
+  "camerupt-mega": {
+   "name": "Mega Camerupt",
+   "usage": 1.31,
+   "sets": [
+    {
+     "name": "Cameruptite Quiet",
+     "alignment": "Quiet",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 2,
+      "spe": 0
+     },
+     "item": "Cameruptite",
+     "ability": "Sheer Force",
+     "moves": [
+      "Earth Power",
+      "Protect",
+      "Heat Wave",
+      "Ancient Power"
+     ],
+     "weight": 0.543
+    },
+    {
+     "name": "Cameruptite Quiet #2",
+     "alignment": "Quiet",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 2,
+      "spa": 32,
+      "spd": 0,
+      "spe": 0
+     },
+     "item": "Cameruptite",
+     "ability": "Sheer Force",
+     "moves": [
+      "Earth Power",
+      "Protect",
+      "Heat Wave",
+      "Ancient Power"
+     ],
+     "weight": 0.36
+    },
+    {
+     "name": "Cameruptite Quiet #3",
+     "alignment": "Quiet",
+     "spread": {
+      "hp": 32,
+      "atk": 0,
+      "def": 1,
+      "spa": 32,
+      "spd": 1,
+      "spe": 0
+     },
+     "item": "Cameruptite",
+     "ability": "Sheer Force",
+     "moves": [
+      "Earth Power",
+      "Protect",
+      "Heat Wave",
+      "Ancient Power"
+     ],
+     "weight": 0.097
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.1721
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.1089
+    },
+    {
+     "pokemon_id": "staraptor",
+     "share": 0.0681
+    },
+    {
+     "pokemon_id": "sylveon",
+     "share": 0.0578
+    },
+    {
+     "pokemon_id": "blastoise-mega",
+     "share": 0.0545
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0432
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0282
+    },
+    {
+     "pokemon_id": "mawile-mega",
+     "share": 0.0266
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.024
+    },
+    {
+     "pokemon_id": "aerodactyl-mega",
+     "share": 0.0236
+    },
+    {
+     "pokemon_id": "maushold",
+     "share": 0.0212
+    },
+    {
+     "pokemon_id": "torkoal",
+     "share": 0.02
+    }
+   ]
+  },
+  "staraptor": {
+   "name": "Staraptor",
+   "usage": 1.25,
+   "sets": [
+    {
+     "name": "Choice Scarf Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 32,
+      "atk": 2,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Choice Scarf",
+     "ability": "Intimidate",
+     "moves": [
+      "Brave Bird",
+      "U-turn",
+      "Close Combat",
+      "Final Gambit"
+     ],
+     "weight": 0.364
+    },
+    {
+     "name": "Choice Scarf Jolly #2",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 32,
+      "atk": 14,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 20
+     },
+     "item": "Choice Scarf",
+     "ability": "Intimidate",
+     "moves": [
+      "Brave Bird",
+      "U-turn",
+      "Close Combat",
+      "Final Gambit"
+     ],
+     "weight": 0.335
+    },
+    {
+     "name": "Choice Scarf Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Choice Scarf",
+     "ability": "Intimidate",
+     "moves": [
+      "Brave Bird",
+      "U-turn",
+      "Close Combat",
+      "Final Gambit"
+     ],
+     "weight": 0.301
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.1161
+    },
+    {
+     "pokemon_id": "blastoise-mega",
+     "share": 0.1031
+    },
+    {
+     "pokemon_id": "mawile-mega",
+     "share": 0.0822
+    },
+    {
+     "pokemon_id": "camerupt-mega",
+     "share": 0.0775
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0671
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0564
+    },
+    {
+     "pokemon_id": "dragapult",
+     "share": 0.0514
+    },
+    {
+     "pokemon_id": "torkoal",
+     "share": 0.042
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.0172
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0171
+    },
+    {
+     "pokemon_id": "sylveon",
+     "share": 0.0166
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0155
+    }
+   ]
+  },
+  "swampert": {
+   "name": "Swampert",
+   "usage": 1.17,
+   "sets": [
+    {
+     "name": "Leftovers Brave",
+     "alignment": "Brave",
+     "spread": {
+      "hp": 32,
+      "atk": 10,
+      "def": 11,
+      "spa": 0,
+      "spd": 13,
+      "spe": 0
+     },
+     "item": "Leftovers",
+     "ability": "Torrent",
+     "moves": [
+      "Yawn",
+      "Protect",
+      "High Horsepower",
+      "Flip Turn"
+     ],
+     "weight": 0.392
+    },
+    {
+     "name": "Sitrus Berry Brave",
+     "alignment": "Brave",
+     "spread": {
+      "hp": 32,
+      "atk": 10,
+      "def": 19,
+      "spa": 0,
+      "spd": 5,
+      "spe": 0
+     },
+     "item": "Sitrus Berry",
+     "ability": "Torrent",
+     "moves": [
+      "Yawn",
+      "Protect",
+      "High Horsepower",
+      "Flip Turn"
+     ],
+     "weight": 0.348
+    },
+    {
+     "name": "Leftovers Brave #3",
+     "alignment": "Brave",
+     "spread": {
+      "hp": 32,
+      "atk": 21,
+      "def": 12,
+      "spa": 0,
+      "spd": 1,
+      "spe": 0
+     },
+     "item": "Leftovers",
+     "ability": "Torrent",
+     "moves": [
+      "Yawn",
+      "Protect",
+      "High Horsepower",
+      "Flip Turn"
+     ],
+     "weight": 0.26
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.1588
+    },
+    {
+     "pokemon_id": "gengar-mega",
+     "share": 0.1554
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.1457
+    },
+    {
+     "pokemon_id": "ninetales-alola",
+     "share": 0.1429
+    },
+    {
+     "pokemon_id": "dragonite",
+     "share": 0.1372
+    },
+    {
+     "pokemon_id": "kommo-o",
+     "share": 0.0251
+    },
+    {
+     "pokemon_id": "metagross-mega",
+     "share": 0.0177
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.0131
+    },
+    {
+     "pokemon_id": "ceruledge",
+     "share": 0.0121
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0117
+    },
+    {
+     "pokemon_id": "maushold",
+     "share": 0.011
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0095
+    }
+   ]
+  },
+  "tsareena": {
+   "name": "Tsareena",
+   "usage": 1.17,
+   "sets": [
+    {
+     "name": "Wide Lens Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Wide Lens",
+     "ability": "Queenly Majesty",
+     "moves": [
+      "Triple Axel",
+      "Power Whip",
+      "Low Kick",
+      "Protect"
+     ],
+     "weight": 0.447
+    },
+    {
+     "name": "Choice Scarf Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Choice Scarf",
+     "ability": "Queenly Majesty",
+     "moves": [
+      "Triple Axel",
+      "Power Whip",
+      "Low Kick",
+      "Protect"
+     ],
+     "weight": 0.296
+    },
+    {
+     "name": "Focus Sash Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 10,
+      "atk": 23,
+      "def": 7,
+      "spa": 0,
+      "spd": 0,
+      "spe": 26
+     },
+     "item": "Focus Sash",
+     "ability": "Queenly Majesty",
+     "moves": [
+      "Triple Axel",
+      "Power Whip",
+      "Low Kick",
+      "Protect"
+     ],
+     "weight": 0.258
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0851
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0649
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.061
+    },
+    {
+     "pokemon_id": "aerodactyl-mega",
+     "share": 0.0435
+    },
+    {
+     "pokemon_id": "froslass-mega",
+     "share": 0.0399
+    },
+    {
+     "pokemon_id": "raichu-mega-y",
+     "share": 0.0397
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.0341
+    },
+    {
+     "pokemon_id": "pelipper",
+     "share": 0.0298
+    },
+    {
+     "pokemon_id": "delphox-mega",
+     "share": 0.0294
+    },
+    {
+     "pokemon_id": "gholdengo",
+     "share": 0.0224
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0223
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0204
+    }
+   ]
+  },
+  "dragapult": {
+   "name": "Dragapult",
+   "usage": 1.11,
+   "sets": [
+    {
+     "name": "Focus Sash Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Clear Body",
+     "moves": [
+      "Protect",
+      "Dragon Darts",
+      "Phantom Force",
+      "Dragon Dance"
+     ],
+     "weight": 0.736
+    },
+    {
+     "name": "Life Orb Timid",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Life Orb",
+     "ability": "Clear Body",
+     "moves": [
+      "Protect",
+      "Dragon Darts",
+      "Phantom Force",
+      "Dragon Dance"
+     ],
+     "weight": 0.158
+    },
+    {
+     "name": "Focus Sash Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Clear Body",
+     "moves": [
+      "Protect",
+      "Dragon Darts",
+      "Phantom Force",
+      "Dragon Dance"
+     ],
+     "weight": 0.106
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0989
+    },
+    {
+     "pokemon_id": "mawile-mega",
+     "share": 0.0661
+    },
+    {
+     "pokemon_id": "staraptor",
+     "share": 0.0612
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0612
+    },
+    {
+     "pokemon_id": "blastoise-mega",
+     "share": 0.0584
+    },
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0407
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0347
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0306
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0281
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.027
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.0235
+    },
+    {
+     "pokemon_id": "venusaur",
+     "share": 0.0212
+    }
+   ]
+  },
+  "pyroar-mega": {
+   "name": "Mega Pyroar",
+   "usage": 1.1,
+   "sets": [
+    {
+     "name": "Pyroarite Timid",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 2,
+      "atk": 0,
+      "def": 0,
+      "spa": 32,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Pyroarite",
+     "ability": "Fire Mane",
+     "moves": [
+      "Protect",
+      "Heat Wave",
+      "Overheat",
+      "Solar Beam"
+     ],
+     "weight": 0.792
+    },
+    {
+     "name": "Pyroarite Timid #2",
+     "alignment": "Timid",
+     "spread": {
+      "hp": 0,
+      "atk": 0,
+      "def": 7,
+      "spa": 32,
+      "spd": 0,
+      "spe": 27
+     },
+     "item": "Pyroarite",
+     "ability": "Fire Mane",
+     "moves": [
+      "Protect",
+      "Heat Wave",
+      "Overheat",
+      "Solar Beam"
+     ],
+     "weight": 0.122
+    },
+    {
+     "name": "Pyroarite Modest",
+     "alignment": "Modest",
+     "spread": {
+      "hp": 0,
+      "atk": 0,
+      "def": 1,
+      "spa": 32,
+      "spd": 1,
+      "spe": 32
+     },
+     "item": "Pyroarite",
+     "ability": "Fire Mane",
+     "moves": [
+      "Protect",
+      "Heat Wave",
+      "Overheat",
+      "Solar Beam"
+     ],
+     "weight": 0.086
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.1367
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.1226
+    },
+    {
+     "pokemon_id": "whimsicott",
+     "share": 0.1067
+    },
+    {
+     "pokemon_id": "torkoal",
+     "share": 0.0963
+    },
+    {
+     "pokemon_id": "floette-eternal-mega",
+     "share": 0.0726
+    },
+    {
+     "pokemon_id": "venusaur",
+     "share": 0.0484
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0247
+    },
+    {
+     "pokemon_id": "raichu-mega-y",
+     "share": 0.0188
+    },
+    {
+     "pokemon_id": "mamoswine",
+     "share": 0.0185
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0157
+    },
+    {
+     "pokemon_id": "staraptor-mega",
+     "share": 0.0151
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0138
+    }
+   ]
+  },
+  "kangaskhan-mega": {
+   "name": "Mega Kangaskhan",
+   "usage": 1.06,
+   "sets": [
+    {
+     "name": "Kangaskhanite Brave",
+     "alignment": "Brave",
+     "spread": {
+      "hp": 32,
+      "atk": 32,
+      "def": 2,
+      "spa": 0,
+      "spd": 0,
+      "spe": 0
+     },
+     "item": "Kangaskhanite",
+     "ability": "Parental Bond",
+     "moves": [
+      "Fake Out",
+      "Double-Edge",
+      "Sucker Punch",
+      "Ice Punch"
+     ],
+     "weight": 0.503
+    },
+    {
+     "name": "Kangaskhanite Brave #2",
+     "alignment": "Brave",
+     "spread": {
+      "hp": 32,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 2,
+      "spe": 0
+     },
+     "item": "Kangaskhanite",
+     "ability": "Parental Bond",
+     "moves": [
+      "Fake Out",
+      "Double-Edge",
+      "Sucker Punch",
+      "Ice Punch"
+     ],
+     "weight": 0.258
+    },
+    {
+     "name": "Kangaskhanite Brave #3",
+     "alignment": "Brave",
+     "spread": {
+      "hp": 32,
+      "atk": 32,
+      "def": 1,
+      "spa": 0,
+      "spd": 1,
+      "spe": 0
+     },
+     "item": "Kangaskhanite",
+     "ability": "Parental Bond",
+     "moves": [
+      "Fake Out",
+      "Double-Edge",
+      "Sucker Punch",
+      "Ice Punch"
+     ],
+     "weight": 0.238
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.1048
+    },
+    {
+     "pokemon_id": "torkoal",
+     "share": 0.0914
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0673
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0641
+    },
+    {
+     "pokemon_id": "sylveon",
+     "share": 0.0502
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0391
+    },
+    {
+     "pokemon_id": "kommo-o",
+     "share": 0.0313
+    },
+    {
+     "pokemon_id": "vivillon",
+     "share": 0.031
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0256
+    },
+    {
+     "pokemon_id": "venusaur",
+     "share": 0.0241
+    },
+    {
+     "pokemon_id": "sneasler",
+     "share": 0.0223
+    },
+    {
+     "pokemon_id": "gholdengo",
+     "share": 0.0218
+    }
+   ]
+  },
+  "mamoswine": {
+   "name": "Mamoswine",
+   "usage": 1.05,
+   "sets": [
+    {
+     "name": "Focus Sash Adamant",
+     "alignment": "Adamant",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Focus Sash",
+     "ability": "Oblivious",
+     "moves": [
+      "Ice Shard",
+      "Protect",
+      "High Horsepower",
+      "Icicle Crash"
+     ],
+     "weight": 0.572
+    },
+    {
+     "name": "Life Orb Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 2,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 0,
+      "spe": 32
+     },
+     "item": "Life Orb",
+     "ability": "Oblivious",
+     "moves": [
+      "Ice Shard",
+      "Protect",
+      "High Horsepower",
+      "Icicle Crash"
+     ],
+     "weight": 0.292
+    },
+    {
+     "name": "Choice Scarf Jolly",
+     "alignment": "Jolly",
+     "spread": {
+      "hp": 0,
+      "atk": 32,
+      "def": 0,
+      "spa": 0,
+      "spd": 2,
+      "spe": 32
+     },
+     "item": "Choice Scarf",
+     "ability": "Oblivious",
+     "moves": [
+      "Ice Shard",
+      "Protect",
+      "High Horsepower",
+      "Icicle Crash"
+     ],
+     "weight": 0.136
+    }
+   ],
+   "teammates": [
+    {
+     "pokemon_id": "charizard-mega-y",
+     "share": 0.0795
+    },
+    {
+     "pokemon_id": "venusaur",
+     "share": 0.0682
+    },
+    {
+     "pokemon_id": "incineroar",
+     "share": 0.0594
+    },
+    {
+     "pokemon_id": "farigiraf",
+     "share": 0.041
+    },
+    {
+     "pokemon_id": "garchomp",
+     "share": 0.0359
+    },
+    {
+     "pokemon_id": "kingambit",
+     "share": 0.0326
+    },
+    {
+     "pokemon_id": "raichu-mega-y",
+     "share": 0.0292
+    },
+    {
+     "pokemon_id": "basculegion-m",
+     "share": 0.0289
+    },
+    {
+     "pokemon_id": "torkoal",
+     "share": 0.0243
+    },
+    {
+     "pokemon_id": "toxapex",
+     "share": 0.0242
+    },
+    {
+     "pokemon_id": "sableye",
+     "share": 0.0233
+    },
+    {
+     "pokemon_id": "sinistcha",
+     "share": 0.0225
+    }
+   ]
+  }
+ }
+}

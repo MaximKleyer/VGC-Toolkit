@@ -1,0 +1,27 @@
+# --- Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+
+# --- Node (frontend UI and the Showdown sidecar; reinstall with npm install)
+frontend/node_modules/
+sim/node_modules/
+frontend/dist/
+npm-debug.log*
+
+# --- Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Claude Code: keep shared project settings, ignore the machine-local ones
+.claude/settings.local.json
+
+# --- Scratch
+*.tmp
+*.log

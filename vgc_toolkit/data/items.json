@@ -1,0 +1,1075 @@
+{
+ "black-belt": {
+  "id": "black-belt",
+  "name": "Black Belt",
+  "effect": "An item to be held by a Pok\u00e9mon. This belt helps with focus and boosts the power of the holder's Fighting-type moves.",
+  "category": "held",
+  "boost_type": "Fighting",
+  "boost_multiplier": 1.2
+ },
+ "black-glasses": {
+  "id": "black-glasses",
+  "name": "Black Glasses",
+  "effect": "An item to be held by a Pok\u00e9mon. It's a pair of shady- looking glasses that boost the power of the holder's Dark-type moves.",
+  "category": "held",
+  "boost_type": "Dark",
+  "boost_multiplier": 1.2
+ },
+ "charcoal": {
+  "id": "charcoal",
+  "name": "Charcoal",
+  "effect": "An item to be held by a Pok\u00e9mon. It's a combustible fuel that boosts the power of the holder's Fire-type moves.",
+  "category": "held",
+  "boost_type": "Fire",
+  "boost_multiplier": 1.2
+ },
+ "choice-scarf": {
+  "id": "choice-scarf",
+  "name": "Choice Scarf",
+  "effect": "An item to be held by a Pok\u00e9mon. This curious scarf boosts the holder's Speed stat but only allows the use of a single move.",
+  "category": "held",
+  "speed_multiplier": 1.5
+ },
+ "dragon-fang": {
+  "id": "dragon-fang",
+  "name": "Dragon Fang",
+  "effect": "An item to be held by a Pok\u00e9mon. This hard, sharp fang boosts the power of the holder's Dragon-type moves.",
+  "category": "held",
+  "boost_type": "Dragon",
+  "boost_multiplier": 1.2
+ },
+ "fairy-feather": {
+  "id": "fairy-feather",
+  "name": "Fairy Feather",
+  "effect": "An item to be held by a Pok\u00e9mon. This feather, which gleams faintly when hit by light, boosts the power of the holder's Fairy-type moves.",
+  "category": "held",
+  "boost_type": "Fairy",
+  "boost_multiplier": 1.2
+ },
+ "focus-band": {
+  "id": "focus-band",
+  "name": "Focus Band",
+  "effect": "An item to be held by a Pok\u00e9mon. When the holder is hit with a move that should knock it out, it may be able to endure with 1 HP.",
+  "category": "held"
+ },
+ "focus-sash": {
+  "id": "focus-sash",
+  "name": "Focus Sash",
+  "effect": "An item to be held by a Pok\u00e9mon. If the holder has full HP and it is hit with a move that should knock it out, it will endure with 1 HP\u2014but only once.",
+  "category": "held",
+  "focus_sash": true
+ },
+ "hard-stone": {
+  "id": "hard-stone",
+  "name": "Hard Stone",
+  "effect": "An item to be held by a Pok\u00e9mon. It's a durable stone that boosts the power of the holder's Rock-type moves.",
+  "category": "held",
+  "boost_type": "Rock",
+  "boost_multiplier": 1.2
+ },
+ "king-s-rock": {
+  "id": "king-s-rock",
+  "name": "King's Rock",
+  "effect": "An item to be held by a Pok\u00e9mon. It may cause the target to flinch whenever the holder successfully inflicts damage on them with an attack.",
+  "category": "held"
+ },
+ "leftovers": {
+  "id": "leftovers",
+  "name": "Leftovers",
+  "effect": "An item to be held by a Pok\u00e9mon. It slowly but steadily restores the holder's HP.",
+  "category": "held"
+ },
+ "light-ball": {
+  "id": "light-ball",
+  "name": "Light Ball",
+  "effect": "An item to be held by Pikachu. It's a mysterious orb that boosts Pikachu's Attack and Sp. Atk stats.",
+  "category": "held",
+  "stat_double_for": "pikachu"
+ },
+ "magnet": {
+  "id": "magnet",
+  "name": "Magnet",
+  "effect": "An item to be held by a Pok\u00e9mon. It's a powerful magnet that boosts the power of the holder's Electric-type moves.",
+  "category": "held",
+  "boost_type": "Electric",
+  "boost_multiplier": 1.2
+ },
+ "mental-herb": {
+  "id": "mental-herb",
+  "name": "Mental Herb",
+  "effect": "An item to be held by a Pok\u00e9mon. The holder will be able to shake off move-binding effects to move freely\u2014 but only once.",
+  "category": "held"
+ },
+ "metal-coat": {
+  "id": "metal-coat",
+  "name": "Metal Coat",
+  "effect": "An item to be held by a Pok\u00e9mon. It's a special metallic coating that boosts the power of the holder's Steel-type moves.",
+  "category": "held",
+  "boost_type": "Steel",
+  "boost_multiplier": 1.2
+ },
+ "miracle-seed": {
+  "id": "miracle-seed",
+  "name": "Miracle Seed",
+  "effect": "An item to be held by a Pok\u00e9mon. It's a seed imbued with life force that boosts the power of the holder's Grass-type moves.",
+  "category": "held",
+  "boost_type": "Grass",
+  "boost_multiplier": 1.2
+ },
+ "mystic-water": {
+  "id": "mystic-water",
+  "name": "Mystic Water",
+  "effect": "An item to be held by a Pok\u00e9mon. This teardrop-shaped gem boosts the power of the holder's Water-type moves.",
+  "category": "held",
+  "boost_type": "Water",
+  "boost_multiplier": 1.2
+ },
+ "never-melt-ice": {
+  "id": "never-melt-ice",
+  "name": "Never-Melt Ice",
+  "effect": "An item to be held by a Pok\u00e9mon. It's a heat-repelling piece of ice that boosts the power of the holder's Ice- type moves.",
+  "category": "held",
+  "boost_type": "Ice",
+  "boost_multiplier": 1.2
+ },
+ "poison-barb": {
+  "id": "poison-barb",
+  "name": "Poison Barb",
+  "effect": "An item to be held by a Pok\u00e9mon. This small poisonous barb boosts the power of the holder's Poison-type moves.",
+  "category": "held",
+  "boost_type": "Poison",
+  "boost_multiplier": 1.2
+ },
+ "quick-claw": {
+  "id": "quick-claw",
+  "name": "Quick Claw",
+  "effect": "An item to be held by a Pok\u00e9mon. This light, sharp claw lets the holder occasionally unleash a move faster than it usually would.",
+  "category": "held"
+ },
+ "scope-lens": {
+  "id": "scope-lens",
+  "name": "Scope Lens",
+  "effect": "An item to be held by a Pok\u00e9mon. It's a lens for scoping out weak points. It boosts the holder's critical-hit ratio.",
+  "category": "held"
+ },
+ "sharp-beak": {
+  "id": "sharp-beak",
+  "name": "Sharp Beak",
+  "effect": "An item to be held by a Pok\u00e9mon. It's a long, sharp beak that boosts the power of the holder's Flying-type moves.",
+  "category": "held",
+  "boost_type": "Flying",
+  "boost_multiplier": 1.2
+ },
+ "shell-bell": {
+  "id": "shell-bell",
+  "name": "Shell Bell",
+  "effect": "An item to be held by a Pok\u00e9mon. The holder restores a little HP to itself every time it inflicts damage with an attack.",
+  "category": "held"
+ },
+ "silk-scarf": {
+  "id": "silk-scarf",
+  "name": "Silk Scarf",
+  "effect": "An item to be held by a Pok\u00e9mon. It's a sumptuous scarf that boosts the power of the holder's Normal-type moves.",
+  "category": "held",
+  "boost_type": "Normal",
+  "boost_multiplier": 1.2
+ },
+ "soft-sand": {
+  "id": "soft-sand",
+  "name": "Soft Sand",
+  "effect": "An item to be held by a Pok\u00e9mon. This loose, silky sand boosts the power of the holder's Ground-type moves.",
+  "category": "held",
+  "boost_type": "Ground",
+  "boost_multiplier": 1.2
+ },
+ "spell-tag": {
+  "id": "spell-tag",
+  "name": "Spell Tag",
+  "effect": "An item to be held by a Pok\u00e9mon. It's a sinister, eerie tag that boosts the power of the holder's Ghost-type moves.",
+  "category": "held",
+  "boost_type": "Ghost",
+  "boost_multiplier": 1.2
+ },
+ "white-herb": {
+  "id": "white-herb",
+  "name": "White Herb",
+  "effect": "An item to be held by a Pok\u00e9mon. It will restore any lowered stat in battle\u2014but only once.",
+  "category": "held"
+ },
+ "aspear-berry": {
+  "id": "aspear-berry",
+  "name": "Aspear Berry",
+  "effect": "If a Pok\u00e9mon holds one of these Berries, it will be able to thaw itself after being frozen.",
+  "category": "berry"
+ },
+ "babiri-berry": {
+  "id": "babiri-berry",
+  "name": "Babiri Berry",
+  "effect": "If a Pok\u00e9mon holding this Berry is hit with a supereffective Steel-type move, the power of that move will be weakened.",
+  "category": "berry",
+  "resist_type": "Steel"
+ },
+ "charti-berry": {
+  "id": "charti-berry",
+  "name": "Charti Berry",
+  "effect": "If a Pok\u00e9mon holding this Berry is hit with a supereffective Rock-type move, the power of that move will be weakened.",
+  "category": "berry",
+  "resist_type": "Rock"
+ },
+ "cheri-berry": {
+  "id": "cheri-berry",
+  "name": "Cheri Berry",
+  "effect": "If a Pok\u00e9mon holds one of these Berries, it will be able to free itself from paralysis.",
+  "category": "berry"
+ },
+ "chesto-berry": {
+  "id": "chesto-berry",
+  "name": "Chesto Berry",
+  "effect": "If a Pok\u00e9mon holds one of these Berries, it will be able to shake off its drowsiness.",
+  "category": "berry"
+ },
+ "chilan-berry": {
+  "id": "chilan-berry",
+  "name": "Chilan Berry",
+  "effect": "If a Pok\u00e9mon holding this Berry is hit with a Normal-type move, the power of that move will be weakened.",
+  "category": "berry",
+  "resist_type": "Normal"
+ },
+ "chople-berry": {
+  "id": "chople-berry",
+  "name": "Chople Berry",
+  "effect": "If a Pok\u00e9mon holding this Berry is hit with a supereffective Fighting-type move, the power of that move will be weakened.",
+  "category": "berry",
+  "resist_type": "Fighting"
+ },
+ "coba-berry": {
+  "id": "coba-berry",
+  "name": "Coba Berry",
+  "effect": "If a Pok\u00e9mon holding this Berry is hit with a supereffective Flying-type move, the power of that move will be weakened.",
+  "category": "berry",
+  "resist_type": "Flying"
+ },
+ "colbur-berry": {
+  "id": "colbur-berry",
+  "name": "Colbur Berry",
+  "effect": "If a Pok\u00e9mon holding this Berry is hit with a supereffective Dark-type move, the power of that move will be weakened.",
+  "category": "berry",
+  "resist_type": "Dark"
+ },
+ "haban-berry": {
+  "id": "haban-berry",
+  "name": "Haban Berry",
+  "effect": "If a Pok\u00e9mon holding this Berry is hit with a supereffective Dragon-type move, the power of that move will be weakened.",
+  "category": "berry",
+  "resist_type": "Dragon"
+ },
+ "kasib-berry": {
+  "id": "kasib-berry",
+  "name": "Kasib Berry",
+  "effect": "If a Pok\u00e9mon holding this Berry is hit with a supereffective Ghost-type move, the power of that move will be weakened.",
+  "category": "berry",
+  "resist_type": "Ghost"
+ },
+ "kebia-berry": {
+  "id": "kebia-berry",
+  "name": "Kebia Berry",
+  "effect": "If a Pok\u00e9mon holding this Berry is hit with a supereffective Poison-type move, the power of that move will be weakened.",
+  "category": "berry",
+  "resist_type": "Poison"
+ },
+ "leppa-berry": {
+  "id": "leppa-berry",
+  "name": "Leppa Berry",
+  "effect": "If a Pok\u00e9mon holds one of these Berries, it will be able to restore 10 PP to a move.",
+  "category": "berry"
+ },
+ "lum-berry": {
+  "id": "lum-berry",
+  "name": "Lum Berry",
+  "effect": "If a Pok\u00e9mon holds one of these Berries, it will be able to cure itself of any status condition it may have.",
+  "category": "berry"
+ },
+ "occa-berry": {
+  "id": "occa-berry",
+  "name": "Occa Berry",
+  "effect": "If a Pok\u00e9mon holding this Berry is hit with a supereffective Fire-type move, the power of that move will be weakened.",
+  "category": "berry",
+  "resist_type": "Fire"
+ },
+ "oran-berry": {
+  "id": "oran-berry",
+  "name": "Oran Berry",
+  "effect": "If a Pok\u00e9mon holds one of these Berries, it will be able to restore 10 HP to itself.",
+  "category": "berry"
+ },
+ "passho-berry": {
+  "id": "passho-berry",
+  "name": "Passho Berry",
+  "effect": "If a Pok\u00e9mon holding this Berry is hit with a supereffective Water-type move, the power of that move will be weakened.",
+  "category": "berry",
+  "resist_type": "Water"
+ },
+ "payapa-berry": {
+  "id": "payapa-berry",
+  "name": "Payapa Berry",
+  "effect": "If a Pok\u00e9mon holding this Berry is hit with a supereffective Psychic-type move, the power of that move will be weakened.",
+  "category": "berry",
+  "resist_type": "Psychic"
+ },
+ "pecha-berry": {
+  "id": "pecha-berry",
+  "name": "Pecha Berry",
+  "effect": "If a Pok\u00e9mon holds one of these Berries, it will be able to lift the effects of being poisoned from itself.",
+  "category": "berry"
+ },
+ "persim-berry": {
+  "id": "persim-berry",
+  "name": "Persim Berry",
+  "effect": "If a Pok\u00e9mon holds one of these Berries, it will be able to cure itself of confusion.",
+  "category": "berry"
+ },
+ "rawst-berry": {
+  "id": "rawst-berry",
+  "name": "Rawst Berry",
+  "effect": "If a Pok\u00e9mon holds one of these Berries, it will be able to cure itself of a burn.",
+  "category": "berry"
+ },
+ "rindo-berry": {
+  "id": "rindo-berry",
+  "name": "Rindo Berry",
+  "effect": "If a Pok\u00e9mon holding this Berry is hit with a supereffective Grass-type move, the power of that move will be weakened.",
+  "category": "berry",
+  "resist_type": "Grass"
+ },
+ "roseli-berry": {
+  "id": "roseli-berry",
+  "name": "Roseli Berry",
+  "effect": "If a Pok\u00e9mon holding this Berry is hit with a supereffective Fairy-type move, the power of that move will be weakened.",
+  "category": "berry",
+  "resist_type": "Fairy"
+ },
+ "shuca-berry": {
+  "id": "shuca-berry",
+  "name": "Shuca Berry",
+  "effect": "If a Pok\u00e9mon holding this Berry is hit with a supereffective Ground-type move, the power of that move will be weakened.",
+  "category": "berry",
+  "resist_type": "Ground"
+ },
+ "sitrus-berry": {
+  "id": "sitrus-berry",
+  "name": "Sitrus Berry",
+  "effect": "If a Pok\u00e9mon holds one of these Berries, it will be able to restore a small amount of HP to itself.",
+  "category": "berry"
+ },
+ "tanga-berry": {
+  "id": "tanga-berry",
+  "name": "Tanga Berry",
+  "effect": "If a Pok\u00e9mon holding this Berry is hit with a supereffective Bug-type move, the power of that move will be weakened.",
+  "category": "berry",
+  "resist_type": "Bug"
+ },
+ "wacan-berry": {
+  "id": "wacan-berry",
+  "name": "Wacan Berry",
+  "effect": "If a Pok\u00e9mon holding this Berry is hit with a supereffective Electric-type move, the power of that move will be weakened.",
+  "category": "berry",
+  "resist_type": "Electric"
+ },
+ "yache-berry": {
+  "id": "yache-berry",
+  "name": "Yache Berry",
+  "effect": "If a Pok\u00e9mon holding this Berry is hit with a supereffective Ice-type move, the power of that move will be weakened.",
+  "category": "berry",
+  "resist_type": "Ice"
+ },
+ "clefablite": {
+  "id": "clefablite",
+  "name": "Clefablite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "clefable-mega"
+ },
+ "victreebelite": {
+  "id": "victreebelite",
+  "name": "Victreebelite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "victreebel-mega"
+ },
+ "starminite": {
+  "id": "starminite",
+  "name": "Starminite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "starmie-mega"
+ },
+ "dragoninite": {
+  "id": "dragoninite",
+  "name": "Dragoninite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "dragonite-mega"
+ },
+ "meganiumite": {
+  "id": "meganiumite",
+  "name": "Meganiumite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "meganium-mega"
+ },
+ "feraligite": {
+  "id": "feraligite",
+  "name": "Feraligite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "feraligatr-mega"
+ },
+ "skarmorite": {
+  "id": "skarmorite",
+  "name": "Skarmorite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "skarmory-mega"
+ },
+ "froslassite": {
+  "id": "froslassite",
+  "name": "Froslassite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "froslass-mega"
+ },
+ "emboarite": {
+  "id": "emboarite",
+  "name": "Emboarite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "emboar-mega"
+ },
+ "excadrite": {
+  "id": "excadrite",
+  "name": "Excadrite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "excadrill-mega"
+ },
+ "scolipite": {
+  "id": "scolipite",
+  "name": "Scolipite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "scolipede-mega"
+ },
+ "scraftinite": {
+  "id": "scraftinite",
+  "name": "Scraftinite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "scrafty-mega"
+ },
+ "eelektrossite": {
+  "id": "eelektrossite",
+  "name": "Eelektrossite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "eelektross-mega"
+ },
+ "chandelurite": {
+  "id": "chandelurite",
+  "name": "Chandelurite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "chandelure-mega"
+ },
+ "chesnaughtite": {
+  "id": "chesnaughtite",
+  "name": "Chesnaughtite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "chesnaught-mega"
+ },
+ "delphoxite": {
+  "id": "delphoxite",
+  "name": "Delphoxite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "delphox-mega"
+ },
+ "greninjite": {
+  "id": "greninjite",
+  "name": "Greninjite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "greninja-mega"
+ },
+ "pyroarite": {
+  "id": "pyroarite",
+  "name": "Pyroarite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "pyroar-mega"
+ },
+ "floettite": {
+  "id": "floettite",
+  "name": "Floettite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "floette-eternal-mega"
+ },
+ "malamarite": {
+  "id": "malamarite",
+  "name": "Malamarite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "malamar-mega"
+ },
+ "barbaracite": {
+  "id": "barbaracite",
+  "name": "Barbaracite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "barbaracle-mega"
+ },
+ "dragalgite": {
+  "id": "dragalgite",
+  "name": "Dragalgite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "dragalge-mega"
+ },
+ "hawluchanite": {
+  "id": "hawluchanite",
+  "name": "Hawluchanite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "hawlucha-mega"
+ },
+ "drampanite": {
+  "id": "drampanite",
+  "name": "Drampanite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "drampa-mega"
+ },
+ "falinksite": {
+  "id": "falinksite",
+  "name": "Falinksite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "falinks-mega"
+ },
+ "raichunite-x": {
+  "id": "raichunite-x",
+  "name": "Raichunite X",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "raichu-mega-x"
+ },
+ "raichunite-y": {
+  "id": "raichunite-y",
+  "name": "Raichunite Y",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "raichu-mega-y"
+ },
+ "chimechite": {
+  "id": "chimechite",
+  "name": "Chimechite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "chimecho-mega"
+ },
+ "absolite": {
+  "id": "absolite",
+  "name": "Absolite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "absol-mega"
+ },
+ "staraptite": {
+  "id": "staraptite",
+  "name": "Staraptite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "staraptor-mega"
+ },
+ "garchompite": {
+  "id": "garchompite",
+  "name": "Garchompite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "garchomp-mega"
+ },
+ "lucarionite": {
+  "id": "lucarionite",
+  "name": "Lucarionite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "lucario-mega"
+ },
+ "golurkite": {
+  "id": "golurkite",
+  "name": "Golurkite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "golurk-mega"
+ },
+ "crabominite": {
+  "id": "crabominite",
+  "name": "Crabominite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "crabominable-mega"
+ },
+ "scovillainite": {
+  "id": "scovillainite",
+  "name": "Scovillainite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "scovillain-mega"
+ },
+ "glimmoranite": {
+  "id": "glimmoranite",
+  "name": "Glimmoranite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "glimmora-mega"
+ },
+ "wide-lens": {
+  "id": "wide-lens",
+  "name": "Wide Lens",
+  "effect": "An item to be held by a Pok\u00e9mon. It's a magnifying lens that slightly boosts the accuracy of moves.",
+  "category": "held"
+ },
+ "muscle-band": {
+  "id": "muscle-band",
+  "name": "Muscle Band",
+  "effect": "An item to be held by a Pok\u00e9mon. It's a headband that slightly boosts the power of physical moves.",
+  "category": "held",
+  "category_boost": "Physical",
+  "category_multiplier": 1.1
+ },
+ "wise-glasses": {
+  "id": "wise-glasses",
+  "name": "Wise Glasses",
+  "effect": "An item to be held by a Pok\u00e9mon. It's a thick pair of glasses that slightly boosts the power of special moves.",
+  "category": "held",
+  "category_boost": "Special",
+  "category_multiplier": 1.1
+ },
+ "expert-belt": {
+  "id": "expert-belt",
+  "name": "Expert Belt",
+  "effect": "An item to be held by a Pok\u00e9mon. It's a well-worn belt that slightly boosts the power of supereffective moves.",
+  "category": "held",
+  "se_multiplier": 1.2
+ },
+ "light-clay": {
+  "id": "light-clay",
+  "name": "Light Clay",
+  "effect": "An item to be held by a Pok\u00e9mon. It extends the duration of barrier moves like Light Screen and Reflect used by the holder.",
+  "category": "held"
+ },
+ "life-orb": {
+  "id": "life-orb",
+  "name": "Life Orb",
+  "effect": "An item to be held by a Pok\u00e9mon. It boosts the power of moves, but at the cost of some HP on each hit.",
+  "category": "held",
+  "final_multiplier": 1.3,
+  "recoil_fraction": 0.1
+ },
+ "zoom-lens": {
+  "id": "zoom-lens",
+  "name": "Zoom Lens",
+  "effect": "An item to be held by a Pok\u00e9mon. If the holder moves after its target, its accuracy will be boosted.",
+  "category": "held"
+ },
+ "metronome": {
+  "id": "metronome",
+  "name": "Metronome",
+  "effect": "An item to be held by a Pok\u00e9mon. It boosts moves used consecutively but is reset if another move is used.",
+  "category": "held",
+  "streak_step": 0.2,
+  "streak_cap": 2.0
+ },
+ "iron-ball": {
+  "id": "iron-ball",
+  "name": "Iron Ball",
+  "effect": "An item to be held by a Pok\u00e9mon. It lowers Speed and lets Ground-type moves hit Flying-type and Levitating holders.",
+  "category": "held",
+  "speed_multiplier": 0.5,
+  "grounds_holder": true
+ },
+ "icy-rock": {
+  "id": "icy-rock",
+  "name": "Icy Rock",
+  "effect": "An item to be held by a Pok\u00e9mon. It extends the duration of the move Hail/Snow used by the holder.",
+  "category": "held"
+ },
+ "smooth-rock": {
+  "id": "smooth-rock",
+  "name": "Smooth Rock",
+  "effect": "An item to be held by a Pok\u00e9mon. It extends the duration of the move Sandstorm used by the holder.",
+  "category": "held"
+ },
+ "heat-rock": {
+  "id": "heat-rock",
+  "name": "Heat Rock",
+  "effect": "An item to be held by a Pok\u00e9mon. It extends the duration of the move Sunny Day used by the holder.",
+  "category": "held"
+ },
+ "damp-rock": {
+  "id": "damp-rock",
+  "name": "Damp Rock",
+  "effect": "An item to be held by a Pok\u00e9mon. It extends the duration of the move Rain Dance used by the holder.",
+  "category": "held"
+ },
+ "shed-shell": {
+  "id": "shed-shell",
+  "name": "Shed Shell",
+  "effect": "An item to be held by a Pok\u00e9mon. This blandly fragranced shell allows the holder to switch out of battle without fail.",
+  "category": "held"
+ },
+ "big-root": {
+  "id": "big-root",
+  "name": "Big Root",
+  "effect": "An item to be held by a Pok\u00e9mon. It boosts the power of HP-stealing moves to let the holder recover more HP.",
+  "category": "held"
+ },
+ "brightpowder": {
+  "id": "brightpowder",
+  "name": "BrightPowder",
+  "effect": "An item to be held by a Pok\u00e9mon. This glittery powder casts a tricky glare that lowers the accuracy of opposing Pok\u00e9mon's moves.",
+  "category": "held"
+ },
+ "silverpowder": {
+  "id": "silverpowder",
+  "name": "SilverPowder",
+  "effect": "An item to be held by a Pok\u00e9mon. It's a shiny silver powder that boosts the power of the holder's Bug-type moves.",
+  "category": "held",
+  "boost_type": "Bug",
+  "boost_multiplier": 1.2
+ },
+ "twistedspoon": {
+  "id": "twistedspoon",
+  "name": "TwistedSpoon",
+  "effect": "An item to be held by a Pok\u00e9mon. This spoon is imbued with telekinetic energy and boosts the power of the holder's Psychic-type moves.",
+  "category": "held",
+  "boost_type": "Psychic",
+  "boost_multiplier": 1.2
+ },
+ "abomasite": {
+  "id": "abomasite",
+  "name": "Abomasite",
+  "effect": "One of a variety of mysterious Mega Stones. An Abomasnow holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "abomasnow-mega"
+ },
+ "aerodactylite": {
+  "id": "aerodactylite",
+  "name": "Aerodactylite",
+  "effect": "One of a variety of mysterious Mega Stones. An Aerodactyl holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "aerodactyl-mega"
+ },
+ "aggronite": {
+  "id": "aggronite",
+  "name": "Aggronite",
+  "effect": "One of a variety of mysterious Mega Stones. An Aggron holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "aggron-mega"
+ },
+ "alakazite": {
+  "id": "alakazite",
+  "name": "Alakazite",
+  "effect": "One of a variety of mysterious Mega Stones. An Alakazam holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "alakazam-mega"
+ },
+ "altarianite": {
+  "id": "altarianite",
+  "name": "Altarianite",
+  "effect": "One of a variety of mysterious Mega Stones. An Altaria holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "altaria-mega"
+ },
+ "ampharosite": {
+  "id": "ampharosite",
+  "name": "Ampharosite",
+  "effect": "One of a variety of mysterious Mega Stones. An Ampharos holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "ampharos-mega"
+ },
+ "audinite": {
+  "id": "audinite",
+  "name": "Audinite",
+  "effect": "One of a variety of mysterious Mega Stones. An Audino holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "audino-mega"
+ },
+ "banettite": {
+  "id": "banettite",
+  "name": "Banettite",
+  "effect": "One of a variety of mysterious Mega Stones. A Banette holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "banette-mega"
+ },
+ "beedrillite": {
+  "id": "beedrillite",
+  "name": "Beedrillite",
+  "effect": "One of a variety of mysterious Mega Stones. A Beedrill holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "beedrill-mega"
+ },
+ "blastoisinite": {
+  "id": "blastoisinite",
+  "name": "Blastoisinite",
+  "effect": "One of a variety of mysterious Mega Stones. A Blastoise holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "blastoise-mega"
+ },
+ "cameruptite": {
+  "id": "cameruptite",
+  "name": "Cameruptite",
+  "effect": "One of a variety of mysterious Mega Stones. A Camerupt holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "camerupt-mega"
+ },
+ "charizardite-x": {
+  "id": "charizardite-x",
+  "name": "Charizardite X",
+  "effect": "One of a variety of mysterious Mega Stones. A Charizard holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "charizard-mega-x"
+ },
+ "charizardite-y": {
+  "id": "charizardite-y",
+  "name": "Charizardite Y",
+  "effect": "One of a variety of mysterious Mega Stones. A Charizard holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "charizard-mega-y"
+ },
+ "galladite": {
+  "id": "galladite",
+  "name": "Galladite",
+  "effect": "One of a variety of mysterious Mega Stones. A Gallade holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "gallade-mega"
+ },
+ "gardevoirite": {
+  "id": "gardevoirite",
+  "name": "Gardevoirite",
+  "effect": "One of a variety of mysterious Mega Stones. A Gardevoir holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "gardevoir-mega"
+ },
+ "gengarite": {
+  "id": "gengarite",
+  "name": "Gengarite",
+  "effect": "One of a variety of mysterious Mega Stones. A Gengar holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "gengar-mega"
+ },
+ "glalitite": {
+  "id": "glalitite",
+  "name": "Glalitite",
+  "effect": "One of a variety of mysterious Mega Stones. A Glalie holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "glalie-mega"
+ },
+ "gyaradosite": {
+  "id": "gyaradosite",
+  "name": "Gyaradosite",
+  "effect": "One of a variety of mysterious Mega Stones. A Gyarados holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "gyarados-mega"
+ },
+ "heracronite": {
+  "id": "heracronite",
+  "name": "Heracronite",
+  "effect": "One of a variety of mysterious Mega Stones. A Heracross holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "heracross-mega"
+ },
+ "houndoominite": {
+  "id": "houndoominite",
+  "name": "Houndoominite",
+  "effect": "One of a variety of mysterious Mega Stones. A Houndoom holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "houndoom-mega"
+ },
+ "kangaskhanite": {
+  "id": "kangaskhanite",
+  "name": "Kangaskhanite",
+  "effect": "One of a variety of mysterious Mega Stones. A Kangaskhan holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "kangaskhan-mega"
+ },
+ "lopunnite": {
+  "id": "lopunnite",
+  "name": "Lopunnite",
+  "effect": "One of a variety of mysterious Mega Stones. A Lopunny holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "lopunny-mega"
+ },
+ "manectite": {
+  "id": "manectite",
+  "name": "Manectite",
+  "effect": "One of a variety of mysterious Mega Stones. A Manectric holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "manectric-mega"
+ },
+ "medichamite": {
+  "id": "medichamite",
+  "name": "Medichamite",
+  "effect": "One of a variety of mysterious Mega Stones. A Medicham holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "medicham-mega"
+ },
+ "meowsticite": {
+  "id": "meowsticite",
+  "name": "Meowsticite",
+  "effect": "One of a variety of mysterious Mega Stones. A Meowstic holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "meowstic-m-mega"
+ },
+ "pidgeotite": {
+  "id": "pidgeotite",
+  "name": "Pidgeotite",
+  "effect": "One of a variety of mysterious Mega Stones. A Pidgeot holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "pidgeot-mega"
+ },
+ "pinsirite": {
+  "id": "pinsirite",
+  "name": "Pinsirite",
+  "effect": "One of a variety of mysterious Mega Stones. A Pinsir holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "pinsir-mega"
+ },
+ "sablenite": {
+  "id": "sablenite",
+  "name": "Sablenite",
+  "effect": "One of a variety of mysterious Mega Stones. A Sableye holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "sableye-mega"
+ },
+ "scizorite": {
+  "id": "scizorite",
+  "name": "Scizorite",
+  "effect": "One of a variety of mysterious Mega Stones. A Scizor holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "scizor-mega"
+ },
+ "sharpedonite": {
+  "id": "sharpedonite",
+  "name": "Sharpedonite",
+  "effect": "One of a variety of mysterious Mega Stones. A Sharpedo holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "sharpedo-mega"
+ },
+ "slowbronite": {
+  "id": "slowbronite",
+  "name": "Slowbronite",
+  "effect": "One of a variety of mysterious Mega Stones. A Slowbro holding this stone will be able to Mega Evolve during battle. It won't work for a Galarian Slowbro, however.",
+  "category": "mega_stone",
+  "mega_form": "slowbro-mega"
+ },
+ "steelixite": {
+  "id": "steelixite",
+  "name": "Steelixite",
+  "effect": "One of a variety of mysterious Mega Stones. A Steelix holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "steelix-mega"
+ },
+ "tyranitarite": {
+  "id": "tyranitarite",
+  "name": "Tyranitarite",
+  "effect": "One of a variety of mysterious Mega Stones. A Tyranitar holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "tyranitar-mega"
+ },
+ "venusaurite": {
+  "id": "venusaurite",
+  "name": "Venusaurite",
+  "effect": "One of a variety of mysterious Mega Stones. A Venusaur holding this stone will be able to Mega Evolve during battle.",
+  "category": "mega_stone",
+  "mega_form": "venusaur-mega"
+ },
+ "swampertite": {
+  "id": "swampertite",
+  "name": "Swampertite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "swampert-mega"
+ },
+ "sceptilite": {
+  "id": "sceptilite",
+  "name": "Sceptilite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "sceptile-mega"
+ },
+ "blazikenite": {
+  "id": "blazikenite",
+  "name": "Blazikenite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "blaziken-mega"
+ },
+ "metagrossite": {
+  "id": "metagrossite",
+  "name": "Metagrossite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "metagross-mega"
+ },
+ "mawilite": {
+  "id": "mawilite",
+  "name": "Mawilite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "mawile-mega"
+ },
+ "salamencite": {
+  "id": "salamencite",
+  "name": "Salamencite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "salamence-mega"
+ },
+ "golisopodite": {
+  "id": "golisopodite",
+  "name": "Golisopodite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "golisopod-mega"
+ },
+ "baxcaliburite": {
+  "id": "baxcaliburite",
+  "name": "Baxcaliburite",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "baxcalibur-mega"
+ },
+ "absolite-z": {
+  "id": "absolite-z",
+  "name": "Absolite Z",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "absol-mega-z"
+ },
+ "garchompite-z": {
+  "id": "garchompite-z",
+  "name": "Garchompite Z",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "garchomp-mega-z"
+ },
+ "lucarionite-z": {
+  "id": "lucarionite-z",
+  "name": "Lucarionite Z",
+  "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
+  "category": "mega_stone",
+  "mega_form": "lucario-mega-z"
+ }
+}

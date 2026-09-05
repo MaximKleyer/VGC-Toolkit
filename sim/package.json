@@ -1,0 +1,16 @@
+{
+  "name": "champions-toolkit-sim",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Pokemon Showdown simulator sidecar for the Champions VGC Toolkit battle tab",
+  "scripts": {
+    "start": "node server.mjs",
+    "check": "node --check server.mjs",
+    "test": "node --test",
+    "smoke": "node smoke.mjs"
+  },
+  "dependencies": {
+    "pokemon-showdown": "0.11.11"
+  }
+}

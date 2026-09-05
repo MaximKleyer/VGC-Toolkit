@@ -1,0 +1,8890 @@
+{
+ "Accelerock": {
+  "name": "Accelerock",
+  "type": "Rock",
+  "category": "Physical",
+  "base_power": 40,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 1,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Usually goes first.",
+  "source": "gen9_baseline"
+ },
+ "Acid Armor": {
+  "name": "Acid Armor",
+  "type": "Poison",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises the user's Defense by 2.",
+  "source": "gen9_baseline"
+ },
+ "Acid Spray": {
+  "name": "Acid Spray",
+  "type": "Poison",
+  "category": "Special",
+  "base_power": 40,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "bullet": 1
+  },
+  "short_desc": "100% chance to lower the target's Sp. Def by 2.",
+  "source": "gen9_baseline"
+ },
+ "Acrobatics": {
+  "name": "Acrobatics",
+  "type": "Flying",
+  "category": "Physical",
+  "base_power": 55,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "any",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "distance": 1,
+   "metronome": 1
+  },
+  "short_desc": "Power doubles if the user has no held item.",
+  "source": "gen9_baseline"
+ },
+ "Acupressure": {
+  "name": "Acupressure",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 30,
+  "priority": 0,
+  "target": "adjacentAllyOrSelf",
+  "flags": {
+   "metronome": 1
+  },
+  "short_desc": "Raises a random stat of the user or an ally by 2.",
+  "source": "gen9_baseline"
+ },
+ "Aerial Ace": {
+  "name": "Aerial Ace",
+  "type": "Flying",
+  "category": "Physical",
+  "base_power": 60,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "any",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "distance": 1,
+   "metronome": 1,
+   "slicing": 1
+  },
+  "short_desc": "This move does not check accuracy.",
+  "source": "gen9_baseline"
+ },
+ "After You": {
+  "name": "After You",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "bypasssub": 1,
+   "allyanim": 1
+  },
+  "short_desc": "The target makes its move right after the user.",
+  "source": "gen9_baseline"
+ },
+ "Agility": {
+  "name": "Agility",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 30,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises the user's Speed by 2.",
+  "source": "gen9_baseline"
+ },
+ "Air Cutter": {
+  "name": "Air Cutter",
+  "type": "Flying",
+  "category": "Special",
+  "base_power": 60,
+  "accuracy": 95,
+  "pp": 25,
+  "priority": 0,
+  "target": "allAdjacentFoes",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "slicing": 1,
+   "wind": 1
+  },
+  "short_desc": "High critical hit ratio. Hits adjacent foes.",
+  "source": "gen9_baseline"
+ },
+ "Air Slash": {
+  "name": "Air Slash",
+  "type": "Flying",
+  "category": "Special",
+  "base_power": 75,
+  "accuracy": 95,
+  "pp": 15,
+  "priority": 0,
+  "target": "any",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "distance": 1,
+   "metronome": 1,
+   "slicing": 1
+  },
+  "short_desc": "30% chance to make the target flinch.",
+  "source": "gen9_baseline"
+ },
+ "Alluring Voice": {
+  "name": "Alluring Voice",
+  "type": "Fairy",
+  "category": "Special",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "sound": 1,
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% confuse target that had a stat rise this turn.",
+  "source": "gen9_baseline"
+ },
+ "Ally Switch": {
+  "name": "Ally Switch",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 15,
+  "priority": 2,
+  "target": "self",
+  "flags": {
+   "metronome": 1
+  },
+  "short_desc": "User and ally swap positions; using again can fail.",
+  "source": "gen9_baseline"
+ },
+ "Amnesia": {
+  "name": "Amnesia",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises the user's Sp. Def by 2.",
+  "source": "gen9_baseline"
+ },
+ "Ancient Power": {
+  "name": "Ancient Power",
+  "type": "Rock",
+  "category": "Special",
+  "base_power": 60,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "10% chance to raise all stats by 1 (not acc/eva).",
+  "source": "gen9_baseline"
+ },
+ "Apple Acid": {
+  "name": "Apple Acid",
+  "type": "Grass",
+  "category": "Special",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1
+  },
+  "short_desc": "100% chance to lower the target's Sp. Def by 1.",
+  "source": "gen9_baseline"
+ },
+ "Aqua Cutter": {
+  "name": "Aqua Cutter",
+  "type": "Water",
+  "category": "Physical",
+  "base_power": 70,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "slicing": 1
+  },
+  "short_desc": "High critical hit ratio.",
+  "source": "gen9_baseline"
+ },
+ "Aqua Jet": {
+  "name": "Aqua Jet",
+  "type": "Water",
+  "category": "Physical",
+  "base_power": 40,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 1,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Usually goes first.",
+  "source": "gen9_baseline"
+ },
+ "Aqua Ring": {
+  "name": "Aqua Ring",
+  "type": "Water",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "User recovers 1/16 max HP per turn.",
+  "source": "gen9_baseline"
+ },
+ "Aqua Step": {
+  "name": "Aqua Step",
+  "type": "Water",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "dance": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% chance to raise the user's Speed by 1.",
+  "source": "gen9_baseline"
+ },
+ "Aqua Tail": {
+  "name": "Aqua Tail",
+  "type": "Water",
+  "category": "Physical",
+  "base_power": 90,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "No additional effect.",
+  "source": "gen9_baseline"
+ },
+ "Armor Cannon": {
+  "name": "Armor Cannon",
+  "type": "Fire",
+  "category": "Special",
+  "base_power": 120,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1
+  },
+  "short_desc": "Lowers the user's Defense and Sp. Def by 1.",
+  "source": "gen9_baseline"
+ },
+ "Aromatic Mist": {
+  "name": "Aromatic Mist",
+  "type": "Fairy",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "adjacentAlly",
+  "flags": {
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises an ally's Sp. Def by 1.",
+  "source": "gen9_baseline"
+ },
+ "Assurance": {
+  "name": "Assurance",
+  "type": "Dark",
+  "category": "Physical",
+  "base_power": 60,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Power doubles if target was damaged this turn.",
+  "source": "gen9_baseline"
+ },
+ "Attract": {
+  "name": "Attract",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "A target of the opposite gender gets infatuated.",
+  "source": "gen9_baseline"
+ },
+ "Aura Sphere": {
+  "name": "Aura Sphere",
+  "type": "Fighting",
+  "category": "Special",
+  "base_power": 80,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "any",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "distance": 1,
+   "metronome": 1,
+   "bullet": 1,
+   "pulse": 1
+  },
+  "short_desc": "This move does not check accuracy.",
+  "source": "gen9_baseline"
+ },
+ "Aura Wheel": {
+  "name": "Aura Wheel",
+  "type": "Electric",
+  "category": "Physical",
+  "base_power": 110,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1
+  },
+  "short_desc": "Morpeko: Electric; Hangry: Dark; 100% +1 Spe.",
+  "source": "gen9_baseline"
+ },
+ "Aurora Veil": {
+  "name": "Aurora Veil",
+  "type": "Ice",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "allySide",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "For 5 turns, damage to allies halved. Snow only.",
+  "source": "gen9_baseline"
+ },
+ "Avalanche": {
+  "name": "Avalanche",
+  "type": "Ice",
+  "category": "Physical",
+  "base_power": 60,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": -4,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Power doubles if user is damaged by the target.",
+  "source": "gen9_baseline"
+ },
+ "Axe Kick": {
+  "name": "Axe Kick",
+  "type": "Fighting",
+  "category": "Physical",
+  "base_power": 120,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "30% confusion. User loses 50% max HP if miss.",
+  "source": "gen9_baseline"
+ },
+ "Baby-Doll Eyes": {
+  "name": "Baby-Doll Eyes",
+  "type": "Fairy",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 30,
+  "priority": 1,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the target's Attack by 1.",
+  "source": "gen9_baseline"
+ },
+ "Baneful Bunker": {
+  "name": "Baneful Bunker",
+  "type": "Poison",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 4,
+  "target": "self",
+  "flags": {
+   "noassist": 1,
+   "failcopycat": 1
+  },
+  "short_desc": "Protects from moves. Contact: poison.",
+  "source": "gen9_baseline"
+ },
+ "Baton Pass": {
+  "name": "Baton Pass",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 40,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "metronome": 1
+  },
+  "short_desc": "User switches, passing stat changes and more.",
+  "source": "gen9_baseline"
+ },
+ "Beak Blast": {
+  "name": "Beak Blast",
+  "type": "Flying",
+  "category": "Physical",
+  "base_power": 120,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": -3,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "failmefirst": 1,
+   "nosleeptalk": 1,
+   "noassist": 1,
+   "failcopycat": 1,
+   "failinstruct": 1,
+   "bullet": 1
+  },
+  "short_desc": "Burns on contact with the user before it moves.",
+  "source": "gen9_baseline"
+ },
+ "Beat Up": {
+  "name": "Beat Up",
+  "type": "Dark",
+  "category": "Physical",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "All healthy allies aid in damaging the target.",
+  "source": "gen9_baseline"
+ },
+ "Belch": {
+  "name": "Belch",
+  "type": "Poison",
+  "category": "Special",
+  "base_power": 120,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "failmefirst": 1,
+   "nosleeptalk": 1,
+   "noassist": 1,
+   "failcopycat": 1,
+   "failmimic": 1,
+   "failinstruct": 1
+  },
+  "short_desc": "Cannot be selected until the user eats a Berry.",
+  "source": "gen9_baseline"
+ },
+ "Belly Drum": {
+  "name": "Belly Drum",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "User loses 50% max HP. Maximizes Attack.",
+  "source": "gen9_baseline"
+ },
+ "Bind": {
+  "name": "Bind",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 15,
+  "accuracy": 85,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Traps and damages the target for 4-5 turns.",
+  "source": "gen9_baseline"
+ },
+ "Bite": {
+  "name": "Bite",
+  "type": "Dark",
+  "category": "Physical",
+  "base_power": 60,
+  "accuracy": 100,
+  "pp": 25,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "bite": 1
+  },
+  "short_desc": "30% chance to make the target flinch.",
+  "source": "gen9_baseline"
+ },
+ "Bitter Blade": {
+  "name": "Bitter Blade",
+  "type": "Fire",
+  "category": "Physical",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "heal": 1,
+   "metronome": 1,
+   "slicing": 1
+  },
+  "short_desc": "User recovers 50% of the damage dealt.",
+  "source": "gen9_baseline"
+ },
+ "Bitter Malice": {
+  "name": "Bitter Malice",
+  "type": "Ghost",
+  "category": "Special",
+  "base_power": 75,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% chance to lower the target's Attack by 1.",
+  "source": "gen9_baseline"
+ },
+ "Blast Burn": {
+  "name": "Blast Burn",
+  "type": "Fire",
+  "category": "Special",
+  "base_power": 150,
+  "accuracy": 90,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "recharge": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "User cannot move next turn.",
+  "source": "gen9_baseline"
+ },
+ "Blaze Kick": {
+  "name": "Blaze Kick",
+  "type": "Fire",
+  "category": "Physical",
+  "base_power": 85,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "High critical hit ratio. 10% chance to burn.",
+  "source": "gen9_baseline"
+ },
+ "Blizzard": {
+  "name": "Blizzard",
+  "type": "Ice",
+  "category": "Special",
+  "base_power": 110,
+  "accuracy": 70,
+  "pp": 5,
+  "priority": 0,
+  "target": "allAdjacentFoes",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "wind": 1
+  },
+  "short_desc": "10% chance to freeze foe(s). Can't miss in Snow.",
+  "source": "gen9_baseline"
+ },
+ "Block": {
+  "name": "Block",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "reflectable": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Prevents the target from switching out.",
+  "source": "gen9_baseline"
+ },
+ "Body Press": {
+  "name": "Body Press",
+  "type": "Fighting",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1
+  },
+  "short_desc": "Uses user's Def stat as Atk in damage calculation.",
+  "source": "gen9_baseline"
+ },
+ "Body Slam": {
+  "name": "Body Slam",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 85,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "nonsky": 1,
+   "metronome": 1,
+   "minimize": 1
+  },
+  "short_desc": "30% chance to paralyze the target.",
+  "source": "gen9_baseline"
+ },
+ "Bone Rush": {
+  "name": "Bone Rush",
+  "type": "Ground",
+  "category": "Physical",
+  "base_power": 30,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Hits 2-5 times in one turn.",
+  "source": "gen9_baseline"
+ },
+ "Boomburst": {
+  "name": "Boomburst",
+  "type": "Normal",
+  "category": "Special",
+  "base_power": 140,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "allAdjacent",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "sound": 1,
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "No additional effect. Hits adjacent Pokemon.",
+  "source": "gen9_baseline"
+ },
+ "Bounce": {
+  "name": "Bounce",
+  "type": "Flying",
+  "category": "Physical",
+  "base_power": 85,
+  "accuracy": 85,
+  "pp": 5,
+  "priority": 0,
+  "target": "any",
+  "flags": {
+   "contact": 1,
+   "charge": 1,
+   "protect": 1,
+   "mirror": 1,
+   "gravity": 1,
+   "distance": 1,
+   "metronome": 1,
+   "nosleeptalk": 1,
+   "noassist": 1,
+   "failinstruct": 1
+  },
+  "short_desc": "Bounces turn 1. Hits turn 2. 30% paralyze.",
+  "source": "gen9_baseline"
+ },
+ "Brave Bird": {
+  "name": "Brave Bird",
+  "type": "Flying",
+  "category": "Physical",
+  "base_power": 120,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "any",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "distance": 1,
+   "metronome": 1
+  },
+  "short_desc": "Has 33% recoil.",
+  "source": "gen9_baseline"
+ },
+ "Breaking Swipe": {
+  "name": "Breaking Swipe",
+  "type": "Dragon",
+  "category": "Physical",
+  "base_power": 60,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "allAdjacentFoes",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1
+  },
+  "short_desc": "100% chance to lower the foe(s) Attack by 1.",
+  "source": "gen9_baseline"
+ },
+ "Brick Break": {
+  "name": "Brick Break",
+  "type": "Fighting",
+  "category": "Physical",
+  "base_power": 75,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Destroys screens, unless the target is immune.",
+  "source": "gen9_baseline"
+ },
+ "Brutal Swing": {
+  "name": "Brutal Swing",
+  "type": "Dark",
+  "category": "Physical",
+  "base_power": 60,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "allAdjacent",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "No additional effect. Hits adjacent Pokemon.",
+  "source": "gen9_baseline"
+ },
+ "Bug Bite": {
+  "name": "Bug Bite",
+  "type": "Bug",
+  "category": "Physical",
+  "base_power": 60,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "User steals and eats the target's Berry.",
+  "source": "gen9_baseline"
+ },
+ "Bug Buzz": {
+  "name": "Bug Buzz",
+  "type": "Bug",
+  "category": "Special",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "sound": 1,
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "10% chance to lower the target's Sp. Def by 1.",
+  "source": "gen9_baseline"
+ },
+ "Bulk Up": {
+  "name": "Bulk Up",
+  "type": "Fighting",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises the user's Attack and Defense by 1.",
+  "source": "gen9_baseline"
+ },
+ "Bulldoze": {
+  "name": "Bulldoze",
+  "type": "Ground",
+  "category": "Physical",
+  "base_power": 60,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "allAdjacent",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "nonsky": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% chance lower adjacent Pkmn Speed by 1.",
+  "source": "gen9_baseline"
+ },
+ "Bullet Punch": {
+  "name": "Bullet Punch",
+  "type": "Steel",
+  "category": "Physical",
+  "base_power": 40,
+  "accuracy": 100,
+  "pp": 30,
+  "priority": 1,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "punch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Usually goes first.",
+  "source": "gen9_baseline"
+ },
+ "Bullet Seed": {
+  "name": "Bullet Seed",
+  "type": "Grass",
+  "category": "Physical",
+  "base_power": 25,
+  "accuracy": 100,
+  "pp": 30,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "bullet": 1
+  },
+  "short_desc": "Hits 2-5 times in one turn.",
+  "source": "gen9_baseline"
+ },
+ "Burn Up": {
+  "name": "Burn Up",
+  "type": "Fire",
+  "category": "Special",
+  "base_power": 130,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "defrost": 1,
+   "metronome": 1
+  },
+  "short_desc": "User's Fire type becomes typeless; must be Fire.",
+  "source": "gen9_baseline"
+ },
+ "Burning Jealousy": {
+  "name": "Burning Jealousy",
+  "type": "Fire",
+  "category": "Special",
+  "base_power": 70,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "allAdjacentFoes",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% burns a target that had a stat rise this turn.",
+  "source": "gen9_baseline"
+ },
+ "Calm Mind": {
+  "name": "Calm Mind",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises the user's Sp. Atk and Sp. Def by 1.",
+  "source": "gen9_baseline"
+ },
+ "Ceaseless Edge": {
+  "name": "Ceaseless Edge",
+  "type": "Dark",
+  "category": "Physical",
+  "base_power": 65,
+  "accuracy": 90,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "slicing": 1
+  },
+  "short_desc": "Sets a layer of Spikes on the opposing side.",
+  "source": "gen9_baseline"
+ },
+ "Charge": {
+  "name": "Charge",
+  "type": "Electric",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "+1 SpD, user's next Electric move 2x power.",
+  "source": "gen9_baseline"
+ },
+ "Charge Beam": {
+  "name": "Charge Beam",
+  "type": "Electric",
+  "category": "Special",
+  "base_power": 50,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "70% chance to raise the user's Sp. Atk by 1.",
+  "source": "gen9_baseline"
+ },
+ "Charm": {
+  "name": "Charm",
+  "type": "Fairy",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the target's Attack by 2.",
+  "source": "gen9_baseline"
+ },
+ "Chilling Water": {
+  "name": "Chilling Water",
+  "type": "Water",
+  "category": "Special",
+  "base_power": 50,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1
+  },
+  "short_desc": "100% chance to lower the target's Attack by 1.",
+  "source": "gen9_baseline"
+ },
+ "Chilly Reception": {
+  "name": "Chilly Reception",
+  "type": "Ice",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "all",
+  "flags": {},
+  "short_desc": "Starts Snow. User switches out.",
+  "source": "gen9_baseline"
+ },
+ "Circle Throw": {
+  "name": "Circle Throw",
+  "type": "Fighting",
+  "category": "Physical",
+  "base_power": 60,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": -6,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "noassist": 1,
+   "failcopycat": 1
+  },
+  "short_desc": "Forces the target to switch to a random ally.",
+  "source": "gen9_baseline"
+ },
+ "Clanging Scales": {
+  "name": "Clanging Scales",
+  "type": "Dragon",
+  "category": "Special",
+  "base_power": 110,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "allAdjacentFoes",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "sound": 1,
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the user's Defense by 1.",
+  "source": "gen9_baseline"
+ },
+ "Clangorous Soul": {
+  "name": "Clangorous Soul",
+  "type": "Dragon",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "sound": 1,
+   "dance": 1
+  },
+  "short_desc": "User loses 33% of its max HP. +1 to all stats.",
+  "source": "gen9_baseline"
+ },
+ "Clear Smog": {
+  "name": "Clear Smog",
+  "type": "Poison",
+  "category": "Special",
+  "base_power": 50,
+  "accuracy": null,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Resets all of the target's stat stages to 0.",
+  "source": "gen9_baseline"
+ },
+ "Close Combat": {
+  "name": "Close Combat",
+  "type": "Fighting",
+  "category": "Physical",
+  "base_power": 120,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the user's Defense and Sp. Def by 1.",
+  "source": "gen9_baseline"
+ },
+ "Coaching": {
+  "name": "Coaching",
+  "type": "Fighting",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "adjacentAlly",
+  "flags": {
+   "bypasssub": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises an ally's Attack and Defense by 1.",
+  "source": "gen9_baseline"
+ },
+ "Coil": {
+  "name": "Coil",
+  "type": "Poison",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises user's Attack, Defense, accuracy by 1.",
+  "source": "gen9_baseline"
+ },
+ "Comeuppance": {
+  "name": "Comeuppance",
+  "type": "Dark",
+  "category": "Physical",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "scripted",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "failmefirst": 1
+  },
+  "short_desc": "If hit by an attack, returns 1.5x damage.",
+  "source": "gen9_baseline"
+ },
+ "Confuse Ray": {
+  "name": "Confuse Ray",
+  "type": "Ghost",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Confuses the target.",
+  "source": "gen9_baseline"
+ },
+ "Copycat": {
+  "name": "Copycat",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "failencore": 1,
+   "nosleeptalk": 1,
+   "noassist": 1,
+   "failcopycat": 1,
+   "failmimic": 1,
+   "failinstruct": 1
+  },
+  "short_desc": "Uses the last move used in the battle.",
+  "source": "gen9_baseline"
+ },
+ "Corrosive Gas": {
+  "name": "Corrosive Gas",
+  "type": "Poison",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 40,
+  "priority": 0,
+  "target": "allAdjacent",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Removes adjacent Pokemon's held items.",
+  "source": "gen9_baseline"
+ },
+ "Cosmic Power": {
+  "name": "Cosmic Power",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises the user's Defense and Sp. Def by 1.",
+  "source": "gen9_baseline"
+ },
+ "Cotton Guard": {
+  "name": "Cotton Guard",
+  "type": "Grass",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises the user's Defense by 3.",
+  "source": "gen9_baseline"
+ },
+ "Cotton Spore": {
+  "name": "Cotton Spore",
+  "type": "Grass",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 40,
+  "priority": 0,
+  "target": "allAdjacentFoes",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "powder": 1
+  },
+  "short_desc": "Lowers the target's Speed by 2.",
+  "source": "gen9_baseline"
+ },
+ "Counter": {
+  "name": "Counter",
+  "type": "Fighting",
+  "category": "Physical",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": -5,
+  "target": "scripted",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "failmefirst": 1,
+   "noassist": 1,
+   "failcopycat": 1
+  },
+  "short_desc": "If hit by physical attack, returns double damage.",
+  "source": "gen9_baseline"
+ },
+ "Covet": {
+  "name": "Covet",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 60,
+  "accuracy": 100,
+  "pp": 25,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "failmefirst": 1,
+   "noassist": 1,
+   "failcopycat": 1
+  },
+  "short_desc": "If the user has no item, it steals the target's.",
+  "source": "gen9_baseline"
+ },
+ "Crabhammer": {
+  "name": "Crabhammer",
+  "type": "Water",
+  "category": "Physical",
+  "base_power": 100,
+  "accuracy": 95,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "High critical hit ratio.",
+  "source": "gen9_baseline"
+ },
+ "Cross Chop": {
+  "name": "Cross Chop",
+  "type": "Fighting",
+  "category": "Physical",
+  "base_power": 100,
+  "accuracy": 80,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "High critical hit ratio.",
+  "source": "gen9_baseline"
+ },
+ "Cross Poison": {
+  "name": "Cross Poison",
+  "type": "Poison",
+  "category": "Physical",
+  "base_power": 70,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "slicing": 1
+  },
+  "short_desc": "High critical hit ratio. 10% chance to poison.",
+  "source": "gen9_baseline"
+ },
+ "Crunch": {
+  "name": "Crunch",
+  "type": "Dark",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "bite": 1
+  },
+  "short_desc": "20% chance to lower the target's Defense by 1.",
+  "source": "gen9_baseline"
+ },
+ "Crush Claw": {
+  "name": "Crush Claw",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 75,
+  "accuracy": 95,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "50% chance to lower the target's Defense by 1.",
+  "source": "gen9_baseline"
+ },
+ "Curse": {
+  "name": "Curse",
+  "type": "Ghost",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "Curses if Ghost, else -1 Spe, +1 Atk, +1 Def.",
+  "source": "gen9_baseline"
+ },
+ "Dark Pulse": {
+  "name": "Dark Pulse",
+  "type": "Dark",
+  "category": "Special",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "any",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "distance": 1,
+   "metronome": 1,
+   "pulse": 1
+  },
+  "short_desc": "20% chance to make the target flinch.",
+  "source": "gen9_baseline"
+ },
+ "Darkest Lariat": {
+  "name": "Darkest Lariat",
+  "type": "Dark",
+  "category": "Physical",
+  "base_power": 85,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Ignores the target's stat stage changes.",
+  "source": "gen9_baseline"
+ },
+ "Dazzling Gleam": {
+  "name": "Dazzling Gleam",
+  "type": "Fairy",
+  "category": "Special",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "allAdjacentFoes",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "No additional effect. Hits adjacent foes.",
+  "source": "gen9_baseline"
+ },
+ "Decorate": {
+  "name": "Decorate",
+  "type": "Fairy",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "allyanim": 1
+  },
+  "short_desc": "Raises the target's Attack and Sp. Atk by 2.",
+  "source": "gen9_baseline"
+ },
+ "Defog": {
+  "name": "Defog",
+  "type": "Flying",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "-1 evasion; ends user and target hazards/terrain.",
+  "source": "gen9_baseline"
+ },
+ "Destiny Bond": {
+  "name": "Destiny Bond",
+  "type": "Ghost",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "bypasssub": 1,
+   "noassist": 1,
+   "failcopycat": 1
+  },
+  "short_desc": "If an opponent knocks out the user, it also faints.",
+  "source": "gen9_baseline"
+ },
+ "Detect": {
+  "name": "Detect",
+  "type": "Fighting",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 5,
+  "priority": 4,
+  "target": "self",
+  "flags": {
+   "noassist": 1,
+   "failcopycat": 1
+  },
+  "short_desc": "Prevents moves from affecting the user this turn.",
+  "source": "gen9_baseline"
+ },
+ "Dig": {
+  "name": "Dig",
+  "type": "Ground",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "charge": 1,
+   "protect": 1,
+   "mirror": 1,
+   "nonsky": 1,
+   "metronome": 1,
+   "nosleeptalk": 1,
+   "noassist": 1,
+   "failinstruct": 1
+  },
+  "short_desc": "Digs underground turn 1, strikes turn 2.",
+  "source": "gen9_baseline"
+ },
+ "Dire Claw": {
+  "name": "Dire Claw",
+  "type": "Poison",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "50% chance to sleep, poison, or paralyze target.",
+  "source": "gen9_baseline"
+ },
+ "Disable": {
+  "name": "Disable",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "For 4 turns, disables the target's last move used.",
+  "source": "gen9_baseline"
+ },
+ "Discharge": {
+  "name": "Discharge",
+  "type": "Electric",
+  "category": "Special",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "allAdjacent",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "30% chance to paralyze adjacent Pokemon.",
+  "source": "gen9_baseline"
+ },
+ "Dive": {
+  "name": "Dive",
+  "type": "Water",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "charge": 1,
+   "protect": 1,
+   "mirror": 1,
+   "nonsky": 1,
+   "allyanim": 1,
+   "metronome": 1,
+   "nosleeptalk": 1,
+   "noassist": 1,
+   "failinstruct": 1
+  },
+  "short_desc": "Dives underwater turn 1, strikes turn 2.",
+  "source": "gen9_baseline"
+ },
+ "Double Hit": {
+  "name": "Double Hit",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 35,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Hits 2 times in one turn.",
+  "source": "gen9_baseline"
+ },
+ "Double Team": {
+  "name": "Double Team",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 15,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises the user's evasiveness by 1.",
+  "source": "gen9_baseline"
+ },
+ "Double-Edge": {
+  "name": "Double-Edge",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 120,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Has 33% recoil.",
+  "source": "gen9_baseline"
+ },
+ "Draco Meteor": {
+  "name": "Draco Meteor",
+  "type": "Dragon",
+  "category": "Special",
+  "base_power": 130,
+  "accuracy": 90,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the user's Sp. Atk by 2.",
+  "source": "gen9_baseline"
+ },
+ "Dragon Cheer": {
+  "name": "Dragon Cheer",
+  "type": "Dragon",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 15,
+  "priority": 0,
+  "target": "adjacentAlly",
+  "flags": {
+   "bypasssub": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Ally: Crit ratio +1, or +2 if ally is Dragon type.",
+  "source": "gen9_baseline"
+ },
+ "Dragon Claw": {
+  "name": "Dragon Claw",
+  "type": "Dragon",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "No additional effect.",
+  "source": "gen9_baseline"
+ },
+ "Dragon Dance": {
+  "name": "Dragon Dance",
+  "type": "Dragon",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "dance": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises the user's Attack and Speed by 1.",
+  "source": "gen9_baseline"
+ },
+ "Dragon Darts": {
+  "name": "Dragon Darts",
+  "type": "Dragon",
+  "category": "Physical",
+  "base_power": 50,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "noparentalbond": 1
+  },
+  "short_desc": "Hits twice. Doubles: Tries to hit each foe once.",
+  "source": "gen9_baseline"
+ },
+ "Dragon Pulse": {
+  "name": "Dragon Pulse",
+  "type": "Dragon",
+  "category": "Special",
+  "base_power": 85,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "any",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "distance": 1,
+   "metronome": 1,
+   "pulse": 1
+  },
+  "short_desc": "No additional effect.",
+  "source": "gen9_baseline"
+ },
+ "Dragon Rush": {
+  "name": "Dragon Rush",
+  "type": "Dragon",
+  "category": "Physical",
+  "base_power": 100,
+  "accuracy": 75,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "minimize": 1
+  },
+  "short_desc": "20% chance to make the target flinch.",
+  "source": "gen9_baseline"
+ },
+ "Dragon Tail": {
+  "name": "Dragon Tail",
+  "type": "Dragon",
+  "category": "Physical",
+  "base_power": 60,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": -6,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "noassist": 1,
+   "failcopycat": 1
+  },
+  "short_desc": "Forces the target to switch to a random ally.",
+  "source": "gen9_baseline"
+ },
+ "Drain Punch": {
+  "name": "Drain Punch",
+  "type": "Fighting",
+  "category": "Physical",
+  "base_power": 75,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "punch": 1,
+   "heal": 1,
+   "metronome": 1
+  },
+  "short_desc": "User recovers 50% of the damage dealt.",
+  "source": "gen9_baseline"
+ },
+ "Draining Kiss": {
+  "name": "Draining Kiss",
+  "type": "Fairy",
+  "category": "Special",
+  "base_power": 50,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "heal": 1,
+   "metronome": 1
+  },
+  "short_desc": "User recovers 75% of the damage dealt.",
+  "source": "gen9_baseline"
+ },
+ "Drill Peck": {
+  "name": "Drill Peck",
+  "type": "Flying",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "any",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "distance": 1,
+   "metronome": 1
+  },
+  "short_desc": "No additional effect.",
+  "source": "gen9_baseline"
+ },
+ "Drill Run": {
+  "name": "Drill Run",
+  "type": "Ground",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 95,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "High critical hit ratio.",
+  "source": "gen9_baseline"
+ },
+ "Dual Wingbeat": {
+  "name": "Dual Wingbeat",
+  "type": "Flying",
+  "category": "Physical",
+  "base_power": 40,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Hits 2 times in one turn.",
+  "source": "gen9_baseline"
+ },
+ "Dynamic Punch": {
+  "name": "Dynamic Punch",
+  "type": "Fighting",
+  "category": "Physical",
+  "base_power": 100,
+  "accuracy": 50,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "punch": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% chance to confuse the target.",
+  "source": "gen9_baseline"
+ },
+ "Earth Power": {
+  "name": "Earth Power",
+  "type": "Ground",
+  "category": "Special",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "nonsky": 1,
+   "metronome": 1
+  },
+  "short_desc": "10% chance to lower the target's Sp. Def by 1.",
+  "source": "gen9_baseline"
+ },
+ "Earthquake": {
+  "name": "Earthquake",
+  "type": "Ground",
+  "category": "Physical",
+  "base_power": 100,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "allAdjacent",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "nonsky": 1,
+   "metronome": 1
+  },
+  "short_desc": "Hits adjacent Pokemon. Double damage on Dig.",
+  "source": "gen9_baseline"
+ },
+ "Eerie Impulse": {
+  "name": "Eerie Impulse",
+  "type": "Electric",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the target's Sp. Atk by 2.",
+  "source": "gen9_baseline"
+ },
+ "Eerie Spell": {
+  "name": "Eerie Spell",
+  "type": "Psychic",
+  "category": "Special",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "sound": 1,
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "Removes 3 PP from the target's last move.",
+  "source": "gen9_baseline"
+ },
+ "Electric Terrain": {
+  "name": "Electric Terrain",
+  "type": "Electric",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "all",
+  "flags": {
+   "nonsky": 1,
+   "metronome": 1
+  },
+  "short_desc": "5 turns. Grounded: +Electric power, can't sleep.",
+  "source": "gen9_baseline"
+ },
+ "Electrify": {
+  "name": "Electrify",
+  "type": "Electric",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Changes the target's move to Electric this turn.",
+  "source": "gen9_baseline"
+ },
+ "Electro Ball": {
+  "name": "Electro Ball",
+  "type": "Electric",
+  "category": "Special",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "bullet": 1
+  },
+  "short_desc": "More power the faster the user is than the target.",
+  "source": "gen9_baseline"
+ },
+ "Electro Shot": {
+  "name": "Electro Shot",
+  "type": "Electric",
+  "category": "Special",
+  "base_power": 130,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "charge": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises Sp. Atk by 1, hits turn 2. Rain: no charge.",
+  "source": "gen9_baseline"
+ },
+ "Electroweb": {
+  "name": "Electroweb",
+  "type": "Electric",
+  "category": "Special",
+  "base_power": 55,
+  "accuracy": 95,
+  "pp": 15,
+  "priority": 0,
+  "target": "allAdjacentFoes",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% chance to lower the foe(s) Speed by 1.",
+  "source": "gen9_baseline"
+ },
+ "Encore": {
+  "name": "Encore",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "bypasssub": 1,
+   "metronome": 1,
+   "failencore": 1
+  },
+  "short_desc": "Target repeats its last move for its next 3 turns.",
+  "source": "gen9_baseline"
+ },
+ "Endeavor": {
+  "name": "Endeavor",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "noparentalbond": 1
+  },
+  "short_desc": "Lowers the target's HP to the user's HP.",
+  "source": "gen9_baseline"
+ },
+ "Endure": {
+  "name": "Endure",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 4,
+  "target": "self",
+  "flags": {
+   "noassist": 1,
+   "failcopycat": 1
+  },
+  "short_desc": "User survives attacks this turn with at least 1 HP.",
+  "source": "gen9_baseline"
+ },
+ "Energy Ball": {
+  "name": "Energy Ball",
+  "type": "Grass",
+  "category": "Special",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "bullet": 1
+  },
+  "short_desc": "10% chance to lower the target's Sp. Def by 1.",
+  "source": "gen9_baseline"
+ },
+ "Entrainment": {
+  "name": "Entrainment",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "The target's Ability changes to match the user's.",
+  "source": "gen9_baseline"
+ },
+ "Eruption": {
+  "name": "Eruption",
+  "type": "Fire",
+  "category": "Special",
+  "base_power": 150,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "allAdjacentFoes",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Less power as user's HP decreases. Hits foe(s).",
+  "source": "gen9_baseline"
+ },
+ "Expanding Force": {
+  "name": "Expanding Force",
+  "type": "Psychic",
+  "category": "Special",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "User on Psychic Terrain: 1.5x power, hits foes.",
+  "source": "gen9_baseline"
+ },
+ "Explosion": {
+  "name": "Explosion",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 250,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "allAdjacent",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "noparentalbond": 1
+  },
+  "short_desc": "Hits adjacent Pokemon. The user faints.",
+  "source": "gen9_baseline"
+ },
+ "Extrasensory": {
+  "name": "Extrasensory",
+  "type": "Psychic",
+  "category": "Special",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "10% chance to make the target flinch.",
+  "source": "gen9_baseline"
+ },
+ "Extreme Speed": {
+  "name": "Extreme Speed",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 2,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Nearly always goes first.",
+  "source": "gen9_baseline"
+ },
+ "Facade": {
+  "name": "Facade",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 70,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Power doubles if user is burn/poison/paralyzed.",
+  "source": "gen9_baseline"
+ },
+ "Fairy Lock": {
+  "name": "Fairy Lock",
+  "type": "Fairy",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "all",
+  "flags": {
+   "mirror": 1,
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "Prevents all Pokemon from switching next turn.",
+  "source": "gen9_baseline"
+ },
+ "Fake Out": {
+  "name": "Fake Out",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 40,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 3,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Hits first. First turn out only. 100% flinch chance.",
+  "source": "gen9_baseline"
+ },
+ "Fake Tears": {
+  "name": "Fake Tears",
+  "type": "Dark",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the target's Sp. Def by 2.",
+  "source": "gen9_baseline"
+ },
+ "Feather Dance": {
+  "name": "Feather Dance",
+  "type": "Flying",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "dance": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the target's Attack by 2.",
+  "source": "gen9_baseline"
+ },
+ "Feint": {
+  "name": "Feint",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 30,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 2,
+  "target": "normal",
+  "flags": {
+   "mirror": 1,
+   "noassist": 1,
+   "failcopycat": 1
+  },
+  "short_desc": "Nullifies Detect, Protect, and Quick/Wide Guard.",
+  "source": "gen9_baseline"
+ },
+ "Fell Stinger": {
+  "name": "Fell Stinger",
+  "type": "Bug",
+  "category": "Physical",
+  "base_power": 50,
+  "accuracy": 100,
+  "pp": 25,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises user's Attack by 3 if this KOes the target.",
+  "source": "gen9_baseline"
+ },
+ "Fickle Beam": {
+  "name": "Fickle Beam",
+  "type": "Dragon",
+  "category": "Special",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Has a 30% chance this move's power is doubled.",
+  "source": "gen9_baseline"
+ },
+ "Fiery Dance": {
+  "name": "Fiery Dance",
+  "type": "Fire",
+  "category": "Special",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "dance": 1,
+   "metronome": 1
+  },
+  "short_desc": "50% chance to raise the user's Sp. Atk by 1.",
+  "source": "gen9_baseline"
+ },
+ "Final Gambit": {
+  "name": "Final Gambit",
+  "type": "Fighting",
+  "category": "Special",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "metronome": 1,
+   "noparentalbond": 1
+  },
+  "short_desc": "Does damage equal to the user's HP. User faints.",
+  "source": "gen9_baseline"
+ },
+ "Fire Blast": {
+  "name": "Fire Blast",
+  "type": "Fire",
+  "category": "Special",
+  "base_power": 110,
+  "accuracy": 85,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "10% chance to burn the target.",
+  "source": "gen9_baseline"
+ },
+ "Fire Fang": {
+  "name": "Fire Fang",
+  "type": "Fire",
+  "category": "Physical",
+  "base_power": 65,
+  "accuracy": 95,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "bite": 1
+  },
+  "short_desc": "10% chance to burn. 10% chance to flinch.",
+  "source": "gen9_baseline"
+ },
+ "Fire Lash": {
+  "name": "Fire Lash",
+  "type": "Fire",
+  "category": "Physical",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% chance to lower the target's Defense by 1.",
+  "source": "gen9_baseline"
+ },
+ "Fire Punch": {
+  "name": "Fire Punch",
+  "type": "Fire",
+  "category": "Physical",
+  "base_power": 75,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "punch": 1,
+   "metronome": 1
+  },
+  "short_desc": "10% chance to burn the target.",
+  "source": "gen9_baseline"
+ },
+ "Fire Spin": {
+  "name": "Fire Spin",
+  "type": "Fire",
+  "category": "Special",
+  "base_power": 35,
+  "accuracy": 85,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Traps and damages the target for 4-5 turns.",
+  "source": "gen9_baseline"
+ },
+ "First Impression": {
+  "name": "First Impression",
+  "type": "Bug",
+  "category": "Physical",
+  "base_power": 100,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 2,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Nearly always goes first. First turn out only.",
+  "source": "gen9_baseline"
+ },
+ "Fissure": {
+  "name": "Fissure",
+  "type": "Ground",
+  "category": "Physical",
+  "base_power": 0,
+  "accuracy": 30,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "nonsky": 1,
+   "metronome": 1
+  },
+  "short_desc": "OHKOs the target. Fails if user is a lower level.",
+  "source": "gen9_baseline"
+ },
+ "Flail": {
+  "name": "Flail",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "More power the less HP the user has left.",
+  "source": "gen9_baseline"
+ },
+ "Flame Charge": {
+  "name": "Flame Charge",
+  "type": "Fire",
+  "category": "Physical",
+  "base_power": 50,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% chance to raise the user's Speed by 1.",
+  "source": "gen9_baseline"
+ },
+ "Flamethrower": {
+  "name": "Flamethrower",
+  "type": "Fire",
+  "category": "Special",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "10% chance to burn the target.",
+  "source": "gen9_baseline"
+ },
+ "Flare Blitz": {
+  "name": "Flare Blitz",
+  "type": "Fire",
+  "category": "Physical",
+  "base_power": 120,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "defrost": 1,
+   "metronome": 1
+  },
+  "short_desc": "Has 33% recoil. 10% chance to burn. Thaws user.",
+  "source": "gen9_baseline"
+ },
+ "Flash Cannon": {
+  "name": "Flash Cannon",
+  "type": "Steel",
+  "category": "Special",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "10% chance to lower the target's Sp. Def by 1.",
+  "source": "gen9_baseline"
+ },
+ "Flatter": {
+  "name": "Flatter",
+  "type": "Dark",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises the target's Sp. Atk by 1 and confuses it.",
+  "source": "gen9_baseline"
+ },
+ "Fling": {
+  "name": "Fling",
+  "type": "Dark",
+  "category": "Physical",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "allyanim": 1,
+   "metronome": 1,
+   "noparentalbond": 1
+  },
+  "short_desc": "Flings the user's item at the target. Power varies.",
+  "source": "gen9_baseline"
+ },
+ "Flip Turn": {
+  "name": "Flip Turn",
+  "type": "Water",
+  "category": "Physical",
+  "base_power": 60,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "User switches out after damaging the target.",
+  "source": "gen9_baseline"
+ },
+ "Flower Trick": {
+  "name": "Flower Trick",
+  "type": "Grass",
+  "category": "Physical",
+  "base_power": 70,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Always results in a critical hit; no accuracy check.",
+  "source": "gen9_baseline"
+ },
+ "Fly": {
+  "name": "Fly",
+  "type": "Flying",
+  "category": "Physical",
+  "base_power": 90,
+  "accuracy": 95,
+  "pp": 15,
+  "priority": 0,
+  "target": "any",
+  "flags": {
+   "contact": 1,
+   "charge": 1,
+   "protect": 1,
+   "mirror": 1,
+   "gravity": 1,
+   "distance": 1,
+   "metronome": 1,
+   "nosleeptalk": 1,
+   "noassist": 1,
+   "failinstruct": 1
+  },
+  "short_desc": "Flies up on first turn, then strikes the next turn.",
+  "source": "gen9_baseline"
+ },
+ "Flying Press": {
+  "name": "Flying Press",
+  "type": "Fighting",
+  "category": "Physical",
+  "base_power": 100,
+  "accuracy": 95,
+  "pp": 10,
+  "priority": 0,
+  "target": "any",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "gravity": 1,
+   "distance": 1,
+   "nonsky": 1,
+   "metronome": 1,
+   "minimize": 1
+  },
+  "short_desc": "Combines Flying in its type effectiveness.",
+  "source": "gen9_baseline"
+ },
+ "Focus Blast": {
+  "name": "Focus Blast",
+  "type": "Fighting",
+  "category": "Special",
+  "base_power": 120,
+  "accuracy": 70,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "bullet": 1
+  },
+  "short_desc": "10% chance to lower the target's Sp. Def by 1.",
+  "source": "gen9_baseline"
+ },
+ "Focus Energy": {
+  "name": "Focus Energy",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 30,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises the user's critical hit ratio by 2.",
+  "source": "gen9_baseline"
+ },
+ "Focus Punch": {
+  "name": "Focus Punch",
+  "type": "Fighting",
+  "category": "Physical",
+  "base_power": 150,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": -3,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "punch": 1,
+   "failmefirst": 1,
+   "nosleeptalk": 1,
+   "noassist": 1,
+   "failcopycat": 1,
+   "failinstruct": 1
+  },
+  "short_desc": "Fails if the user takes damage before it hits.",
+  "source": "gen9_baseline"
+ },
+ "Follow Me": {
+  "name": "Follow Me",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 2,
+  "target": "self",
+  "flags": {
+   "noassist": 1,
+   "failcopycat": 1
+  },
+  "short_desc": "The foes' moves target the user on the turn used.",
+  "source": "gen9_baseline"
+ },
+ "Forest's Curse": {
+  "name": "Forest's Curse",
+  "type": "Grass",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Adds Grass to the target's type(s).",
+  "source": "gen9_baseline"
+ },
+ "Foul Play": {
+  "name": "Foul Play",
+  "type": "Dark",
+  "category": "Physical",
+  "base_power": 95,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Uses target's Attack stat in damage calculation.",
+  "source": "gen9_baseline"
+ },
+ "Freeze-Dry": {
+  "name": "Freeze-Dry",
+  "type": "Ice",
+  "category": "Special",
+  "base_power": 70,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "10% chance to freeze. Super effective on Water.",
+  "source": "gen9_baseline"
+ },
+ "Frenzy Plant": {
+  "name": "Frenzy Plant",
+  "type": "Grass",
+  "category": "Special",
+  "base_power": 150,
+  "accuracy": 90,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "recharge": 1,
+   "protect": 1,
+   "mirror": 1,
+   "nonsky": 1,
+   "metronome": 1
+  },
+  "short_desc": "User cannot move next turn.",
+  "source": "gen9_baseline"
+ },
+ "Frost Breath": {
+  "name": "Frost Breath",
+  "type": "Ice",
+  "category": "Special",
+  "base_power": 60,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Always results in a critical hit.",
+  "source": "gen9_baseline"
+ },
+ "Future Sight": {
+  "name": "Future Sight",
+  "type": "Psychic",
+  "category": "Special",
+  "base_power": 120,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "allyanim": 1,
+   "metronome": 1,
+   "futuremove": 1
+  },
+  "short_desc": "Hits two turns after being used.",
+  "source": "gen9_baseline"
+ },
+ "Gastro Acid": {
+  "name": "Gastro Acid",
+  "type": "Poison",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Nullifies the target's Ability.",
+  "source": "gen9_baseline"
+ },
+ "Giga Drain": {
+  "name": "Giga Drain",
+  "type": "Grass",
+  "category": "Special",
+  "base_power": 75,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "heal": 1,
+   "metronome": 1
+  },
+  "short_desc": "User recovers 50% of the damage dealt.",
+  "source": "gen9_baseline"
+ },
+ "Giga Impact": {
+  "name": "Giga Impact",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 150,
+  "accuracy": 90,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "recharge": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "User cannot move next turn.",
+  "source": "gen9_baseline"
+ },
+ "Gigaton Hammer": {
+  "name": "Gigaton Hammer",
+  "type": "Steel",
+  "category": "Physical",
+  "base_power": 160,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "cantusetwice": 1
+  },
+  "short_desc": "Cannot be selected the turn after it's used.",
+  "source": "gen9_baseline"
+ },
+ "Glare": {
+  "name": "Glare",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 30,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Paralyzes the target.",
+  "source": "gen9_baseline"
+ },
+ "Grass Knot": {
+  "name": "Grass Knot",
+  "type": "Grass",
+  "category": "Special",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "nonsky": 1,
+   "metronome": 1
+  },
+  "short_desc": "More power the heavier the target.",
+  "source": "gen9_baseline"
+ },
+ "Grassy Glide": {
+  "name": "Grassy Glide",
+  "type": "Grass",
+  "category": "Physical",
+  "base_power": 55,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "User on Grassy Terrain: +1 priority.",
+  "source": "gen9_baseline"
+ },
+ "Grassy Terrain": {
+  "name": "Grassy Terrain",
+  "type": "Grass",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "all",
+  "flags": {
+   "nonsky": 1,
+   "metronome": 1
+  },
+  "short_desc": "5 turns. Grounded: +Grass power, +1/16 max HP.",
+  "source": "gen9_baseline"
+ },
+ "Grav Apple": {
+  "name": "Grav Apple",
+  "type": "Grass",
+  "category": "Physical",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1
+  },
+  "short_desc": "Target: 100% -1 Def. During Gravity: 1.5x power.",
+  "source": "gen9_baseline"
+ },
+ "Gravity": {
+  "name": "Gravity",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "all",
+  "flags": {
+   "nonsky": 1,
+   "metronome": 1
+  },
+  "short_desc": "5 turns: no Ground immunities, 1.67x accuracy.",
+  "source": "gen9_baseline"
+ },
+ "Growth": {
+  "name": "Growth",
+  "type": "Grass",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises user's Attack and Sp. Atk by 1; 2 in Sun.",
+  "source": "gen9_baseline"
+ },
+ "Guard Split": {
+  "name": "Guard Split",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Averages Defense and Sp. Def stats with target.",
+  "source": "gen9_baseline"
+ },
+ "Guard Swap": {
+  "name": "Guard Swap",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "bypasssub": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Swaps Defense and Sp. Def changes with target.",
+  "source": "gen9_baseline"
+ },
+ "Guillotine": {
+  "name": "Guillotine",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 0,
+  "accuracy": 30,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "OHKOs the target. Fails if user is a lower level.",
+  "source": "gen9_baseline"
+ },
+ "Gunk Shot": {
+  "name": "Gunk Shot",
+  "type": "Poison",
+  "category": "Physical",
+  "base_power": 120,
+  "accuracy": 80,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "30% chance to poison the target.",
+  "source": "gen9_baseline"
+ },
+ "Gyro Ball": {
+  "name": "Gyro Ball",
+  "type": "Steel",
+  "category": "Physical",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "bullet": 1
+  },
+  "short_desc": "More power the slower the user than the target.",
+  "source": "gen9_baseline"
+ },
+ "Hammer Arm": {
+  "name": "Hammer Arm",
+  "type": "Fighting",
+  "category": "Physical",
+  "base_power": 100,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "punch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the user's Speed by 1.",
+  "source": "gen9_baseline"
+ },
+ "Hard Press": {
+  "name": "Hard Press",
+  "type": "Steel",
+  "category": "Physical",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "More power the more HP the target has left.",
+  "source": "gen9_baseline"
+ },
+ "Haze": {
+  "name": "Haze",
+  "type": "Ice",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 30,
+  "priority": 0,
+  "target": "all",
+  "flags": {
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "Eliminates all stat changes.",
+  "source": "gen9_baseline"
+ },
+ "Head Smash": {
+  "name": "Head Smash",
+  "type": "Rock",
+  "category": "Physical",
+  "base_power": 150,
+  "accuracy": 80,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Has 1/2 recoil.",
+  "source": "gen9_baseline"
+ },
+ "Headlong Rush": {
+  "name": "Headlong Rush",
+  "type": "Ground",
+  "category": "Physical",
+  "base_power": 120,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "punch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the user's Defense and Sp. Def by 1.",
+  "source": "gen9_baseline"
+ },
+ "Heal Bell": {
+  "name": "Heal Bell",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "allyTeam",
+  "flags": {
+   "snatch": 1,
+   "sound": 1,
+   "distance": 1,
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "Cures the user's party of all status conditions.",
+  "source": "gen9_baseline"
+ },
+ "Heal Pulse": {
+  "name": "Heal Pulse",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "any",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "distance": 1,
+   "heal": 1,
+   "allyanim": 1,
+   "metronome": 1,
+   "pulse": 1
+  },
+  "short_desc": "Heals the target by 50% of its max HP.",
+  "source": "gen9_baseline"
+ },
+ "Healing Wish": {
+  "name": "Healing Wish",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "heal": 1,
+   "metronome": 1
+  },
+  "short_desc": "User faints. Next hurt Pokemon is fully healed.",
+  "source": "gen9_baseline"
+ },
+ "Heat Crash": {
+  "name": "Heat Crash",
+  "type": "Fire",
+  "category": "Physical",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "nonsky": 1,
+   "metronome": 1,
+   "minimize": 1
+  },
+  "short_desc": "More power the heavier the user than the target.",
+  "source": "gen9_baseline"
+ },
+ "Heat Wave": {
+  "name": "Heat Wave",
+  "type": "Fire",
+  "category": "Special",
+  "base_power": 95,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "allAdjacentFoes",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "wind": 1
+  },
+  "short_desc": "10% chance to burn the foe(s).",
+  "source": "gen9_baseline"
+ },
+ "Heavy Slam": {
+  "name": "Heavy Slam",
+  "type": "Steel",
+  "category": "Physical",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "nonsky": 1,
+   "metronome": 1,
+   "minimize": 1
+  },
+  "short_desc": "More power the heavier the user than the target.",
+  "source": "gen9_baseline"
+ },
+ "Helping Hand": {
+  "name": "Helping Hand",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 5,
+  "target": "adjacentAlly",
+  "flags": {
+   "bypasssub": 1,
+   "noassist": 1,
+   "failcopycat": 1
+  },
+  "short_desc": "One adjacent ally's move power is 1.5x this turn.",
+  "source": "gen9_baseline"
+ },
+ "Hex": {
+  "name": "Hex",
+  "type": "Ghost",
+  "category": "Special",
+  "base_power": 65,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Power doubles if the target has a status ailment.",
+  "source": "gen9_baseline"
+ },
+ "High Horsepower": {
+  "name": "High Horsepower",
+  "type": "Ground",
+  "category": "Physical",
+  "base_power": 95,
+  "accuracy": 95,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "No additional effect.",
+  "source": "gen9_baseline"
+ },
+ "High Jump Kick": {
+  "name": "High Jump Kick",
+  "type": "Fighting",
+  "category": "Physical",
+  "base_power": 130,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "gravity": 1,
+   "metronome": 1
+  },
+  "short_desc": "User is hurt by 50% of its max HP if it misses.",
+  "source": "gen9_baseline"
+ },
+ "Horn Drill": {
+  "name": "Horn Drill",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 0,
+  "accuracy": 30,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "OHKOs the target. Fails if user is a lower level.",
+  "source": "gen9_baseline"
+ },
+ "Horn Leech": {
+  "name": "Horn Leech",
+  "type": "Grass",
+  "category": "Physical",
+  "base_power": 75,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "heal": 1,
+   "metronome": 1
+  },
+  "short_desc": "User recovers 50% of the damage dealt.",
+  "source": "gen9_baseline"
+ },
+ "Howl": {
+  "name": "Howl",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 40,
+  "priority": 0,
+  "target": "allies",
+  "flags": {
+   "snatch": 1,
+   "sound": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises the user's and ally's Attack by 1.",
+  "source": "gen9_baseline"
+ },
+ "Hurricane": {
+  "name": "Hurricane",
+  "type": "Flying",
+  "category": "Special",
+  "base_power": 110,
+  "accuracy": 70,
+  "pp": 10,
+  "priority": 0,
+  "target": "any",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "distance": 1,
+   "metronome": 1,
+   "wind": 1
+  },
+  "short_desc": "30% chance to confuse target. Can't miss in rain.",
+  "source": "gen9_baseline"
+ },
+ "Hydro Cannon": {
+  "name": "Hydro Cannon",
+  "type": "Water",
+  "category": "Special",
+  "base_power": 150,
+  "accuracy": 90,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "recharge": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "User cannot move next turn.",
+  "source": "gen9_baseline"
+ },
+ "Hydro Pump": {
+  "name": "Hydro Pump",
+  "type": "Water",
+  "category": "Special",
+  "base_power": 110,
+  "accuracy": 80,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "No additional effect.",
+  "source": "gen9_baseline"
+ },
+ "Hyper Beam": {
+  "name": "Hyper Beam",
+  "type": "Normal",
+  "category": "Special",
+  "base_power": 150,
+  "accuracy": 90,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "recharge": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "User cannot move next turn.",
+  "source": "gen9_baseline"
+ },
+ "Hyper Voice": {
+  "name": "Hyper Voice",
+  "type": "Normal",
+  "category": "Special",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "allAdjacentFoes",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "sound": 1,
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "No additional effect. Hits adjacent foes.",
+  "source": "gen9_baseline"
+ },
+ "Hypnosis": {
+  "name": "Hypnosis",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 60,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Causes the target to fall asleep.",
+  "source": "gen9_baseline"
+ },
+ "Ice Beam": {
+  "name": "Ice Beam",
+  "type": "Ice",
+  "category": "Special",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "10% chance to freeze the target.",
+  "source": "gen9_baseline"
+ },
+ "Ice Fang": {
+  "name": "Ice Fang",
+  "type": "Ice",
+  "category": "Physical",
+  "base_power": 65,
+  "accuracy": 95,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "bite": 1
+  },
+  "short_desc": "10% chance to freeze. 10% chance to flinch.",
+  "source": "gen9_baseline"
+ },
+ "Ice Hammer": {
+  "name": "Ice Hammer",
+  "type": "Ice",
+  "category": "Physical",
+  "base_power": 100,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "punch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the user's Speed by 1.",
+  "source": "gen9_baseline"
+ },
+ "Ice Punch": {
+  "name": "Ice Punch",
+  "type": "Ice",
+  "category": "Physical",
+  "base_power": 75,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "punch": 1,
+   "metronome": 1
+  },
+  "short_desc": "10% chance to freeze the target.",
+  "source": "gen9_baseline"
+ },
+ "Ice Shard": {
+  "name": "Ice Shard",
+  "type": "Ice",
+  "category": "Physical",
+  "base_power": 40,
+  "accuracy": 100,
+  "pp": 30,
+  "priority": 1,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Usually goes first.",
+  "source": "gen9_baseline"
+ },
+ "Ice Spinner": {
+  "name": "Ice Spinner",
+  "type": "Ice",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Ends the effects of terrain.",
+  "source": "gen9_baseline"
+ },
+ "Icicle Crash": {
+  "name": "Icicle Crash",
+  "type": "Ice",
+  "category": "Physical",
+  "base_power": 85,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "30% chance to make the target flinch.",
+  "source": "gen9_baseline"
+ },
+ "Icicle Spear": {
+  "name": "Icicle Spear",
+  "type": "Ice",
+  "category": "Physical",
+  "base_power": 25,
+  "accuracy": 100,
+  "pp": 30,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Hits 2-5 times in one turn.",
+  "source": "gen9_baseline"
+ },
+ "Icy Wind": {
+  "name": "Icy Wind",
+  "type": "Ice",
+  "category": "Special",
+  "base_power": 55,
+  "accuracy": 95,
+  "pp": 15,
+  "priority": 0,
+  "target": "allAdjacentFoes",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "wind": 1
+  },
+  "short_desc": "100% chance to lower the foe(s) Speed by 1.",
+  "source": "gen9_baseline"
+ },
+ "Imprison": {
+  "name": "Imprison",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "bypasssub": 1,
+   "metronome": 1,
+   "mustpressure": 1
+  },
+  "short_desc": "No foe can use any move known by the user.",
+  "source": "gen9_baseline"
+ },
+ "Infernal Parade": {
+  "name": "Infernal Parade",
+  "type": "Ghost",
+  "category": "Special",
+  "base_power": 65,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "30% burn. 2x power if target is already statused.",
+  "source": "gen9_baseline"
+ },
+ "Inferno": {
+  "name": "Inferno",
+  "type": "Fire",
+  "category": "Special",
+  "base_power": 100,
+  "accuracy": 50,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% chance to burn the target.",
+  "source": "gen9_baseline"
+ },
+ "Infestation": {
+  "name": "Infestation",
+  "type": "Bug",
+  "category": "Special",
+  "base_power": 20,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Traps and damages the target for 4-5 turns.",
+  "source": "gen9_baseline"
+ },
+ "Ingrain": {
+  "name": "Ingrain",
+  "type": "Grass",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "nonsky": 1,
+   "metronome": 1
+  },
+  "short_desc": "Traps/grounds user; heals 1/16 max HP per turn.",
+  "source": "gen9_baseline"
+ },
+ "Instruct": {
+  "name": "Instruct",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "bypasssub": 1,
+   "allyanim": 1,
+   "failinstruct": 1
+  },
+  "short_desc": "The target immediately uses its last used move.",
+  "source": "gen9_baseline"
+ },
+ "Iron Defense": {
+  "name": "Iron Defense",
+  "type": "Steel",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 15,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises the user's Defense by 2.",
+  "source": "gen9_baseline"
+ },
+ "Iron Head": {
+  "name": "Iron Head",
+  "type": "Steel",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "30% chance to make the target flinch.",
+  "source": "gen9_baseline"
+ },
+ "Iron Tail": {
+  "name": "Iron Tail",
+  "type": "Steel",
+  "category": "Physical",
+  "base_power": 100,
+  "accuracy": 75,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "30% chance to lower the target's Defense by 1.",
+  "source": "gen9_baseline"
+ },
+ "Jet Punch": {
+  "name": "Jet Punch",
+  "type": "Water",
+  "category": "Physical",
+  "base_power": 60,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 1,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "punch": 1
+  },
+  "short_desc": "Usually goes first.",
+  "source": "gen9_baseline"
+ },
+ "King's Shield": {
+  "name": "King's Shield",
+  "type": "Steel",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 4,
+  "target": "self",
+  "flags": {
+   "noassist": 1,
+   "failcopycat": 1,
+   "failinstruct": 1
+  },
+  "short_desc": "Protects from damaging attacks. Contact: -1 Atk.",
+  "source": "gen9_baseline"
+ },
+ "Knock Off": {
+  "name": "Knock Off",
+  "type": "Dark",
+  "category": "Physical",
+  "base_power": 65,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "1.5x damage if foe holds an item. Removes item.",
+  "source": "gen9_baseline"
+ },
+ "Kowtow Cleave": {
+  "name": "Kowtow Cleave",
+  "type": "Dark",
+  "category": "Physical",
+  "base_power": 85,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "slicing": 1
+  },
+  "short_desc": "This move does not check accuracy.",
+  "source": "gen9_baseline"
+ },
+ "Lash Out": {
+  "name": "Lash Out",
+  "type": "Dark",
+  "category": "Physical",
+  "base_power": 75,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "2x power if the user had a stat lowered this turn.",
+  "source": "gen9_baseline"
+ },
+ "Last Resort": {
+  "name": "Last Resort",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 140,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Fails unless each known move has been used.",
+  "source": "gen9_baseline"
+ },
+ "Last Respects": {
+  "name": "Last Respects",
+  "type": "Ghost",
+  "category": "Physical",
+  "base_power": 50,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "+50 power for each time a party member fainted.",
+  "source": "gen9_baseline"
+ },
+ "Lava Plume": {
+  "name": "Lava Plume",
+  "type": "Fire",
+  "category": "Special",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "allAdjacent",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "30% chance to burn adjacent Pokemon.",
+  "source": "gen9_baseline"
+ },
+ "Leaf Blade": {
+  "name": "Leaf Blade",
+  "type": "Grass",
+  "category": "Physical",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "slicing": 1
+  },
+  "short_desc": "High critical hit ratio.",
+  "source": "gen9_baseline"
+ },
+ "Leaf Storm": {
+  "name": "Leaf Storm",
+  "type": "Grass",
+  "category": "Special",
+  "base_power": 130,
+  "accuracy": 90,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the user's Sp. Atk by 2.",
+  "source": "gen9_baseline"
+ },
+ "Leech Life": {
+  "name": "Leech Life",
+  "type": "Bug",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "heal": 1,
+   "metronome": 1
+  },
+  "short_desc": "User recovers 50% of the damage dealt.",
+  "source": "gen9_baseline"
+ },
+ "Leech Seed": {
+  "name": "Leech Seed",
+  "type": "Grass",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "1/8 of target's HP is restored to user every turn.",
+  "source": "gen9_baseline"
+ },
+ "Life Dew": {
+  "name": "Life Dew",
+  "type": "Water",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "allies",
+  "flags": {
+   "snatch": 1,
+   "heal": 1,
+   "bypasssub": 1
+  },
+  "short_desc": "Heals the user and its allies by 1/4 their max HP.",
+  "source": "gen9_baseline"
+ },
+ "Light Screen": {
+  "name": "Light Screen",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 30,
+  "priority": 0,
+  "target": "allySide",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "For 5 turns, special damage to allies is halved.",
+  "source": "gen9_baseline"
+ },
+ "Light of Ruin": {
+  "name": "Light of Ruin",
+  "type": "Fairy",
+  "category": "Special",
+  "base_power": 140,
+  "accuracy": 90,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1
+  },
+  "short_desc": "Has 1/2 recoil.",
+  "source": "gen9_baseline"
+ },
+ "Liquidation": {
+  "name": "Liquidation",
+  "type": "Water",
+  "category": "Physical",
+  "base_power": 85,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "20% chance to lower the target's Defense by 1.",
+  "source": "gen9_baseline"
+ },
+ "Lock-On": {
+  "name": "Lock-On",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "User's next move will not miss the target.",
+  "source": "gen9_baseline"
+ },
+ "Low Kick": {
+  "name": "Low Kick",
+  "type": "Fighting",
+  "category": "Physical",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "More power the heavier the target.",
+  "source": "gen9_baseline"
+ },
+ "Low Sweep": {
+  "name": "Low Sweep",
+  "type": "Fighting",
+  "category": "Physical",
+  "base_power": 65,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% chance to lower the target's Speed by 1.",
+  "source": "gen9_baseline"
+ },
+ "Lumina Crash": {
+  "name": "Lumina Crash",
+  "type": "Psychic",
+  "category": "Special",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% chance to lower the target's Sp. Def by 2.",
+  "source": "gen9_baseline"
+ },
+ "Lunge": {
+  "name": "Lunge",
+  "type": "Bug",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% chance to lower the target's Attack by 1.",
+  "source": "gen9_baseline"
+ },
+ "Mach Punch": {
+  "name": "Mach Punch",
+  "type": "Fighting",
+  "category": "Physical",
+  "base_power": 40,
+  "accuracy": 100,
+  "pp": 30,
+  "priority": 1,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "punch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Usually goes first.",
+  "source": "gen9_baseline"
+ },
+ "Magic Powder": {
+  "name": "Magic Powder",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "allyanim": 1,
+   "metronome": 1,
+   "powder": 1
+  },
+  "short_desc": "Changes the target's type to Psychic.",
+  "source": "gen9_baseline"
+ },
+ "Magic Room": {
+  "name": "Magic Room",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "all",
+  "flags": {
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "For 5 turns, all held items have no effect.",
+  "source": "gen9_baseline"
+ },
+ "Magnet Rise": {
+  "name": "Magnet Rise",
+  "type": "Electric",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "gravity": 1,
+   "metronome": 1
+  },
+  "short_desc": "For 5 turns, the user has immunity to Ground.",
+  "source": "gen9_baseline"
+ },
+ "Magnetic Flux": {
+  "name": "Magnetic Flux",
+  "type": "Electric",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "allySide",
+  "flags": {
+   "snatch": 1,
+   "distance": 1,
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises Def, Sp. Def of allies with Plus/Minus by 1.",
+  "source": "gen9_baseline"
+ },
+ "Matcha Gotcha": {
+  "name": "Matcha Gotcha",
+  "type": "Grass",
+  "category": "Special",
+  "base_power": 80,
+  "accuracy": 90,
+  "pp": 15,
+  "priority": 0,
+  "target": "allAdjacentFoes",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "defrost": 1,
+   "heal": 1,
+   "metronome": 1
+  },
+  "short_desc": "20% burn. Recovers 50% dmg dealt. Thaws foe(s).",
+  "source": "gen9_baseline"
+ },
+ "Mean Look": {
+  "name": "Mean Look",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "reflectable": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Prevents the target from switching out.",
+  "source": "gen9_baseline"
+ },
+ "Mega Kick": {
+  "name": "Mega Kick",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 120,
+  "accuracy": 75,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "No additional effect.",
+  "source": "gen9_baseline"
+ },
+ "Megahorn": {
+  "name": "Megahorn",
+  "type": "Bug",
+  "category": "Physical",
+  "base_power": 120,
+  "accuracy": 85,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "No additional effect.",
+  "source": "gen9_baseline"
+ },
+ "Memento": {
+  "name": "Memento",
+  "type": "Dark",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers target's Attack, Sp. Atk by 2. User faints.",
+  "source": "gen9_baseline"
+ },
+ "Metal Burst": {
+  "name": "Metal Burst",
+  "type": "Steel",
+  "category": "Physical",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "scripted",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "failmefirst": 1
+  },
+  "short_desc": "If hit by an attack, returns 1.5x damage.",
+  "source": "gen9_baseline"
+ },
+ "Metal Sound": {
+  "name": "Metal Sound",
+  "type": "Steel",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 85,
+  "pp": 40,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "sound": 1,
+   "bypasssub": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the target's Sp. Def by 2.",
+  "source": "gen9_baseline"
+ },
+ "Meteor Beam": {
+  "name": "Meteor Beam",
+  "type": "Rock",
+  "category": "Special",
+  "base_power": 120,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "charge": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises user's Sp. Atk by 1 on turn 1. Hits turn 2.",
+  "source": "gen9_baseline"
+ },
+ "Meteor Mash": {
+  "name": "Meteor Mash",
+  "type": "Steel",
+  "category": "Physical",
+  "base_power": 90,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "punch": 1,
+   "metronome": 1
+  },
+  "short_desc": "20% chance to raise the user's Attack by 1.",
+  "source": "gen9_baseline"
+ },
+ "Minimize": {
+  "name": "Minimize",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises the user's evasiveness by 2.",
+  "source": "gen9_baseline"
+ },
+ "Mirror Coat": {
+  "name": "Mirror Coat",
+  "type": "Psychic",
+  "category": "Special",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": -5,
+  "target": "scripted",
+  "flags": {
+   "protect": 1,
+   "failmefirst": 1,
+   "noassist": 1
+  },
+  "short_desc": "If hit by special attack, returns double damage.",
+  "source": "gen9_baseline"
+ },
+ "Misty Explosion": {
+  "name": "Misty Explosion",
+  "type": "Fairy",
+  "category": "Special",
+  "base_power": 100,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "allAdjacent",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "User faints. User on Misty Terrain: 1.5x power.",
+  "source": "gen9_baseline"
+ },
+ "Misty Terrain": {
+  "name": "Misty Terrain",
+  "type": "Fairy",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "all",
+  "flags": {
+   "nonsky": 1,
+   "metronome": 1
+  },
+  "short_desc": "5 turns. Can't status,-Dragon power vs grounded.",
+  "source": "gen9_baseline"
+ },
+ "Moonblast": {
+  "name": "Moonblast",
+  "type": "Fairy",
+  "category": "Special",
+  "base_power": 95,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "30% chance to lower the target's Sp. Atk by 1.",
+  "source": "gen9_baseline"
+ },
+ "Moonlight": {
+  "name": "Moonlight",
+  "type": "Fairy",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "heal": 1,
+   "metronome": 1
+  },
+  "short_desc": "Heals the user by a weather-dependent amount.",
+  "source": "gen9_baseline"
+ },
+ "Morning Sun": {
+  "name": "Morning Sun",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "heal": 1,
+   "metronome": 1
+  },
+  "short_desc": "Heals the user by a weather-dependent amount.",
+  "source": "gen9_baseline"
+ },
+ "Mortal Spin": {
+  "name": "Mortal Spin",
+  "type": "Poison",
+  "category": "Physical",
+  "base_power": 30,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "allAdjacentFoes",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Poisons foes, frees user from hazards/bind/leech.",
+  "source": "gen9_baseline"
+ },
+ "Mountain Gale": {
+  "name": "Mountain Gale",
+  "type": "Ice",
+  "category": "Physical",
+  "base_power": 120,
+  "accuracy": 85,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "30% chance to make the target flinch.",
+  "source": "gen9_baseline"
+ },
+ "Mud Shot": {
+  "name": "Mud Shot",
+  "type": "Ground",
+  "category": "Special",
+  "base_power": 55,
+  "accuracy": 95,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% chance to lower the target's Speed by 1.",
+  "source": "gen9_baseline"
+ },
+ "Mud-Slap": {
+  "name": "Mud-Slap",
+  "type": "Ground",
+  "category": "Special",
+  "base_power": 20,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% chance to lower the target's accuracy by 1.",
+  "source": "gen9_baseline"
+ },
+ "Muddy Water": {
+  "name": "Muddy Water",
+  "type": "Water",
+  "category": "Special",
+  "base_power": 90,
+  "accuracy": 85,
+  "pp": 10,
+  "priority": 0,
+  "target": "allAdjacentFoes",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "nonsky": 1,
+   "metronome": 1
+  },
+  "short_desc": "30% chance to lower the foe(s) accuracy by 1.",
+  "source": "gen9_baseline"
+ },
+ "Mystical Fire": {
+  "name": "Mystical Fire",
+  "type": "Fire",
+  "category": "Special",
+  "base_power": 75,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% chance to lower the target's Sp. Atk by 1.",
+  "source": "gen9_baseline"
+ },
+ "Nasty Plot": {
+  "name": "Nasty Plot",
+  "type": "Dark",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises the user's Sp. Atk by 2.",
+  "source": "gen9_baseline"
+ },
+ "Night Daze": {
+  "name": "Night Daze",
+  "type": "Dark",
+  "category": "Special",
+  "base_power": 90,
+  "accuracy": 95,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "40% chance to lower the target's accuracy by 1.",
+  "source": "gen9_baseline"
+ },
+ "Night Shade": {
+  "name": "Night Shade",
+  "type": "Ghost",
+  "category": "Special",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Does damage equal to the user's level.",
+  "source": "gen9_baseline"
+ },
+ "Night Slash": {
+  "name": "Night Slash",
+  "type": "Dark",
+  "category": "Physical",
+  "base_power": 70,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "slicing": 1
+  },
+  "short_desc": "High critical hit ratio.",
+  "source": "gen9_baseline"
+ },
+ "Noble Roar": {
+  "name": "Noble Roar",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 30,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "sound": 1,
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the target's Attack and Sp. Atk by 1.",
+  "source": "gen9_baseline"
+ },
+ "Nuzzle": {
+  "name": "Nuzzle",
+  "type": "Electric",
+  "category": "Physical",
+  "base_power": 20,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% chance to paralyze the target.",
+  "source": "gen9_baseline"
+ },
+ "Outrage": {
+  "name": "Outrage",
+  "type": "Dragon",
+  "category": "Physical",
+  "base_power": 120,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "randomNormal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "failinstruct": 1
+  },
+  "short_desc": "Lasts 2-3 turns. Confuses the user afterwards.",
+  "source": "gen9_baseline"
+ },
+ "Overheat": {
+  "name": "Overheat",
+  "type": "Fire",
+  "category": "Special",
+  "base_power": 130,
+  "accuracy": 90,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the user's Sp. Atk by 2.",
+  "source": "gen9_baseline"
+ },
+ "Pain Split": {
+  "name": "Pain Split",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Shares HP of user and target equally.",
+  "source": "gen9_baseline"
+ },
+ "Parabolic Charge": {
+  "name": "Parabolic Charge",
+  "type": "Electric",
+  "category": "Special",
+  "base_power": 65,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "allAdjacent",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "heal": 1,
+   "metronome": 1
+  },
+  "short_desc": "User recovers 50% of the damage dealt.",
+  "source": "gen9_baseline"
+ },
+ "Parting Shot": {
+  "name": "Parting Shot",
+  "type": "Dark",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "sound": 1,
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers target's Atk, Sp. Atk by 1. User switches.",
+  "source": "gen9_baseline"
+ },
+ "Payback": {
+  "name": "Payback",
+  "type": "Dark",
+  "category": "Physical",
+  "base_power": 50,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Power doubles if the user moves after the target.",
+  "source": "gen9_baseline"
+ },
+ "Perish Song": {
+  "name": "Perish Song",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "all",
+  "flags": {
+   "sound": 1,
+   "distance": 1,
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "All active Pokemon will faint in 3 turns.",
+  "source": "gen9_baseline"
+ },
+ "Petal Blizzard": {
+  "name": "Petal Blizzard",
+  "type": "Grass",
+  "category": "Physical",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "allAdjacent",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "wind": 1
+  },
+  "short_desc": "No additional effect. Hits adjacent Pokemon.",
+  "source": "gen9_baseline"
+ },
+ "Petal Dance": {
+  "name": "Petal Dance",
+  "type": "Grass",
+  "category": "Special",
+  "base_power": 120,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "randomNormal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "dance": 1,
+   "metronome": 1,
+   "failinstruct": 1
+  },
+  "short_desc": "Lasts 2-3 turns. Confuses the user afterwards.",
+  "source": "gen9_baseline"
+ },
+ "Phantom Force": {
+  "name": "Phantom Force",
+  "type": "Ghost",
+  "category": "Physical",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "charge": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "nosleeptalk": 1,
+   "noassist": 1,
+   "failinstruct": 1
+  },
+  "short_desc": "Disappears turn 1. Hits turn 2. Breaks protection.",
+  "source": "gen9_baseline"
+ },
+ "Pin Missile": {
+  "name": "Pin Missile",
+  "type": "Bug",
+  "category": "Physical",
+  "base_power": 25,
+  "accuracy": 95,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Hits 2-5 times in one turn.",
+  "source": "gen9_baseline"
+ },
+ "Play Rough": {
+  "name": "Play Rough",
+  "type": "Fairy",
+  "category": "Physical",
+  "base_power": 90,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "10% chance to lower the target's Attack by 1.",
+  "source": "gen9_baseline"
+ },
+ "Pluck": {
+  "name": "Pluck",
+  "type": "Flying",
+  "category": "Physical",
+  "base_power": 60,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "any",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "distance": 1,
+   "metronome": 1
+  },
+  "short_desc": "User steals and eats the target's Berry.",
+  "source": "gen9_baseline"
+ },
+ "Poison Fang": {
+  "name": "Poison Fang",
+  "type": "Poison",
+  "category": "Physical",
+  "base_power": 50,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "bite": 1
+  },
+  "short_desc": "50% chance to badly poison the target.",
+  "source": "gen9_baseline"
+ },
+ "Poison Jab": {
+  "name": "Poison Jab",
+  "type": "Poison",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "30% chance to poison the target.",
+  "source": "gen9_baseline"
+ },
+ "Poison Powder": {
+  "name": "Poison Powder",
+  "type": "Poison",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 75,
+  "pp": 35,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "powder": 1
+  },
+  "short_desc": "Poisons the target.",
+  "source": "gen9_baseline"
+ },
+ "Pollen Puff": {
+  "name": "Pollen Puff",
+  "type": "Bug",
+  "category": "Special",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "allyanim": 1,
+   "metronome": 1,
+   "bullet": 1
+  },
+  "short_desc": "If the target is an ally, heals 50% of its max HP.",
+  "source": "gen9_baseline"
+ },
+ "Poltergeist": {
+  "name": "Poltergeist",
+  "type": "Ghost",
+  "category": "Physical",
+  "base_power": 110,
+  "accuracy": 90,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Fails if the target has no held item.",
+  "source": "gen9_baseline"
+ },
+ "Population Bomb": {
+  "name": "Population Bomb",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 20,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "slicing": 1
+  },
+  "short_desc": "Hits 10 times. Each hit can miss.",
+  "source": "gen9_baseline"
+ },
+ "Pounce": {
+  "name": "Pounce",
+  "type": "Bug",
+  "category": "Physical",
+  "base_power": 50,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1
+  },
+  "short_desc": "100% chance to lower the target's Speed by 1.",
+  "source": "gen9_baseline"
+ },
+ "Pound": {
+  "name": "Pound",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 40,
+  "accuracy": 100,
+  "pp": 35,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "No additional effect.",
+  "source": "gen9_baseline"
+ },
+ "Power Gem": {
+  "name": "Power Gem",
+  "type": "Rock",
+  "category": "Special",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "No additional effect.",
+  "source": "gen9_baseline"
+ },
+ "Power Split": {
+  "name": "Power Split",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Averages Attack and Sp. Atk stats with target.",
+  "source": "gen9_baseline"
+ },
+ "Power Swap": {
+  "name": "Power Swap",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "bypasssub": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Swaps Attack and Sp. Atk stat stages with target.",
+  "source": "gen9_baseline"
+ },
+ "Power Trick": {
+  "name": "Power Trick",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Switches user's Attack and Defense stats.",
+  "source": "gen9_baseline"
+ },
+ "Power Trip": {
+  "name": "Power Trip",
+  "type": "Dark",
+  "category": "Physical",
+  "base_power": 20,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": " + 20 power for each of the user's stat boosts.",
+  "source": "gen9_baseline"
+ },
+ "Power Whip": {
+  "name": "Power Whip",
+  "type": "Grass",
+  "category": "Physical",
+  "base_power": 120,
+  "accuracy": 85,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "No additional effect.",
+  "source": "gen9_baseline"
+ },
+ "Protect": {
+  "name": "Protect",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 4,
+  "target": "self",
+  "flags": {
+   "noassist": 1,
+   "failcopycat": 1
+  },
+  "short_desc": "Prevents moves from affecting the user this turn.",
+  "source": "gen9_baseline"
+ },
+ "Psych Up": {
+  "name": "Psych Up",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "bypasssub": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Copies the target's current stat stages.",
+  "source": "gen9_baseline"
+ },
+ "Psychic": {
+  "name": "Psychic",
+  "type": "Psychic",
+  "category": "Special",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "10% chance to lower the target's Sp. Def by 1.",
+  "source": "gen9_baseline"
+ },
+ "Psychic Fangs": {
+  "name": "Psychic Fangs",
+  "type": "Psychic",
+  "category": "Physical",
+  "base_power": 85,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "bite": 1
+  },
+  "short_desc": "Destroys screens, unless the target is immune.",
+  "source": "gen9_baseline"
+ },
+ "Psychic Noise": {
+  "name": "Psychic Noise",
+  "type": "Psychic",
+  "category": "Special",
+  "base_power": 75,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "sound": 1,
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "For 2 turns, the target is prevented from healing.",
+  "source": "gen9_baseline"
+ },
+ "Psychic Terrain": {
+  "name": "Psychic Terrain",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "all",
+  "flags": {
+   "nonsky": 1,
+   "metronome": 1
+  },
+  "short_desc": "5 turns. Grounded: +Psychic power, priority-safe.",
+  "source": "gen9_baseline"
+ },
+ "Psycho Cut": {
+  "name": "Psycho Cut",
+  "type": "Psychic",
+  "category": "Physical",
+  "base_power": 70,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "slicing": 1
+  },
+  "short_desc": "High critical hit ratio.",
+  "source": "gen9_baseline"
+ },
+ "Psyshield Bash": {
+  "name": "Psyshield Bash",
+  "type": "Psychic",
+  "category": "Physical",
+  "base_power": 90,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% chance to raise the user's Defense by 1.",
+  "source": "gen9_baseline"
+ },
+ "Psyshock": {
+  "name": "Psyshock",
+  "type": "Psychic",
+  "category": "Special",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Damages target based on Defense, not Sp. Def.",
+  "source": "gen9_baseline"
+ },
+ "Quash": {
+  "name": "Quash",
+  "type": "Dark",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1
+  },
+  "short_desc": "Forces the target to move last this turn.",
+  "source": "gen9_baseline"
+ },
+ "Quick Attack": {
+  "name": "Quick Attack",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 40,
+  "accuracy": 100,
+  "pp": 30,
+  "priority": 1,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Usually goes first.",
+  "source": "gen9_baseline"
+ },
+ "Quick Guard": {
+  "name": "Quick Guard",
+  "type": "Fighting",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 15,
+  "priority": 3,
+  "target": "allySide",
+  "flags": {
+   "snatch": 1
+  },
+  "short_desc": "Protects allies from priority attacks this turn.",
+  "source": "gen9_baseline"
+ },
+ "Quiver Dance": {
+  "name": "Quiver Dance",
+  "type": "Bug",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "dance": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises the user's Sp. Atk, Sp. Def, Speed by 1.",
+  "source": "gen9_baseline"
+ },
+ "Rage Powder": {
+  "name": "Rage Powder",
+  "type": "Bug",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 2,
+  "target": "self",
+  "flags": {
+   "noassist": 1,
+   "failcopycat": 1,
+   "powder": 1
+  },
+  "short_desc": "The foes' moves target the user on the turn used.",
+  "source": "gen9_baseline"
+ },
+ "Raging Bull": {
+  "name": "Raging Bull",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1
+  },
+  "short_desc": "Destroys screens. Type depends on user's form.",
+  "source": "gen9_baseline"
+ },
+ "Raging Fury": {
+  "name": "Raging Fury",
+  "type": "Fire",
+  "category": "Physical",
+  "base_power": 120,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "randomNormal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1
+  },
+  "short_desc": "Lasts 2-3 turns. Confuses the user afterwards.",
+  "source": "gen9_baseline"
+ },
+ "Rain Dance": {
+  "name": "Rain Dance",
+  "type": "Water",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "all",
+  "flags": {
+   "metronome": 1
+  },
+  "short_desc": "For 5 turns, heavy rain powers Water moves.",
+  "source": "gen9_baseline"
+ },
+ "Rapid Spin": {
+  "name": "Rapid Spin",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 50,
+  "accuracy": 100,
+  "pp": 40,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Free user from hazards/bind/Leech Seed; +1 Spe.",
+  "source": "gen9_baseline"
+ },
+ "Razor Shell": {
+  "name": "Razor Shell",
+  "type": "Water",
+  "category": "Physical",
+  "base_power": 75,
+  "accuracy": 95,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "slicing": 1
+  },
+  "short_desc": "50% chance to lower the target's Defense by 1.",
+  "source": "gen9_baseline"
+ },
+ "Recover": {
+  "name": "Recover",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "heal": 1,
+   "metronome": 1
+  },
+  "short_desc": "Heals the user by 50% of its max HP.",
+  "source": "gen9_baseline"
+ },
+ "Recycle": {
+  "name": "Recycle",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Restores the item the user last used.",
+  "source": "gen9_baseline"
+ },
+ "Reflect": {
+  "name": "Reflect",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "allySide",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "For 5 turns, physical damage to allies is halved.",
+  "source": "gen9_baseline"
+ },
+ "Reflect Type": {
+  "name": "Reflect Type",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "bypasssub": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "User becomes the same type as the target.",
+  "source": "gen9_baseline"
+ },
+ "Rest": {
+  "name": "Rest",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "heal": 1,
+   "metronome": 1
+  },
+  "short_desc": "User sleeps 2 turns and restores HP and status.",
+  "source": "gen9_baseline"
+ },
+ "Reversal": {
+  "name": "Reversal",
+  "type": "Fighting",
+  "category": "Physical",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "More power the less HP the user has left.",
+  "source": "gen9_baseline"
+ },
+ "Rising Voltage": {
+  "name": "Rising Voltage",
+  "type": "Electric",
+  "category": "Special",
+  "base_power": 70,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "2x power if target is grounded in Electric Terrain.",
+  "source": "gen9_baseline"
+ },
+ "Roar": {
+  "name": "Roar",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": -6,
+  "target": "normal",
+  "flags": {
+   "reflectable": 1,
+   "mirror": 1,
+   "sound": 1,
+   "bypasssub": 1,
+   "allyanim": 1,
+   "metronome": 1,
+   "noassist": 1,
+   "failcopycat": 1
+  },
+  "short_desc": "Forces the target to switch to a random ally.",
+  "source": "gen9_baseline"
+ },
+ "Rock Blast": {
+  "name": "Rock Blast",
+  "type": "Rock",
+  "category": "Physical",
+  "base_power": 25,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "bullet": 1
+  },
+  "short_desc": "Hits 2-5 times in one turn.",
+  "source": "gen9_baseline"
+ },
+ "Rock Polish": {
+  "name": "Rock Polish",
+  "type": "Rock",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises the user's Speed by 2.",
+  "source": "gen9_baseline"
+ },
+ "Rock Slide": {
+  "name": "Rock Slide",
+  "type": "Rock",
+  "category": "Physical",
+  "base_power": 75,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "allAdjacentFoes",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "30% chance to make the foe(s) flinch.",
+  "source": "gen9_baseline"
+ },
+ "Rock Tomb": {
+  "name": "Rock Tomb",
+  "type": "Rock",
+  "category": "Physical",
+  "base_power": 60,
+  "accuracy": 95,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% chance to lower the target's Speed by 1.",
+  "source": "gen9_baseline"
+ },
+ "Rock Wrecker": {
+  "name": "Rock Wrecker",
+  "type": "Rock",
+  "category": "Physical",
+  "base_power": 150,
+  "accuracy": 90,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "recharge": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "bullet": 1
+  },
+  "short_desc": "User cannot move next turn.",
+  "source": "gen9_baseline"
+ },
+ "Role Play": {
+  "name": "Role Play",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "bypasssub": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "User replaces its Ability with the target's.",
+  "source": "gen9_baseline"
+ },
+ "Roost": {
+  "name": "Roost",
+  "type": "Flying",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "heal": 1,
+   "metronome": 1
+  },
+  "short_desc": "Heals 50% HP. Flying-type removed 'til turn ends.",
+  "source": "gen9_baseline"
+ },
+ "Round": {
+  "name": "Round",
+  "type": "Normal",
+  "category": "Special",
+  "base_power": 60,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "sound": 1,
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "Power doubles if others used Round this turn.",
+  "source": "gen9_baseline"
+ },
+ "Sacred Sword": {
+  "name": "Sacred Sword",
+  "type": "Fighting",
+  "category": "Physical",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "slicing": 1
+  },
+  "short_desc": "Ignores the target's stat stage changes.",
+  "source": "gen9_baseline"
+ },
+ "Safeguard": {
+  "name": "Safeguard",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 25,
+  "priority": 0,
+  "target": "allySide",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "For 5 turns, protects user's party from status.",
+  "source": "gen9_baseline"
+ },
+ "Salt Cure": {
+  "name": "Salt Cure",
+  "type": "Rock",
+  "category": "Physical",
+  "base_power": 40,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1
+  },
+  "short_desc": "Deals 1/8 max HP each turn; 1/4 on Steel, Water.",
+  "source": "gen9_baseline"
+ },
+ "Sand Tomb": {
+  "name": "Sand Tomb",
+  "type": "Ground",
+  "category": "Physical",
+  "base_power": 35,
+  "accuracy": 85,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Traps and damages the target for 4-5 turns.",
+  "source": "gen9_baseline"
+ },
+ "Sandstorm": {
+  "name": "Sandstorm",
+  "type": "Rock",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "all",
+  "flags": {
+   "metronome": 1,
+   "wind": 1
+  },
+  "short_desc": "For 5 turns, a sandstorm rages. Rock: 1.5x SpD.",
+  "source": "gen9_baseline"
+ },
+ "Scald": {
+  "name": "Scald",
+  "type": "Water",
+  "category": "Special",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "defrost": 1,
+   "metronome": 1
+  },
+  "short_desc": "30% chance to burn the target. Thaws target.",
+  "source": "gen9_baseline"
+ },
+ "Scale Shot": {
+  "name": "Scale Shot",
+  "type": "Dragon",
+  "category": "Physical",
+  "base_power": 25,
+  "accuracy": 90,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Hits 2-5 times. User: -1 Def, +1 Spe after last hit.",
+  "source": "gen9_baseline"
+ },
+ "Scary Face": {
+  "name": "Scary Face",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the target's Speed by 2.",
+  "source": "gen9_baseline"
+ },
+ "Scorching Sands": {
+  "name": "Scorching Sands",
+  "type": "Ground",
+  "category": "Special",
+  "base_power": 70,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "defrost": 1,
+   "metronome": 1
+  },
+  "short_desc": "30% chance to burn the target. Thaws target.",
+  "source": "gen9_baseline"
+ },
+ "Screech": {
+  "name": "Screech",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 85,
+  "pp": 40,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "sound": 1,
+   "bypasssub": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the target's Defense by 2.",
+  "source": "gen9_baseline"
+ },
+ "Seed Bomb": {
+  "name": "Seed Bomb",
+  "type": "Grass",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "bullet": 1
+  },
+  "short_desc": "No additional effect.",
+  "source": "gen9_baseline"
+ },
+ "Seismic Toss": {
+  "name": "Seismic Toss",
+  "type": "Fighting",
+  "category": "Physical",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "nonsky": 1,
+   "metronome": 1
+  },
+  "short_desc": "Does damage equal to the user's level.",
+  "source": "gen9_baseline"
+ },
+ "Self-Destruct": {
+  "name": "Self-Destruct",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 200,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "allAdjacent",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "noparentalbond": 1
+  },
+  "short_desc": "Hits adjacent Pokemon. The user faints.",
+  "source": "gen9_baseline"
+ },
+ "Shadow Ball": {
+  "name": "Shadow Ball",
+  "type": "Ghost",
+  "category": "Special",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "bullet": 1
+  },
+  "short_desc": "20% chance to lower the target's Sp. Def by 1.",
+  "source": "gen9_baseline"
+ },
+ "Shadow Claw": {
+  "name": "Shadow Claw",
+  "type": "Ghost",
+  "category": "Physical",
+  "base_power": 70,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "High critical hit ratio.",
+  "source": "gen9_baseline"
+ },
+ "Shadow Punch": {
+  "name": "Shadow Punch",
+  "type": "Ghost",
+  "category": "Physical",
+  "base_power": 60,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "punch": 1,
+   "metronome": 1
+  },
+  "short_desc": "This move does not check accuracy.",
+  "source": "gen9_baseline"
+ },
+ "Shadow Sneak": {
+  "name": "Shadow Sneak",
+  "type": "Ghost",
+  "category": "Physical",
+  "base_power": 40,
+  "accuracy": 100,
+  "pp": 30,
+  "priority": 1,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Usually goes first.",
+  "source": "gen9_baseline"
+ },
+ "Shed Tail": {
+  "name": "Shed Tail",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "self",
+  "flags": {},
+  "short_desc": "User takes 1/2 its max HP to pass a substitute.",
+  "source": "gen9_baseline"
+ },
+ "Sheer Cold": {
+  "name": "Sheer Cold",
+  "type": "Ice",
+  "category": "Special",
+  "base_power": 0,
+  "accuracy": 30,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "OHKOs non-Ice targets. Fails if user's lower level.",
+  "source": "gen9_baseline"
+ },
+ "Shell Side Arm": {
+  "name": "Shell Side Arm",
+  "type": "Poison",
+  "category": "Special",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "20% psn. Physical+contact if it would be stronger.",
+  "source": "gen9_baseline"
+ },
+ "Shell Smash": {
+  "name": "Shell Smash",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 15,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers Def, SpD by 1; raises Atk, SpA, Spe by 2.",
+  "source": "gen9_baseline"
+ },
+ "Shelter": {
+  "name": "Shelter",
+  "type": "Steel",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises the user's Defense by 2.",
+  "source": "gen9_baseline"
+ },
+ "Simple Beam": {
+  "name": "Simple Beam",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "The target's Ability becomes Simple.",
+  "source": "gen9_baseline"
+ },
+ "Sing": {
+  "name": "Sing",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 55,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "sound": 1,
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "Causes the target to fall asleep.",
+  "source": "gen9_baseline"
+ },
+ "Skill Swap": {
+  "name": "Skill Swap",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "bypasssub": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "The user and the target trade Abilities.",
+  "source": "gen9_baseline"
+ },
+ "Skitter Smack": {
+  "name": "Skitter Smack",
+  "type": "Bug",
+  "category": "Physical",
+  "base_power": 70,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% chance to lower target's Sp. Atk by 1.",
+  "source": "gen9_baseline"
+ },
+ "Sky Attack": {
+  "name": "Sky Attack",
+  "type": "Flying",
+  "category": "Physical",
+  "base_power": 140,
+  "accuracy": 90,
+  "pp": 5,
+  "priority": 0,
+  "target": "any",
+  "flags": {
+   "charge": 1,
+   "protect": 1,
+   "mirror": 1,
+   "distance": 1,
+   "metronome": 1,
+   "nosleeptalk": 1,
+   "failinstruct": 1
+  },
+  "short_desc": "Charges, then hits turn 2. 30% flinch. High crit.",
+  "source": "gen9_baseline"
+ },
+ "Slack Off": {
+  "name": "Slack Off",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "heal": 1,
+   "metronome": 1
+  },
+  "short_desc": "Heals the user by 50% of its max HP.",
+  "source": "gen9_baseline"
+ },
+ "Sleep Powder": {
+  "name": "Sleep Powder",
+  "type": "Grass",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 75,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "powder": 1
+  },
+  "short_desc": "Causes the target to fall asleep.",
+  "source": "gen9_baseline"
+ },
+ "Sleep Talk": {
+  "name": "Sleep Talk",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "failencore": 1,
+   "nosleeptalk": 1,
+   "noassist": 1,
+   "failcopycat": 1,
+   "failmimic": 1,
+   "failinstruct": 1
+  },
+  "short_desc": "User must be asleep. Uses another known move.",
+  "source": "gen9_baseline"
+ },
+ "Sludge Bomb": {
+  "name": "Sludge Bomb",
+  "type": "Poison",
+  "category": "Special",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "bullet": 1
+  },
+  "short_desc": "30% chance to poison the target.",
+  "source": "gen9_baseline"
+ },
+ "Sludge Wave": {
+  "name": "Sludge Wave",
+  "type": "Poison",
+  "category": "Special",
+  "base_power": 95,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "allAdjacent",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "10% chance to poison adjacent Pokemon.",
+  "source": "gen9_baseline"
+ },
+ "Smack Down": {
+  "name": "Smack Down",
+  "type": "Rock",
+  "category": "Physical",
+  "base_power": 50,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "nonsky": 1,
+   "metronome": 1
+  },
+  "short_desc": "Removes the target's Ground immunity.",
+  "source": "gen9_baseline"
+ },
+ "Smart Strike": {
+  "name": "Smart Strike",
+  "type": "Steel",
+  "category": "Physical",
+  "base_power": 70,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "This move does not check accuracy.",
+  "source": "gen9_baseline"
+ },
+ "Snap Trap": {
+  "name": "Snap Trap",
+  "type": "Steel",
+  "category": "Physical",
+  "base_power": 35,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1
+  },
+  "short_desc": "Traps and damages the target for 4-5 turns.",
+  "source": "gen9_baseline"
+ },
+ "Snarl": {
+  "name": "Snarl",
+  "type": "Dark",
+  "category": "Special",
+  "base_power": 55,
+  "accuracy": 95,
+  "pp": 15,
+  "priority": 0,
+  "target": "allAdjacentFoes",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "sound": 1,
+   "bypasssub": 1
+  },
+  "short_desc": "100% chance to lower the foe(s) Sp. Atk by 1.",
+  "source": "gen9_baseline"
+ },
+ "Snore": {
+  "name": "Snore",
+  "type": "Normal",
+  "category": "Special",
+  "base_power": 50,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "sound": 1,
+   "bypasssub": 1
+  },
+  "short_desc": "User must be asleep. 30% chance to flinch target.",
+  "source": "gen9_baseline"
+ },
+ "Snowscape": {
+  "name": "Snowscape",
+  "type": "Ice",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "all",
+  "flags": {},
+  "short_desc": "For 5 turns, snow falls. Ice: 1.5x Def.",
+  "source": "gen9_baseline"
+ },
+ "Soak": {
+  "name": "Soak",
+  "type": "Water",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Changes the target's type to Water.",
+  "source": "gen9_baseline"
+ },
+ "Solar Beam": {
+  "name": "Solar Beam",
+  "type": "Grass",
+  "category": "Special",
+  "base_power": 120,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "charge": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "nosleeptalk": 1,
+   "failinstruct": 1
+  },
+  "short_desc": "Charges turn 1. Hits turn 2. No charge in sunlight.",
+  "source": "gen9_baseline"
+ },
+ "Solar Blade": {
+  "name": "Solar Blade",
+  "type": "Grass",
+  "category": "Physical",
+  "base_power": 125,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "charge": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "nosleeptalk": 1,
+   "failinstruct": 1,
+   "slicing": 1
+  },
+  "short_desc": "Charges turn 1. Hits turn 2. No charge in sunlight.",
+  "source": "gen9_baseline"
+ },
+ "Sparkling Aria": {
+  "name": "Sparkling Aria",
+  "type": "Water",
+  "category": "Special",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "allAdjacent",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "sound": 1,
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "The target is cured of its burn.",
+  "source": "gen9_baseline"
+ },
+ "Speed Swap": {
+  "name": "Speed Swap",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "bypasssub": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Swaps Speed stat with target.",
+  "source": "gen9_baseline"
+ },
+ "Spicy Extract": {
+  "name": "Spicy Extract",
+  "type": "Grass",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1
+  },
+  "short_desc": "Raises target's Atk by 2 and lowers its Def by 2.",
+  "source": "gen9_baseline"
+ },
+ "Spikes": {
+  "name": "Spikes",
+  "type": "Ground",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "foeSide",
+  "flags": {
+   "reflectable": 1,
+   "nonsky": 1,
+   "metronome": 1,
+   "mustpressure": 1
+  },
+  "short_desc": "Hurts grounded foes on switch-in. Max 3 layers.",
+  "source": "gen9_baseline"
+ },
+ "Spiky Shield": {
+  "name": "Spiky Shield",
+  "type": "Grass",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 4,
+  "target": "self",
+  "flags": {
+   "noassist": 1,
+   "failcopycat": 1
+  },
+  "short_desc": "Protects from moves. Contact: loses 1/8 max HP.",
+  "source": "gen9_baseline"
+ },
+ "Spirit Shackle": {
+  "name": "Spirit Shackle",
+  "type": "Ghost",
+  "category": "Physical",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Prevents the target from switching out.",
+  "source": "gen9_baseline"
+ },
+ "Spit Up": {
+  "name": "Spit Up",
+  "type": "Normal",
+  "category": "Special",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "metronome": 1
+  },
+  "short_desc": "More power with more uses of Stockpile.",
+  "source": "gen9_baseline"
+ },
+ "Spite": {
+  "name": "Spite",
+  "type": "Ghost",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the PP of the target's last move by 4.",
+  "source": "gen9_baseline"
+ },
+ "Stealth Rock": {
+  "name": "Stealth Rock",
+  "type": "Rock",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "foeSide",
+  "flags": {
+   "reflectable": 1,
+   "metronome": 1,
+   "mustpressure": 1
+  },
+  "short_desc": "Hurts foes on switch-in. Factors Rock weakness.",
+  "source": "gen9_baseline"
+ },
+ "Steel Beam": {
+  "name": "Steel Beam",
+  "type": "Steel",
+  "category": "Special",
+  "base_power": 140,
+  "accuracy": 95,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1
+  },
+  "short_desc": "User loses 50% max HP.",
+  "source": "gen9_baseline"
+ },
+ "Steel Roller": {
+  "name": "Steel Roller",
+  "type": "Steel",
+  "category": "Physical",
+  "base_power": 130,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Fails if there is no terrain active. Ends the terrain.",
+  "source": "gen9_baseline"
+ },
+ "Steel Wing": {
+  "name": "Steel Wing",
+  "type": "Steel",
+  "category": "Physical",
+  "base_power": 70,
+  "accuracy": 90,
+  "pp": 25,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "10% chance to raise the user's Defense by 1.",
+  "source": "gen9_baseline"
+ },
+ "Sticky Web": {
+  "name": "Sticky Web",
+  "type": "Bug",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "foeSide",
+  "flags": {
+   "reflectable": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers Speed of grounded foes by 1 on switch-in.",
+  "source": "gen9_baseline"
+ },
+ "Stockpile": {
+  "name": "Stockpile",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises user's Defense, Sp. Def by 1. Max 3 uses.",
+  "source": "gen9_baseline"
+ },
+ "Stomping Tantrum": {
+  "name": "Stomping Tantrum",
+  "type": "Ground",
+  "category": "Physical",
+  "base_power": 75,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Power doubles if the user's last move failed.",
+  "source": "gen9_baseline"
+ },
+ "Stone Axe": {
+  "name": "Stone Axe",
+  "type": "Rock",
+  "category": "Physical",
+  "base_power": 65,
+  "accuracy": 90,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "slicing": 1
+  },
+  "short_desc": "Sets Stealth Rock on the target's side.",
+  "source": "gen9_baseline"
+ },
+ "Stone Edge": {
+  "name": "Stone Edge",
+  "type": "Rock",
+  "category": "Physical",
+  "base_power": 100,
+  "accuracy": 80,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "High critical hit ratio.",
+  "source": "gen9_baseline"
+ },
+ "Stored Power": {
+  "name": "Stored Power",
+  "type": "Psychic",
+  "category": "Special",
+  "base_power": 20,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": " + 20 power for each of the user's stat boosts.",
+  "source": "gen9_baseline"
+ },
+ "Storm Throw": {
+  "name": "Storm Throw",
+  "type": "Fighting",
+  "category": "Physical",
+  "base_power": 60,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Always results in a critical hit.",
+  "source": "gen9_baseline"
+ },
+ "Strength Sap": {
+  "name": "Strength Sap",
+  "type": "Grass",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "heal": 1,
+   "metronome": 1
+  },
+  "short_desc": "User heals HP=target's Atk stat. Lowers Atk by 1.",
+  "source": "gen9_baseline"
+ },
+ "String Shot": {
+  "name": "String Shot",
+  "type": "Bug",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 95,
+  "pp": 40,
+  "priority": 0,
+  "target": "allAdjacentFoes",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the foe(s) Speed by 2.",
+  "source": "gen9_baseline"
+ },
+ "Struggle Bug": {
+  "name": "Struggle Bug",
+  "type": "Bug",
+  "category": "Special",
+  "base_power": 50,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "allAdjacentFoes",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% chance to lower the foe(s) Sp. Atk by 1.",
+  "source": "gen9_baseline"
+ },
+ "Stuff Cheeks": {
+  "name": "Stuff Cheeks",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Must hold Berry to use. User eats Berry, Def +2.",
+  "source": "gen9_baseline"
+ },
+ "Stun Spore": {
+  "name": "Stun Spore",
+  "type": "Grass",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 75,
+  "pp": 30,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "powder": 1
+  },
+  "short_desc": "Paralyzes the target.",
+  "source": "gen9_baseline"
+ },
+ "Substitute": {
+  "name": "Substitute",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "nonsky": 1,
+   "metronome": 1
+  },
+  "short_desc": "User takes 1/4 its max HP to put in a substitute.",
+  "source": "gen9_baseline"
+ },
+ "Sucker Punch": {
+  "name": "Sucker Punch",
+  "type": "Dark",
+  "category": "Physical",
+  "base_power": 70,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 1,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Usually goes first. Fails if target is not attacking.",
+  "source": "gen9_baseline"
+ },
+ "Sunny Day": {
+  "name": "Sunny Day",
+  "type": "Fire",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "all",
+  "flags": {
+   "metronome": 1
+  },
+  "short_desc": "For 5 turns, intense sunlight powers Fire moves.",
+  "source": "gen9_baseline"
+ },
+ "Super Fang": {
+  "name": "Super Fang",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 0,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Does damage equal to 1/2 target's current HP.",
+  "source": "gen9_baseline"
+ },
+ "Supercell Slam": {
+  "name": "Supercell Slam",
+  "type": "Electric",
+  "category": "Physical",
+  "base_power": 100,
+  "accuracy": 95,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "minimize": 1
+  },
+  "short_desc": "User is hurt by 50% of its max HP if it misses.",
+  "source": "gen9_baseline"
+ },
+ "Superpower": {
+  "name": "Superpower",
+  "type": "Fighting",
+  "category": "Physical",
+  "base_power": 120,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the user's Attack and Defense by 1.",
+  "source": "gen9_baseline"
+ },
+ "Surf": {
+  "name": "Surf",
+  "type": "Water",
+  "category": "Special",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "allAdjacent",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "nonsky": 1,
+   "metronome": 1
+  },
+  "short_desc": "Hits adjacent Pokemon. Double damage on Dive.",
+  "source": "gen9_baseline"
+ },
+ "Swagger": {
+  "name": "Swagger",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 85,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises the target's Attack by 2 and confuses it.",
+  "source": "gen9_baseline"
+ },
+ "Swallow": {
+  "name": "Swallow",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "heal": 1,
+   "metronome": 1
+  },
+  "short_desc": "Heals the user based on uses of Stockpile.",
+  "source": "gen9_baseline"
+ },
+ "Sweet Kiss": {
+  "name": "Sweet Kiss",
+  "type": "Fairy",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 75,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Causes the target to become confused.",
+  "source": "gen9_baseline"
+ },
+ "Sweet Scent": {
+  "name": "Sweet Scent",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "allAdjacentFoes",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the foe(s) evasiveness by 2.",
+  "source": "gen9_baseline"
+ },
+ "Switcheroo": {
+  "name": "Switcheroo",
+  "type": "Dark",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "allyanim": 1,
+   "noassist": 1,
+   "failcopycat": 1
+  },
+  "short_desc": "User switches its held item with the target's.",
+  "source": "gen9_baseline"
+ },
+ "Swords Dance": {
+  "name": "Swords Dance",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "dance": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises the user's Attack by 2.",
+  "source": "gen9_baseline"
+ },
+ "Synthesis": {
+  "name": "Synthesis",
+  "type": "Grass",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "heal": 1,
+   "metronome": 1
+  },
+  "short_desc": "Heals the user by a weather-dependent amount.",
+  "source": "gen9_baseline"
+ },
+ "Syrup Bomb": {
+  "name": "Syrup Bomb",
+  "type": "Grass",
+  "category": "Special",
+  "base_power": 60,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "bullet": 1
+  },
+  "short_desc": "Target's Speed is lowered by 1 stage for 3 turns.",
+  "source": "gen9_baseline"
+ },
+ "Tail Slap": {
+  "name": "Tail Slap",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 25,
+  "accuracy": 85,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Hits 2-5 times in one turn.",
+  "source": "gen9_baseline"
+ },
+ "Tailwind": {
+  "name": "Tailwind",
+  "type": "Flying",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 15,
+  "priority": 0,
+  "target": "allySide",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1,
+   "wind": 1
+  },
+  "short_desc": "For 4 turns, allies' Speed is doubled.",
+  "source": "gen9_baseline"
+ },
+ "Taunt": {
+  "name": "Taunt",
+  "type": "Dark",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "Target can't use status moves its next 3 turns.",
+  "source": "gen9_baseline"
+ },
+ "Tearful Look": {
+  "name": "Tearful Look",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "reflectable": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the target's Attack and Sp. Atk by 1.",
+  "source": "gen9_baseline"
+ },
+ "Teatime": {
+  "name": "Teatime",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "all",
+  "flags": {
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "All active Pokemon consume held Berries.",
+  "source": "gen9_baseline"
+ },
+ "Teeter Dance": {
+  "name": "Teeter Dance",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "allAdjacent",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "dance": 1,
+   "metronome": 1
+  },
+  "short_desc": "Confuses adjacent Pokemon.",
+  "source": "gen9_baseline"
+ },
+ "Temper Flare": {
+  "name": "Temper Flare",
+  "type": "Fire",
+  "category": "Physical",
+  "base_power": 75,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Power doubles if the user's last move failed.",
+  "source": "gen9_baseline"
+ },
+ "Terrain Pulse": {
+  "name": "Terrain Pulse",
+  "type": "Normal",
+  "category": "Special",
+  "base_power": 50,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "pulse": 1
+  },
+  "short_desc": "User on terrain: power doubles, type varies.",
+  "source": "gen9_baseline"
+ },
+ "Thief": {
+  "name": "Thief",
+  "type": "Dark",
+  "category": "Physical",
+  "base_power": 60,
+  "accuracy": 100,
+  "pp": 25,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "failmefirst": 1,
+   "noassist": 1,
+   "failcopycat": 1
+  },
+  "short_desc": "If the user has no item, it steals the target's.",
+  "source": "gen9_baseline"
+ },
+ "Thrash": {
+  "name": "Thrash",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 120,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "randomNormal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "failinstruct": 1
+  },
+  "short_desc": "Lasts 2-3 turns. Confuses the user afterwards.",
+  "source": "gen9_baseline"
+ },
+ "Throat Chop": {
+  "name": "Throat Chop",
+  "type": "Dark",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "For 2 turns, the target cannot use sound moves.",
+  "source": "gen9_baseline"
+ },
+ "Thunder": {
+  "name": "Thunder",
+  "type": "Electric",
+  "category": "Special",
+  "base_power": 110,
+  "accuracy": 70,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "30% chance to paralyze. Can't miss in rain.",
+  "source": "gen9_baseline"
+ },
+ "Thunder Fang": {
+  "name": "Thunder Fang",
+  "type": "Electric",
+  "category": "Physical",
+  "base_power": 65,
+  "accuracy": 95,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "bite": 1
+  },
+  "short_desc": "10% chance to paralyze. 10% chance to flinch.",
+  "source": "gen9_baseline"
+ },
+ "Thunder Punch": {
+  "name": "Thunder Punch",
+  "type": "Electric",
+  "category": "Physical",
+  "base_power": 75,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "punch": 1,
+   "metronome": 1
+  },
+  "short_desc": "10% chance to paralyze the target.",
+  "source": "gen9_baseline"
+ },
+ "Thunder Wave": {
+  "name": "Thunder Wave",
+  "type": "Electric",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 90,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Paralyzes the target.",
+  "source": "gen9_baseline"
+ },
+ "Thunderbolt": {
+  "name": "Thunderbolt",
+  "type": "Electric",
+  "category": "Special",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "10% chance to paralyze the target.",
+  "source": "gen9_baseline"
+ },
+ "Tickle": {
+  "name": "Tickle",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the target's Attack and Defense by 1.",
+  "source": "gen9_baseline"
+ },
+ "Tidy Up": {
+  "name": "Tidy Up",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "self",
+  "flags": {},
+  "short_desc": "User +1 Atk, Spe. Clears all substitutes/hazards.",
+  "source": "gen9_baseline"
+ },
+ "Torch Song": {
+  "name": "Torch Song",
+  "type": "Fire",
+  "category": "Special",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "sound": 1,
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% chance to raise the user's Sp. Atk by 1.",
+  "source": "gen9_baseline"
+ },
+ "Torment": {
+  "name": "Torment",
+  "type": "Dark",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "bypasssub": 1,
+   "metronome": 1
+  },
+  "short_desc": "Target can't select the same move twice in a row.",
+  "source": "gen9_baseline"
+ },
+ "Toxic": {
+  "name": "Toxic",
+  "type": "Poison",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Badly poisons the target. Poison types can't miss.",
+  "source": "gen9_baseline"
+ },
+ "Toxic Spikes": {
+  "name": "Toxic Spikes",
+  "type": "Poison",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "foeSide",
+  "flags": {
+   "reflectable": 1,
+   "nonsky": 1,
+   "metronome": 1,
+   "mustpressure": 1
+  },
+  "short_desc": "Poisons grounded foes on switch-in. Max 2 layers.",
+  "source": "gen9_baseline"
+ },
+ "Toxic Thread": {
+  "name": "Toxic Thread",
+  "type": "Poison",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the target's Speed by 1 and poisons it.",
+  "source": "gen9_baseline"
+ },
+ "Trailblaze": {
+  "name": "Trailblaze",
+  "type": "Grass",
+  "category": "Physical",
+  "base_power": 50,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1
+  },
+  "short_desc": "100% chance to raise the user's Speed by 1.",
+  "source": "gen9_baseline"
+ },
+ "Transform": {
+  "name": "Transform",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "allyanim": 1,
+   "failencore": 1,
+   "noassist": 1,
+   "failcopycat": 1,
+   "failmimic": 1,
+   "failinstruct": 1
+  },
+  "short_desc": "Copies target's stats, moves, types, and Ability.",
+  "source": "gen9_baseline"
+ },
+ "Tri Attack": {
+  "name": "Tri Attack",
+  "type": "Normal",
+  "category": "Special",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "20% chance to paralyze or burn or freeze target.",
+  "source": "gen9_baseline"
+ },
+ "Trick": {
+  "name": "Trick",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "allyanim": 1,
+   "noassist": 1,
+   "failcopycat": 1
+  },
+  "short_desc": "User switches its held item with the target's.",
+  "source": "gen9_baseline"
+ },
+ "Trick Room": {
+  "name": "Trick Room",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 5,
+  "priority": -7,
+  "target": "all",
+  "flags": {
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Goes last. For 5 turns, turn order is reversed.",
+  "source": "gen9_baseline"
+ },
+ "Trick-or-Treat": {
+  "name": "Trick-or-Treat",
+  "type": "Ghost",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "Adds Ghost to the target's type(s).",
+  "source": "gen9_baseline"
+ },
+ "Triple Arrows": {
+  "name": "Triple Arrows",
+  "type": "Fighting",
+  "category": "Physical",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "High crit. Target: 50% -1 Defense, 30% flinch.",
+  "source": "gen9_baseline"
+ },
+ "Triple Axel": {
+  "name": "Triple Axel",
+  "type": "Ice",
+  "category": "Physical",
+  "base_power": 20,
+  "accuracy": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Hits 3 times. Each hit can miss, but power rises.",
+  "source": "gen9_baseline"
+ },
+ "Trop Kick": {
+  "name": "Trop Kick",
+  "type": "Grass",
+  "category": "Physical",
+  "base_power": 85,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% chance to lower the target's Attack by 1.",
+  "source": "gen9_baseline"
+ },
+ "Twin Beam": {
+  "name": "Twin Beam",
+  "type": "Psychic",
+  "category": "Special",
+  "base_power": 40,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1
+  },
+  "short_desc": "Hits 2 times in one turn.",
+  "source": "gen9_baseline"
+ },
+ "U-turn": {
+  "name": "U-turn",
+  "type": "Bug",
+  "category": "Physical",
+  "base_power": 70,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "User switches out after damaging the target.",
+  "source": "gen9_baseline"
+ },
+ "Upper Hand": {
+  "name": "Upper Hand",
+  "type": "Fighting",
+  "category": "Physical",
+  "base_power": 65,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 3,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% flinch. Fails unless target using priority.",
+  "source": "gen9_baseline"
+ },
+ "Uproar": {
+  "name": "Uproar",
+  "type": "Normal",
+  "category": "Special",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "randomNormal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "sound": 1,
+   "bypasssub": 1,
+   "metronome": 1,
+   "nosleeptalk": 1,
+   "failinstruct": 1
+  },
+  "short_desc": "Lasts 3 turns. Active Pokemon cannot fall asleep.",
+  "source": "gen9_baseline"
+ },
+ "Vacuum Wave": {
+  "name": "Vacuum Wave",
+  "type": "Fighting",
+  "category": "Special",
+  "base_power": 40,
+  "accuracy": 100,
+  "pp": 30,
+  "priority": 1,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Usually goes first.",
+  "source": "gen9_baseline"
+ },
+ "Venoshock": {
+  "name": "Venoshock",
+  "type": "Poison",
+  "category": "Special",
+  "base_power": 65,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Power doubles if the target is poisoned.",
+  "source": "gen9_baseline"
+ },
+ "Volt Switch": {
+  "name": "Volt Switch",
+  "type": "Electric",
+  "category": "Special",
+  "base_power": 70,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "User switches out after damaging the target.",
+  "source": "gen9_baseline"
+ },
+ "Volt Tackle": {
+  "name": "Volt Tackle",
+  "type": "Electric",
+  "category": "Physical",
+  "base_power": 120,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Has 33% recoil. 10% chance to paralyze target.",
+  "source": "gen9_baseline"
+ },
+ "Water Pulse": {
+  "name": "Water Pulse",
+  "type": "Water",
+  "category": "Special",
+  "base_power": 60,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "any",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "distance": 1,
+   "metronome": 1,
+   "pulse": 1
+  },
+  "short_desc": "20% chance to confuse the target.",
+  "source": "gen9_baseline"
+ },
+ "Water Shuriken": {
+  "name": "Water Shuriken",
+  "type": "Water",
+  "category": "Special",
+  "base_power": 15,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 1,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Usually goes first. Hits 2-5 times in one turn.",
+  "source": "gen9_baseline"
+ },
+ "Water Spout": {
+  "name": "Water Spout",
+  "type": "Water",
+  "category": "Special",
+  "base_power": 150,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "allAdjacentFoes",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Less power as user's HP decreases. Hits foe(s).",
+  "source": "gen9_baseline"
+ },
+ "Waterfall": {
+  "name": "Waterfall",
+  "type": "Water",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "20% chance to make the target flinch.",
+  "source": "gen9_baseline"
+ },
+ "Wave Crash": {
+  "name": "Wave Crash",
+  "type": "Water",
+  "category": "Physical",
+  "base_power": 120,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Has 33% recoil.",
+  "source": "gen9_baseline"
+ },
+ "Weather Ball": {
+  "name": "Weather Ball",
+  "type": "Normal",
+  "category": "Special",
+  "base_power": 50,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "bullet": 1
+  },
+  "short_desc": "Power doubles and type varies in each weather.",
+  "source": "gen9_baseline"
+ },
+ "Whirlpool": {
+  "name": "Whirlpool",
+  "type": "Water",
+  "category": "Special",
+  "base_power": 35,
+  "accuracy": 85,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Traps and damages the target for 4-5 turns.",
+  "source": "gen9_baseline"
+ },
+ "Whirlwind": {
+  "name": "Whirlwind",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "priority": -6,
+  "target": "normal",
+  "flags": {
+   "reflectable": 1,
+   "mirror": 1,
+   "bypasssub": 1,
+   "allyanim": 1,
+   "metronome": 1,
+   "noassist": 1,
+   "failcopycat": 1,
+   "wind": 1
+  },
+  "short_desc": "Forces the target to switch to a random ally.",
+  "source": "gen9_baseline"
+ },
+ "Wide Guard": {
+  "name": "Wide Guard",
+  "type": "Rock",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 3,
+  "target": "allySide",
+  "flags": {
+   "snatch": 1
+  },
+  "short_desc": "Protects allies from multi-target moves this turn.",
+  "source": "gen9_baseline"
+ },
+ "Wild Charge": {
+  "name": "Wild Charge",
+  "type": "Electric",
+  "category": "Physical",
+  "base_power": 90,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Has 1/4 recoil.",
+  "source": "gen9_baseline"
+ },
+ "Will-O-Wisp": {
+  "name": "Will-O-Wisp",
+  "type": "Fire",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 85,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Burns the target.",
+  "source": "gen9_baseline"
+ },
+ "Wish": {
+  "name": "Wish",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "heal": 1,
+   "metronome": 1
+  },
+  "short_desc": "Next turn, 50% of the user's max HP is restored.",
+  "source": "gen9_baseline"
+ },
+ "Wonder Room": {
+  "name": "Wonder Room",
+  "type": "Psychic",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "all",
+  "flags": {
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "For 5 turns, all Defense and Sp. Def stats switch.",
+  "source": "gen9_baseline"
+ },
+ "Wood Hammer": {
+  "name": "Wood Hammer",
+  "type": "Grass",
+  "category": "Physical",
+  "base_power": 120,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Has 33% recoil.",
+  "source": "gen9_baseline"
+ },
+ "Worry Seed": {
+  "name": "Worry Seed",
+  "type": "Grass",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "allyanim": 1,
+   "metronome": 1
+  },
+  "short_desc": "The target's Ability becomes Insomnia.",
+  "source": "gen9_baseline"
+ },
+ "Wrap": {
+  "name": "Wrap",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 15,
+  "accuracy": 90,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Traps and damages the target for 4-5 turns.",
+  "source": "gen9_baseline"
+ },
+ "X-Scissor": {
+  "name": "X-Scissor",
+  "type": "Bug",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "slicing": 1
+  },
+  "short_desc": "No additional effect.",
+  "source": "gen9_baseline"
+ },
+ "Yawn": {
+  "name": "Yawn",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Puts the target to sleep after 1 turn.",
+  "source": "gen9_baseline"
+ },
+ "Zap Cannon": {
+  "name": "Zap Cannon",
+  "type": "Electric",
+  "category": "Special",
+  "base_power": 120,
+  "accuracy": 50,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "bullet": 1
+  },
+  "short_desc": "100% chance to paralyze the target.",
+  "source": "gen9_baseline"
+ },
+ "Zen Headbutt": {
+  "name": "Zen Headbutt",
+  "type": "Psychic",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 90,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "20% chance to make the target flinch.",
+  "source": "gen9_baseline"
+ },
+ "No Retreat": {
+  "name": "No Retreat",
+  "type": "Fighting",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 8,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises all of the user's stats by 1, but it cannot switch out.",
+  "source": "champions_signature"
+ },
+ "Barb Barrage": {
+  "name": "Barb Barrage",
+  "type": "Poison",
+  "category": "Physical",
+  "base_power": 60,
+  "accuracy": 100,
+  "pp": 10,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Doubles damage if the target is poisoned.",
+  "priority": 0,
+  "source": "mb_sheet"
+ },
+ "Make It Rain": {
+  "name": "Make It Rain",
+  "type": "Steel",
+  "category": "Special",
+  "base_power": 120,
+  "accuracy": 95,
+  "pp": 5,
+  "target": "allAdjacentFoes",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the user's Sp. Atk by 1. Hits all foes.",
+  "priority": 0,
+  "source": "mb_sheet"
+ },
+ "Rage Fist": {
+  "name": "Rage Fist",
+  "type": "Ghost",
+  "category": "Physical",
+  "base_power": 50,
+  "accuracy": 100,
+  "pp": 10,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "punch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Power rises by 50 for each hit the user has taken.",
+  "priority": 0,
+  "source": "mb_sheet"
+ },
+ "Spirit Break": {
+  "name": "Spirit Break",
+  "type": "Fairy",
+  "category": "Physical",
+  "base_power": 75,
+  "accuracy": 100,
+  "pp": 15,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Lowers the target's Sp. Atk by 1.",
+  "priority": 0,
+  "source": "mb_sheet"
+ },
+ "Topsy-Turvy": {
+  "name": "Topsy-Turvy",
+  "type": "Dark",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 20,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "reflectable": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Inverts the target's stat stages.",
+  "priority": 0,
+  "source": "mb_sheet"
+ },
+ "Drum Beating": {
+  "name": "Drum Beating",
+  "type": "Grass",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "100% chance to lower the target's Speed by 1.",
+  "source": "provisional_mc: gen9 mainline (no M-B Pokemon learned it)"
+ },
+ "Glaive Rush": {
+  "name": "Glaive Rush",
+  "type": "Dragon",
+  "category": "Physical",
+  "base_power": 120,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "User takes double damage and can't avoid attacks until its next move.",
+  "source": "provisional_mc: gen9 mainline (no M-B Pokemon learned it)"
+ }
+}

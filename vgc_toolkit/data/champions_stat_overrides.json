@@ -1,0 +1,4 @@
+{
+  "_comment": "Confirmed Champions stat changes vs the Gen 9 baseline. Applied last by build_pokedex.py --overrides. Aegislash Shield forme: Champions restored 150/150 defenses (Gen 9 mainline is 140/140) — confirmed by Maxim 2026-06-10.",
+  "aegislash": {"def": 150, "spd": 150}
+}

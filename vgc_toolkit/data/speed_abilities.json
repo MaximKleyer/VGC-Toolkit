@@ -1,0 +1,56 @@
+{
+  "Swift Swim": {
+    "condition": "weather",
+    "value": "rain",
+    "multiplier": 2.0
+  },
+  "Chlorophyll": {
+    "condition": "weather",
+    "value": "sun",
+    "multiplier": 2.0
+  },
+  "Sand Rush": {
+    "condition": "weather",
+    "value": "sand",
+    "multiplier": 2.0
+  },
+  "Slush Rush": {
+    "condition": "weather",
+    "value": "snow",
+    "multiplier": 2.0
+  },
+  "Surge Surfer": {
+    "condition": "terrain",
+    "value": "electric",
+    "multiplier": 2.0
+  },
+  "Unburden": {
+    "condition": "itemConsumed",
+    "multiplier": 2.0
+  },
+  "Quick Feet": {
+    "condition": "status",
+    "value": "any",
+    "multiplier": 1.5
+  },
+  "Speed Boost": {
+    "condition": "passive",
+    "multiplier": null
+  },
+  "Steam Engine": {
+    "condition": "trigger",
+    "multiplier": null
+  },
+  "Motor Drive": {
+    "condition": "trigger",
+    "multiplier": null
+  },
+  "Protosynthesis": {
+    "condition": "sun+booster",
+    "multiplier": 1.5
+  },
+  "Quark Drive": {
+    "condition": "electric+booster",
+    "multiplier": 1.5
+  }
+}

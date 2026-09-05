@@ -1,0 +1,167 @@
+{
+  "Serious": {
+    "boost": null,
+    "reduce": null,
+    "multipliers": {
+      "atk": 1.0,
+      "def": 1.0,
+      "spa": 1.0,
+      "spd": 1.0,
+      "spe": 1.0
+    }
+  },
+  "Timid": {
+    "boost": "spe",
+    "reduce": "atk",
+    "multipliers": {
+      "atk": 0.9,
+      "def": 1.0,
+      "spa": 1.0,
+      "spd": 1.0,
+      "spe": 1.1
+    }
+  },
+  "Jolly": {
+    "boost": "spe",
+    "reduce": "spa",
+    "multipliers": {
+      "atk": 1.0,
+      "def": 1.0,
+      "spa": 0.9,
+      "spd": 1.0,
+      "spe": 1.1
+    }
+  },
+  "Hasty": {
+    "boost": "spe",
+    "reduce": "def",
+    "multipliers": {
+      "atk": 1.0,
+      "def": 0.9,
+      "spa": 1.0,
+      "spd": 1.0,
+      "spe": 1.1
+    }
+  },
+  "Naive": {
+    "boost": "spe",
+    "reduce": "spd",
+    "multipliers": {
+      "atk": 1.0,
+      "def": 1.0,
+      "spa": 1.0,
+      "spd": 0.9,
+      "spe": 1.1
+    }
+  },
+  "Modest": {
+    "boost": "spa",
+    "reduce": "atk",
+    "multipliers": {
+      "atk": 0.9,
+      "def": 1.0,
+      "spa": 1.1,
+      "spd": 1.0,
+      "spe": 1.0
+    }
+  },
+  "Adamant": {
+    "boost": "atk",
+    "reduce": "spa",
+    "multipliers": {
+      "atk": 1.1,
+      "def": 1.0,
+      "spa": 0.9,
+      "spd": 1.0,
+      "spe": 1.0
+    }
+  },
+  "Bold": {
+    "boost": "def",
+    "reduce": "atk",
+    "multipliers": {
+      "atk": 0.9,
+      "def": 1.1,
+      "spa": 1.0,
+      "spd": 1.0,
+      "spe": 1.0
+    }
+  },
+  "Impish": {
+    "boost": "def",
+    "reduce": "spa",
+    "multipliers": {
+      "atk": 1.0,
+      "def": 1.1,
+      "spa": 0.9,
+      "spd": 1.0,
+      "spe": 1.0
+    }
+  },
+  "Calm": {
+    "boost": "spd",
+    "reduce": "atk",
+    "multipliers": {
+      "atk": 0.9,
+      "def": 1.0,
+      "spa": 1.0,
+      "spd": 1.1,
+      "spe": 1.0
+    }
+  },
+  "Careful": {
+    "boost": "spd",
+    "reduce": "spa",
+    "multipliers": {
+      "atk": 1.0,
+      "def": 1.0,
+      "spa": 0.9,
+      "spd": 1.1,
+      "spe": 1.0
+    }
+  },
+  "Brave": {
+    "boost": "atk",
+    "reduce": "spe",
+    "multipliers": {
+      "atk": 1.1,
+      "def": 1.0,
+      "spa": 1.0,
+      "spd": 1.0,
+      "spe": 0.9
+    }
+  },
+  "Quiet": {
+    "boost": "spa",
+    "reduce": "spe",
+    "multipliers": {
+      "atk": 1.0,
+      "def": 1.0,
+      "spa": 1.1,
+      "spd": 1.0,
+      "spe": 0.9
+    }
+  },
+  "Relaxed": {
+    "boost": "def",
+    "reduce": "spe",
+    "multipliers": {
+      "atk": 1.0,
+      "def": 1.1,
+      "spa": 1.0,
+      "spd": 1.0,
+      "spe": 0.9
+    }
+  },
+  "Sassy": {
+    "boost": "spd",
+    "reduce": "spe",
+    "multipliers": {
+      "atk": 1.0,
+      "def": 1.0,
+      "spa": 1.0,
+      "spd": 1.1,
+      "spe": 0.9
+    }
+  }
+}

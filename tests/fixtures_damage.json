@@ -1,0 +1,699 @@
+[
+ {
+  "label": "basic STAB special",
+  "attacker": "chandelure-mega",
+  "attacker_opts": {
+   "sp": {
+    "spa": 32
+   },
+   "nature": "Modest"
+  },
+  "defender": "kingambit",
+  "defender_opts": {
+   "sp": {
+    "hp": 32
+   }
+  },
+  "move": "Heat Wave",
+  "move_opts": {},
+  "field": {},
+  "expected_rolls": [
+   192,
+   194,
+   198,
+   198,
+   200,
+   204,
+   206,
+   206,
+   210,
+   212,
+   216,
+   216,
+   218,
+   222,
+   224,
+   228
+  ]
+ },
+ {
+  "label": "spread + sun",
+  "attacker": "chandelure-mega",
+  "attacker_opts": {
+   "sp": {
+    "spa": 32
+   },
+   "nature": "Modest"
+  },
+  "defender": "kingambit",
+  "defender_opts": {
+   "sp": {
+    "hp": 32
+   }
+  },
+  "move": "Heat Wave",
+  "move_opts": {
+   "spread": true
+  },
+  "field": {
+   "weather": "Sun"
+  },
+  "expected_rolls": [
+   288,
+   294,
+   296,
+   300,
+   302,
+   306,
+   308,
+   312,
+   318,
+   320,
+   324,
+   326,
+   330,
+   332,
+   336,
+   342
+  ]
+ },
+ {
+  "label": "rain boosted water",
+  "attacker": "politoed",
+  "attacker_opts": {
+   "sp": {
+    "spa": 32
+   },
+   "nature": "Modest"
+  },
+  "defender": "chandelure-mega",
+  "defender_opts": {
+   "sp": {
+    "hp": 4
+   }
+  },
+  "move": "Surf",
+  "move_opts": {
+   "spread": true
+  },
+  "field": {
+   "weather": "Rain"
+  },
+  "expected_rolls": [
+   138,
+   140,
+   140,
+   144,
+   144,
+   146,
+   150,
+   150,
+   152,
+   152,
+   156,
+   156,
+   158,
+   158,
+   162,
+   164
+  ]
+ },
+ {
+  "label": "physical + burn",
+  "attacker": "kingambit",
+  "attacker_opts": {
+   "sp": {
+    "atk": 32
+   },
+   "nature": "Adamant",
+   "status": "brn"
+  },
+  "defender": "skarmory-mega",
+  "defender_opts": {
+   "sp": {
+    "hp": 32,
+    "def": 16
+   }
+  },
+  "move": "Kowtow Cleave",
+  "move_opts": {},
+  "field": {},
+  "expected_rolls": [
+   33,
+   34,
+   34,
+   35,
+   36,
+   36,
+   36,
+   36,
+   37,
+   37,
+   38,
+   38,
+   39,
+   39,
+   39,
+   40
+  ]
+ },
+ {
+  "label": "crit ignores screens",
+  "attacker": "kingambit",
+  "attacker_opts": {
+   "sp": {
+    "atk": 32
+   }
+  },
+  "defender": "clefable",
+  "defender_opts": {
+   "sp": {
+    "hp": 32
+   }
+  },
+  "move": "Iron Head",
+  "move_opts": {
+   "crit": true
+  },
+  "field": {
+   "reflect": true
+  },
+  "expected_rolls": [
+   272,
+   276,
+   278,
+   284,
+   288,
+   290,
+   294,
+   296,
+   300,
+   302,
+   306,
+   308,
+   312,
+   314,
+   318,
+   324
+  ]
+ },
+ {
+  "label": "reflect halves physical",
+  "attacker": "kingambit",
+  "attacker_opts": {
+   "sp": {
+    "atk": 32
+   }
+  },
+  "defender": "clefable",
+  "defender_opts": {
+   "sp": {
+    "hp": 32
+   }
+  },
+  "move": "Iron Head",
+  "move_opts": {},
+  "field": {
+   "reflect": true
+  },
+  "expected_rolls": [
+   121,
+   121,
+   124,
+   125,
+   128,
+   128,
+   129,
+   132,
+   132,
+   133,
+   136,
+   137,
+   137,
+   140,
+   141,
+   144
+  ]
+ },
+ {
+  "label": "adaptability stab",
+  "attacker": "glimmora-mega",
+  "attacker_opts": {
+   "sp": {
+    "atk": 32
+   },
+   "nature": "Jolly",
+   "ability": "Adaptability"
+  },
+  "defender": "gardevoir",
+  "defender_opts": {
+   "sp": {
+    "hp": 4
+   }
+  },
+  "move": "Poison Jab",
+  "move_opts": {},
+  "field": {},
+  "expected_rolls": [
+   204,
+   204,
+   208,
+   208,
+   212,
+   216,
+   216,
+   220,
+   220,
+   224,
+   228,
+   228,
+   232,
+   232,
+   236,
+   240
+  ]
+ },
+ {
+  "label": "huge power",
+  "attacker": "starmie-mega",
+  "attacker_opts": {
+   "sp": {
+    "atk": 32
+   },
+   "ability": "Huge Power"
+  },
+  "defender": "kingambit",
+  "defender_opts": {
+   "sp": {
+    "hp": 32
+   }
+  },
+  "move": "Waterfall",
+  "move_opts": {},
+  "field": {},
+  "expected_rolls": [
+   99,
+   100,
+   100,
+   102,
+   103,
+   105,
+   105,
+   106,
+   108,
+   109,
+   111,
+   111,
+   112,
+   114,
+   115,
+   117
+  ]
+ },
+ {
+  "label": "multiscale full hp",
+  "attacker": "dragapult",
+  "attacker_opts": {
+   "sp": {
+    "spa": 32
+   },
+   "nature": "Timid"
+  },
+  "defender": "dragonite-mega",
+  "defender_opts": {
+   "sp": {
+    "hp": 32
+   },
+   "ability": "Multiscale"
+  },
+  "move": "Shadow Ball",
+  "move_opts": {},
+  "field": {},
+  "expected_rolls": [
+   24,
+   24,
+   24,
+   24,
+   24,
+   25,
+   25,
+   25,
+   26,
+   26,
+   27,
+   27,
+   27,
+   27,
+   27,
+   28
+  ]
+ },
+ {
+  "label": "type boost item",
+  "attacker": "golurk-mega",
+  "attacker_opts": {
+   "sp": {
+    "atk": 32
+   },
+   "nature": "Adamant",
+   "item": "Soft Sand"
+  },
+  "defender": "kingambit",
+  "defender_opts": {
+   "sp": {
+    "hp": 32
+   }
+  },
+  "move": "Earthquake",
+  "move_opts": {
+   "spread": true
+  },
+  "field": {},
+  "expected_rolls": [
+   168,
+   170,
+   174,
+   174,
+   176,
+   180,
+   180,
+   182,
+   186,
+   186,
+   188,
+   192,
+   192,
+   194,
+   198,
+   200
+  ]
+ },
+ {
+  "label": "resist berry",
+  "attacker": "chandelure-mega",
+  "attacker_opts": {
+   "sp": {
+    "spa": 32
+   },
+   "nature": "Modest"
+  },
+  "defender": "kingambit",
+  "defender_opts": {
+   "sp": {
+    "hp": 32
+   },
+   "item": "Occa Berry"
+  },
+  "move": "Heat Wave",
+  "move_opts": {},
+  "field": {},
+  "expected_rolls": [
+   96,
+   97,
+   99,
+   99,
+   100,
+   102,
+   103,
+   103,
+   105,
+   106,
+   108,
+   108,
+   109,
+   111,
+   112,
+   114
+  ]
+ },
+ {
+  "label": "stat stages",
+  "attacker": "kingambit",
+  "attacker_opts": {
+   "sp": {
+    "atk": 32
+   },
+   "boosts": {
+    "atk": 2
+   }
+  },
+  "defender": "clefable",
+  "defender_opts": {
+   "sp": {
+    "hp": 32
+   },
+   "boosts": {
+    "def": 1
+   }
+  },
+  "move": "Iron Head",
+  "move_opts": {},
+  "field": {},
+  "expected_rolls": [
+   242,
+   246,
+   248,
+   252,
+   254,
+   258,
+   260,
+   264,
+   266,
+   270,
+   272,
+   276,
+   278,
+   282,
+   284,
+   288
+  ]
+ },
+ {
+  "label": "body press",
+  "attacker": "skarmory-mega",
+  "attacker_opts": {
+   "sp": {
+    "def": 32
+   },
+   "nature": "Impish"
+  },
+  "defender": "kingambit",
+  "defender_opts": {
+   "sp": {
+    "hp": 32
+   }
+  },
+  "move": "Body Press",
+  "move_opts": {},
+  "field": {},
+  "expected_rolls": [
+   156,
+   156,
+   160,
+   160,
+   160,
+   164,
+   164,
+   168,
+   168,
+   172,
+   172,
+   176,
+   176,
+   180,
+   180,
+   184
+  ]
+ },
+ {
+  "label": "psyshock hits def",
+  "attacker": "gardevoir",
+  "attacker_opts": {
+   "sp": {
+    "spa": 32
+   },
+   "nature": "Modest"
+  },
+  "defender": "primarina",
+  "defender_opts": {
+   "sp": {
+    "hp": 32,
+    "spd": 32
+   },
+   "nature": "Calm"
+  },
+  "move": "Psyshock",
+  "move_opts": {},
+  "field": {},
+  "expected_rolls": [
+   93,
+   94,
+   96,
+   97,
+   97,
+   99,
+   100,
+   102,
+   102,
+   103,
+   105,
+   106,
+   106,
+   108,
+   109,
+   111
+  ]
+ },
+ {
+  "label": "foul play",
+  "attacker": "sableye",
+  "attacker_opts": {
+   "sp": {}
+  },
+  "defender": "kingambit",
+  "defender_opts": {
+   "sp": {
+    "hp": 32,
+    "atk": 32
+   },
+   "nature": "Adamant"
+  },
+  "move": "Foul Play",
+  "move_opts": {},
+  "field": {},
+  "expected_rolls": [
+   39,
+   40,
+   40,
+   41,
+   42,
+   42,
+   42,
+   42,
+   43,
+   44,
+   44,
+   45,
+   45,
+   45,
+   46,
+   47
+  ]
+ },
+ {
+  "label": "thick fat halves",
+  "attacker": "chandelure-mega",
+  "attacker_opts": {
+   "sp": {
+    "spa": 32
+   },
+   "nature": "Modest"
+  },
+  "defender": "snorlax",
+  "defender_opts": {
+   "sp": {
+    "hp": 32
+   },
+   "ability": "Thick Fat"
+  },
+  "move": "Heat Wave",
+  "move_opts": {},
+  "field": {},
+  "expected_rolls": [
+   39,
+   39,
+   39,
+   40,
+   40,
+   40,
+   42,
+   42,
+   42,
+   43,
+   43,
+   43,
+   45,
+   45,
+   45,
+   46
+  ]
+ },
+ {
+  "label": "snow def boost",
+  "attacker": "kingambit",
+  "attacker_opts": {
+   "sp": {
+    "atk": 32
+   },
+   "nature": "Adamant"
+  },
+  "defender": "froslass-mega",
+  "defender_opts": {
+   "sp": {
+    "hp": 32
+   }
+  },
+  "move": "Iron Head",
+  "move_opts": {},
+  "field": {
+   "weather": "Snow"
+  },
+  "expected_rolls": [
+   138,
+   140,
+   140,
+   144,
+   144,
+   146,
+   150,
+   150,
+   152,
+   152,
+   156,
+   156,
+   158,
+   158,
+   162,
+   164
+  ]
+ },
+ {
+  "label": "friend guard + filter",
+  "attacker": "dragapult",
+  "attacker_opts": {
+   "sp": {
+    "spa": 32
+   }
+  },
+  "defender": "dragonite-mega",
+  "defender_opts": {
+   "sp": {
+    "hp": 32
+   },
+   "ability": "Filter"
+  },
+  "move": "Draco Meteor",
+  "move_opts": {},
+  "field": {
+   "friendGuard": true
+  },
+  "expected_rolls": [
+   85,
+   88,
+   89,
+   89,
+   91,
+   91,
+   92,
+   94,
+   94,
+   96,
+   96,
+   98,
+   99,
+   99,
+   101,
+   102
+  ]
+ }
+]

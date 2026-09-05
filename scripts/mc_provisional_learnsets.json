@@ -1,0 +1,55 @@
+{
+ "_note": "Gen 9 mainline learnsets (union of pokemondb.net /moves/9 and serebii.net pokedex-sv, fetched 2026-09-03) for the species added in Regulation M-C. scripts/add_mc_forms.py intersects each list with the Champions move pool (moves.json) and writes it as a provisional learnset. Replace this file (and re-run with --force-learnsets) once the Champions M-C learnsets are published.",
+ "rillaboom": [
+  "Acrobatics", "Body Press", "Body Slam", "Boomburst", "Branch Poke", "Brick Break",
+  "Bulk Up", "Bulldoze", "Bullet Seed", "Double Hit", "Double-Edge", "Drain Punch",
+  "Drum Beating", "Earth Power", "Earthquake", "Endeavor", "Endure", "Energy Ball",
+  "Facade", "Fake Out", "False Swipe", "Fling", "Focus Blast", "Focus Punch",
+  "Frenzy Plant", "Giga Drain", "Giga Impact", "Grass Knot", "Grass Pledge",
+  "Grassy Glide", "Grassy Terrain", "Growl", "Growth", "Hammer Arm", "High Horsepower",
+  "Hyper Beam", "Hyper Voice", "Knock Off", "Leaf Storm", "Leech Seed", "Low Kick",
+  "Low Sweep", "Magical Leaf", "Mud Shot", "Noble Roar", "Protect", "Razor Leaf",
+  "Rest", "Scary Face", "Scratch", "Screech", "Seed Bomb", "Slam", "Sleep Talk",
+  "Snarl", "Solar Beam", "Solar Blade", "Stomping Tantrum", "Strength", "Substitute",
+  "Sunny Day", "Swift", "Swords Dance", "Take Down", "Taunt", "Tera Blast", "Thief",
+  "Trailblaze", "U-turn", "Uproar", "Wood Hammer", "Worry Seed"
+ ],
+ "salamence": [
+  "Aerial Ace", "Air Slash", "Bite", "Body Slam", "Breaking Swipe", "Brick Break",
+  "Bulldoze", "Crunch", "Defense Curl", "Double-Edge", "Draco Meteor", "Dragon Breath",
+  "Dragon Cheer", "Dragon Claw", "Dragon Dance", "Dragon Pulse", "Dragon Rush",
+  "Dragon Tail", "Dual Wingbeat", "Earthquake", "Ember", "Endure", "Facade",
+  "Fire Blast", "Fire Fang", "Fire Spin", "Flame Charge", "Flamethrower", "Fly",
+  "Focus Energy", "Giga Impact", "Headbutt", "Heat Wave", "Helping Hand", "Hurricane",
+  "Hydro Pump", "Hyper Beam", "Hyper Voice", "Iron Defense", "Iron Head", "Leer",
+  "Mud-Slap", "Outrage", "Protect", "Psychic Fangs", "Rain Dance", "Rest", "Roar",
+  "Rock Slide", "Rock Tomb", "Roost", "Scale Shot", "Scary Face", "Shadow Claw",
+  "Skull Bash", "Sleep Talk", "Stone Edge", "Substitute", "Sunny Day", "Swift",
+  "Tailwind", "Take Down", "Temper Flare", "Tera Blast", "Thrash", "Thunder Fang",
+  "Twister", "Zen Headbutt"
+ ],
+ "golisopod": [
+  "Agility", "Aqua Jet", "Blizzard", "Brick Break", "Bulk Up", "Close Combat",
+  "Dark Pulse", "Double Hit", "Drill Run", "Dual Chop", "Endure", "Facade",
+  "False Swipe", "First Impression", "Focus Blast", "Giga Impact", "Gunk Shot",
+  "Harden", "Hyper Beam", "Ice Beam", "Icy Wind", "Iron Defense", "Iron Head",
+  "Leech Life", "Liquidation", "Metal Claw", "Mud Shot", "Muddy Water", "Night Slash",
+  "Pin Missile", "Poison Jab", "Protect", "Rock Slide", "Rock Smash", "Rock Tomb",
+  "Rollout", "Scald", "Screech", "Shadow Claw", "Slash", "Sludge Bomb", "Spikes",
+  "Substitute", "Surf", "Swift", "Swords Dance", "Taunt", "U-turn", "Waterfall",
+  "X-Scissor"
+ ],
+ "baxcalibur": [
+  "Aerial Ace", "Aqua Tail", "Bite", "Blizzard", "Body Press", "Body Slam",
+  "Breaking Swipe", "Brick Break", "Bulldoze", "Crunch", "Dig", "Double-Edge",
+  "Draco Meteor", "Dragon Breath", "Dragon Cheer", "Dragon Claw", "Dragon Dance",
+  "Dragon Pulse", "Dragon Rush", "Dragon Tail", "Earthquake", "Endure", "Facade",
+  "False Swipe", "Focus Energy", "Freeze-Dry", "Frost Breath", "Giga Impact",
+  "Glaive Rush", "Helping Hand", "High Horsepower", "Hyper Beam", "Ice Beam",
+  "Ice Fang", "Ice Hammer", "Ice Shard", "Icicle Crash", "Icicle Spear", "Icy Wind",
+  "Iron Head", "Leer", "Outrage", "Protect", "Psychic Fangs", "Rain Dance", "Rest",
+  "Scale Shot", "Scary Face", "Sheer Cold", "Sleep Talk", "Snowscape",
+  "Stomping Tantrum", "Substitute", "Swords Dance", "Tackle", "Take Down",
+  "Tera Blast", "Thunder Fang", "Zen Headbutt"
+ ]
+}

@@ -1,0 +1,1999 @@
+{
+  "clefable": {
+    "id": "clefable",
+    "name": "Clefable",
+    "types": [
+      "Fairy"
+    ],
+    "base": {
+      "hp": 95,
+      "atk": 70,
+      "def": 73,
+      "spa": 95,
+      "spd": 90,
+      "spe": 60
+    },
+    "abilities": [
+      "Cute Charm",
+      "Magic Guard",
+      "Unaware"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "clefable-mega": {
+    "id": "clefable-mega",
+    "name": "Mega Clefable",
+    "types": [
+      "Fairy",
+      "Flying"
+    ],
+    "base": {
+      "hp": 95,
+      "atk": 80,
+      "def": 93,
+      "spa": 135,
+      "spd": 110,
+      "spe": 70
+    },
+    "abilities": [
+      "Magic Bounce"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "clefable"
+  },
+  "victreebel": {
+    "id": "victreebel",
+    "name": "Victreebel",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "base": {
+      "hp": 80,
+      "atk": 105,
+      "def": 65,
+      "spa": 100,
+      "spd": 70,
+      "spe": 70
+    },
+    "abilities": [
+      "Chlorophyll",
+      "Gluttony"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "victreebel-mega": {
+    "id": "victreebel-mega",
+    "name": "Mega Victreebel",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "base": {
+      "hp": 80,
+      "atk": 125,
+      "def": 85,
+      "spa": 135,
+      "spd": 95,
+      "spe": 70
+    },
+    "abilities": [
+      "Innards Out"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "victreebel"
+  },
+  "starmie": {
+    "id": "starmie",
+    "name": "Starmie",
+    "types": [
+      "Water",
+      "Psychic"
+    ],
+    "base": {
+      "hp": 60,
+      "atk": 75,
+      "def": 85,
+      "spa": 100,
+      "spd": 85,
+      "spe": 115
+    },
+    "abilities": [
+      "Illuminate",
+      "Natural Cure",
+      "Analytic"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "starmie-mega": {
+    "id": "starmie-mega",
+    "name": "Mega Starmie",
+    "types": [
+      "Water",
+      "Psychic"
+    ],
+    "base": {
+      "hp": 60,
+      "atk": 100,
+      "def": 105,
+      "spa": 130,
+      "spd": 105,
+      "spe": 120
+    },
+    "abilities": [
+      "Huge Power"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "starmie"
+  },
+  "dragonite": {
+    "id": "dragonite",
+    "name": "Dragonite",
+    "types": [
+      "Dragon",
+      "Flying"
+    ],
+    "base": {
+      "hp": 91,
+      "atk": 134,
+      "def": 95,
+      "spa": 100,
+      "spd": 100,
+      "spe": 80
+    },
+    "abilities": [
+      "Inner Focus",
+      "Multiscale"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "dragonite-mega": {
+    "id": "dragonite-mega",
+    "name": "Mega Dragonite",
+    "types": [
+      "Dragon",
+      "Flying"
+    ],
+    "base": {
+      "hp": 91,
+      "atk": 124,
+      "def": 115,
+      "spa": 145,
+      "spd": 125,
+      "spe": 100
+    },
+    "abilities": [
+      "Multiscale"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "dragonite"
+  },
+  "meganium": {
+    "id": "meganium",
+    "name": "Meganium",
+    "types": [
+      "Grass"
+    ],
+    "base": {
+      "hp": 80,
+      "atk": 82,
+      "def": 100,
+      "spa": 83,
+      "spd": 100,
+      "spe": 80
+    },
+    "abilities": [
+      "Overgrow",
+      "Leaf Guard"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "meganium-mega": {
+    "id": "meganium-mega",
+    "name": "Mega Meganium",
+    "types": [
+      "Grass",
+      "Fairy"
+    ],
+    "base": {
+      "hp": 80,
+      "atk": 92,
+      "def": 115,
+      "spa": 143,
+      "spd": 115,
+      "spe": 80
+    },
+    "abilities": [
+      "Mega Sol"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "meganium"
+  },
+  "feraligatr": {
+    "id": "feraligatr",
+    "name": "Feraligatr",
+    "types": [
+      "Water"
+    ],
+    "base": {
+      "hp": 85,
+      "atk": 105,
+      "def": 100,
+      "spa": 79,
+      "spd": 83,
+      "spe": 78
+    },
+    "abilities": [
+      "Torrent",
+      "Sheer Force"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "feraligatr-mega": {
+    "id": "feraligatr-mega",
+    "name": "Mega Feraligatr",
+    "types": [
+      "Water",
+      "Dragon"
+    ],
+    "base": {
+      "hp": 85,
+      "atk": 160,
+      "def": 125,
+      "spa": 89,
+      "spd": 93,
+      "spe": 78
+    },
+    "abilities": [
+      "Dragonize"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "feraligatr"
+  },
+  "skarmory": {
+    "id": "skarmory",
+    "name": "Skarmory",
+    "types": [
+      "Steel",
+      "Flying"
+    ],
+    "base": {
+      "hp": 65,
+      "atk": 80,
+      "def": 140,
+      "spa": 40,
+      "spd": 70,
+      "spe": 70
+    },
+    "abilities": [
+      "Keen Eye",
+      "Sturdy",
+      "Weak Armor"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "skarmory-mega": {
+    "id": "skarmory-mega",
+    "name": "Mega Skarmory",
+    "types": [
+      "Steel",
+      "Flying"
+    ],
+    "base": {
+      "hp": 65,
+      "atk": 140,
+      "def": 110,
+      "spa": 40,
+      "spd": 100,
+      "spe": 110
+    },
+    "abilities": [
+      "Stalwart"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "skarmory"
+  },
+  "froslass": {
+    "id": "froslass",
+    "name": "Froslass",
+    "types": [
+      "Ice",
+      "Ghost"
+    ],
+    "base": {
+      "hp": 70,
+      "atk": 80,
+      "def": 70,
+      "spa": 80,
+      "spd": 70,
+      "spe": 110
+    },
+    "abilities": [
+      "Snow Cloak",
+      "Cursed Body"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "froslass-mega": {
+    "id": "froslass-mega",
+    "name": "Mega Froslass",
+    "types": [
+      "Ice",
+      "Ghost"
+    ],
+    "base": {
+      "hp": 70,
+      "atk": 80,
+      "def": 70,
+      "spa": 140,
+      "spd": 100,
+      "spe": 120
+    },
+    "abilities": [
+      "Snow Warning"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "froslass"
+  },
+  "emboar": {
+    "id": "emboar",
+    "name": "Emboar",
+    "types": [
+      "Fire",
+      "Fighting"
+    ],
+    "base": {
+      "hp": 110,
+      "atk": 123,
+      "def": 65,
+      "spa": 100,
+      "spd": 65,
+      "spe": 65
+    },
+    "abilities": [
+      "Blaze",
+      "Reckless"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "emboar-mega": {
+    "id": "emboar-mega",
+    "name": "Mega Emboar",
+    "types": [
+      "Fire",
+      "Fighting"
+    ],
+    "base": {
+      "hp": 110,
+      "atk": 148,
+      "def": 75,
+      "spa": 110,
+      "spd": 110,
+      "spe": 75
+    },
+    "abilities": [
+      "Mold Breaker"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "emboar"
+  },
+  "excadrill": {
+    "id": "excadrill",
+    "name": "Excadrill",
+    "types": [
+      "Ground",
+      "Steel"
+    ],
+    "base": {
+      "hp": 110,
+      "atk": 135,
+      "def": 60,
+      "spa": 50,
+      "spd": 65,
+      "spe": 88
+    },
+    "abilities": [
+      "Sand Rush",
+      "Sand Force",
+      "Mold Breaker"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "excadrill-mega": {
+    "id": "excadrill-mega",
+    "name": "Mega Excadrill",
+    "types": [
+      "Ground",
+      "Steel"
+    ],
+    "base": {
+      "hp": 110,
+      "atk": 165,
+      "def": 100,
+      "spa": 65,
+      "spd": 65,
+      "spe": 103
+    },
+    "abilities": [
+      "Piercing Drill"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "excadrill"
+  },
+  "scolipede": {
+    "id": "scolipede",
+    "name": "Scolipede",
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "base": {
+      "hp": 60,
+      "atk": 100,
+      "def": 89,
+      "spa": 55,
+      "spd": 69,
+      "spe": 112
+    },
+    "abilities": [
+      "Poison Point",
+      "Swarm",
+      "Speed Boost"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "scolipede-mega": {
+    "id": "scolipede-mega",
+    "name": "Mega Scolipede",
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "base": {
+      "hp": 60,
+      "atk": 140,
+      "def": 149,
+      "spa": 75,
+      "spd": 99,
+      "spe": 62
+    },
+    "abilities": [],
+    "is_mega": true,
+    "in_game": false,
+    "mega_of": "scolipede"
+  },
+  "scrafty": {
+    "id": "scrafty",
+    "name": "Scrafty",
+    "types": [
+      "Dark",
+      "Fighting"
+    ],
+    "base": {
+      "hp": 65,
+      "atk": 90,
+      "def": 115,
+      "spa": 45,
+      "spd": 115,
+      "spe": 58
+    },
+    "abilities": [
+      "Shed Skin",
+      "Moxie",
+      "Intimidate"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "scrafty-mega": {
+    "id": "scrafty-mega",
+    "name": "Mega Scrafty",
+    "types": [
+      "Dark",
+      "Fighting"
+    ],
+    "base": {
+      "hp": 65,
+      "atk": 130,
+      "def": 135,
+      "spa": 55,
+      "spd": 135,
+      "spe": 68
+    },
+    "abilities": [],
+    "is_mega": true,
+    "in_game": false,
+    "mega_of": "scrafty"
+  },
+  "eelektross": {
+    "id": "eelektross",
+    "name": "Eelektross",
+    "types": [
+      "Electric"
+    ],
+    "base": {
+      "hp": 85,
+      "atk": 115,
+      "def": 80,
+      "spa": 105,
+      "spd": 80,
+      "spe": 50
+    },
+    "abilities": [
+      "Levitate"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "eelektross-mega": {
+    "id": "eelektross-mega",
+    "name": "Mega Eelektross",
+    "types": [
+      "Electric"
+    ],
+    "base": {
+      "hp": 85,
+      "atk": 145,
+      "def": 80,
+      "spa": 135,
+      "spd": 90,
+      "spe": 80
+    },
+    "abilities": [],
+    "is_mega": true,
+    "in_game": false,
+    "mega_of": "eelektross"
+  },
+  "chandelure": {
+    "id": "chandelure",
+    "name": "Chandelure",
+    "types": [
+      "Ghost",
+      "Fire"
+    ],
+    "base": {
+      "hp": 60,
+      "atk": 55,
+      "def": 90,
+      "spa": 145,
+      "spd": 90,
+      "spe": 80
+    },
+    "abilities": [
+      "Flash Fire",
+      "Flame Body",
+      "Infiltrator"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "chandelure-mega": {
+    "id": "chandelure-mega",
+    "name": "Mega Chandelure",
+    "types": [
+      "Ghost",
+      "Fire"
+    ],
+    "base": {
+      "hp": 60,
+      "atk": 75,
+      "def": 110,
+      "spa": 175,
+      "spd": 110,
+      "spe": 90
+    },
+    "abilities": [
+      "Infiltrator"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "chandelure"
+  },
+  "chesnaught": {
+    "id": "chesnaught",
+    "name": "Chesnaught",
+    "types": [
+      "Grass",
+      "Fighting"
+    ],
+    "base": {
+      "hp": 88,
+      "atk": 107,
+      "def": 122,
+      "spa": 74,
+      "spd": 75,
+      "spe": 64
+    },
+    "abilities": [
+      "Overgrow",
+      "Bulletproof"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "chesnaught-mega": {
+    "id": "chesnaught-mega",
+    "name": "Mega Chesnaught",
+    "types": [
+      "Grass",
+      "Fighting"
+    ],
+    "base": {
+      "hp": 88,
+      "atk": 137,
+      "def": 172,
+      "spa": 74,
+      "spd": 115,
+      "spe": 44
+    },
+    "abilities": [
+      "Bulletproof"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "chesnaught"
+  },
+  "delphox": {
+    "id": "delphox",
+    "name": "Delphox",
+    "types": [
+      "Fire",
+      "Psychic"
+    ],
+    "base": {
+      "hp": 75,
+      "atk": 69,
+      "def": 72,
+      "spa": 114,
+      "spd": 100,
+      "spe": 104
+    },
+    "abilities": [
+      "Blaze",
+      "Magician"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "delphox-mega": {
+    "id": "delphox-mega",
+    "name": "Mega Delphox",
+    "types": [
+      "Fire",
+      "Psychic"
+    ],
+    "base": {
+      "hp": 75,
+      "atk": 69,
+      "def": 72,
+      "spa": 159,
+      "spd": 125,
+      "spe": 134
+    },
+    "abilities": [
+      "Levitate"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "delphox"
+  },
+  "greninja": {
+    "id": "greninja",
+    "name": "Greninja",
+    "types": [
+      "Water",
+      "Dark"
+    ],
+    "base": {
+      "hp": 72,
+      "atk": 95,
+      "def": 67,
+      "spa": 103,
+      "spd": 71,
+      "spe": 122
+    },
+    "abilities": [
+      "Torrent",
+      "Protean",
+      "Battle Bond"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "greninja-mega": {
+    "id": "greninja-mega",
+    "name": "Mega Greninja",
+    "types": [
+      "Water",
+      "Dark"
+    ],
+    "base": {
+      "hp": 72,
+      "atk": 125,
+      "def": 77,
+      "spa": 133,
+      "spd": 81,
+      "spe": 142
+    },
+    "abilities": [
+      "Protean"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "greninja"
+  },
+  "pyroar": {
+    "id": "pyroar",
+    "name": "Pyroar",
+    "types": [
+      "Fire",
+      "Normal"
+    ],
+    "base": {
+      "hp": 86,
+      "atk": 68,
+      "def": 72,
+      "spa": 109,
+      "spd": 66,
+      "spe": 106
+    },
+    "abilities": [
+      "Rivalry",
+      "Unnerve",
+      "Moxie"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "pyroar-mega": {
+    "id": "pyroar-mega",
+    "name": "Mega Pyroar",
+    "types": [
+      "Fire",
+      "Normal"
+    ],
+    "base": {
+      "hp": 86,
+      "atk": 88,
+      "def": 92,
+      "spa": 129,
+      "spd": 86,
+      "spe": 126
+    },
+    "abilities": [],
+    "is_mega": true,
+    "in_game": false,
+    "mega_of": "pyroar"
+  },
+  "floette-eternal": {
+    "id": "floette-eternal",
+    "name": "Floette-Eternal",
+    "types": [
+      "Fairy"
+    ],
+    "base": {
+      "hp": 74,
+      "atk": 65,
+      "def": 67,
+      "spa": 125,
+      "spd": 128,
+      "spe": 92
+    },
+    "abilities": [
+      "Flower Veil",
+      "Symbiosis"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "floette-eternal-mega": {
+    "id": "floette-eternal-mega",
+    "name": "Mega Floette-Eternal",
+    "types": [
+      "Fairy"
+    ],
+    "base": {
+      "hp": 74,
+      "atk": 85,
+      "def": 87,
+      "spa": 155,
+      "spd": 148,
+      "spe": 102
+    },
+    "abilities": [
+      "Fairy Aura"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "floette-eternal"
+  },
+  "malamar": {
+    "id": "malamar",
+    "name": "Malamar",
+    "types": [
+      "Dark",
+      "Psychic"
+    ],
+    "base": {
+      "hp": 86,
+      "atk": 92,
+      "def": 88,
+      "spa": 68,
+      "spd": 75,
+      "spe": 73
+    },
+    "abilities": [
+      "Contrary",
+      "Suction Cups",
+      "Infiltrator"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "malamar-mega": {
+    "id": "malamar-mega",
+    "name": "Mega Malamar",
+    "types": [
+      "Dark",
+      "Psychic"
+    ],
+    "base": {
+      "hp": 86,
+      "atk": 102,
+      "def": 88,
+      "spa": 98,
+      "spd": 120,
+      "spe": 88
+    },
+    "abilities": [],
+    "is_mega": true,
+    "in_game": false,
+    "mega_of": "malamar"
+  },
+  "barbaracle": {
+    "id": "barbaracle",
+    "name": "Barbaracle",
+    "types": [
+      "Rock",
+      "Water"
+    ],
+    "base": {
+      "hp": 72,
+      "atk": 105,
+      "def": 115,
+      "spa": 54,
+      "spd": 86,
+      "spe": 68
+    },
+    "abilities": [
+      "Tough Claws",
+      "Sniper",
+      "Pickpocket"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "barbaracle-mega": {
+    "id": "barbaracle-mega",
+    "name": "Mega Barbaracle",
+    "types": [
+      "Rock",
+      "Fighting"
+    ],
+    "base": {
+      "hp": 72,
+      "atk": 140,
+      "def": 130,
+      "spa": 64,
+      "spd": 106,
+      "spe": 88
+    },
+    "abilities": [],
+    "is_mega": true,
+    "in_game": false,
+    "mega_of": "barbaracle"
+  },
+  "dragalge": {
+    "id": "dragalge",
+    "name": "Dragalge",
+    "types": [
+      "Poison",
+      "Dragon"
+    ],
+    "base": {
+      "hp": 65,
+      "atk": 75,
+      "def": 90,
+      "spa": 97,
+      "spd": 123,
+      "spe": 44
+    },
+    "abilities": [
+      "Poison Point",
+      "Poison Touch",
+      "Adaptability"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "dragalge-mega": {
+    "id": "dragalge-mega",
+    "name": "Mega Dragalge",
+    "types": [
+      "Poison",
+      "Dragon"
+    ],
+    "base": {
+      "hp": 65,
+      "atk": 85,
+      "def": 105,
+      "spa": 132,
+      "spd": 163,
+      "spe": 44
+    },
+    "abilities": [],
+    "is_mega": true,
+    "in_game": false,
+    "mega_of": "dragalge"
+  },
+  "hawlucha": {
+    "id": "hawlucha",
+    "name": "Hawlucha",
+    "types": [
+      "Fighting",
+      "Flying"
+    ],
+    "base": {
+      "hp": 78,
+      "atk": 92,
+      "def": 75,
+      "spa": 74,
+      "spd": 63,
+      "spe": 118
+    },
+    "abilities": [
+      "Limber",
+      "Unburden",
+      "Mold Breaker"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "hawlucha-mega": {
+    "id": "hawlucha-mega",
+    "name": "Mega Hawlucha",
+    "types": [
+      "Fighting",
+      "Flying"
+    ],
+    "base": {
+      "hp": 78,
+      "atk": 137,
+      "def": 100,
+      "spa": 74,
+      "spd": 93,
+      "spe": 118
+    },
+    "abilities": [
+      "No Guard"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "hawlucha"
+  },
+  "zygarde-complete": {
+    "id": "zygarde-complete",
+    "name": "Zygarde-Complete",
+    "types": [
+      "Dragon",
+      "Ground"
+    ],
+    "base": {
+      "hp": 216,
+      "atk": 100,
+      "def": 121,
+      "spa": 91,
+      "spd": 95,
+      "spe": 85
+    },
+    "abilities": [
+      "Aura Break",
+      "Power Construct"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "zygarde-complete-mega": {
+    "id": "zygarde-complete-mega",
+    "name": "Mega Zygarde-Complete",
+    "types": [
+      "Dragon",
+      "Ground"
+    ],
+    "base": {
+      "hp": 216,
+      "atk": 70,
+      "def": 91,
+      "spa": 216,
+      "spd": 85,
+      "spe": 100
+    },
+    "abilities": [],
+    "is_mega": true,
+    "in_game": false,
+    "mega_of": "zygarde-complete"
+  },
+  "drampa": {
+    "id": "drampa",
+    "name": "Drampa",
+    "types": [
+      "Normal",
+      "Dragon"
+    ],
+    "base": {
+      "hp": 78,
+      "atk": 60,
+      "def": 85,
+      "spa": 135,
+      "spd": 91,
+      "spe": 36
+    },
+    "abilities": [
+      "Berserk",
+      "Sap Sipper",
+      "Cloud Nine"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "drampa-mega": {
+    "id": "drampa-mega",
+    "name": "Mega Drampa",
+    "types": [
+      "Normal",
+      "Dragon"
+    ],
+    "base": {
+      "hp": 78,
+      "atk": 85,
+      "def": 110,
+      "spa": 160,
+      "spd": 116,
+      "spe": 36
+    },
+    "abilities": [
+      "Berserk"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "drampa"
+  },
+  "falinks": {
+    "id": "falinks",
+    "name": "Falinks",
+    "types": [
+      "Fighting"
+    ],
+    "base": {
+      "hp": 65,
+      "atk": 100,
+      "def": 100,
+      "spa": 70,
+      "spd": 60,
+      "spe": 75
+    },
+    "abilities": [
+      "Battle Armor",
+      "Defiant"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "falinks-mega": {
+    "id": "falinks-mega",
+    "name": "Mega Falinks",
+    "types": [
+      "Fighting"
+    ],
+    "base": {
+      "hp": 65,
+      "atk": 135,
+      "def": 135,
+      "spa": 70,
+      "spd": 65,
+      "spe": 100
+    },
+    "abilities": [],
+    "is_mega": true,
+    "in_game": false,
+    "mega_of": "falinks"
+  },
+  "zeraora": {
+    "id": "zeraora",
+    "name": "Zeraora",
+    "types": [
+      "Electric"
+    ],
+    "base": {
+      "hp": 88,
+      "atk": 112,
+      "def": 75,
+      "spa": 102,
+      "spd": 80,
+      "spe": 143
+    },
+    "abilities": [
+      "Volt Absorb"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "zeraora-mega": {
+    "id": "zeraora-mega",
+    "name": "Mega Zeraora",
+    "types": [
+      "Electric"
+    ],
+    "base": {
+      "hp": 88,
+      "atk": 157,
+      "def": 75,
+      "spa": 147,
+      "spd": 80,
+      "spe": 153
+    },
+    "abilities": [],
+    "is_mega": true,
+    "in_game": false,
+    "mega_of": "zeraora"
+  },
+  "heatran": {
+    "id": "heatran",
+    "name": "Heatran",
+    "types": [
+      "Fire",
+      "Steel"
+    ],
+    "base": {
+      "hp": 91,
+      "atk": 90,
+      "def": 106,
+      "spa": 130,
+      "spd": 106,
+      "spe": 77
+    },
+    "abilities": [
+      "Flash Fire",
+      "Flame Body"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "heatran-mega": {
+    "id": "heatran-mega",
+    "name": "Mega Heatran",
+    "types": [
+      "Fire",
+      "Steel"
+    ],
+    "base": {
+      "hp": 91,
+      "atk": 120,
+      "def": 106,
+      "spa": 175,
+      "spd": 141,
+      "spe": 67
+    },
+    "abilities": [],
+    "is_mega": true,
+    "in_game": false,
+    "mega_of": "heatran"
+  },
+  "darkrai": {
+    "id": "darkrai",
+    "name": "Darkrai",
+    "types": [
+      "Dark"
+    ],
+    "base": {
+      "hp": 70,
+      "atk": 90,
+      "def": 90,
+      "spa": 135,
+      "spd": 90,
+      "spe": 125
+    },
+    "abilities": [
+      "Bad Dreams"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "darkrai-mega": {
+    "id": "darkrai-mega",
+    "name": "Mega Darkrai",
+    "types": [
+      "Dark"
+    ],
+    "base": {
+      "hp": 70,
+      "atk": 120,
+      "def": 130,
+      "spa": 165,
+      "spd": 130,
+      "spe": 85
+    },
+    "abilities": [],
+    "is_mega": true,
+    "in_game": false,
+    "mega_of": "darkrai"
+  },
+  "raichu": {
+    "id": "raichu",
+    "name": "Raichu",
+    "types": [
+      "Electric"
+    ],
+    "base": {
+      "hp": 60,
+      "atk": 90,
+      "def": 55,
+      "spa": 90,
+      "spd": 80,
+      "spe": 110
+    },
+    "abilities": [
+      "Static",
+      "Lightning Rod"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "raichu-mega-x": {
+    "id": "raichu-mega-x",
+    "name": "Mega Raichu X",
+    "types": [
+      "Electric"
+    ],
+    "base": {
+      "hp": 60,
+      "atk": 135,
+      "def": 95,
+      "spa": 90,
+      "spd": 95,
+      "spe": 110
+    },
+    "abilities": [
+      "Electric Surge"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "raichu"
+  },
+  "raichu-mega-y": {
+    "id": "raichu-mega-y",
+    "name": "Mega Raichu Y",
+    "types": [
+      "Electric"
+    ],
+    "base": {
+      "hp": 60,
+      "atk": 100,
+      "def": 55,
+      "spa": 160,
+      "spd": 80,
+      "spe": 130
+    },
+    "abilities": [
+      "No Guard"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "raichu"
+  },
+  "chimecho": {
+    "id": "chimecho",
+    "name": "Chimecho",
+    "types": [
+      "Psychic"
+    ],
+    "base": {
+      "hp": 75,
+      "atk": 50,
+      "def": 80,
+      "spa": 95,
+      "spd": 90,
+      "spe": 65
+    },
+    "abilities": [
+      "Levitate"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "chimecho-mega": {
+    "id": "chimecho-mega",
+    "name": "Mega Chimecho",
+    "types": [
+      "Psychic",
+      "Steel"
+    ],
+    "base": {
+      "hp": 75,
+      "atk": 50,
+      "def": 110,
+      "spa": 135,
+      "spd": 120,
+      "spe": 65
+    },
+    "abilities": [
+      "Levitate"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "chimecho"
+  },
+  "absol": {
+    "id": "absol",
+    "name": "Absol",
+    "types": [
+      "Dark"
+    ],
+    "base": {
+      "hp": 65,
+      "atk": 130,
+      "def": 60,
+      "spa": 75,
+      "spd": 60,
+      "spe": 75
+    },
+    "abilities": [
+      "Pressure",
+      "Super Luck",
+      "Justified"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "absol-mega": {
+    "id": "absol-mega",
+    "name": "Mega Absol",
+    "types": [
+      "Dark"
+    ],
+    "base": {
+      "hp": 65,
+      "atk": 150,
+      "def": 60,
+      "spa": 115,
+      "spd": 60,
+      "spe": 115
+    },
+    "abilities": [
+      "Magic Bounce"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "absol"
+  },
+  "absol-mega-z": {
+    "id": "absol-mega-z",
+    "name": "Mega Absol Z",
+    "types": [
+      "Dark",
+      "Ghost"
+    ],
+    "base": {
+      "hp": 65,
+      "atk": 154,
+      "def": 60,
+      "spa": 75,
+      "spd": 60,
+      "spe": 151
+    },
+    "abilities": [],
+    "is_mega": true,
+    "in_game": false,
+    "mega_of": "absol"
+  },
+  "staraptor": {
+    "id": "staraptor",
+    "name": "Staraptor",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "base": {
+      "hp": 85,
+      "atk": 120,
+      "def": 70,
+      "spa": 50,
+      "spd": 60,
+      "spe": 100
+    },
+    "abilities": [
+      "Intimidate",
+      "Reckless"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "staraptor-mega": {
+    "id": "staraptor-mega",
+    "name": "Mega Staraptor",
+    "types": [
+      "Fighting",
+      "Flying"
+    ],
+    "base": {
+      "hp": 85,
+      "atk": 140,
+      "def": 100,
+      "spa": 60,
+      "spd": 90,
+      "spe": 110
+    },
+    "abilities": [],
+    "is_mega": true,
+    "in_game": false,
+    "mega_of": "staraptor"
+  },
+  "garchomp": {
+    "id": "garchomp",
+    "name": "Garchomp",
+    "types": [
+      "Dragon",
+      "Ground"
+    ],
+    "base": {
+      "hp": 108,
+      "atk": 130,
+      "def": 95,
+      "spa": 80,
+      "spd": 85,
+      "spe": 102
+    },
+    "abilities": [
+      "Sand Veil",
+      "Rough Skin"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "garchomp-mega": {
+    "id": "garchomp-mega",
+    "name": "Mega Garchomp",
+    "types": [
+      "Dragon",
+      "Ground"
+    ],
+    "base": {
+      "hp": 108,
+      "atk": 170,
+      "def": 115,
+      "spa": 120,
+      "spd": 95,
+      "spe": 92
+    },
+    "abilities": [
+      "Sand Force"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "garchomp"
+  },
+  "garchomp-mega-z": {
+    "id": "garchomp-mega-z",
+    "name": "Mega Garchomp Z",
+    "types": [
+      "Dragon"
+    ],
+    "base": {
+      "hp": 108,
+      "atk": 130,
+      "def": 85,
+      "spa": 141,
+      "spd": 85,
+      "spe": 151
+    },
+    "abilities": [],
+    "is_mega": true,
+    "in_game": false,
+    "mega_of": "garchomp"
+  },
+  "lucario": {
+    "id": "lucario",
+    "name": "Lucario",
+    "types": [
+      "Fighting",
+      "Steel"
+    ],
+    "base": {
+      "hp": 70,
+      "atk": 110,
+      "def": 70,
+      "spa": 115,
+      "spd": 70,
+      "spe": 90
+    },
+    "abilities": [
+      "Steadfast",
+      "Inner Focus",
+      "Justified"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "lucario-mega": {
+    "id": "lucario-mega",
+    "name": "Mega Lucario",
+    "types": [
+      "Fighting",
+      "Steel"
+    ],
+    "base": {
+      "hp": 70,
+      "atk": 145,
+      "def": 88,
+      "spa": 140,
+      "spd": 70,
+      "spe": 112
+    },
+    "abilities": [
+      "Adaptability"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "lucario"
+  },
+  "lucario-mega-z": {
+    "id": "lucario-mega-z",
+    "name": "Mega Lucario Z",
+    "types": [
+      "Fighting",
+      "Steel"
+    ],
+    "base": {
+      "hp": 70,
+      "atk": 100,
+      "def": 70,
+      "spa": 164,
+      "spd": 70,
+      "spe": 151
+    },
+    "abilities": [],
+    "is_mega": true,
+    "in_game": false,
+    "mega_of": "lucario"
+  },
+  "golurk": {
+    "id": "golurk",
+    "name": "Golurk",
+    "types": [
+      "Ground",
+      "Ghost"
+    ],
+    "base": {
+      "hp": 89,
+      "atk": 124,
+      "def": 80,
+      "spa": 55,
+      "spd": 80,
+      "spe": 55
+    },
+    "abilities": [
+      "Iron Fist",
+      "Klutz",
+      "No Guard"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "golurk-mega": {
+    "id": "golurk-mega",
+    "name": "Mega Golurk",
+    "types": [
+      "Ground",
+      "Ghost"
+    ],
+    "base": {
+      "hp": 89,
+      "atk": 159,
+      "def": 105,
+      "spa": 70,
+      "spd": 105,
+      "spe": 55
+    },
+    "abilities": [
+      "Unseen Fist"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "golurk"
+  },
+  "meowstic-m": {
+    "id": "meowstic-m",
+    "name": "Meowstic",
+    "types": [
+      "Psychic"
+    ],
+    "base": {
+      "hp": 74,
+      "atk": 48,
+      "def": 76,
+      "spa": 83,
+      "spd": 81,
+      "spe": 104
+    },
+    "abilities": [
+      "Keen Eye",
+      "Infiltrator",
+      "Prankster"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "meowstic-m-mega": {
+    "id": "meowstic-m-mega",
+    "name": "Mega Meowstic",
+    "types": [
+      "Psychic"
+    ],
+    "base": {
+      "hp": 74,
+      "atk": 48,
+      "def": 76,
+      "spa": 143,
+      "spd": 101,
+      "spe": 124
+    },
+    "abilities": [
+      "Trace"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "meowstic-m"
+  },
+  "meowstic-f-mega": {
+    "id": "meowstic-f-mega",
+    "name": "Mega Meowstic-F",
+    "types": [
+      "Psychic"
+    ],
+    "base": {
+      "hp": 74,
+      "atk": 48,
+      "def": 76,
+      "spa": 143,
+      "spd": 101,
+      "spe": 124
+    },
+    "abilities": [
+      "Trace"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "meowstic-f"
+  },
+  "crabominable": {
+    "id": "crabominable",
+    "name": "Crabominable",
+    "types": [
+      "Fighting",
+      "Ice"
+    ],
+    "base": {
+      "hp": 97,
+      "atk": 132,
+      "def": 77,
+      "spa": 62,
+      "spd": 67,
+      "spe": 43
+    },
+    "abilities": [
+      "Hyper Cutter",
+      "Iron Fist",
+      "Anger Point"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "crabominable-mega": {
+    "id": "crabominable-mega",
+    "name": "Mega Crabominable",
+    "types": [
+      "Fighting",
+      "Ice"
+    ],
+    "base": {
+      "hp": 97,
+      "atk": 157,
+      "def": 122,
+      "spa": 62,
+      "spd": 107,
+      "spe": 33
+    },
+    "abilities": [
+      "Iron Fist"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "crabominable"
+  },
+  "golisopod": {
+    "id": "golisopod",
+    "name": "Golisopod",
+    "types": [
+      "Bug",
+      "Water"
+    ],
+    "base": {
+      "hp": 75,
+      "atk": 125,
+      "def": 140,
+      "spa": 60,
+      "spd": 90,
+      "spe": 40
+    },
+    "abilities": [
+      "Emergency Exit"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "golisopod-mega": {
+    "id": "golisopod-mega",
+    "name": "Mega Golisopod",
+    "types": [
+      "Bug",
+      "Steel"
+    ],
+    "base": {
+      "hp": 75,
+      "atk": 150,
+      "def": 175,
+      "spa": 70,
+      "spd": 120,
+      "spe": 40
+    },
+    "abilities": [],
+    "is_mega": true,
+    "in_game": false,
+    "mega_of": "golisopod"
+  },
+  "magearna": {
+    "id": "magearna",
+    "name": "Magearna",
+    "types": [
+      "Steel",
+      "Fairy"
+    ],
+    "base": {
+      "hp": 80,
+      "atk": 95,
+      "def": 115,
+      "spa": 130,
+      "spd": 115,
+      "spe": 65
+    },
+    "abilities": [
+      "Soul-Heart"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "magearna-mega": {
+    "id": "magearna-mega",
+    "name": "Mega Magearna",
+    "types": [
+      "Steel",
+      "Fairy"
+    ],
+    "base": {
+      "hp": 80,
+      "atk": 125,
+      "def": 115,
+      "spa": 170,
+      "spd": 115,
+      "spe": 95
+    },
+    "abilities": [],
+    "is_mega": true,
+    "in_game": false,
+    "mega_of": "magearna"
+  },
+  "scovillain": {
+    "id": "scovillain",
+    "name": "Scovillain",
+    "types": [
+      "Grass",
+      "Fire"
+    ],
+    "base": {
+      "hp": 65,
+      "atk": 108,
+      "def": 65,
+      "spa": 108,
+      "spd": 65,
+      "spe": 75
+    },
+    "abilities": [
+      "Chlorophyll",
+      "Insomnia",
+      "Moody"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "scovillain-mega": {
+    "id": "scovillain-mega",
+    "name": "Mega Scovillain",
+    "types": [
+      "Grass",
+      "Fire"
+    ],
+    "base": {
+      "hp": 65,
+      "atk": 138,
+      "def": 85,
+      "spa": 138,
+      "spd": 85,
+      "spe": 75
+    },
+    "abilities": [
+      "Spicy Spray"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "scovillain"
+  },
+  "glimmora": {
+    "id": "glimmora",
+    "name": "Glimmora",
+    "types": [
+      "Poison",
+      "Rock"
+    ],
+    "base": {
+      "hp": 83,
+      "atk": 55,
+      "def": 90,
+      "spa": 130,
+      "spd": 81,
+      "spe": 86
+    },
+    "abilities": [
+      "Toxic Debris",
+      "Corrosion"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "glimmora-mega": {
+    "id": "glimmora-mega",
+    "name": "Mega Glimmora",
+    "types": [
+      "Poison",
+      "Rock"
+    ],
+    "base": {
+      "hp": 83,
+      "atk": 90,
+      "def": 105,
+      "spa": 150,
+      "spd": 96,
+      "spe": 101
+    },
+    "abilities": [
+      "Adaptability"
+    ],
+    "is_mega": true,
+    "in_game": true,
+    "mega_of": "glimmora"
+  },
+  "tatsugiri": {
+    "id": "tatsugiri",
+    "name": "Tatsugiri",
+    "types": [
+      "Dragon",
+      "Water"
+    ],
+    "base": {
+      "hp": 68,
+      "atk": 50,
+      "def": 60,
+      "spa": 120,
+      "spd": 95,
+      "spe": 82
+    },
+    "abilities": [
+      "Commander",
+      "Storm Drain"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "tatsugiri-mega": {
+    "id": "tatsugiri-mega",
+    "name": "Mega Tatsugiri",
+    "types": [
+      "Dragon",
+      "Water"
+    ],
+    "base": {
+      "hp": 68,
+      "atk": 65,
+      "def": 90,
+      "spa": 135,
+      "spd": 125,
+      "spe": 92
+    },
+    "abilities": [],
+    "is_mega": true,
+    "in_game": false,
+    "mega_of": "tatsugiri"
+  },
+  "baxcalibur": {
+    "id": "baxcalibur",
+    "name": "Baxcalibur",
+    "types": [
+      "Dragon",
+      "Ice"
+    ],
+    "base": {
+      "hp": 115,
+      "atk": 145,
+      "def": 92,
+      "spa": 75,
+      "spd": 86,
+      "spe": 87
+    },
+    "abilities": [
+      "Thermal Exchange",
+      "Ice Body"
+    ],
+    "is_mega": false,
+    "in_game": true
+  },
+  "baxcalibur-mega": {
+    "id": "baxcalibur-mega",
+    "name": "Mega Baxcalibur",
+    "types": [
+      "Dragon",
+      "Ice"
+    ],
+    "base": {
+      "hp": 115,
+      "atk": 175,
+      "def": 117,
+      "spa": 105,
+      "spd": 101,
+      "spe": 87
+    },
+    "abilities": [],
+    "is_mega": true,
+    "in_game": false,
+    "mega_of": "baxcalibur"
+  }
+}
