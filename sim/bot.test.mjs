@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import ps from 'pokemon-showdown';
 import { decide, explain } from './bot.mjs';
 import { validateTeam, normalizeTeam, Battle } from './server.mjs';
-import { dex, scenario, choose, KINGAMBIT, GARCHOMP, SALAMENCE, INCINEROAR, AMOONGUSS, FLUTTER, LUCARIO, ROTOM, CORVIKNIGHT, FARIGIRAF, TORKOAL } from './scenario.mjs';
+import { dex, scenario, choose, KINGAMBIT, GARCHOMP, SALAMENCE, INCINEROAR, AMOONGUSS, FLUTTER, LUCARIO, ROTOM, CORVIKNIGHT, FARIGIRAF, TORKOAL, STARAPTOR, PRIMARINA, SINISTCHA, GOLISOPOD } from './scenario.mjs';
 
 const { Teams } = ps;
 
@@ -174,10 +174,52 @@ test('pressure() answers the three questions from one side\'s point of view', as
   assert.ok(chompOnIncin.max > 80 && chompOnIncin.ko > 0, JSON.stringify(chompOnIncin));
   const incinOnGambit = p.theirs.find((f) => f.species === 'Incineroar').threats.find((t) => t.target === 'Kingambit');
   assert.equal(incinOnGambit.move, 'Flare Blitz');
+  // Every damaging move is listed against each target, best one included, blocked ones flagged.
+  const damaging = GARCHOMP.moves.filter((m) => dex.moves.get(m).category !== 'Status');
+  assert.equal(chompOnIncin.moves.length, damaging.length, JSON.stringify(chompOnIncin.moves));
+  assert.ok(chompOnIncin.moves.some((m) => m.move === 'Earthquake' && m.max === chompOnIncin.max));
+  assert.ok(chompOnIncin.moves.every((m) => typeof m.blocked === 'boolean' && typeof m.min === 'number'));
+  const incinOnChomp = p.theirs.find((f) => f.species === 'Incineroar').threats.find((t) => t.target === 'Garchomp');
+  assert.ok(incinOnChomp.moves.length >= 2);
   // Team preview: their six ranked by danger, with our answers (2HKO or better).
   const pv = scenario({ own: [KINGAMBIT, GARCHOMP, INCINEROAR, AMOONGUSS], foes: [FARIGIRAF, GARCHOMP].map((f) => ({ ...f, bench: true })), teamPreview: true });
   const q = pressure(pv.view, dex, 'p2');
   assert.equal(q.preview.length, 2);
   assert.equal(q.preview[0].species, 'Garchomp');
   assert.ok(q.preview[0].answers.length >= 2);
+});
+
+test('Mega Evolves on the first turn it can, including into a Fairy attacker it outspeeds', () => {
+  // Mega Staraptor is Fighting/Flying: Moonblast becomes super effective, but the
+  // stat gain is permanent and it moves first, so the one-turn evaluator's bonus
+  // for a Mega Evolution must win here.
+  const chomp = { ...GARCHOMP, moves: ['Rock Slide', 'Earthquake', 'Dragon Claw', 'Protect'] };
+  const [, neutral] = choose(scenario({ own: [chomp, STARAPTOR], foes: [FARIGIRAF, GOLISOPOD], canMega: [1], turn: 1 }));
+  assert.ok(/ mega$/.test(neutral), `expected Staraptor to Mega Evolve on a neutral field: ${neutral}`);
+  const [, fairy] = choose(scenario({ own: [chomp, STARAPTOR], foes: [PRIMARINA, SINISTCHA], canMega: [1], turn: 1 }));
+  assert.ok(/ mega$/.test(fairy), `expected Staraptor to Mega Evolve facing Primarina: ${fairy}`);
+  // Contrary turns Close Combat's drops into boosts: the mega happily clicks it.
+  const [cc] = choose(scenario({ own: [STARAPTOR, KINGAMBIT], foes: [INCINEROAR, AMOONGUSS], canMega: [0], turn: 1 }));
+  assert.ok(/ mega$/.test(cc), `expected Mega Staraptor into Incineroar: ${cc}`);
+});
+
+test('does not Mega Evolve into a KO it would otherwise survive', () => {
+  // Under Trick Room Primarina moves first: Moonblast KOs a Fighting-type mega
+  // that a Normal-type base Staraptor survives. The mega bonus is scaled by
+  // survival like everything else, so the bot keeps the base form this turn.
+  const [staraptor] = choose(scenario({ own: [STARAPTOR, KINGAMBIT], foes: [PRIMARINA, SINISTCHA], field: { pseudo: ['Trick Room'] }, canMega: [0], turn: 3 }));
+  assert.ok(!/ mega/.test(staraptor), `Mega Evolving here walks into a Moonblast KO: ${staraptor}`);
+});
+
+test('team preview always brings a Mega Stone holder, and only one of two', () => {
+  const foes = [FLUTTER, ROTOM, CORVIKNIGHT, TORKOAL, GARCHOMP, AMOONGUSS].map((f) => ({ ...f, bench: true }));
+  // Two holders (slots 5 and 6): exactly one comes, chosen by matchup.
+  const two = scenario({ own: [KINGAMBIT, INCINEROAR, AMOONGUSS, FARIGIRAF, STARAPTOR, SALAMENCE], foes, teamPreview: true });
+  const picks = decide(two.req, two.view, dex).slice(5);
+  assert.equal(['5', '6'].filter((k) => picks.includes(k)).length, 1, `expected exactly one of Staraptor / Salamence in ${picks}`);
+  // A lone holder comes whatever it scores.
+  const one = scenario({ own: [KINGAMBIT, INCINEROAR, AMOONGUSS, FARIGIRAF, LUCARIO, SALAMENCE], foes, teamPreview: true });
+  assert.ok(decide(one.req, one.view, dex).slice(5).includes('6'), 'the only Mega Stone holder must be brought');
+  const oneFirst = scenario({ own: [STARAPTOR, KINGAMBIT, INCINEROAR, AMOONGUSS, FARIGIRAF, LUCARIO], foes, teamPreview: true });
+  assert.ok(decide(oneFirst.req, oneFirst.view, dex).slice(5).includes('1'), 'the only Mega Stone holder must be brought');
 });

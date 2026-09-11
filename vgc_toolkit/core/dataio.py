@@ -159,20 +159,58 @@ def meta_sets() -> dict:
 
 # ---------- regulations ----------
 
+def regulation_meta() -> dict[str, dict]:
+    """Per-tag metadata from the optional regulations.json: a display label,
+    whether the tag is experimental (a published regulation plus predictions
+    of the toolkit's own; none since Regulation M-C shipped) and which
+    published regulation it is based on. Keys starting with "_" are comments."""
+    path = DATA_DIR / "regulations.json"
+    if not path.exists():
+        return {}
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    return {k: v for k, v in raw.items() if not k.startswith("_") and isinstance(v, dict)}
+
+
 def regulations() -> list[dict]:
     """Every regulation tag present in the pokedex, oldest to newest, with the
-    number of forms legal in each. Drives the UI's regulation selector."""
+    number of forms legal in each plus its metadata (label, experimental,
+    based_on). Drives the UI's regulation selector."""
     counts: dict[str, int] = {}
     for mon in pokedex().values():
         for r in mon.get("regulations", []):
             counts[r] = counts.get(r, 0) + 1
-    return [{"regulation": r, "forms": n} for r, n in sorted(counts.items())]
+    meta = regulation_meta()
+    out = []
+    for r, n in sorted(counts.items()):
+        m = meta.get(r, {})
+        out.append({"regulation": r, "forms": n, "label": m.get("label", r),
+                    "experimental": bool(m.get("experimental")),
+                    "based_on": m.get("based_on"), "note": m.get("note")})
+    return out
 
 
 def default_regulation() -> str:
-    """The newest regulation in the data (lexical: M-A < M-B < M-C)."""
-    regs = regulations()
+    """The newest published regulation in the data (lexical: M-A < M-B < M-C).
+    Experimental tags never become the default."""
+    regs = [r for r in regulations() if not r["experimental"]]
     return regs[-1]["regulation"] if regs else "M-B"
+
+
+def base_regulation(regulation: str) -> str:
+    """The published regulation an experimental tag extends (itself for a
+    published one): M-C-EXP -> M-C. Used wherever ladder data or Showdown
+    formats exist only for published regulations."""
+    meta = regulation_meta().get(regulation, {})
+    return meta.get("based_on") or regulation
+
+
+def item_legal(item: dict, regulation: str | None) -> bool:
+    """Items carry no regulation tag unless they are scoped to one (the items
+    Regulation M-C introduced); untagged items are legal everywhere."""
+    regs = item.get("regulations")
+    if not regs or regulation in (None, "All"):
+        return True
+    return regulation in regs
 
 
 # Single source of truth for every backend default. Because it is derived from

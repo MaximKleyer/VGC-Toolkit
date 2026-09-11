@@ -164,12 +164,22 @@ def _names(ms) -> str:
     return ", ".join(m.name for m in ms) if ms else "none"
 
 
+from vgc_toolkit.core.damage import WEIGHT_MOVES
+
+
+def _listed_bp(mv: dict) -> int:
+    """Base power for the composition questions. Weight-based moves list 0; count
+    them as the 100 BP they deal to the 100-200 kg targets that dominate the
+    format (the matchup pass uses the real weights through the damage engine)."""
+    return mv["base_power"] or (100 if mv["name"] in WEIGHT_MOVES else 0)
+
+
 def _stab_bp(m: Member) -> tuple[int, str] | None:
     best = None
     for d in m.damaging:
-        if d["type"] in m.types and d["base_power"]:
-            if best is None or d["base_power"] > best[0]:
-                best = (d["base_power"], d["name"])
+        if d["type"] in m.types and _listed_bp(d):
+            if best is None or _listed_bp(d) > best[0]:
+                best = (_listed_bp(d), d["name"])
     return best
 
 
@@ -440,7 +450,7 @@ def _defense(ms: list[Member], threats: list[dict]) -> list[Check]:
     for th in threats[:8]:
         for mv in th["moves"]:
             mvd = dataio.moves().get(mv)
-            if mvd and mvd["category"] != "Status" and mvd["base_power"] >= 60:
+            if mvd and mvd["category"] != "Status" and _listed_bp(mvd) >= 60:
                 top_types.setdefault(mvd["type"], []).append(th["name"])
     thin = [(t, sorted(set(who))) for t, who in top_types.items() if len(resist[t]) < 2]
     if thin:
@@ -594,7 +604,7 @@ def _best_move(attacker: Combatant, moves: list[str], defender: Combatant, field
     move_db = dataio.moves()
     for name in moves:
         mv = move_db.get(name)
-        if not mv or mv["category"] == "Status" or not mv["base_power"]:
+        if not mv or mv["category"] == "Status" or not _listed_bp(mv):
             continue
         try:
             r = calculate(attacker, defender, name, field, max_ko_hits=2)

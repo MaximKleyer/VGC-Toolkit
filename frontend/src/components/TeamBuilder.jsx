@@ -1,22 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { DataCtx } from '../App.jsx';
-import { post, combatant, emptySlot } from '../api.js';
+import { post, emptySlot, emptyTeam, padTeam, slotsFromImport, teamMembers } from '../api.js';
 import {
   MoveSelect, PokemonPicker, Sprite, StatPointsEditor, TypeChip,
-  useFullMon, useLearnset,
+  useFullMon, useLearnset, itemLabel, stonesFor, megaSwitchTarget, switchForm, CategoryIcon, accuracyLabel,
 } from './shared.jsx';
 import LiveAnalysis from './LiveAnalysis.jsx';
 import PlaybookCheck from './PlaybookCheck.jsx';
 import SpeedTiers from './SpeedTiers.jsx';
 import AbilityOverride from './AbilityOverride.jsx';
 
-const TEAMS_KEY = 'vgc-toolkit-teams-v1';
-const loadTeamLibrary = () => {
-  try { return JSON.parse(localStorage.getItem(TEAMS_KEY)) || []; }
-  catch { return []; }
-};
-
 function SlotCard({ index, slot, selected, onSelect, onClear }) {
+  const { moves: moveDb } = useContext(DataCtx) || {};
   if (!slot.pokemonId)
     return (
       <button className={`slot-tile empty ${selected ? 'selected' : ''}`} onClick={onSelect}>
@@ -29,13 +24,19 @@ function SlotCard({ index, slot, selected, onSelect, onClear }) {
       <button className="slot-x" onClick={(e) => { e.stopPropagation(); onClear(); }}>×</button>
       <span className="slot-num mono dim">{index + 1}</span>
       <Sprite id={slot.pokemonId} size={72} />
+      {slot.nickname && <div className="slot-nick">{slot.nickname}</div>}
       <div className="slot-name">{slot.displayName || slot.pokemonId}</div>
       <div className="slot-types">
         {(slot.types || []).map((t) => <TypeChip key={t} t={t} />)}
       </div>
       <div className="slot-align warn small">{slot.alignment}</div>
       <ul className="slot-moves dim small">
-        {slot.moves.filter(Boolean).map((m) => <li key={m}>{m}</li>)}
+        {slot.moves.filter(Boolean).map((m) => (
+          <li key={m} title={moveDb?.[m]?.short_desc}>
+            <CategoryIcon category={moveDb?.[m]?.category} /> {m}
+            <span className="slot-move-acc mono">{accuracyLabel(moveDb?.[m])}</span>
+          </li>
+        ))}
       </ul>
     </div>
   );
@@ -50,7 +51,9 @@ function ItemSelect({ slot, mon, upd }) {
         <span className="chip warn small">MEGA STONE · LOCKED</span>
       </div>
     );
+  const stones = stonesFor(mon, items);
   const groups = {
+    ...(stones.length ? { 'Mega Stone': stones } : {}),
     'Held items': items.filter((i) => i.category === 'held'),
     Berries: items.filter((i) => i.category === 'berry'),
   };
@@ -59,7 +62,7 @@ function ItemSelect({ slot, mon, upd }) {
       <option value="">None</option>
       {Object.entries(groups).map(([label, list]) => (
         <optgroup label={label} key={label}>
-          {list.map((i) => <option key={i.id} value={i.name}>{i.name}</option>)}
+          {list.map((i) => <option key={i.id} value={i.name}>{itemLabel(i)}</option>)}
         </optgroup>
       ))}
     </select>
@@ -77,6 +80,21 @@ function AlignmentSelect({ slot, upd }) {
         </option>
       ))}
     </select>
+  );
+}
+
+// "Mega Evolve" on a base form holding its stone, "Base form" on a Mega.
+function MegaSwitch({ slot, mon, onChange, compact }) {
+  const { items, pokemon } = useContext(DataCtx);
+  const target = megaSwitchTarget(slot, mon, items, pokemon);
+  if (!target) return null;
+  return (
+    <button className={`mega-switch ${compact ? 'small' : ''}`}
+      title={target.mega ? `Show this set as ${target.id} (same spread, moves and item; ability follows the form)`
+                         : 'Show this set as the base form it is brought as'}
+      onClick={(e) => { e.stopPropagation(); switchForm(slot, target.id).then(onChange); }}>
+      ✦ {target.label}
+    </button>
   );
 }
 
@@ -115,6 +133,7 @@ function SlotEditor({ slot, onChange, onClose, errors }) {
           />
         </div>
         <span className="spacer" />
+        <MegaSwitch slot={slot} mon={mon} onChange={onChange} />
         <button onClick={onClose}>Close ×</button>
       </div>
 
@@ -198,37 +217,36 @@ function SlotEditorWrapper(props) {
 }
 
 export default function TeamBuilder({ team, setTeam }) {
-  const { pokemon } = useContext(DataCtx);
+  const { pokemon, teamLibrary, saveTeamEntry, deleteTeamEntry, oppTeam, setOppTeam } = useContext(DataCtx);
   const [active, setActive] = useState(null);
   const [showSpeed, setShowSpeed] = useState(false);
   const [showTeams, setShowTeams] = useState(false);
+  const [showOpp, setShowOpp] = useState(false);
   const [teamName, setTeamName] = useState('');
-  const [library, setLibrary] = useState(loadTeamLibrary);
+  const [oppPaste, setOppPaste] = useState('');
+  const [oppName, setOppName] = useState('');
+  const mine = teamLibrary.filter((t) => (t.kind || 'mine') !== 'opponent');
+  const opps = teamLibrary.filter((t) => t.kind === 'opponent');
+  const oppFilled = oppTeam.filter((s) => s.pokemonId);
 
-  const persistLibrary = (next) => {
-    setLibrary(next);
-    localStorage.setItem(TEAMS_KEY, JSON.stringify(next));
-  };
   const saveTeam = () => {
     const name = teamName.trim();
     if (!name) return;
-    const entry = { id: `${Date.now()}`, name, savedAt: new Date().toISOString(),
-                    slots: team };
-    const existing = library.findIndex((t) => t.name === name);
-    const next = existing >= 0
-      ? library.map((t, i) => (i === existing ? { ...entry, id: t.id } : t))
-      : [...library, entry];
-    persistLibrary(next);
+    saveTeamEntry({ kind: 'mine', name, slots: team });
     setTeamName('');
   };
   const loadTeam = (id) => {
-    const t = library.find((x) => x.id === id);
+    const t = teamLibrary.find((x) => x.id === id);
     if (!t) return;
-    const slots = t.slots.slice(0, 6).map((s) => ({ ...emptySlot(), ...s }));
-    while (slots.length < 6) slots.push(emptySlot());
-    setTeam(slots);
+    setTeam(padTeam(t.slots));
     setValidation(null);
     setActive(null);
+  };
+  const saveOpp = () => {
+    const name = oppName.trim();
+    if (!name) return;
+    saveTeamEntry({ kind: 'opponent', name, slots: oppTeam });
+    setOppName('');
   };
   const [validation, setValidation] = useState(null);
   const { regulation } = useContext(DataCtx);  // selected in the header
@@ -238,10 +256,7 @@ export default function TeamBuilder({ team, setTeam }) {
   const [error, setError] = useState(null);
 
   const filled = team.filter((s) => s.pokemonId);
-  const payload = () => ({
-    team: filled.map((s) => ({ pokemon: combatant(s), moves: s.moves.filter(Boolean) })),
-    regulation,
-  });
+  const payload = () => ({ team: teamMembers(filled), regulation });
 
   const setSlot = (i, slot) => {
     const next = [...team];
@@ -260,22 +275,15 @@ export default function TeamBuilder({ team, setTeam }) {
 
   const doImport = () => run(async () => {
     const r = await post('/team/import', { paste, regulation });
-    const slots = r.team.map((m) => ({
-      ...emptySlot(),
-      pokemonId: m.pokemon.pokemon_id,
-      displayName: pokemon.find((p) => p.id === m.pokemon.pokemon_id)?.name,
-      types: pokemon.find((p) => p.id === m.pokemon.pokemon_id)?.types || [],
-      spread: m.pokemon.spread,
-      alignment: m.pokemon.alignment,
-      ability: m.pokemon.ability || '',
-      item: m.pokemon.item || '',
-      itemUserSet: !!m.pokemon.item,
-      moves: [...m.moves, '', '', '', ''].slice(0, 4),
-    }));
-    while (slots.length < 6) slots.push(emptySlot());
-    setTeam(slots);
+    setTeam(slotsFromImport(r, pokemon));
     setValidation(r.validation);
     setShowPaste(false);
+  });
+  // The opponent team: what the Damage Calc's Pokémon 2 strip, the Team Preview
+  // tab and the Battle tab's opponent picker read.
+  const importOpp = () => run(async () => {
+    const r = await post('/team/import', { paste: oppPaste, regulation });
+    setOppTeam(slotsFromImport(r, pokemon));
   });
 
   const doExport = () => run(async () => {
@@ -291,7 +299,11 @@ export default function TeamBuilder({ team, setTeam }) {
           <button onClick={() => setShowPaste(!showPaste)}>Import / export paste</button>
           <button className={showTeams ? 'active-toggle' : ''}
             onClick={() => setShowTeams(!showTeams)}>
-            My teams ({library.length})
+            My teams ({mine.length})
+          </button>
+          <button className={showOpp ? 'active-toggle' : ''}
+            onClick={() => setShowOpp(!showOpp)}>
+            Opponent team ({oppFilled.length})
           </button>
           <span className="spacer" />
           <button
@@ -316,13 +328,13 @@ export default function TeamBuilder({ team, setTeam }) {
                 Save current team
               </button>
             </div>
-            {library.length === 0 ? (
+            {mine.length === 0 ? (
               <p className="dim small">No saved teams yet. Your working team
               autosaves on its own — this library is for keeping multiple
-              named teams.</p>
+              named teams. Saved teams also appear in the Battle tab.</p>
             ) : (
               <ul className="team-library">
-                {library.map((t) => (
+                {mine.map((t) => (
                   <li key={t.id}>
                     <div className="team-lib-sprites">
                       {t.slots.filter((s) => s.pokemonId).map((s, i) => (
@@ -334,10 +346,70 @@ export default function TeamBuilder({ team, setTeam }) {
                       {new Date(t.savedAt).toLocaleDateString()}
                     </span>
                     <button onClick={() => loadTeam(t.id)}>Load</button>
-                    <button className="chip-x"
-                      onClick={() => persistLibrary(library.filter((x) => x.id !== t.id))}>
-                      ×
+                    <button title="Use this team as the opponent you are calcing against"
+                      onClick={() => { setOppTeam(padTeam(t.slots)); setShowOpp(true); }}>
+                      As opponent
                     </button>
+                    <button className="chip-x" onClick={() => deleteTeamEntry(t.id)}>×</button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        )}
+
+        {showOpp && (
+          <div className="panel teams-panel opp-panel">
+            <p className="dim small" style={{ margin: 0 }}>
+              The team you are calcing against. It feeds the Damage Calc (the Pokémon 2 strip),
+              the Team Preview tab and the Battle tab's opponent. Nicknames, genders and Shiny
+              lines in a paste are fine.
+            </p>
+            <textarea rows={8} className="mono" value={oppPaste} onChange={(e) => setOppPaste(e.target.value)}
+              placeholder={'Kids (Kingambit) @ Black Glasses\nAbility: Defiant\nLevel: 50\nEVs: 32 HP / 32 Atk / 1 SpD / 1 Spe\nAdamant Nature\n- Kowtow Cleave\n- Sucker Punch\n- Swords Dance\n- Protect'} />
+            <div className="toolbar">
+              <button className="primary" onClick={importOpp} disabled={busy || !oppPaste.trim()}>
+                Import paste → opponent team
+              </button>
+              <button onClick={() => setOppTeam(emptyTeam())} disabled={!oppFilled.length}>Clear</button>
+              <span className="spacer" />
+              <input placeholder="Save as… (e.g. Rain team from ladder)" value={oppName}
+                onChange={(e) => setOppName(e.target.value)} style={{ minWidth: 220 }} />
+              <button onClick={saveOpp} disabled={!oppName.trim() || !oppFilled.length}>Save opponent team</button>
+            </div>
+            {oppFilled.length > 0 && (
+              <div className="opp-strip">
+                {oppTeam.map((s, i) => s.pokemonId && (
+                  <div key={i} className="opp-chip"
+                    title={`${s.displayName}${s.item ? ` @ ${s.item}` : ''}\n${s.ability || ''}\n${(s.moves || []).filter(Boolean).join(' / ')}`}>
+                    <Sprite id={s.pokemonId} size={52} />
+                    <span className="opp-chip-name">{s.nickname || s.displayName}</span>
+                    {s.nickname && <span className="dim small">{s.displayName}</span>}
+                    <span className="dim small">{s.item || 'no item'}</span>
+                    <div className="slot-types">{(s.types || []).map((t) => <TypeChip key={t} t={t} />)}</div>
+                    <MegaSwitch slot={s} mon={{ id: s.pokemonId }} compact
+                      onChange={(ns) => setOppTeam(oppTeam.map((x, j) => (j === i ? ns : x)))} />
+                  </div>
+                ))}
+              </div>
+            )}
+            {opps.length > 0 && (
+              <ul className="team-library">
+                {opps.map((t) => (
+                  <li key={t.id}>
+                    <div className="team-lib-sprites">
+                      {t.slots.filter((s) => s.pokemonId).map((s, i) => (
+                        <Sprite key={i} id={s.pokemonId} size={30} />
+                      ))}
+                    </div>
+                    <span className="team-lib-name">{t.name}</span>
+                    <span className="chip team-lib-kind">opponent</span>
+                    <span className="dim small">{new Date(t.savedAt).toLocaleDateString()}</span>
+                    <button onClick={() => setOppTeam(padTeam(t.slots))}>Load</button>
+                    <button title="Edit this team as your own" onClick={() => { setTeam(padTeam(t.slots)); setValidation(null); setActive(null); }}>
+                      As mine
+                    </button>
+                    <button className="chip-x" onClick={() => deleteTeamEntry(t.id)}>×</button>
                   </li>
                 ))}
               </ul>

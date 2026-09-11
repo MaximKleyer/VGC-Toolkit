@@ -315,6 +315,20 @@ def main():
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     # indent=1 matches the committed file so rebuild diffs stay minimal
+    # Weights (Low Kick / Grass Knot / Heavy Slam / Heat Crash): the baseline
+    # dump where it has the form, else what the committed file already carried;
+    # scripts/fill_weights.py completes the rest from the engine data in sim/.
+    no_weight = []
+    for our_id, mon in pokedex.items():
+        dex = dex_lookup(our_id) or {}
+        w = dex.get("weight_kg") or dex.get("weightkg") or existing.get(our_id, {}).get("weight_kg")
+        if w:
+            mon["weight_kg"] = w
+        else:
+            no_weight.append(our_id)
+    if no_weight:
+        print(f"{len(no_weight)} forms without a weight (run scripts/fill_weights.py): "
+              + ", ".join(no_weight[:12]) + (" ..." if len(no_weight) > 12 else ""))
     (OUT_DIR / "pokedex.json").write_text(json.dumps(pokedex, indent=1))
     if carried:
         print(f"  carried forward from the committed dex (absent from inputs): "

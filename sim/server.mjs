@@ -13,10 +13,14 @@
 //                                          or "team 1234" or "switch 3"
 //   POST /sim/validate          {format, paste|team} -> {problems: [...]|null, team}
 //   GET  /sim/formats           formats whose name contains "Champions"
+//   POST /sim/lab               {format, p1:{name,paste|team}, p2:{...}, oppLeadPct, budget, seed}
+//                               -> {id}: a Matchup Lab job (lab.mjs), bot-vs-bot self-play
+//   GET  /sim/lab/:id           {status, progress, results}; DELETE stops it
 //
 // Run:  cd sim && npm install && npm start      (port 8001; SIM_PORT overrides)
 
 import http from 'node:http';
+import fs from 'node:fs';
 import { randomUUID } from 'node:crypto';
 import { pathToFileURL } from 'node:url';
 import ps from 'pokemon-showdown';
@@ -27,11 +31,13 @@ const PORT = Number(process.env.SIM_PORT || 8001);
 const DEFAULT_FORMAT = 'gen9championsvgc2026regmb';
 const battles = new Map();
 
-// Regulation M-C has no Showdown format yet. Until it does, expose a
-// provisional one: the M-B doubles format with Showdown's "Obtainable"
-// legality checks (species availability, learnsets) switched off so the
-// confirmed M-C additions can be used. Species Clause, Item Clause = 1,
-// Level 50, Team Preview and pick-4 stay in force.
+// Regulation M-C (live since 2026-09-08) has no Showdown format in this
+// engine build yet. Until it does, expose a provisional one: the M-B doubles
+// format with Showdown's "Obtainable" legality checks (species availability,
+// learnsets) switched off so the M-C additions can be used: the champions mod
+// carries every Gen 9 species, item and move as "Past", which !Obtainable
+// unlocks. Species Clause, Item Clause = 1, Level 50, Team Preview and pick-4
+// stay in force.
 export const SYNTHETIC_FORMATS = {
   gen9championsvgc2026regmc: {
     id: 'gen9championsvgc2026regmc',
@@ -47,11 +53,33 @@ const STONE_ALIASES = { Golisopodite: 'Golisopite', Baxcaliburite: 'Baxcalibrite
 const aliasStones = (text) => Object.entries(STONE_ALIASES)
   .reduce((t, [ours, theirs]) => t.split(ours).join(theirs), text);
 
-// Champions-confirmed data this engine build (July 2026) predates: Mega Absol Z
-// Sharpness, Mega Garchomp Z Levitate, Mega Lucario Z Aura Guard (new ability:
-// halves damage the holder takes from contact moves). Patched into the loaded
-// 'champions' mod data at startup so battles use the confirmed abilities.
-export function patchChampionsData() {
+// The toolkit's own ability choices for forms whose Champions ability is not
+// announced yet (Team Builder ability editor -> vgc_toolkit/data/ability_overrides.json):
+// {"golisopod-mega": ["Battle Armor"], ...} (the file keeps a list per form; the
+// first entry is the choice). Read fresh every time it is applied.
+const OVERRIDES_FILE = new URL('../vgc_toolkit/data/ability_overrides.json', import.meta.url);
+export function loadAbilityOverrides(file = OVERRIDES_FILE) {
+  try {
+    return JSON.parse(fs.readFileSync(file, 'utf8')) || {};
+  } catch {
+    return {};
+  }
+}
+
+// Champions data this engine build (July 2026) predates, patched into the
+// loaded 'champions' mod at startup and again whenever a battle starts (so a
+// Team Builder ability choice applies without restarting the sidecar):
+//  - the six Regulation M-C megas' abilities (Mega Absol Z Sharpness, Mega
+//    Garchomp Z Levitate, Mega Lucario Z Aura Guard, a new ability that halves
+//    damage the holder takes from contact moves, Mega Golisopod Tough Claws,
+//    Mega Baxcalibur Thermal Exchange; the engine ships the base forms'
+//    abilities), plus the toolkit's overrides for anything still unannounced;
+//  - Run Away as an in-battle ability: the holder can always switch out;
+//  - the M-C move changes (2026-09-08): Slash 80 BP, Meteor Assault 170,
+//    Snipe Shot 85, Double Shock is a punch, Wish and Strength Sap 8 PP,
+//    Milk Drink can target the ally.
+// Returns "Species = Ability" strings for the log.
+export function patchChampionsData(overrides = loadAbilityOverrides()) {
   const dex = Dex.mod('champions');
   dex.data.Abilities.auraguard = {
     name: 'Aura Guard', num: -9001, rating: 3.5,
@@ -59,17 +87,59 @@ export function patchChampionsData() {
       if (move.flags['contact']) return this.chainModify(0.5);
     },
   };
-  const fixes = { absolmegaz: 'Sharpness', garchompmegaz: 'Levitate', lucariomegaz: 'Aura Guard' };
-  for (const [id, ability] of Object.entries(fixes)) {
-    if (dex.data.Pokedex[id]) dex.data.Pokedex[id].abilities = { 0: ability };
-  }
+  // Run Away: the holder ignores trapping (Shadow Tag, Arena Trap, binding moves).
+  dex.data.Abilities.runaway = {
+    ...dex.data.Abilities.runaway,
+    onTrapPokemonPriority: -10,
+    onTrapPokemon(pokemon) { pokemon.trapped = pokemon.maybeTrapped = false; },
+  };
   dex.abilities.abilityCache?.clear?.();
+  // A copy per move: the mod's data table shares entries with its parent generation.
+  const moveFix = (id, fix) => {
+    const m = dex.data.Moves[id];
+    if (!m) return;
+    dex.data.Moves[id] = { ...m, ...fix, ...(fix.flags ? { flags: { ...m.flags, ...fix.flags } } : {}) };
+  };
+  moveFix('slash', { basePower: 80 });
+  moveFix('meteorassault', { basePower: 170 });
+  moveFix('snipeshot', { basePower: 85 });
+  moveFix('doubleshock', { flags: { punch: 1 } });
+  moveFix('wish', { pp: 8 });
+  moveFix('strengthsap', { pp: 8 });
+  moveFix('milkdrink', { target: 'adjacentAllyOrSelf' });
+  dex.moves.moveCache?.clear?.();
+  const applied = [];
+  const setAbility = (id, ability) => {
+    const entry = dex.data.Pokedex[id];
+    if (!entry) return;
+    // A copy: a mod's data table shares entry objects with its parent generation.
+    dex.data.Pokedex[id] = { ...entry, abilities: { 0: ability } };
+    applied.push(`${entry.name} = ${ability}`);
+  };
+  const fixes = { absolmegaz: 'Sharpness', garchompmegaz: 'Levitate', lucariomegaz: 'Aura Guard',
+    salamencemega: 'Aerilate', golisopodmega: 'Tough Claws', baxcaliburmega: 'Thermal Exchange' };
+  for (const [id, ability] of Object.entries(fixes)) setAbility(id, ability);
+  for (const [toolkitId, choice] of Object.entries(overrides)) {
+    const ability = Array.isArray(choice) ? choice[0] : choice;
+    if (toolkitId.startsWith('_') || !ability) continue;
+    // Toolkit ids are the engine's ids with dashes ("absol-mega-z" -> absolmegaz);
+    // Floette's mega drops the "eternal" the toolkit keeps.
+    const id = [toID(toolkitId), toID(toolkitId).replace('eternal', '')].find((x) => dex.data.Pokedex[x]);
+    const ab = dex.abilities.get(String(ability));
+    if (!id) { console.warn(`[abilities] override for unknown species "${toolkitId}" ignored`); continue; }
+    if (!ab.exists) { console.warn(`[abilities] "${ability}" (${toolkitId}) is not an ability this engine knows; ignored`); continue; }
+    setAbility(id, ab.name);
+  }
   dex.species.speciesCache?.clear?.();
-  return Object.keys(fixes).map((id) => `${dex.species.get(id).name} = ${dex.species.get(id).abilities[0]}`);
+  return applied;
 }
 
 import { toID, parsePos, parseHP, speciesFromDetails, newState, applyLine, syncOwnSide } from './protocol.mjs';
 import { decide as smartDecide, pressure } from './bot.mjs';
+import { runLab, BUDGETS } from './lab.mjs';
+
+// Matchup Lab jobs: {id, status: running|done|stopped|error, progress, results, error}.
+const labs = new Map();
 
 function parseTeam(input) {
   // Accepts a Showdown paste, a packed string, or an array of set objects.
@@ -98,6 +168,13 @@ export function normalizeTeam(team, formatid) {
       const from = stone.exists && stone.megaStone && typeof stone.megaStone === 'object'
         ? Object.keys(stone.megaStone).find((k) => stone.megaStone[k] === sp.name) : null;
       set.species = from || sp.baseSpecies;
+      // The toolkit's paste carries the mega's ability. In battle the Pokémon
+      // keeps a base-form ability until it Mega Evolves (Intimidate Staraptor ->
+      // Contrary Mega Staraptor); the engine applies the mega's ability from
+      // species data at that moment, so give the set a base-form one here.
+      const base = dex.species.get(set.species);
+      const own = Object.values(base.abilities || {});
+      if (own.length && !own.some((a) => toID(a) === toID(set.ability))) set.ability = own[0];
     }
     if (!set.level) set.level = 50;
   }
@@ -359,7 +436,7 @@ const server = http.createServer(async (req, res) => {
     if (req.method === 'GET' && url.pathname === '/sim/formats') return send(res, 200, championsFormats());
     if (req.method === 'GET' && url.pathname === '/sim/health') {
       // `bots` lets the UI detect a sidecar running older code than it expects.
-      return send(res, 200, { ok: true, engine: 'pokemon-showdown', version: 2, bots: BOT_MODES, formats: championsFormats().length });
+      return send(res, 200, { ok: true, engine: 'pokemon-showdown', version: 3, bots: BOT_MODES, formats: championsFormats().length, lab: Object.keys(BUDGETS) });
     }
     if (req.method === 'POST' && url.pathname === '/sim/validate') {
       const body = await readJSON(req);
@@ -370,9 +447,43 @@ const server = http.createServer(async (req, res) => {
       if (norm.length) return send(res, 200, { problems: norm, team });
       return send(res, 200, { problems: validateTeam(fmt, team), team });
     }
+    if (req.method === 'POST' && url.pathname === '/sim/lab') {
+      const body = await readJSON(req);
+      const format = body.format || DEFAULT_FORMAT;
+      patchChampionsData();
+      const p1 = { name: 'You', team: parseTeam(body.p1?.paste ?? body.p1?.team) };
+      const p2 = { name: 'Them', team: parseTeam(body.p2?.paste ?? body.p2?.team) };
+      for (const [who, p] of [['p1', p1], ['p2', p2]]) {
+        if (p.team.length < 4) return send(res, 400, { error: `${who}: the lab needs at least four Pokemon with moves` });
+        const problems = normalizeTeam(p.team, format).concat(validateTeam(format, p.team) || []);
+        if (problems.length) return send(res, 400, { error: `${who}: team is not legal in ${format}`, problems });
+      }
+      const budget = BUDGETS[body.budget] ? body.budget : 'standard';
+      const job = { id: randomUUID().slice(0, 8), status: 'running', progress: { done: 0, total: 0, phase: 'starting', seconds: 0 }, results: null, error: null, stop: false, started: Date.now() };
+      labs.set(job.id, job);
+      // Keep the map small: forget finished jobs older than an hour.
+      for (const [id, j] of labs) if (j.status !== 'running' && Date.now() - j.started > 3600e3) labs.delete(id);
+      runLab({
+        formatid: resolveFormat(format), dex: Dex.forFormat(resolveFormat(format)), p1, p2, budget,
+        oppLeadPct: Array.isArray(body.oppLeadPct) ? body.oppLeadPct : null,
+        seed: Number.isFinite(body.seed) ? body.seed : undefined,
+        shouldStop: () => job.stop,
+      }, (p) => { job.progress = p; })
+        .then((results) => { job.status = results ? 'done' : 'stopped'; job.results = results && { ...results, formatid: format }; })
+        .catch((e) => { job.status = 'error'; job.error = e.message; console.warn(`[lab] ${e.stack || e.message}`); });
+      return send(res, 200, { id: job.id, status: job.status, budget });
+    }
+    const lab = /^\/sim\/lab\/([a-z0-9-]+)$/.exec(url.pathname);
+    if (lab) {
+      const job = labs.get(lab[1]);
+      if (!job) return send(res, 404, { error: 'no such lab' });
+      if (req.method === 'DELETE') { job.stop = true; return send(res, 200, { ok: true }); }
+      return send(res, 200, { id: job.id, status: job.status, progress: job.progress, results: job.results, error: job.error });
+    }
     if (req.method === 'POST' && url.pathname === '/sim/battle') {
       const body = await readJSON(req);
       const format = body.format || DEFAULT_FORMAT;
+      patchChampionsData();   // ability choices made in the Team Builder since startup
       const p1 = { name: body.p1?.name || 'You', team: parseTeam(body.p1?.paste ?? body.p1?.team) };
       const p2 = { name: body.p2?.name || 'Bot', team: parseTeam(body.p2?.paste ?? body.p2?.team) };
       for (const [who, p] of [['p1', p1], ['p2', p2]]) {
@@ -416,6 +527,6 @@ if (isMain) {
   server.listen(PORT, '127.0.0.1', () => {
     const n = championsFormats().length;
     console.log(`sim sidecar on http://127.0.0.1:${PORT}  (pokemon-showdown; ${n} Champions formats; default ${DEFAULT_FORMAT})`);
-    console.log(`confirmed M-C abilities patched in: ${patched.join(', ')}`);
+    console.log(`engine abilities patched (confirmed M-C data + ability_overrides.json): ${patched.join(', ')}`);
   });
 }

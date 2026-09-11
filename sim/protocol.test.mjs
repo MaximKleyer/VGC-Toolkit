@@ -10,6 +10,9 @@ test('position and HP parsing', () => {
   assert.deepEqual(parseHP('181/182 brn'), { hp: 181, maxhp: 182, status: 'brn', fainted: false });
   assert.deepEqual(parseHP('75/100'), { hp: 75, maxhp: 100, status: null, fainted: false });
   assert.deepEqual(parseHP('0 fnt'), { hp: 0, maxhp: 100, status: 'fnt', fainted: true });
+  // The champions mod's HP-bar colour tag at 50% / 20% ("50/100g", "20/100r") is not part of the number.
+  assert.deepEqual(parseHP('50/100g'), { hp: 50, maxhp: 100, status: null, fainted: false });
+  assert.deepEqual(parseHP('20/100r par'), { hp: 20, maxhp: 100, status: 'par', fainted: false });
 });
 
 test('a doubles turn reduces into UI state', () => {

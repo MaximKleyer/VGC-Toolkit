@@ -19,7 +19,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from ingest_items import OUT_DIR, categorize  # noqa: E402
 
-BASE_KEYS = ("id", "name", "effect", "category")
+# regulations / experimental scope an item to a regulation (experimental
+# items); they are data carried through a retag, not mechanics tags.
+BASE_KEYS = ("id", "name", "effect", "category", "regulations", "experimental")
 
 
 def main() -> int:
@@ -36,6 +38,9 @@ def main() -> int:
     for slug, it in items.items():
         new = {"id": it["id"], "name": it["name"], "effect": it.get("effect", ""),
                **categorize(it["name"], mega_stones)}
+        for key in ("regulations", "experimental"):
+            if key in it:
+                new[key] = it[key]
         # A stone whose form is missing from the pokedex keeps its previous link.
         if new.get("category") == "mega_stone" and not new.get("mega_form") and it.get("mega_form"):
             new["mega_form"] = it["mega_form"]

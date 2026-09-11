@@ -23,7 +23,7 @@ import math
 from vgc_toolkit.core import dataio, stats
 from dataclasses import replace
 
-from vgc_toolkit.core.damage import Combatant, Field, calculate
+from vgc_toolkit.core.damage import WEIGHT_MOVES, Combatant, Field, calculate
 from vgc_toolkit.core.stats import SPSpread
 
 ALL_TYPES = ["Normal", "Fire", "Water", "Electric", "Grass", "Ice", "Fighting",
@@ -105,7 +105,9 @@ def _best_hit(attacker_id: str, defender: Combatant, field: Field,
     best = None
     for name in moves:
         m = move_db.get(name)
-        if not m or m["category"] == "Status" or m["base_power"] < 1:
+        # 0-BP variable moves (Electro Ball, Gyro Ball ...) cannot be ranked without
+        # an override; weight-based ones get their power from the weights.
+        if not m or m["category"] == "Status" or (m["base_power"] < 1 and name not in WEIGHT_MOVES):
             continue
         if practical:
             # Skip moves nobody actually clicks for damage: recharge nukes
@@ -153,10 +155,9 @@ def rank_moves(attacker: Combatant, defender: Combatant,
     ranked = []
     for name in learnset:
         m = move_db.get(name)
-        # Skip status moves and 0-BP variable-power moves (Low Kick, Grass Knot,
-        # Electro Ball...): the engine can't rank those without an override and
-        # they'd otherwise leak in as meaningless ~1% rows.
-        if not m or m["category"] == "Status" or m["base_power"] < 1:
+        # 0-BP variable moves (Electro Ball, Gyro Ball ...) cannot be ranked without
+        # an override; weight-based ones get their power from the weights.
+        if not m or m["category"] == "Status" or (m["base_power"] < 1 and name not in WEIGHT_MOVES):
             continue
         try:
             r = calculate(attacker, defender, name, field, max_ko_hits=2)
@@ -168,7 +169,7 @@ def rank_moves(attacker: Combatant, defender: Combatant,
             "move": name,
             "type": r.get("type", m["type"]),   # effective type (-ate abilities, Weather Ball)
             "category": m["category"],
-            "base_power": m["base_power"],
+            "base_power": r.get("base_power", m["base_power"]),   # weight moves: the power actually used
             "accuracy": m.get("accuracy"),
             "recharge": bool(m.get("flags", {}).get("recharge")),
             "type_effectiveness": r["type_effectiveness"],

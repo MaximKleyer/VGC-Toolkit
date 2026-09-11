@@ -93,7 +93,8 @@ class TestStages:
 class TestData:
     def test_roster_size_and_megas(self):
         dex = dataio.pokedex()
-        assert len(dex) == 320          # 310 M-B forms + 10 confirmed M-C additions
+        # 310 M-B forms + the 33 Regulation M-C additions (2026-09-08)
+        assert len(dex) == 343
         megas = [m for m in dex.values() if "mega_of" in m]
         assert len(megas) == 82
         # Every mega's base form exists and back-links
@@ -130,9 +131,21 @@ class TestData:
 
     def test_alignments_loaded(self):
         al = dataio.alignments()
-        assert len(al) == 15
+        assert len(al) == 21          # every +10%/-10% pairing of the five stats, plus Serious
         assert al["Timid"]["boost"] == "spe"
         assert al["Serious"]["boost"] is None
+        # The six the speed-calc source omits (the game has them).
+        for name, boost, reduce in [("Lonely", "atk", "def"), ("Naughty", "atk", "spd"), ("Mild", "spa", "def"),
+                                    ("Rash", "spa", "spd"), ("Lax", "def", "spd"), ("Gentle", "spd", "def")]:
+            assert (al[name]["boost"], al[name]["reduce"]) == (boost, reduce)
+            assert al[name]["multipliers"][boost] == 1.1 and al[name]["multipliers"][reduce] == 0.9
+
+    def test_every_form_has_a_weight(self):
+        dex = dataio.pokedex()
+        missing = [pid for pid, m in dex.items() if not m.get("weight_kg")]
+        assert not missing, f"forms without weight_kg (run scripts/fill_weights.py): {missing[:10]}"
+        assert dex["snorlax"]["weight_kg"] == 460
+        assert dex["golisopod-mega"]["weight_kg"] == 148      # Champions-new mega, from the engine's champions mod
 
     def test_mega_stones_link_to_forms(self):
         items = dataio.items()

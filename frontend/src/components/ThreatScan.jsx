@@ -116,9 +116,12 @@ export default function ThreatScan({ team, sendToCalc }) {
   // behind is normal right after a regulation change (its ladder has not run
   // yet), so only two or more counts as stale.
   const metaReg = metaSets?.info?.regulation || null;
-  const regOrder = (regulations || []).map((r) => r.regulation);
-  const metaLag = metaReg && regOrder.includes(metaReg) && regOrder.includes(regulation)
-    ? regOrder.indexOf(regulation) - regOrder.indexOf(metaReg)
+  // Published regulations only: an experimental tag (none at present) counts as the
+  // regulation it is based on, since ladders exist only for published ones.
+  const regOrder = (regulations || []).filter((r) => !r.experimental).map((r) => r.regulation);
+  const selBase = (regulations || []).find((r) => r.regulation === regulation)?.based_on || regulation;
+  const metaLag = metaReg && regOrder.includes(metaReg) && regOrder.includes(selBase)
+    ? regOrder.indexOf(selBase) - regOrder.indexOf(metaReg)
     : 0;
   const metaStale = metaLag >= 2;
   const metaTitle = !metaReg ? undefined

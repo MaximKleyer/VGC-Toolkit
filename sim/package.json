@@ -11,6 +11,6 @@
     "smoke": "node smoke.mjs"
   },
   "dependencies": {
-    "pokemon-showdown": "0.11.11"
+    "pokemon-showdown": "^0.11.11"
   }
 }

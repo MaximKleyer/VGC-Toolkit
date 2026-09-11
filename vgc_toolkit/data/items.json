@@ -1071,5 +1071,137 @@
   "effect": "A Mega Stone. The matching Pokemon can Mega Evolve while holding it.",
   "category": "mega_stone",
   "mega_form": "lucario-mega-z"
+ },
+ "grassy-seed": {
+  "id": "grassy-seed",
+  "name": "Grassy Seed",
+  "effect": "An item to be held by a Pokemon. It boosts Defense on Grassy Terrain. It can only be used once.",
+  "category": "held",
+  "terrain_seed": {
+   "terrain": "grassy",
+   "stat": "def"
+  },
+  "regulations": [
+   "M-C"
+  ]
+ },
+ "electric-seed": {
+  "id": "electric-seed",
+  "name": "Electric Seed",
+  "effect": "An item to be held by a Pokemon. It boosts Defense on Electric Terrain. It can only be used once.",
+  "category": "held",
+  "terrain_seed": {
+   "terrain": "electric",
+   "stat": "def"
+  },
+  "regulations": [
+   "M-C"
+  ]
+ },
+ "psychic-seed": {
+  "id": "psychic-seed",
+  "name": "Psychic Seed",
+  "effect": "An item to be held by a Pokemon. It boosts Sp. Def on Psychic Terrain. It can only be used once.",
+  "category": "held",
+  "terrain_seed": {
+   "terrain": "psychic",
+   "stat": "spd"
+  },
+  "regulations": [
+   "M-C"
+  ]
+ },
+ "misty-seed": {
+  "id": "misty-seed",
+  "name": "Misty Seed",
+  "effect": "An item to be held by a Pokemon. It boosts Sp. Def on Misty Terrain. It can only be used once.",
+  "category": "held",
+  "terrain_seed": {
+   "terrain": "misty",
+   "stat": "spd"
+  },
+  "regulations": [
+   "M-C"
+  ]
+ },
+ "leek": {
+  "id": "leek",
+  "name": "Leek",
+  "effect": "An item to be held by Farfetch'd or Sirfetch'd. This long, stiff stalk of leek boosts the critical-hit ratio of the holder's moves.",
+  "category": "held",
+  "crit_stage": 2,
+  "crit_users": [
+   "farfetch-d",
+   "sirfetch-d"
+  ],
+  "regulations": [
+   "M-C"
+  ]
+ },
+ "rocky-helmet": {
+  "id": "rocky-helmet",
+  "name": "Rocky Helmet",
+  "effect": "An item to be held by a Pokemon. If the holder is hit, the attacker will also be damaged upon contact.",
+  "category": "held",
+  "regulations": [
+   "M-C"
+  ]
+ },
+ "air-balloon": {
+  "id": "air-balloon",
+  "name": "Air Balloon",
+  "effect": "An item to be held by a Pokemon. The holder will float in the air until hit. Once hit, this item will burst.",
+  "category": "held",
+  "airborne": true,
+  "regulations": [
+   "M-C"
+  ]
+ },
+ "red-card": {
+  "id": "red-card",
+  "name": "Red Card",
+  "effect": "An item to be held by a Pokemon. When the holder is hit by an attack, the attacker is removed from battle.",
+  "category": "held",
+  "regulations": [
+   "M-C"
+  ]
+ },
+ "binding-band": {
+  "id": "binding-band",
+  "name": "Binding Band",
+  "effect": "An item to be held by a Pokemon. A band that increases the power of binding moves when held.",
+  "category": "held",
+  "regulations": [
+   "M-C"
+  ]
+ },
+ "eject-button": {
+  "id": "eject-button",
+  "name": "Eject Button",
+  "effect": "An item to be held by a Pokemon. If the holder is hit by an attack, it will be switched out of battle.",
+  "category": "held",
+  "regulations": [
+   "M-C"
+  ]
+ },
+ "normal-gem": {
+  "id": "normal-gem",
+  "name": "Normal Gem",
+  "effect": "A gem with an ordinary essence. When held, it strengthens the power of a Normal-type move one time.",
+  "category": "held",
+  "gem_type": "Normal",
+  "gem_multiplier": 1.3,
+  "regulations": [
+   "M-C"
+  ]
+ },
+ "terrain-extender": {
+  "id": "terrain-extender",
+  "name": "Terrain Extender",
+  "effect": "An item to be held by a Pokemon. It extends the duration of the terrain caused by the holder's Ability or a move.",
+  "category": "held",
+  "regulations": [
+   "M-C"
+  ]
  }
 }

@@ -9,7 +9,8 @@ class TestMoves:
     def test_universe_size_and_all_defined(self):
         moves = dataio.moves()
         # 496 from Champions learnsets + Drum Beating and Glaive Rush (M-C signatures)
-        assert len(moves) == 498
+        # + the six signature moves of the Reg M-C Experimental predictions
+        assert len(moves) == 511
         assert not any(m.get("needs_definition") for m in moves.values())
 
     def test_move_spot_checks(self):
@@ -34,14 +35,14 @@ class TestMoves:
 
 class TestLearnsets:
     def test_counts(self):
-        # 233 M-B species + the 4 new M-C species (provisional learnsets)
-        assert len(dataio.learnsets()) == 237
+        # 233 M-B species + the 27 species Regulation M-C added (provisional learnsets)
+        assert len(dataio.learnsets()) == 260
 
     def test_known_learnset_facts(self):
         assert "Kowtow Cleave" in dataio.get_learnset("kingambit")["moves"]
         chz = dataio.get_learnset("charizard")["moves"]
         assert "Air Slash" in chz and "Heat Wave" in chz
-        assert len(chz) == 72
+        assert len(chz) == 73          # + Slash, usable again since Regulation M-C
 
     def test_megas_share_base_learnset(self):
         assert dataio.get_learnset("dragonite-mega") == dataio.get_learnset("dragonite")

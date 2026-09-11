@@ -7325,7 +7325,7 @@
   "category": "Status",
   "base_power": 0,
   "accuracy": 100,
-  "pp": 10,
+  "pp": 8,
   "priority": 0,
   "target": "normal",
   "flags": {
@@ -7336,7 +7336,7 @@
    "metronome": 1
   },
   "short_desc": "User heals HP=target's Atk stat. Lowers Atk by 1.",
-  "source": "gen9_baseline"
+  "source": "gen9_baseline+mc_2026-09"
  },
  "String Shot": {
   "name": "String Shot",
@@ -8592,7 +8592,7 @@
   "category": "Status",
   "base_power": 0,
   "accuracy": null,
-  "pp": 10,
+  "pp": 8,
   "priority": 0,
   "target": "self",
   "flags": {
@@ -8601,7 +8601,7 @@
    "metronome": 1
   },
   "short_desc": "Next turn, 50% of the user's max HP is restored.",
-  "source": "gen9_baseline"
+  "source": "gen9_baseline+mc_2026-09"
  },
  "Wonder Room": {
   "name": "Wonder Room",
@@ -8886,5 +8886,232 @@
   },
   "short_desc": "User takes double damage and can't avoid attacks until its next move.",
   "source": "provisional_mc: gen9 mainline (no M-B Pokemon learned it)"
+ },
+ "Pyro Ball": {
+  "name": "Pyro Ball",
+  "type": "Fire",
+  "category": "Physical",
+  "base_power": 120,
+  "accuracy": 90,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "defrost": 1,
+   "bullet": 1
+  },
+  "short_desc": "10% chance to burn the target. Thaws user.",
+  "source": "mc_2026-09: gen9 mainline definition (move added to the pool with Regulation M-C)"
+ },
+ "Court Change": {
+  "name": "Court Change",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "all",
+  "flags": {
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Swaps user's field effects with the opposing side.",
+  "source": "mc_2026-09: gen9 mainline definition (move added to the pool with Regulation M-C)"
+ },
+ "Snipe Shot": {
+  "name": "Snipe Shot",
+  "type": "Water",
+  "category": "Special",
+  "base_power": 85,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "High critical hit ratio. Cannot be redirected.",
+  "source": "mc_2026-09: gen9 mainline definition (move added to the pool with Regulation M-C)+mc_2026-09"
+ },
+ "Zing Zap": {
+  "name": "Zing Zap",
+  "type": "Electric",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "30% chance to make the target flinch.",
+  "source": "mc_2026-09: gen9 mainline definition (move added to the pool with Regulation M-C)"
+ },
+ "Slash": {
+  "name": "Slash",
+  "type": "Normal",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 20,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "slicing": 1
+  },
+  "short_desc": "High critical hit ratio.",
+  "source": "mc_2026-09: gen9 mainline definition (move added to the pool with Regulation M-C)+mc_2026-09"
+ },
+ "Milk Drink": {
+  "name": "Milk Drink",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "adjacentAllyOrSelf",
+  "flags": {
+   "snatch": 1,
+   "heal": 1,
+   "metronome": 1
+  },
+  "short_desc": "Heals the user by 50% of its max HP.",
+  "source": "mc_2026-09: gen9 mainline definition (move added to the pool with Regulation M-C)+mc_2026-09"
+ },
+ "Meteor Assault": {
+  "name": "Meteor Assault",
+  "type": "Fighting",
+  "category": "Physical",
+  "base_power": 170,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "recharge": 1,
+   "protect": 1,
+   "mirror": 1,
+   "failinstruct": 1
+  },
+  "short_desc": "User cannot move next turn.",
+  "source": "mc_2026-09: gen9 mainline definition (move added to the pool with Regulation M-C)+mc_2026-09"
+ },
+ "Double Shock": {
+  "name": "Double Shock",
+  "type": "Electric",
+  "category": "Physical",
+  "base_power": 120,
+  "accuracy": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "punch": 1
+  },
+  "short_desc": "User's Electric type: typeless; must be Electric.",
+  "source": "mc_2026-09: gen9 mainline definition (move added to the pool with Regulation M-C)+mc_2026-09"
+ },
+ "Overdrive": {
+  "name": "Overdrive",
+  "type": "Electric",
+  "category": "Special",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "allAdjacentFoes",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "sound": 1,
+   "bypasssub": 1
+  },
+  "short_desc": "No additional effect. Hits foe(s).",
+  "source": "mc_2026-09: gen9 mainline definition (move added to the pool with Regulation M-C)"
+ },
+ "Shift Gear": {
+  "name": "Shift Gear",
+  "type": "Steel",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "snatch": 1,
+   "metronome": 1
+  },
+  "short_desc": "Raises the user's Speed by 2 and Attack by 1.",
+  "source": "mc_2026-09: gen9 mainline definition (move added to the pool with Regulation M-C)"
+ },
+ "Octolock": {
+  "name": "Octolock",
+  "type": "Fighting",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1
+  },
+  "short_desc": "Traps target, lowers Def and SpD by 1 each turn.",
+  "source": "mc_2026-09: gen9 mainline definition (move added to the pool with Regulation M-C)"
+ },
+ "Revival Blessing": {
+  "name": "Revival Blessing",
+  "type": "Normal",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": null,
+  "pp": 1,
+  "priority": 0,
+  "target": "self",
+  "flags": {
+   "heal": 1,
+   "nosketch": 1
+  },
+  "short_desc": "Revives a fainted Pokemon to 50% HP.",
+  "source": "mc_2026-09: gen9 mainline definition (move added to the pool with Regulation M-C)"
+ },
+ "Jaw Lock": {
+  "name": "Jaw Lock",
+  "type": "Dark",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "normal",
+  "flags": {
+   "contact": 1,
+   "protect": 1,
+   "mirror": 1,
+   "metronome": 1,
+   "bite": 1
+  },
+  "short_desc": "Prevents both user and target from switching out.",
+  "source": "mc_2026-09: gen9 mainline definition (move added to the pool with Regulation M-C)"
  }
 }

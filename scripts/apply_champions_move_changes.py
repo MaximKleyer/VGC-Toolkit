@@ -11,7 +11,9 @@ aren't in the dataset (Bolt Beak, Fishious Rend, Astral Barrage, Blood Moon,
 Make It Rain, Hyper Drill, Gear Grind, Anchor Shot, Snipe Shot, Triple Dive,
 Dragon Hammer, Revelation Dance); they're reported as skipped.
 
-Re-running is idempotent.
+Re-running is idempotent. The Regulation M-C changes of 2026-09-08 (Slash,
+Meteor Assault, Snipe Shot, Wish, Strength Sap, Double Shock, Milk Drink) live
+in scripts/add_mc_release.py, which also adds the moves that were new to the pool.
 """
 
 import json

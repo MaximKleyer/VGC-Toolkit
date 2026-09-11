@@ -18,11 +18,12 @@ from functools import lru_cache
 from itertools import combinations
 
 from vgc_toolkit.core import dataio
-from vgc_toolkit.core.damage import Combatant, Field, calculate
+from vgc_toolkit.core.damage import Combatant, Field, calculate, _slug
 from vgc_toolkit.core.stats import SPSpread, calc_stat
 from vgc_toolkit.core.matchup import (
     _alignment_mult, defensive_profile, WEATHER_SETTERS,
 )
+from vgc_toolkit.core.teams import _stone_family
 
 TERRAIN_SETTERS = {"Electric Surge": "electric", "Grassy Surge": "grassy",
                    "Misty Surge": "misty", "Psychic Surge": "psychic"}
@@ -32,6 +33,24 @@ PIVOTS = {"U-turn", "Volt Switch", "Flip Turn", "Parting Shot"}
 SPEED_CONTROL = {"Tailwind", "Trick Room", "Icy Wind", "Electroweb",
                  "Bleakwind Storm", "Thunder Wave", "Glare", "Nuzzle"}
 TAILWIND_TR = {"Tailwind", "Trick Room"}
+# Abilities that stop a Fake Out aimed at your side (Psychic Surge via the terrain).
+FAKE_OUT_BLOCKERS = {"Armor Tail", "Dazzling", "Queenly Majesty", "Psychic Surge"}
+ANSWER_SCORE = 30        # a matrix cell at or above this counts as an answer
+
+
+def _is_mega_slot(pokemon_id: str, item: str | None) -> bool:
+    """A slot that will Mega Evolve: a Mega form, or a base form holding its
+    own stone. Only one Pokemon can Mega Evolve per game, so a four may carry
+    at most one of these."""
+    mon = dataio.get_pokemon(pokemon_id)
+    if mon.get("mega_of"):
+        return True
+    if not item:
+        return False
+    it = dataio.items().get(_slug(item))
+    if not it or it.get("category") != "mega_stone" or not it.get("mega_form"):
+        return False
+    return _stone_family(pokemon_id) == _stone_family(it["mega_form"])
 
 
 # ----------------------------------------------------------------------------
@@ -260,6 +279,10 @@ def team_preview(my_team: list[dict], opp_team: list[dict],
         moves = [mv for mv in (m.get("moves") or []) if mv] or None
         my_sides.append(_Side(c, moves, _spe(c)))
 
+    my_mega_idx = [i for i, m in enumerate(my_team)
+                   if _is_mega_slot(m["pokemon_id"], m.get("item"))]
+    my_names = [dataio.get_pokemon(m["pokemon_id"])["name"] for m in my_team]
+
     opp_sides, opp_meta = [], []
     for o in opp_team:
         sp = o["pokemon_id"]
@@ -339,11 +362,45 @@ def team_preview(my_team: list[dict], opp_team: list[dict],
             tempo += 7; notes.append("speed control")
         if pair_moves & REDIRECTION:
             tempo += 6; notes.append("redirection")
-        return 0.7 * s + tempo, notes
+        # The read against their projected front: who moves first, who
+        # one-shots whom, and whether their Fake Out gets through.
+        why, risk = [], 0.0
+        front = order[:2]
+        for i_ in (i, k):
+            faster = [j for j in front if my_sides[i_].spe > opp_sides[j].spe]
+            slower = [j for j in front if my_sides[i_].spe < opp_sides[j].spe]
+            if front and len(faster) == len(front):
+                why.append(f"{my_names[i_]} outspeeds both projected leads "
+                           f"({my_sides[i_].spe} vs "
+                           f"{' / '.join(str(opp_sides[j].spe) for j in front)})")
+            elif slower:
+                why.append(f"{my_names[i_]} is slower than "
+                           + " and ".join(opp_out[j]["name"] for j in slower))
+            for j in front:
+                c = cells[i_][j]
+                if c["my_pct"] >= 100:
+                    why.append(f"{my_names[i_]} OHKOs {opp_out[j]['name']} "
+                               f"({c['my_move']} {c['my_pct']:.0f}%)")
+                if c["their_pct"] >= 100 and not c["i_outspeed"]:
+                    why.append(f"watch: {opp_out[j]['name']}'s {c['their_move']} "
+                               f"OHKOs {my_names[i_]} first")
+                    risk += 12
+        their_fake_out = [opp_out[j]["name"] for j in front
+                          if FAKE_OUT in set(opp_meta[j]["moves"])]
+        if their_fake_out:
+            if pair_abils & FAKE_OUT_BLOCKERS:
+                why.append("their Fake Out is blocked ("
+                           + next(a for a in pair_abils if a in FAKE_OUT_BLOCKERS) + ")")
+            else:
+                why.append(f"their Fake Out lands on turn one ({their_fake_out[0]})")
+                risk += 6
+        return 0.7 * s + tempo - risk, notes, why
 
     lead_options = []
     for i, k in combinations(range(len(my_sides)), 2):
-        sc, notes = lead_score(i, k)
+        if i in my_mega_idx and k in my_mega_idx:
+            continue                       # only one Pokemon Mega Evolves per game
+        sc, notes, why = lead_score(i, k)
         wins, fears = [], []
         for j in range(len(opp_sides)):
             best = max(cells[i][j]["score"], cells[k][j]["score"])
@@ -356,7 +413,7 @@ def team_preview(my_team: list[dict], opp_team: list[dict],
                      my_sides[k].combatant.pokemon_id],
             "pair_names": [dataio.get_pokemon(my_sides[i].combatant.pokemon_id)["name"],
                            dataio.get_pokemon(my_sides[k].combatant.pokemon_id)["name"]],
-            "score": round(sc, 1), "notes": notes,
+            "score": round(sc, 1), "notes": notes, "why": why,
             "beats": wins[:4], "loses_to": fears[:4],
         })
     lead_options.sort(key=lambda x: -x["score"])
@@ -368,25 +425,43 @@ def team_preview(my_team: list[dict], opp_team: list[dict],
     wincon = base_off.index(max(base_off)) if base_off else None
 
     def combo_eval(combo):
-        sc, notes = 0.0, []
-        # coverage: do you have an answer to each opposing mon?
-        cov = 0.0
-        gaps = []
+        sc, notes, why = 0.0, [], []
+        # Coverage, weighted towards the Pokemon they are likely to bring, and
+        # Wolfe's rule: two answers to each of their Pokemon, an answer being a
+        # matchup cell at or above ANSWER_SCORE (a KO race you win).
+        cov, wsum, gaps, answers, thin, twice = 0.0, 0.0, [], {}, [], 0
         for j in range(len(opp_sides)):
+            w = 1.0 + 2.0 * prop_w[j]
             best = max(cells[i][j]["score"] for i in combo)
-            cov += best
+            cov += w * best; wsum += w
+            ans = [(i, cells[i][j]) for i in combo if cells[i][j]["score"] >= ANSWER_SCORE]
+            ans.sort(key=lambda x: -x[1]["my_pct"])
+            answers[opp_out[j]["name"]] = [
+                {"mon": my_names[i], "move": c["my_move"], "pct": c["my_pct"]} for i, c in ans]
+            if len(ans) >= 2:
+                twice += 1; sc += 4
+            elif len(ans) == 1:
+                thin.append(f"{opp_out[j]['name']} ({my_names[ans[0][0]]})")
+            else:
+                sc -= 10
             if best <= -25:
                 gaps.append(opp_out[j]["name"])
-        cov /= len(opp_sides)
-        sc += cov
+        sc += cov / wsum
         moves = set()
         for i in combo:
             moves |= set(my_team[i].get("moves") or [])
         has_scarf = any(my_team[i].get("item") == "Choice Scarf" for i in combo)
+        sc_src = [my_names[i] for i in combo
+                  if set(my_team[i].get("moves") or []) & SPEED_CONTROL
+                  or my_team[i].get("item") == "Choice Scarf"]
         if (moves & SPEED_CONTROL) or has_scarf:
             sc += 10; notes.append("has speed control")
+            why.append("Speed control: " + ", ".join(
+                f"{my_names[i]} ({', '.join(sorted(set(my_team[i].get('moves') or []) & SPEED_CONTROL) or ['Choice Scarf'])})"
+                for i in combo if my_names[i] in sc_src))
         else:
             notes.append("no speed control")
+            why.append("No speed control in this four")
         if wincon in combo:
             sc += 6
         if my_has_setter and any(
@@ -405,17 +480,36 @@ def team_preview(my_team: list[dict], opp_team: list[dict],
         if stacked:
             sc -= 8 * len(stacked)
             notes.append("shared weakness: " + ", ".join(stacked))
+            why.append("Three of the four are weak to " + ", ".join(stacked))
         if gaps:
             notes.append("struggles vs " + ", ".join(gaps[:3]))
-        return sc, notes, gaps
+        why.insert(0, f"Two answers to {twice} of their {len(opp_sides)}"
+                   + ("" if twice == len(opp_sides) else
+                      "; one answer to " + ", ".join(thin) if thin else "")
+                   + ("; no answer to " + ", ".join(
+                       n for n, a in answers.items() if not a) if any(not a for a in answers.values()) else ""))
+        mega = [i for i in combo if i in my_mega_idx]
+        if mega:
+            why.append(f"Mega: {my_names[mega[0]]}"
+                       + ("; " + ", ".join(my_names[i] for i in my_mega_idx if i not in combo)
+                          + " stays home, only one Pokemon Mega Evolves per game"
+                          if len(my_mega_idx) > 1 else ""))
+        bench = [i for i in range(len(my_sides)) if i not in combo]
+        for i in bench:
+            row = sorted(range(len(opp_sides)), key=lambda j: cells[i][j]["score"])
+            worst = [opp_out[j]["name"] for j in row[:2] if cells[i][j]["score"] < 0]
+            if worst:
+                why.append(f"{my_names[i]} stays home: weakest into " + ", ".join(worst))
+        return sc, notes, gaps, why, answers, (my_names[mega[0]] if mega else None)
 
     bring = []
     if len(my_sides) > 4:
-        combos = list(combinations(range(len(my_sides)), 4))
+        combos = [c for c in combinations(range(len(my_sides)), 4)
+                  if sum(1 for i in c if i in my_mega_idx) <= 1]
     else:
         combos = [tuple(range(len(my_sides)))]
     for combo in combos:
-        sc, notes, gaps = combo_eval(combo)
+        sc, notes, gaps, why, answers, mega_name = combo_eval(combo)
         # restrict lead pairs to this combo
         combo_ids = {my_sides[i].combatant.pokemon_id for i in combo}
         inner = [lo for lo in lead_options
@@ -431,7 +525,8 @@ def team_preview(my_team: list[dict], opp_team: list[dict],
             "bench_names": [dataio.get_pokemon(b)["name"] for b in bench],
             "lead": lead["pair"] if lead else None,
             "lead_names": lead["pair_names"] if lead else None,
-            "score": round(sc, 1), "notes": notes,
+            "score": round(sc, 1), "notes": notes, "why": why,
+            "answers": answers, "mega": mega_name,
         })
     bring.sort(key=lambda x: -x["score"])
 
@@ -459,7 +554,9 @@ def team_preview(my_team: list[dict], opp_team: list[dict],
     if bring:
         plan_bits.append(
             "Recommended four: "
-            + ", ".join(bring[0]["mon_names"]) + ".")
+            + ", ".join(bring[0]["mon_names"])
+            + (f", Mega Evolving {bring[0]['mega']}" if bring[0].get("mega") else "")
+            + ".")
 
     return {
         "field": field,
@@ -482,6 +579,7 @@ def team_preview(my_team: list[dict], opp_team: list[dict],
             },
         },
         "your_leads": lead_options[:3],
-        "bring_four": bring[:2],
+        "bring_four": bring[:3],
+        "my_megas": [my_names[i] for i in my_mega_idx],
         "summary": " ".join(plan_bits),
     }

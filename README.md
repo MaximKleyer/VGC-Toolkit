@@ -14,8 +14,8 @@ Champions fixes every Pokémon at **Level 50 with 31 IVs** in all stats.
 Customization comes from **SP**: 0–32 per stat, **66 total**. Each SP is
 worth 8 EVs in the classic stat formula, which works out to exactly
 **+1 final stat point per SP** at Level 50. **Alignments** are Champions'
-natures: +10% to one stat, −10% to another, never HP (15 exist, `Serious`
-is neutral).
+natures: +10% to one stat, −10% to another, never HP (21 exist: every pairing
+of the five stats plus the neutral `Serious`).
 
 ```
 non-HP stat = floor( (floor((2·Base + 31 + 2·SP) · 50/100) + 5) · alignment )
@@ -45,7 +45,14 @@ npm run dev
 ```
 
 Open **http://localhost:5173** — Team Builder, Damage Calc, Threat Scan, and
-Team Preview tabs. The **regulation selector** in the header (M-B or M-C;
+Team Preview tabs. The Team Builder keeps a **team library** in the browser:
+"My teams" saves named copies of your team, and **"Opponent team"** imports the
+team you are calcing against from a paste (nicknames such as
+`Kids (Kingambit) @ Black Glasses`, gender markers and Shiny lines are fine)
+and shows it with icons; both kinds can be saved and reloaded. The opponent
+team feeds the Damage Calc (a strip above Pokémon 2 loads each set), the Team
+Preview tab ("Load a team…" lists it and every saved team, analysed with their
+real sets instead of ladder guesses) and the Battle tab's opponent picker. The **regulation selector** in the header (M-B or M-C;
 defaults to the newest) drives the roster, team validation, and every
 threat/speed scan. Forms tagged `ability?` in the Pokémon picker have no
 announced Champions ability yet — open them in the Team Builder to set one. (For a single-process deployment,
@@ -165,13 +172,66 @@ compiled for Champions) is wired into three places:
   Room, Tailwind, paralysis, Scarf aware), what each of yours threatens on each
   of theirs and what each of theirs threatens on yours (best move, damage
   range, KO chance). At team preview it ranks their six by the damage they
-  threaten and lists your answers (aim for two).
+  threaten and lists your answers (aim for two). A **Turn read on/off** button
+  in the battle header (also a checkbox on the setup screen) hides all of it,
+  for practising the read yourself; the choice is remembered.
+- **Team Preview tab** (`POST /api/matchup/team-preview`): your six against
+  their six. Both sides load from the team library ("Load a team…" on the
+  opponent side lists the Team Builder's imported opponent and every saved
+  team; a select on your side swaps in a saved team of yours), and a
+  Pokémon picked by hand is read from its ladder set. Their likely leads,
+  your three best lead pairs and three fours to bring each come with the
+  reasons: who outspeeds the projected leads, which move OHKOs whom, whose
+  Fake Out lands first, how many of their six you hold two answers to, where
+  the speed control comes from, stacked weaknesses, and why each benched
+  Pokémon stays home. Only one Pokémon Mega Evolves per game, so a team
+  carrying two Megas (a Mega form or a base form holding its stone) never
+  gets both in a lead or a four; the card says which one evolves (✦).
+- **Simulation lab** (bottom of the Team Preview tab; `POST /sim/lab` on the
+  sidecar, `sim/lab.mjs`): real engine games, the sidecar bot playing both
+  sides, between your six and theirs. Every legal lead + four of yours (one
+  Mega at most) is played against the ways they are likely to pick (the bot's
+  own matchup pick and picks sampled from their lead propensities), the
+  contenders get more games as the weaker ones drop out, and the best are
+  swept against each of their lead pairs. Every KO and every point of damage
+  is attributed from the omniscient stream. The panel shows the certified
+  lead with its record against each of their leads, the leads and fours
+  ranked by the low end of a 95% interval, a simulated matchup grid (how
+  often yours KOs theirs and the reverse), their Pokemon in threat order with
+  your answers to each, your Pokemon's win rate brought versus benched (from
+  the first round only, where every lead and four played the same number of
+  times), and every lead pair of theirs ranked by how well it does for them. The ranking counts only games against
+  their likely picks; the sweep (every lead pair of theirs equally) feeds the
+  "if they lead" tables and is reported separately. Depth quick / standard /
+  deep is roughly 400 / 750 / 1500 games; a game takes a few hundredths of a
+  second. From a
+  terminal, `node lab.cli.mjs my.txt their.txt standard` in `sim/` prints
+  the same report for two pastes. Bot play is not human play: the numbers
+  are evidence about the matchup, not its truth.
 - **`teams/`**: `golisopod_hard_trick_room.txt` (paste) and `.md` (rationale,
   game plan, filled worksheet) — a Mega Golisopod Hard Trick Room team built
-  with the procedure.
+  with the procedure. `golisopod_swords_dance_room.txt` (Swords Dance Mega
+  Golisopod behind Indeedee-F and Farigiraf, Araquanid rain) and
+  `salamence_tailwind_mc.txt` (Mega Salamence Tailwind offense with Pawmot)
+  and `salamence_grassy_mc.txt` (Salamence with Rillaboom, Grassy Seed
+  Sneasler and a Raichu Y second mode) are the Regulation M-C playtest teams; import either in the Team
+  Builder and save it to the library.
 
-The calc also learned Heatproof, Water Bubble, Purifying Salt and Liquid Voice
-along the way.
+The calc also learned Heatproof, Water Bubble (both halves: Fire into the holder
+halved and its own Water moves doubled, applied to the attacking stat as the
+engine does, plus burn immunity; rolls checked against the engine), Purifying
+Salt and Liquid Voice along the way.
+
+## Themes
+
+The header's **Theme** selector switches the whole UI between six palettes:
+Navy (the original), Ember, Arena, Volt, Crimson and Daylight (light). The
+choice is saved in the browser. Every surface colour in `frontend/src/styles.css`
+is a token on `:root`, and each theme is a `:root[data-theme="name"]` block that
+redefines them; type colours, the physical / special icons, weather and terrain
+tints and the p1 / p2 side colours stay fixed because they carry meaning. To add
+a theme, copy a block, change the values, and add the name to `THEMES` in
+`App.jsx`.
 
 ## Battle tab (Showdown simulator + practice bot)
 
@@ -186,23 +246,32 @@ npm install      # first time only (pokemon-showdown, ~140 MB unpacked)
 npm start        # http://127.0.0.1:8001 — the Vite dev server proxies /sim to it
 ```
 
-Flow: your team comes from the Team Builder (or a paste), the opponent is a
+Flow: your team comes from the Team Builder, a saved team or a paste; the opponent is a
 **coherent ladder team** from `meta_sets.json` (`GET /api/meta/random-team`:
 a usage-weighted seed, then partners chosen by how often they actually appear
 alongside the members so far, from the chaos "Teammates" data the ingest now
-keeps; species and item clauses respected) or a paste; the
+keeps; species and item clauses respected), a paste, the Team Builder's opponent
+team or a saved team (any opponent paste can be saved to the library from here); the
 sidecar normalises megas to base form + stone and runs Showdown's team
 validator for the chosen format, so illegal sets are reported before the
 battle starts. Team preview (the opponent's six with their open team sheets, since the
-format runs Open Team Sheets; pick your 4 in lead order), 2D Showdown sprites
-(front for the opponent, back for you), exact HP for your side and % for
-theirs, status/boost/item/ability reveals, weather/terrain/side conditions,
-per-slot move buttons with types and PP, doubles targeting, Mega Evolution,
+format runs Open Team Sheets; pick your 4 in lead order), then a stage laid out
+like the games: your two Pokémon bottom-left as back sprites, the opponent's
+top-right, each under a status plate with its HP bar (exact for your side, %
+for theirs), status, colour-coded stat stages (green up, red down) and revealed
+item / ability; weather/terrain/side conditions; per-slot move buttons tinted
+by the move's live type (Aerilate, Pixilate, Liquid Voice, Weather Ball) with
+PP; doubles targeting by clicking the target on the field (spread moves need
+no aim; the small target buttons remain as a fallback), Mega Evolution,
 switches and forced replacements, and a plain-English battle log. Each turn
 replays action by action (attack / hit animations, an ordered banner: 1st, 2nd,
 …, with a Skip button) using the sidecar's own protocol reducer client-side, so
-the replay always lands on the server's state; the log is grouped per turn with
-your Pokémon in blue and the opponent's in red and HP in bold; a side strip
+the replay always lands on the server's state; the log is grouped per turn:
+actions (moves, switches, faints) are larger with the acting side's colour on
+the left edge, their consequences (damage, effectiveness, status, boosts) are
+indented and quieter, your Pokémon are blue and the opponent's red, and every
+HP line reads number + coloured percentage + change since that slot's last
+line (`Golisopod 149/182 82% −33`, `Garchomp 72% −28%`); a side strip
 shows weather, terrain, Trick Room and Tailwind with turns left (read from the
 engine) and tints the field; Weather Ball and Normal moves under an -ate ability
 display their live type; selected moves fill their button and a plan card
@@ -218,8 +287,12 @@ jointly (no overkill on one target, no Earthquake into its own non-immune
 partner, Helping Hand / Follow Me / Fake Out synergy), predicts the damage it
 takes back this turn and uses Protect with the real consecutive-use odds
 (1/3, then 1/9, ...), plus hand-written values for Trick Room, Tailwind,
-screens, status, setup and healing moves; it Mega Evolves, switches out of bad
-matchups and picks its four at Team Preview by matchup. `random` (legal random
+screens, status, setup and healing moves; it Mega Evolves (the permanent stat
+gain is credited with a bonus the one-turn evaluator would otherwise miss, so
+it evolves unless doing so walks into a KO that turn; Contrary is understood),
+switches out of bad matchups and picks its four at Team Preview by matchup,
+always bringing its Mega Stone holder (with two on the team, the one the
+matchup favours; the other usually stays home). `random` (legal random
 choices) and `default` (Showdown's first legal option) remain. Your own move
 buttons warn when a Protect-family move is on a streak ("33% chance") or when
 Fake Out / First Impression would fail. The setup screen warns when the sidecar
@@ -230,26 +303,37 @@ protocol reducer and the bot's decisions (the bot and engine tests need
 through the HTTP API end to end. State is reduced from p1's protocol stream,
 so the UI never sees more than a real player would.
 
-**Regulation M-C in the simulator.** Showdown has no M-C format yet, so the
-sidecar exposes a provisional one, `gen9championsvgc2026regmc` = the M-B
-doubles format with Showdown's "Obtainable" legality checks (species
-availability, learnsets) switched off; Species Clause, Item Clause, Level 50,
-Team Preview and pick-4 stay in force. The Battle tab picks it automatically
-when the header's regulation selector says M-C. The engine build (July 2026)
-knows all ten M-C additions but predates the confirmed abilities, so the
-sidecar patches the loaded `champions` mod at startup: Mega Absol Z Sharpness,
-Mega Garchomp Z Levitate, Mega Lucario Z Aura Guard (implemented as "halve
-damage taken from contact moves"; `sim/engine.test.mjs` proves it in a
-fixed-seed battle). Two stone names differ upstream and are aliased on import
-(Golisopodite -> Golisopite, Baxcaliburite -> Baxcalibrite). Bot teams come
-from the M-B ladder sets until M-C usage stats exist; ingest those with
-`ingest_meta_sets.py --regulation M-C` and the bot follows. When Showdown ships
-a real M-C format, drop the synthetic entry in `sim/server.mjs`.
-
-Note: Showdown's
-Champions mod treats the first SP in a stat as 4 EVs and the rest as 8
-(`data/mods/champions/scripts.ts`), while this toolkit's calculators use 8 for
-every SP — a small, known discrepancy in some odd-SP spreads.
+**Regulation M-C in the simulator.** The engine build (July 2026) has no
+M-C format, so the sidecar exposes a provisional one,
+`gen9championsvgc2026regmc` = the M-B doubles format with Showdown's
+"Obtainable" legality checks (species availability, learnsets) switched off;
+Species Clause, Item Clause, Level 50, Team Preview and pick-4 stay in force.
+The `champions` mod carries every Gen 9 species, item and move as "Past",
+which the switched-off checks unlock, so all 33 M-C additions and the new
+items (Leek, Rocky Helmet, Air Balloon, Red Card, Binding Band, Eject Button,
+Normal Gem, Terrain Extender, the four terrain Seeds) work as in the game. The
+Battle tab picks the format automatically when the header's regulation
+selector says M-C. The build predates the release itself, so the sidecar
+patches the loaded mod at startup and again whenever a battle starts: the six
+new megas' abilities (Mega Absol Z Sharpness, Mega Garchomp Z Levitate, Mega
+Lucario Z Aura Guard, implemented as "halve damage taken from contact moves",
+Mega Salamence Aerilate, Mega Golisopod Tough Claws, Mega Baxcalibur Thermal
+Exchange), Run Away as an in-battle ability (the holder can always switch
+out), and the M-C move changes (Slash 80 BP, Meteor Assault 170, Snipe Shot
+85, Double Shock a punch, Wish and Strength Sap 8 PP, Milk Drink usable on the
+ally), plus any `ability_overrides.json` choice for a still-unannounced form.
+`sim/engine.test.mjs` validates a release team in the provisional format,
+checks every patched value, and plays a doubles turn with Psychic Surge, a
+Psychic Seed and an Air Balloon. A mega set's paste names the mega's ability;
+the sidecar gives the base form one of its own abilities until it Mega
+Evolves (Intimidate Staraptor → Contrary Mega Staraptor), as in the game. The
+champions mod also tags the opponent's HP with a bar-colour letter at exactly
+50% and 20% (`50/100g`); the reducer and the log strip it. Two stone names
+differ upstream and are aliased on import (Golisopodite -> Golisopite,
+Baxcaliburite -> Baxcalibrite). Bot teams come from the M-B ladder sets until
+M-C usage stats exist; ingest those with `ingest_meta_sets.py --regulation
+M-C` and the bot follows. When Showdown ships a real M-C format, drop the
+synthetic entry in `sim/server.mjs`.
 
 ## Data pipeline
 
@@ -274,6 +358,8 @@ python scripts/export_speedcalc_roster.py \
     --out ../champions-speed-calc/src/data/pokemon.js            # sync the speed calc app
 node scripts/dump_gen9_moves.mjs > gen9_moves.json
 python scripts/build_moves.py --baseline gen9_moves.json
+python scripts/fill_weights.py                                   # weight_kg for every form (Low Kick, Grass Knot,
+                                                                 # Heavy Slam, Heat Crash), from the engine in sim/
 ```
 
 **Roster membership comes from the Learnset sheet** — a Pokemon is M-B legal
@@ -302,34 +388,56 @@ The header's regulation selector and every backend default are derived from
 the tags present in the data, so surfacing a new regulation needs no code
 change.
 
-**Regulation M-C (starts 2026-09-08).** The publicly confirmed additions are
-in: `scripts/add_mc_forms.py` (additive, idempotent) tagged every M-B form
-with M-C and added Rillaboom, Salamence (+Mega), Golisopod (+Mega),
-Baxcalibur (+Mega), Mega Absol Z, Mega Garchomp Z and Mega Lucario Z, their
-six Mega Stones, the two signature moves no M-B Pokémon learned (Drum Beating,
-Glaive Rush), and **provisional learnsets** for the four new species (Gen 9
-mainline learnset ∩ Champions move pool, from
-`scripts/mc_provisional_learnsets.json`; re-run with `--force-learnsets` once
-the real M-C learnsets are published). Stats/types come from the Megas tab
-datamine where it has the form, else Gen 9 mainline. Four of the six new
-megas' abilities are confirmed (Mega Salamence Aerilate, Mega Absol Z
-Sharpness, Mega Garchomp Z Levitate, Mega Lucario Z **Aura Guard**, a
-Champions-new ability that halves damage taken from contact moves; recorded in
-`CONFIRMED_ABILITIES` in the script, which also clears any user override for
-them). Mega Golisopod and Mega Baxcalibur are **not announced**: they ship
-blank with `abilities_provisional`, and the Team Builder shows an **ability
-editor** for them — pick any known ability
-or type one, Save, and it is persisted to `data/ability_overrides.json`
-(`PUT /api/pokemon/{id}/abilities`) and used by the roster, validation, and
-every scan until you reset it. Unannounced M-C Pokémon are deliberately absent.
-(`ingest_items.py` regenerates items.json from the doc and would drop the six
-hand-added stones; re-run `add_mc_forms.py` afterwards to restore them.)
+**Regulation M-C (live since 2026-09-08).** Two additive, idempotent scripts
+carry the regulation. `scripts/add_mc_forms.py` (run first, August 2026)
+tagged every M-B form with M-C and added the publicly confirmed core:
+Rillaboom, Salamence (+Mega), Golisopod (+Mega), Baxcalibur (+Mega), Mega
+Absol Z, Mega Garchomp Z, Mega Lucario Z, their six Mega Stones and the two
+signature moves no M-B Pokémon learned (Drum Beating, Glaive Rush).
+`scripts/add_mc_release.py` applies the release itself and retired the
+toolkit's "Reg M-C Experimental" predictions (tag `M-C-EXP`): the ones that
+came true (Indeedee M/F, Pincurchin, Cinderace, Inteleon, the four terrain
+Seeds) became plain M-C forms and items, the rest (Weezing, Galarian Weezing,
+Dondozo, Tatsugiri, Mega Tatsugiri, Assault Vest, Choice Band, Choice Specs)
+were removed with the moves only they used. It then added the other new
+species from `scripts/mc_species.json` (Gen 8 + 9 mainline data dumped from
+the sim's engine by `node scripts/dump_mc_species.mjs`; Gen 8 because
+Champions keeps the Gen 8 TR moves SV dropped): Wigglytuff, Persian, Alolan
+Persian, Farfetch'd, Mr. Mime, Swalot, Gogoat, Thievul, Toxtricity (Amped and
+Low Key), Grapploct, Perrserker, Sirfetch'd, Arboliva, Pawmot, Squawkabilly
+(Green and Yellow plumage, the two ability sets) and Mabosstiff; the moves the
+pool lacked (Slash, usable again, Milk Drink, Meteor Assault, Double Shock,
+Overdrive, Shift Gear, Octolock, Revival Blessing, Jaw Lock; Slash also
+joined the learnset of every roster species that learns it); the M-C move
+changes (Slash 70 → 80 BP, Meteor Assault 150 → 170, Snipe Shot 80 → 85,
+Wish and Strength Sap 12 → 8 PP, Double Shock is a punching move, Milk Drink
+can target the ally; Politoed lost Pound, Archaludon lost Mirror Coat and
+Metal Burst); the confirmed abilities of all six new megas (Mega Golisopod
+Tough Claws and Mega Baxcalibur Thermal Exchange joined the four known
+before; `ability_overrides.json` is cleared of them); and the new held items,
+scoped to M-C like the Seeds (`regulations: ["M-C"]`, so `/api/items?
+regulation=` and the Team Builder offer them only there and validation
+rejects them in M-B). The calc models Air Balloon (a Ground immunity that
+Gravity or an Iron Ball removes, and no terrain effects on the holder),
+Normal Gem (x1.3 on the first Normal move) and the Seeds (+1 Def / SpD while
+the field's terrain matches); Leek carries a `crit_stage` tag for a later
+crit option. Learnsets of the M-C species are **provisional**: their mainline
+learnset intersected with the Champions move pool; re-run with
+`--force-learnsets` once the Champions M-C learnsets are published. The
+Team Builder's ability editor (`PUT /api/pokemon/{id}/abilities`,
+`data/ability_overrides.json`) stays for any form Champions has not announced
+an ability for. (`ingest_items.py` regenerates items.json from the doc and
+would drop the hand-added stones and M-C items; re-run both scripts
+afterwards to restore them.)
 
-Current data: **320 forms (238 base + 82 megas)** — 310 legal in M-B, all
-320 in M-C — 15 alignments, 154 items (45 held, 81 mega stones — all linked,
-28 berries), full 18×18 type chart, **498 moves (all defined)**, learnsets for
-every base species (megas share their base form's learnset; the four M-C
-species are provisional). The Megas tab of the comparative doc is the
+Current data: **343 forms (261 base + 82 megas)** — 310 legal in M-B, all
+343 in M-C (the 33 additions carry only the M-C tag) — 21 alignments, 166
+items (57 held, 81 mega stones — all linked, 28 berries; the 12 M-C items are
+scoped to M-C), full 18×18 type chart, a weight for every form (Low Kick,
+Grass Knot, Heavy Slam and Heat Crash compute their power from it; Heavy
+Metal and Light Metal apply), **511 moves (all defined)**, learnsets for
+every base species (megas share their base form's learnset; the 27 species
+M-C added are provisional). The Megas tab of the comparative doc is the
 authoritative layer for mega stats/types/abilities, including Champions-new
 abilities (Mega Sol, Dragonize, Piercing Drill, Spicy Spray, ...).
 
@@ -337,13 +445,13 @@ abilities (Mega Sol, Dragonize, Piercing Drill, Spicy Spray, ...).
 
 ```
 GET  /api/pokemon?regulation=M-C     # roster list (any tag; repeatable)
-GET  /api/regulations                # tags present in the data + default (drives the selector)
+GET  /api/regulations                # tags present in the data (label, based_on) + default
 GET  /api/pokemon/{id}               # full pokedex entry
 GET  /api/abilities                  # every ability name in the data (override picker)
 PUT  /api/pokemon/{id}/abilities     # set / clear a provisional ability override
 GET  /api/typechart                  # full 18×18 type chart
 GET  /api/alignments
-GET  /api/items?category=mega_stone
+GET  /api/items?category=mega_stone&regulation=M-C   # regulation scopes the pool (the items M-C added)
 GET  /api/moves                      # full move database
 GET  /api/moves/{name}
 GET  /api/pokemon/{id}/learnset      # megas resolve to base form
@@ -413,6 +521,18 @@ max speed, base 150 → 222).
   x2/3 value, stat stages, Body Press / Psyshock / Foul Play, type items,
   resist berries, Huge Power, Multiscale, Thick Fat, Filter, Friend Guard,
   snow/sand stat boosts, Adaptability).
+- Terrain follows the Gen 8+ rules and is checked roll-for-roll against the
+  engine (`tests/test_damage.py::TestTerrainMechanics`): x1.3 on a grounded
+  user's Electric / Grass / Psychic moves, Misty halving Dragon into grounded
+  targets, Grassy halving Earthquake / Bulldoze / Magnitude, Expanding Force
+  (x1.5 and spread), Rising Voltage (x2 into grounded targets), Misty
+  Explosion (x1.5), Terrain Pulse (type and 100 BP), Steel Roller failing
+  without terrain, and Psychic Terrain blocking priority moves into grounded
+  targets (the result is 0 with a note, so the Threat Scan stops listing Fake
+  Out and Sucker Punch as threats while it is up). Grounding: Flying types and
+  Levitate / Eelevate float; Gravity and Iron Ball ground. The Damage Calc's
+  field panel and the Battle tab's field strip list each weather's and
+  terrain's effects.
 - Held items are data-driven from mechanics tags in `items.json` (curated
   maps in `scripts/ingest_items.py`; refresh with `python scripts/retag_items.py`
   after editing them, no CSV needed): type items (x1.2), Muscle Band / Wise

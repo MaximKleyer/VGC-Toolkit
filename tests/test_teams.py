@@ -217,3 +217,73 @@ class TestMBMegas:
         for pid in self.EXCLUDED:
             mon = dataio.pokedex().get(pid)
             assert mon is None or "M-B" not in mon.get("regulations", []), pid
+
+
+NICK_PASTE = """\
+John Dogs (Scovillain) @ Scovillainite
+Ability: Chlorophyll
+Level: 50
+Shiny: Yes
+EVs: 31 HP / 15 Def / 15 SpD / 5 Spe
+Bold Nature
+- Giga Drain
+- Overheat
+- Rage Powder
+- Protect
+
+SlycedBread (Basculegion) (M) @ Life Orb
+Ability: Adaptability
+Level: 50
+EVs: 4 HP / 28 Atk / 13 Def / 21 Spe
+Adamant Nature
+- Wave Crash
+- Last Respects
+- Aqua Jet
+- Protect
+
+Koala (Froslass-Mega) (F) @ Froslassite
+Ability: Cursed Body
+Level: 50
+EVs: 25 HP / 14 SpD / 27 Spe
+Timid Nature
+- Blizzard
+- Shadow Ball
+- Aurora Veil
+- Protect
+
+Basculegion (F) @ Choice Scarf
+Ability: Adaptability
+Level: 50
+EVs: 32 HP / 32 Atk / 2 Spe
+Adamant Nature
+- Wave Crash
+"""
+
+
+class TestNicknames:
+    def test_nicknames_genders_and_shiny_lines_import(self):
+        team = import_paste(NICK_PASTE)
+        assert [m.combatant.pokemon_id for m in team] == [
+            "scovillain", "basculegion-m", "froslass-mega", "basculegion-f"]
+        assert [m.nickname for m in team] == ["John Dogs", "SlycedBread", "Koala", None]
+        assert team[0].combatant.item == "Scovillainite"
+        assert team[0].combatant.spread.as_dict()["hp"] == 31
+        assert team[1].combatant.alignment == "Adamant"
+
+    def test_export_keeps_nicknames_and_showdown_species_names(self):
+        team = import_paste(NICK_PASTE)
+        paste = export_paste(team)
+        assert "John Dogs (Scovillain) @ Scovillainite" in paste
+        assert "SlycedBread (Basculegion) @ Life Orb" in paste      # male form is plain "Basculegion"
+        assert "Koala (Froslass-Mega) @ Froslassite" in paste
+        assert "Basculegion-F @ Choice Scarf" in paste
+        again = import_paste(paste)
+        assert [m.nickname for m in again] == [m.nickname for m in team]
+        assert [m.combatant.pokemon_id for m in again] == [m.combatant.pokemon_id for m in team]
+
+    def test_import_endpoint_returns_nickname(self):
+        from fastapi.testclient import TestClient
+        from vgc_toolkit.main import app
+        r = TestClient(app).post("/api/team/import", json={"paste": NICK_PASTE, "regulation": "M-C"})
+        assert r.status_code == 200
+        assert [m["nickname"] for m in r.json()["team"]] == ["John Dogs", "SlycedBread", "Koala", None]

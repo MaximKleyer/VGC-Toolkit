@@ -24,6 +24,11 @@ const OWN_KO_COST = 0.5;      // extra cost of losing one of ours
 const INCOMING_WEIGHT = 0.85; // how much expected damage taken counts against a plan
 const TEMPO_PROTECT = 0.08;   // a protecting Pokémon does nothing else this turn
 const TEMPO_SWITCH = 0.25;
+// A Mega Evolution's stat gain lasts the whole battle; a one-turn evaluator only
+// sees this turn's damage. 0.3 is the smallest value at which Mega Staraptor still
+// evolves into a Psychic user (Farigiraf) while a Trick-Room Moonblast KO stays refused.
+const MEGA_BONUS = 0.3;
+const SECOND_MEGA_PENALTY = 0.5; // team preview: a second Mega Stone holder usually stays home (only one can evolve)
 
 // ---------------------------------------------------------------- tables
 export const PROTECT_MOVES = new Set(['protect', 'detect', 'spikyshield', 'banefulbunker', 'kingsshield',
@@ -114,7 +119,7 @@ export function makeFighter(dex, o) {
   let ability = toID(o.ability);
   if (sp.exists && (sp.isMega || !ability)) ability = toID(sp.abilities[0]);
   return {
-    species: sp, types: sp.exists ? sp.types : ['Normal'], weight: sp.weightkg || 50, stats, maxhp, hpFrac,
+    species: sp, types: sp.exists ? sp.types : ['Normal'], weight: (sp.weightkg || 50) * weightMult(ability), stats, maxhp, hpFrac,
     status: o.status && o.status !== 'fnt' ? o.status : null, boosts: o.boosts || {}, item: toID(o.item),
     ability, moves, side: o.side, slot: o.slot ?? null, index: o.index ?? null,
     protectStreak: o.protectStreak || 0, moveActions: o.moveActions || 0, lastMove: o.lastMove || null,
@@ -179,7 +184,8 @@ function megaVariant(me, dex) {
   for (const k of ['atk', 'def', 'spa', 'spd', 'spe']) {
     stats[k] = Math.max(1, stats[k] + (mega.baseStats[k] - me.species.baseStats[k]));
   }
-  return { ...me, species: mega, types: mega.types, ability: toID(mega.abilities[0]), stats, weight: mega.weightkg || me.weight, megaOf: me };
+  const ability = toID(mega.abilities[0]);
+  return { ...me, species: mega, types: mega.types, ability, stats, weight: (mega.weightkg || me.weight) * weightMult(ability), megaOf: me };
 }
 
 // ---------------------------------------------------------------- field
@@ -195,7 +201,7 @@ export function buildCtx(view, dex) {
 
 function isGrounded(f, ctx) {
   if (ctx.gravity || f.item === 'ironball') return true;
-  if (f.types.includes('Flying') || f.ability === 'levitate' || f.item === 'airballoon') return false;
+  if (f.types.includes('Flying') || f.ability === 'levitate' || f.ability === 'eelevate' || f.item === 'airballoon') return false;
   return true;
 }
 
@@ -233,7 +239,7 @@ export function movesFirst(a, b, ctx, prioA = 0, prioB = 0) {
 
 function movePriority(f, move, ctx) {
   let p = move.priority || 0;
-  if (move.id === 'grassyglide' && ctx.terrain === 'grassyterrain') p += 1;
+  if (move.id === 'grassyglide' && ctx.terrain === 'grassyterrain' && isGrounded(f, ctx)) p += 1;
   if (f.ability === 'prankster' && move.category === 'Status') p += 1;
   if (f.ability === 'galewings' && move.type === 'Flying' && f.hpFrac >= 0.999) p += 1;
   if (f.ability === 'triage' && move.flags?.heal) p += 3;
@@ -243,6 +249,10 @@ function movePriority(f, move, ctx) {
 // ---------------------------------------------------------------- damage
 function weightBP(kg) {
   return kg >= 200 ? 120 : kg >= 100 ? 100 : kg >= 50 ? 80 : kg >= 25 ? 60 : kg >= 10 ? 40 : 20;
+}
+// Heavy Metal doubles, Light Metal halves (Low Kick / Grass Knot / Heavy Slam / Heat Crash).
+function weightMult(ability) {
+  return ability === 'heavymetal' ? 2 : ability === 'lightmetal' ? 0.5 : 1;
 }
 
 function variableBasePower(move, att, def, ctx, opts) {
@@ -278,8 +288,8 @@ function variableBasePower(move, att, def, ctx, opts) {
     case 'boltbeak': case 'fishiousrend': return movesFirst(att, def, ctx) >= 0.5 ? 170 : 85;
     case 'risingvoltage': return ctx.terrain === 'electricterrain' && isGrounded(def, ctx) ? 140 : 70;
     case 'expandingforce': return ctx.terrain === 'psychicterrain' && isGrounded(att, ctx) ? 120 : 80;
-    case 'mistyexplosion': return ctx.terrain === 'mistyterrain' ? 150 : 100;
-    case 'psyblade': return ctx.terrain === 'electricterrain' ? 120 : 80;
+    case 'mistyexplosion': return ctx.terrain === 'mistyterrain' && isGrounded(att, ctx) ? 150 : 100;
+    case 'psyblade': return ctx.terrain === 'electricterrain' && isGrounded(att, ctx) ? 120 : 80;
     case 'solarbeam': case 'solarblade': return ctx.weather && !isSun(ctx.weather) ? bp / 2 : bp;
     case 'lastrespects': return 50 + 50 * (opts.faintedAllies || 0);
     case 'ragefist': return 50 + 50 * Math.min(6, opts.timesHit || 0);
@@ -618,7 +628,9 @@ function secondaryValue(att, def, move, r, X, first) {
     if (s.volatileStatus === 'confusion') v += chance * 0.05;
   }
   if (move.self?.boosts) {
-    for (const [, n] of Object.entries(move.self.boosts)) v += n > 0 ? 0.06 * n : 0;
+    // Contrary flips the user's own stat changes (Close Combat's drops become boosts).
+    const flip = att.ability === 'contrary' ? -1 : 1;
+    for (const [, n] of Object.entries(move.self.boosts)) v += n * flip > 0 ? 0.06 * n * flip : 0;
   }
   if (move.id === 'knockoff' && def.item && !stickyItem(def, X.dex)) v += 0.08;
   if (move.drain && att.hpFrac < 0.7) v += r.dmg * (move.drain[0] / move.drain[1]) * 0.3;
@@ -639,7 +651,8 @@ function selfCost(att, def, move, r, X) {
   if (move.selfdestruct) cost += att.hpFrac * 0.6 + OWN_KO_COST * 0.6;
   if (move.hasCrashDamage) cost += (1 - r.d.accuracy) * 0.5 * 0.35;
   if (att.item === 'lifeorb' && !magic && r.dmg > 0) cost += 0.1 * 0.35;
-  if (move.self?.boosts) for (const [, n] of Object.entries(move.self.boosts)) if (n < 0) cost += 0.04 * -n;
+  const flip = att.ability === 'contrary' ? -1 : 1;
+  if (move.self?.boosts) for (const [, n] of Object.entries(move.self.boosts)) if (n * flip < 0) cost += 0.04 * -n * flip;
   if (move.flags?.contact && !(att.ability === 'longreach') && !(att.item === 'punchingglove' && move.flags.punch)) {
     if (def.item === 'rockyhelmet' && !magic) cost += (1 / 6) * 0.35;
     if ((def.ability === 'roughskin' || def.ability === 'ironbarbs') && !magic) cost += (1 / 8) * 0.35;
@@ -862,7 +875,9 @@ function statusActions(me, slot, move, idx, X, partner, partnerSlot, mega) {
 
 // ---------------------------------------------------------------- attacking actions
 function attackActions(me, slot, move, idx, mv, X, partner, partnerSlot, mega) {
-  const tt = mv.target || move.target;
+  // Expanding Force from a grounded user on Psychic Terrain hits both opponents.
+  const tt = (move.id === 'expandingforce' && X.ctx.terrain === 'psychicterrain' && isGrounded(me, X.ctx))
+    ? 'allAdjacentFoes' : (mv.target || move.target);
   const text = (targetStr) => `move ${idx + 1}${targetStr}${mega ? ' mega' : ''}`;
   const foeAllyAbility = (f) => X.foes.find((g) => g !== f)?.ability;
   const build = (targets, targetStr, hitsPartner) => {
@@ -1142,7 +1157,9 @@ function evaluateTurn(req, view, dex) {
     let list = listFor(me, false);
     if (a.canMegaEvo) {
       const mm = megaVariant(me, dex);
-      if (mm) list = list.concat(listFor(mm, true));
+      // The bonus is scaled by survival like everything else, so a mega that
+      // would die before acting still is not chosen.
+      if (mm) list = list.concat(listFor(mm, true).map((act) => ({ ...act, value: act.value + MEGA_BONUS })));
     }
     // Voluntary switches: only when this Pokémon is doing little or is about to go down.
     const canSwitch = !a.trapped && !a.maybeTrapped && bench.length && !(me.moveActions === 0 && ctx.turn > 1);
@@ -1206,18 +1223,21 @@ function teamPreview(req, view, dex) {
   const foes = foeTeam(dex, view, other(side));
   const X = { dex, ctx, side, foeSide: other(side), foes, ours: [], bench: [], faintedAllies: 0, inc: [] };
   const scored = ours.map((me, i) => {
+    // A Mega Stone holder is judged as the mega it becomes on turn 1.
+    const mega = megaVariant(me, dex);
+    const form = mega || me;
     let offense = 0, defense = 0;
     if (foes.length) {
       for (const f of foes) {
         let bestO = 0, bestD = 0;
-        for (const m of me.moves) if (m.category !== 'Status') bestO = Math.max(bestO, attackValue({ ...me, moveActions: 0 }, f, m, ctx, {}).value);
-        for (const m of f.moves) if (m.category !== 'Status') bestD = Math.max(bestD, attackValue(f, me, m, ctx, {}).value);
+        for (const m of form.moves) if (m.category !== 'Status') bestO = Math.max(bestO, attackValue({ ...form, moveActions: 0 }, f, m, ctx, {}).value);
+        for (const m of f.moves) if (m.category !== 'Status') bestD = Math.max(bestD, attackValue(f, form, m, ctx, {}).value);
         offense += bestO; defense += bestD;
       }
       offense /= foes.length; defense /= foes.length;
     }
     const has = (id) => me.moves.some((m) => m.id === id);
-    const slow = me.stats.spe < 80;
+    const slow = form.stats.spe < 80;
     let role = 0, lead = 0;
     if (has('fakeout')) { role += 0.1; lead += 0.25; }
     if (has('followme') || has('ragepowder')) { role += 0.05; lead += 0.1; }
@@ -1227,9 +1247,22 @@ function teamPreview(req, view, dex) {
     if (me.moves.some((m) => PROTECT_MOVES.has(m.id))) role += 0.05;
     if (me.ability === 'intimidate') { role += 0.1; lead += 0.15; }
     if (['drizzle', 'drought', 'sandstream', 'snowwarning', 'grassysurge', 'electricsurge', 'psychicsurge', 'mistysurge'].includes(me.ability)) lead += 0.1;
-    return { i, me, score: offense - 0.6 * defense + role, lead };
+    return { i, me, mega: !!mega, score: offense - 0.6 * defense + role, lead };
   });
-  const picked = [...scored].sort((a, b) => b.score - a.score).slice(0, n);
+  // Bring the Mega: the Mega Stone holder this matchup scores best always makes
+  // the four. A second holder is usually left home: a heavy penalty rather than
+  // a ban, so two megas can still both come when the rest of the team is weak.
+  const byScore = (a, b) => b.score - a.score;
+  const megas = scored.filter((p) => p.mega).sort(byScore);
+  let picked;
+  if (megas.length && n > 1) {
+    const rest = scored.filter((p) => p !== megas[0])
+      .map((p) => (p.mega ? { ...p, score: p.score - SECOND_MEGA_PENALTY } : p))
+      .sort(byScore).slice(0, n - 1);
+    picked = [megas[0], ...rest];
+  } else {
+    picked = [...scored].sort(byScore).slice(0, n);
+  }
   // A Trick Room setter leads with the slowest heavy hitter; otherwise the two best lead scores.
   const setter = picked.find((p) => p.me.moves.some((m) => m.id === 'trickroom') && picked.filter((q) => q.me.stats.spe < 80).length >= 2);
   let leads;
@@ -1253,6 +1286,22 @@ export function decide(req, view, dex) {
 }
 
 // ---------------------------------------------------------------- pressure (the playbook's three questions)
+// Every damaging move the attacker has, against one target, in the set's own
+// order: range, KO odds, and whether it is blocked (type immunity, an ability,
+// the Psychic Terrain priority block). Spread ranges already carry the x0.75.
+function allHits(att, def, X) {
+  const out = [];
+  for (const m of att.moves) {
+    if (m.category === 'Status') continue;
+    const spread = SPREAD_TARGETS.has(m.target) && X.ours.length + X.foes.length >= 3;
+    const r = attackValue(att, def, m, X.ctx, { spread });
+    out.push({ move: m.name, type: r.d.type, min: Math.round(r.d.min * 100), max: Math.round(r.d.max * 100),
+      ko: Math.round(r.pKO * 100), accuracy: Math.round(r.d.accuracy * 100), priority: movePriority(att, m, X.ctx),
+      spread, blocked: !!r.d.blocked });
+  }
+  return out;
+}
+
 function bestHit(att, def, X) {
   let best = null;
   for (const m of att.moves) {
@@ -1307,7 +1356,9 @@ export function pressure(view, dex, side = 'p1') {
   return {
     ...base,
     order,
-    ours: ours.map((o) => ({ ...tag(o), threats: foes.map((f) => ({ target: f.species.name, targetSlot: f.slot, ...(bestHit(o, f, X) || { move: null, max: 0, min: 0, ko: 0 }) })) })),
-    theirs: foes.map((f) => ({ ...tag(f), threats: ours.map((o) => ({ target: o.species.name, targetSlot: o.slot, ...(bestHit(f, o, X) || { move: null, max: 0, min: 0, ko: 0 }) })) })),
+    // `threats` keeps the best hit per target (move/min/max/ko) and adds `moves`,
+    // the full list, so the Battle tab can show every move against both targets.
+    ours: ours.map((o) => ({ ...tag(o), threats: foes.map((f) => ({ target: f.species.name, targetSlot: f.slot, ...(bestHit(o, f, X) || { move: null, max: 0, min: 0, ko: 0 }), moves: allHits(o, f, X) })) })),
+    theirs: foes.map((f) => ({ ...tag(f), threats: ours.map((o) => ({ target: o.species.name, targetSlot: o.slot, ...(bestHit(f, o, X) || { move: null, max: 0, min: 0, ko: 0 }), moves: allHits(f, o, X) })) })),
   };
 }

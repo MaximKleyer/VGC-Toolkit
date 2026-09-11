@@ -60,7 +60,9 @@ def list_pokemon(regulation: list[str] | None = Query(
          "base": m["base"], "is_mega": "mega_of" in m,
          "regulations": m.get("regulations", []),
          # Champions ability not announced yet (UI offers the override editor)
-         "abilities_provisional": bool(m.get("abilities_provisional"))}
+         "abilities_provisional": bool(m.get("abilities_provisional")),
+         # a prediction from an experimental regulation, not a confirmed form
+         "experimental": bool(m.get("experimental"))}
         for m in mons
     ]
 
@@ -128,10 +130,15 @@ def list_alignments():
 
 
 @router.get("/items")
-def list_items(category: str | None = Query(None, description="held | berry | mega_stone")):
+def list_items(category: str | None = Query(None, description="held | berry | mega_stone"),
+               regulation: str | None = Query(
+                   None, description="only items in this regulation's pool (experimental "
+                                     "items are scoped to theirs); omit for every item")):
     items = list(dataio.items().values())
     if category:
         items = [i for i in items if i["category"] == category]
+    if regulation:
+        items = [i for i in items if dataio.item_legal(i, regulation)]
     return items
 
 
@@ -523,10 +530,11 @@ def matchup_survive(req: SurviveRequest):
 class TeamMemberIn(BaseModel):
     pokemon: CombatantIn
     moves: list[str] = Field(..., min_length=1, max_length=4)
+    nickname: str | None = None
 
     def to_member(self) -> teams.TeamMember:
         return teams.TeamMember(combatant=self.pokemon.to_combatant(),
-                                moves=self.moves)
+                                moves=self.moves, nickname=self.nickname or None)
 
 
 class TeamValidateRequest(BaseModel):
@@ -561,6 +569,7 @@ def team_import(req: PasteRequest):
                 "item": m.combatant.item,
             },
             "moves": m.moves,
+            "nickname": m.nickname,
         } for m in team],
         # validate against the regulation the client is building for
         "validation": teams.validate_team(team, req.regulation),

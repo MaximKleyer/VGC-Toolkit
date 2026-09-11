@@ -88,11 +88,38 @@ class TestEngineBehavior:
         assert not any("unknown" in n.lower() for n in r["notes"])
 
     def test_variable_bp_flagged_and_overridable(self):
-        base = calculate(Combatant("kingambit"), Combatant("clefable"), "Low Kick")
+        base = calculate(Combatant("kingambit"), Combatant("clefable"), "Gyro Ball")
         assert any("variable base power" in n for n in base["notes"])
         overridden = calculate(Combatant("kingambit"), Combatant("clefable"),
-                               "Low Kick", bp_override=120)
+                               "Gyro Ball", bp_override=120)
         assert max(overridden["rolls"]) > max(base["rolls"])
+
+    def test_weight_based_moves_use_pokedex_weights(self):
+        def bp(att, dfn, move, atk_ability=None, def_ability=None):
+            return calculate(Combatant(att, ability=atk_ability),
+                             Combatant(dfn, ability=def_ability), move)["base_power"]
+        # Low Kick / Grass Knot: the target's weight (Pikachu 6 kg, Clefable 40 kg, Snorlax 460 kg).
+        assert bp("kingambit", "pikachu", "Low Kick") == 20
+        assert bp("kingambit", "clefable", "Low Kick") == 60
+        assert bp("kingambit", "snorlax", "Low Kick") == 120
+        assert bp("venusaur", "snorlax", "Grass Knot") == 120
+        r = calculate(Combatant("kingambit"), Combatant("snorlax"), "Low Kick")
+        assert any("120 BP" in n and "460" in n for n in r["notes"])
+        assert not any("variable base power" in n for n in r["notes"])
+        assert calculate(Combatant("kingambit"), Combatant("snorlax"), "Low Kick",
+                         bp_override=40)["base_power"] == 40
+        # Heavy Slam / Heat Crash: user weight over target weight (460 / 6 -> 120; equal -> 40).
+        assert bp("snorlax", "pikachu", "Heavy Slam") == 120
+        assert bp("snorlax", "snorlax", "Heavy Slam") == 40
+        # Light Metal halves the holder: Metagross 550 kg -> 275 kg over Kingambit's 120 kg (4.6 -> 100, 2.3 -> 60).
+        assert bp("metagross", "kingambit", "Heavy Slam", atk_ability="Clear Body") == 100
+        assert bp("metagross", "kingambit", "Heavy Slam", atk_ability="Light Metal") == 60
+        # ... and as a target: Grass Knot into a Light Metal Scizor (118 -> 59 kg) drops from 100 to 80.
+        assert bp("venusaur", "scizor", "Grass Knot", def_ability="Technician") == 100
+        assert bp("venusaur", "scizor", "Grass Knot", def_ability="Light Metal") == 80
+        # Heavy Metal doubles: Aggron 360 kg over Kingambit 120 kg is 3.0 -> 80, 720 kg is 6.0 -> 120.
+        assert bp("aggron", "kingambit", "Heavy Slam", atk_ability="Sturdy") == 80
+        assert bp("aggron", "kingambit", "Heavy Slam", atk_ability="Heavy Metal") == 120
 
     def test_ko_chance_sanity(self):
         # A hit dealing 50-60% must be a guaranteed 2HKO and 0% OHKO.
@@ -415,3 +442,110 @@ class TestConfirmedMCMegaAbilities:
         mence = Combatant("salamence-mega", spread=SPSpread(atk=32), alignment="Adamant")
         dfn = Combatant("incineroar", spread=SPSpread(hp=32), ability="Pressure")
         assert calculate(mence, dfn, "Double-Edge")["type"] == "Flying"
+
+
+class TestWaterBubble:
+    """Water Bubble is an attack-stat modifier both ways (x2 for the holder's
+    Water moves, x0.5 for Fire moves aimed at it) and a burn immunity. The
+    expected rolls are the distinct one-hit damages the pokemon-showdown
+    champions engine produced across 48 fixed seeds (no crits)."""
+
+    ARAQ_ATK = Combatant("araquanid", spread=SPSpread(atk=32), alignment="Adamant",
+                         ability="Water Bubble", item="Sitrus Berry")
+    ARAQ_DEF = Combatant("araquanid", spread=SPSpread(hp=32), alignment="Adamant",
+                         ability="Water Bubble", item="Sitrus Berry")
+    KING = Combatant("kingambit", spread=SPSpread(hp=32), alignment="Adamant",
+                     ability="Defiant", item="Leftovers")
+    INCIN = Combatant("incineroar", spread=SPSpread(atk=32), alignment="Adamant",
+                      ability="Blaze", item="Leftovers")
+    SINGLES = Field(is_doubles=False)
+
+    def test_water_moves_are_doubled_to_the_engine_rolls(self):
+        r = calculate(self.ARAQ_ATK, self.KING, "Liquidation", self.SINGLES)
+        assert {93, 94, 96, 97, 99, 100, 102, 103, 105, 106, 108, 109} <= set(r["rolls"])
+        assert any("Water Bubble" in n for n in r["notes"])
+        plain = Combatant("araquanid", spread=SPSpread(atk=32), alignment="Adamant",
+                          ability="Water Absorb", item="Sitrus Berry")
+        base = calculate(plain, self.KING, "Liquidation", self.SINGLES)["rolls"]
+        assert all(1.9 < a / b < 2.1 for a, b in zip(r["rolls"], base))
+
+    def test_other_types_are_untouched(self):
+        r = calculate(self.ARAQ_ATK, self.KING, "Lunge", self.SINGLES)
+        assert {43, 45, 46, 48, 49, 51, 52} <= set(r["rolls"])
+        assert not any("Water Bubble" in n for n in r["notes"])
+
+    def test_fire_into_the_holder_is_halved_on_the_attack_stat(self):
+        r = calculate(self.INCIN, self.ARAQ_DEF, "Flare Blitz", self.SINGLES)
+        assert {55, 57, 58, 60, 61, 63, 64, 66} <= set(r["rolls"])
+        assert any("Fire damage halved" in n for n in r["notes"])
+
+    def test_holder_cannot_be_burned(self):
+        burned = Combatant("araquanid", spread=SPSpread(atk=32), alignment="Adamant",
+                           ability="Water Bubble", item="Sitrus Berry", status="burn")
+        r = calculate(burned, self.KING, "Liquidation", self.SINGLES)
+        assert r["rolls"] == calculate(self.ARAQ_ATK, self.KING, "Liquidation", self.SINGLES)["rolls"]
+        assert any("cannot be burned" in n for n in r["notes"])
+
+
+class TestTerrainMechanics:
+    """Terrain rules (Gen 8+ values). The expected rolls are the distinct one-hit
+    damages the pokemon-showdown champions engine produced across 40 fixed
+    seeds in singles (no crits); the surge ability sets the terrain on entry."""
+
+    SINGLES = Field(is_doubles=False)
+    KING = Combatant("kingambit", spread=SPSpread(hp=32), alignment="Adamant", ability="Defiant", item="Leftovers")
+    CHOMP = Combatant("garchomp", spread=SPSpread(hp=32), alignment="Adamant", ability="Rough Skin", item="Leftovers")
+    INDEEDEE = Combatant("indeedee-f", spread=SPSpread(spa=32), alignment="Modest", ability="Psychic Surge", item="Leftovers")
+    PINCURCHIN = Combatant("pincurchin", spread=SPSpread(spa=32), alignment="Modest", ability="Electric Surge", item="Leftovers")
+    # Wigglytuff: a Fairy with Galarian Weezing's 85 base SpA (the Weezing predictions did not make Regulation M-C).
+    WIGGLYTUFF = Combatant("wigglytuff", spread=SPSpread(spa=32), alignment="Modest", ability="Cute Charm", item="Leftovers")
+    RILLA = Combatant("rillaboom", spread=SPSpread(spa=32), alignment="Modest", ability="Grassy Surge", item="Leftovers")
+    SNEASLER = Combatant("sneasler", spread=SPSpread(atk=32), alignment="Jolly", ability="Poison Touch")
+
+    def test_expanding_force_is_x1_5_and_spread_on_psychic_terrain(self):
+        r = calculate(self.INDEEDEE, self.CHOMP, "Expanding Force", Field(is_doubles=False, terrain="psychic"))
+        assert r["rolls"] == [135, 138, 139, 141, 142, 144, 145, 147, 148, 150, 151, 153, 154, 156, 157, 160]
+        dbl = calculate(self.INDEEDEE, self.CHOMP, "Expanding Force", Field(terrain="psychic"))
+        assert max(dbl["rolls"]) == 120                      # x0.75: it became a spread move
+        assert any("both opponents" in n for n in dbl["notes"])
+        # an airborne user gets neither the boost nor the spread
+        floating = Combatant("indeedee-f", spread=SPSpread(spa=32), alignment="Modest", ability="Levitate")
+        assert calculate(floating, self.CHOMP, "Expanding Force", Field(terrain="psychic"))["rolls"] ==             calculate(floating, self.CHOMP, "Expanding Force", Field())["rolls"]
+
+    def test_rising_voltage_doubles_into_grounded_targets_only(self):
+        r = calculate(self.PINCURCHIN, self.KING, "Rising Voltage", Field(is_doubles=False, terrain="electric"))
+        assert r["rolls"] == [153, 156, 157, 159, 160, 162, 165, 166, 168, 169, 171, 174, 175, 177, 178, 181]
+        bird = Combatant("corviknight", spread=SPSpread(hp=32))
+        on = calculate(self.PINCURCHIN, bird, "Rising Voltage", Field(is_doubles=False, terrain="electric"))["rolls"]
+        off = calculate(self.PINCURCHIN, bird, "Rising Voltage", self.SINGLES)["rolls"]
+        assert 1.25 < max(on) / max(off) < 1.35               # only the user's x1.3, no doubling
+        grounded_bird = Combatant("corviknight", spread=SPSpread(hp=32), item="Iron Ball")
+        ball = calculate(self.PINCURCHIN, grounded_bird, "Rising Voltage", Field(is_doubles=False, terrain="electric"))["rolls"]
+        assert 2.5 < max(ball) / max(off) < 2.7               # Iron Ball grounds it: x1.3 x2
+
+    def test_misty_explosion_and_terrain_pulse(self):
+        r = calculate(self.WIGGLYTUFF, self.KING, "Misty Explosion", Field(is_doubles=False, terrain="misty"))
+        assert r["rolls"] == [121, 123, 124, 126, 127, 129, 130, 132, 133, 135, 136, 138, 139, 141, 142, 144]
+        tp = calculate(self.RILLA, self.KING, "Terrain Pulse", Field(is_doubles=False, terrain="grassy"))
+        assert {43, 44, 45, 46, 47, 48, 49, 50, 51} <= set(tp["rolls"])
+        assert tp["type"] == "Grass" and tp["base_power"] == 100
+        plain = calculate(self.RILLA, self.KING, "Terrain Pulse", self.SINGLES)
+        assert plain["type"] == "Normal" and plain["base_power"] == 50
+
+    def test_psychic_terrain_blocks_priority_into_grounded_targets(self):
+        ind = Combatant("indeedee-f", spread=SPSpread(hp=32), alignment="Calm", ability="Psychic Surge")
+        for mv in ("Fake Out", "Sucker Punch", "Aqua Jet"):
+            r = calculate(self.SNEASLER, ind, mv, Field(terrain="psychic"))
+            assert max(r["rolls"]) == 0 and any("priority move blocked" in n for n in r["notes"]), mv
+        assert max(calculate(self.SNEASLER, ind, "Close Combat", Field(terrain="psychic"))["rolls"]) > 0
+        assert max(calculate(self.SNEASLER, ind, "Fake Out", Field())["rolls"]) > 0
+        flying = Combatant("salamence-mega", ability="Aerilate")
+        assert max(calculate(self.SNEASLER, flying, "Fake Out", Field(terrain="psychic"))["rolls"]) > 0
+
+    def test_misty_halves_dragon_and_steel_roller_needs_terrain(self):
+        chomp = Combatant("garchomp", spread=SPSpread(atk=32), alignment="Adamant", ability="Rough Skin")
+        on = calculate(chomp, self.KING, "Dragon Claw", Field(terrain="misty"))["rolls"]
+        off = calculate(chomp, self.KING, "Dragon Claw", Field())["rolls"]
+        assert 0.45 < max(on) / max(off) < 0.55
+        assert max(calculate(self.KING, self.CHOMP, "Steel Roller", Field())["rolls"]) == 0
+        assert max(calculate(self.KING, self.CHOMP, "Steel Roller", Field(terrain="grassy"))["rolls"]) > 0

@@ -12,11 +12,13 @@ from vgc_toolkit.main import app
 MC_NEW = ["rillaboom", "salamence", "golisopod", "baxcalibur", "salamence-mega",
           "golisopod-mega", "baxcalibur-mega", "absol-mega-z", "garchomp-mega-z",
           "lucario-mega-z"]
-# Champions has not announced these abilities: blank until the user sets one
-# in the UI. The other four new megas were confirmed on 2026-09-03.
-PROVISIONAL = ["golisopod-mega", "baxcalibur-mega"]
-CONFIRMED = {"salamence-mega": ["Aerilate"], "absol-mega-z": ["Sharpness"],
-             "garchomp-mega-z": ["Levitate"], "lucario-mega-z": ["Aura Guard"]}
+# Every new mega's ability is confirmed since the 2026-09-08 release
+# (scripts/add_mc_release.py); nothing ships blank any more.
+PROVISIONAL = []   # every M-C mega ability is confirmed since the 2026-09-08 release
+CONFIRMED = {
+    "salamence-mega": ["Aerilate"], "absol-mega-z": ["Sharpness"], "garchomp-mega-z": ["Levitate"],
+    "lucario-mega-z": ["Aura Guard"], "golisopod-mega": ["Tough Claws"], "baxcalibur-mega": ["Thermal Exchange"],
+}
 NEW_SPECIES = ["rillaboom", "salamence", "golisopod", "baxcalibur"]
 
 
@@ -29,7 +31,7 @@ class TestMCRoster:
     def test_default_is_mc_and_mb_roster_is_unchanged(self, client):
         assert dataio.DEFAULT_REGULATION == "M-C"
         assert len(client.get("/api/pokemon", params={"regulation": "M-B"}).json()) == 310
-        assert len(client.get("/api/pokemon", params={"regulation": "M-C"}).json()) == 320
+        assert len(client.get("/api/pokemon", params={"regulation": "M-C"}).json()) == 343
 
     def test_every_mb_form_carries_over_to_mc(self):
         for mon in dataio.pokedex().values():
@@ -40,7 +42,7 @@ class TestMCRoster:
         chart = dataio.type_chart()
         for pid in MC_NEW:
             mon = dataio.get_pokemon(pid)
-            assert mon["regulations"] == ["M-C"], pid
+            assert "M-C" in mon["regulations"] and "M-B" not in mon["regulations"], pid
             assert set(mon["base"]) == set(stats.STAT_KEYS), pid
             assert all(isinstance(v, int) and v > 0 for v in mon["base"].values()), pid
             assert mon["types"] and all(t in chart for t in mon["types"]), pid
@@ -75,7 +77,7 @@ class TestMCRoster:
             assert not mon.get("abilities_provisional"), pid
         listed = {m["id"]: m for m in
                   client.get("/api/pokemon", params={"regulation": "M-C"}).json()}
-        assert listed["golisopod-mega"]["abilities_provisional"] is True
+        assert listed["golisopod-mega"]["abilities_provisional"] is False
         assert listed["absol-mega-z"]["abilities_provisional"] is False
         assert listed["garchomp"]["abilities_provisional"] is False
 
@@ -121,7 +123,7 @@ class TestAbilityOverride:
         body = r.json()
         assert body["abilities"] == ["Magic Bounce"]      # trimmed, de-duplicated
         assert body["ability_override"] is True
-        assert body["abilities_provisional"] is True      # still unconfirmed by the game
+        assert not body.get("abilities_provisional")     # confirmed by the game; the override still applies
 
         # Visible through the data layer every scan reads, and in the picker list.
         assert dataio.get_pokemon("golisopod-mega")["abilities"] == ["Magic Bounce"]
@@ -139,12 +141,12 @@ class TestAbilityOverride:
         assert teams.validate_member(member("Magic Bounce"), "M-C") == []
         assert teams.validate_member(member("Pressure"), "M-C") != []
 
-        # Empty list removes the override and restores the shipped (blank) data.
+        # Empty list removes the override and restores the shipped data (Tough Claws).
         r = client.put("/api/pokemon/golisopod-mega/abilities", json={"abilities": []})
         assert r.status_code == 200
-        assert r.json()["abilities"] == [] and "ability_override" not in r.json()
+        assert r.json()["abilities"] == ["Tough Claws"] and "ability_override" not in r.json()
         assert dataio.ability_overrides() == {}
-        assert dataio.get_pokemon("golisopod-mega")["abilities"] == []
+        assert dataio.get_pokemon("golisopod-mega")["abilities"] == ["Tough Claws"]   # back to the shipped data
 
     def test_put_rejects_unknown_form_and_too_many_abilities(self, client):
         r = client.put("/api/pokemon/not-a-mon/abilities", json={"abilities": ["Levitate"]})

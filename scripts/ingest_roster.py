@@ -90,10 +90,33 @@ def build_pokedex(roster: list, regulation: str) -> dict:
     return pokedex
 
 
+# Champions has every +10%/-10% pairing of the five non-HP stats plus Serious:
+# 21 alignments. The speed-calc source lists only the fifteen its speed tiers
+# use, so the grid is completed here (output order groups by boosted stat).
+ALL_ALIGNMENTS = {
+    "Serious": (None, None),
+    "Lonely": ("atk", "def"), "Adamant": ("atk", "spa"), "Naughty": ("atk", "spd"), "Brave": ("atk", "spe"),
+    "Bold": ("def", "atk"), "Impish": ("def", "spa"), "Lax": ("def", "spd"), "Relaxed": ("def", "spe"),
+    "Modest": ("spa", "atk"), "Mild": ("spa", "def"), "Rash": ("spa", "spd"), "Quiet": ("spa", "spe"),
+    "Calm": ("spd", "atk"), "Gentle": ("spd", "def"), "Careful": ("spd", "spa"), "Sassy": ("spd", "spe"),
+    "Timid": ("spe", "atk"), "Hasty": ("spe", "def"), "Jolly": ("spe", "spa"), "Naive": ("spe", "spd"),
+}
+
+
+def complete_alignments(raw: dict) -> dict:
+    """The source's alignments plus any of the game's 21 it omits, in grid order."""
+    out = {}
+    for name, (boost, reduce) in ALL_ALIGNMENTS.items():
+        out[name] = raw.get(name) or {"boost": boost, "reduce": reduce}
+    for name, spec in raw.items():          # anything unexpected the source adds
+        out.setdefault(name, spec)
+    return out
+
+
 def build_alignments(raw: dict) -> dict:
     """Alignments: boost/reduce stat keys -> per-stat multiplier table."""
     alignments = {}
-    for name, spec in raw.items():
+    for name, spec in complete_alignments(raw).items():
         mults = {k: 1.0 for k in STAT_KEYS if k != "hp"}
         if spec.get("boost"):
             mults[spec["boost"]] = 1.1
@@ -143,7 +166,7 @@ def main():
 
     n_megas = sum(1 for m in pokedex.values() if "mega_of" in m)
     print(f"pokedex.json: {len(pokedex)} forms ({n_megas} megas) tagged {args.regulation}")
-    print(f"alignments.json: {len(raw_alignments)} alignments")
+    print(f"alignments.json: {len(complete_alignments(raw_alignments))} alignments ({len(raw_alignments)} in the source)")
     print(f"speed_abilities.json: {len(speed_abilities)} speed-relevant abilities")
 
 

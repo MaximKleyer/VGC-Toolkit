@@ -10,8 +10,10 @@ items (x1.2), Muscle Band / Wise Glasses (x1.1 by category), Metronome
 10% recoil note), Expert Belt (x1.2 on super-effective hits),
 super-effective-resist berries, Focus Sash (no OHKO from full HP), Iron
 Ball (grounds the holder; its speed halving lives in speed.py) and Light
-Ball. Choice Band/Specs, Assault Vest and Eviolite are not in the
-Champions item pool. The "-ate" abilities (Aerilate, Pixilate, Refrigerate,
+Ball. Choice Band / Specs (x1.5 Atk / SpA), Assault Vest (x1.5 SpD) and the
+terrain Seeds (+1 stage while the field's terrain matches) exist only in the
+Regulation M-C items (terrain_seed / airborne / gem_type tags); Eviolite is
+not in Champions. The "-ate" abilities (Aerilate, Pixilate, Refrigerate,
 Galvanize and Champions' Dragonize) convert the user's Normal-type moves to
 their type at x1.2, with STAB judged on the new type; results carry the
 effective ``type``.
@@ -132,6 +134,9 @@ ATE_ABILITIES = {"Dragonize": "Dragon", "Aerilate": "Flying", "Pixilate": "Fairy
 ATE_EXEMPT = {"Hidden Power", "Judgment", "Multi-Attack", "Natural Gift",
               "Revelation Dance", "Struggle", "Terrain Pulse", "Tera Blast"}
 
+TERRAIN_PULSE_TYPES = {"electric": "Electric", "grassy": "Grass",
+                       "psychic": "Psychic", "misty": "Fairy"}
+
 IMMUNITY_ABILITIES = {  # ability -> move type nullified
     "Levitate": "Ground", "Eelevate": "Ground", "Flash Fire": "Fire", "Water Absorb": "Water",
     "Storm Drain": "Water", "Dry Skin": "Water", "Volt Absorb": "Electric",
@@ -140,6 +145,8 @@ IMMUNITY_ABILITIES = {  # ability -> move type nullified
 }
 FLAG_IMMUNITY_ABILITIES = {"Bulletproof": "bullet", "Soundproof": "sound",
                            "Wind Rider": "wind"}
+# Holders cannot be burned, so a 'burn' status on them is ignored by the calc.
+BURN_IMMUNE_ABILITIES = {"Water Bubble", "Water Veil", "Thermal Exchange"}
 
 USES_DEFENDER_DEF = {"Psyshock", "Psystrike", "Secret Sword"}
 USES_ATTACKER_DEF = {"Body Press"}
@@ -147,11 +154,46 @@ USES_DEFENDER_ATK = {"Foul Play"}
 IGNORES_DEF_STAGES = {"Sacred Sword", "Darkest Lariat", "Chip Away"}
 
 VARIABLE_BP_MOVES = {
-    "Gyro Ball", "Electro Ball", "Heavy Slam", "Heat Crash", "Grass Knot",
-    "Low Kick", "Stored Power", "Power Trip", "Reversal", "Flail",
+    "Gyro Ball", "Electro Ball", "Stored Power", "Power Trip", "Reversal", "Flail",
     "Eruption", "Water Spout", "Dragon Energy", "Hard Press", "Crush Grip",
     "Last Respects", "Rage Fist",
 }
+
+# Weight-based base power (Gen 9 rules, which Champions keeps). Low Kick and
+# Grass Knot scale with the target's weight; Heavy Slam and Heat Crash with the
+# user-to-target ratio. Heavy Metal doubles and Light Metal halves a Pokemon's
+# weight (Champions has no Float Stone). Weights live in pokedex.json
+# (scripts/fill_weights.py); without one the listed 0 BP stands and a note says so.
+WEIGHT_TARGET_MOVES = {"Low Kick", "Grass Knot"}
+WEIGHT_RATIO_MOVES = {"Heavy Slam", "Heat Crash"}
+WEIGHT_MOVES = WEIGHT_TARGET_MOVES | WEIGHT_RATIO_MOVES
+WEIGHT_ABILITY_MULT = {"Heavy Metal": 2.0, "Light Metal": 0.5}
+
+
+def effective_weight(mon: dict, ability: str | None) -> float | None:
+    """A Pokemon's weight in kg after Heavy Metal / Light Metal, or None if unknown."""
+    kg = mon.get("weight_kg")
+    if not kg:
+        return None
+    return kg * WEIGHT_ABILITY_MULT.get(ability or "", 1.0)
+
+
+def weight_base_power(move_name: str, atk_mon: dict, atk_ability: str | None,
+                      def_mon: dict, def_ability: str | None) -> tuple[int | None, str]:
+    """(base power, note) for a weight-based move; (None, why) without weight data."""
+    dw = effective_weight(def_mon, def_ability)
+    if dw is None:
+        return None, f"{move_name}: no weight on record for {def_mon['name']}"
+    if move_name in WEIGHT_TARGET_MOVES:
+        bp = (120 if dw >= 200 else 100 if dw >= 100 else 80 if dw >= 50
+              else 60 if dw >= 25 else 40 if dw >= 10 else 20)
+        return bp, f"{move_name}: {bp} BP ({def_mon['name']} {dw:g} kg)"
+    aw = effective_weight(atk_mon, atk_ability)
+    if aw is None:
+        return None, f"{move_name}: no weight on record for {atk_mon['name']}"
+    ratio = aw / dw
+    bp = 120 if ratio >= 5 else 100 if ratio >= 4 else 80 if ratio >= 3 else 60 if ratio >= 2 else 40
+    return bp, f"{move_name}: {bp} BP ({atk_mon['name']} {aw:g} kg vs {def_mon['name']} {dw:g} kg)"
 
 MULTIHIT_HINT = {
     "Bullet Seed": 5, "Rock Blast": 5, "Icicle Spear": 5, "Pin Missile": 5,
@@ -247,6 +289,26 @@ def calculate(attacker: Combatant, defender: Combatant, move_name: str,
     d_item = dataio.items().get(_slug(defender.item)) if defender.item else None
     # Iron Ball grounds its holder: Ground hits Flying / Levitate targets.
     ground_all = field.gravity or bool(d_item and d_item.get("grounds_holder"))
+    # Terrain only touches grounded Pokemon: Flying types and Levitate / Eelevate
+    # holders float unless Gravity or an Iron Ball grounds them.
+    # An Air Balloon holder floats (until it is hit) like a Levitate user.
+    a_airborne = bool(a_item and a_item.get("airborne")) and not field.gravity
+    d_airborne = bool(d_item and d_item.get("airborne")) and not ground_all
+    grounded_atk = field.gravity or bool(a_item and a_item.get("grounds_holder")) or (
+        "Flying" not in atk_mon["types"] and atk_ability not in ("Levitate", "Eelevate")
+        and not a_airborne)
+    grounded_def = ground_all or (
+        "Flying" not in def_mon["types"] and def_ability not in ("Levitate", "Eelevate")
+        and not d_airborne)
+
+    # Terrain Pulse: 100 BP and the terrain's type while the user is grounded
+    # (the type decides STAB, effectiveness and immunities below).
+    terrain_pulse = False
+    if move_name == "Terrain Pulse" and grounded_atk and field.terrain in TERRAIN_PULSE_TYPES:
+        move_type = TERRAIN_PULSE_TYPES[field.terrain]
+        terrain_pulse = True
+        notes.append(f"Terrain Pulse: {move_type}-type, 100 BP on "
+                     f"{field.terrain.capitalize()} Terrain")
 
     # --- immunities ---
     if ground_all and move_type == "Ground":
@@ -266,13 +328,32 @@ def calculate(attacker: Combatant, defender: Combatant, move_name: str,
             and not (ground_all and def_ability in ("Levitate", "Eelevate")):
         return _result(move, [0] * 16, def_stats, defender, hits,
                        notes + [f"immune ({def_ability})"], max_ko_hits=max_ko_hits)
+    if move_type == "Ground" and d_airborne:
+        return _result(move, [0] * 16, def_stats, defender, hits,
+                       notes + ["immune (Air Balloon)"], max_ko_hits=max_ko_hits)
     immune_flag = FLAG_IMMUNITY_ABILITIES.get(def_ability)
     if immune_flag and flags.get(immune_flag):
         return _result(move, [0] * 16, def_stats, defender, hits,
                        notes + [f"immune ({def_ability})"], max_ko_hits=max_ko_hits)
+    # Psychic Terrain: a grounded Pokemon cannot be hit by a priority move aimed
+    # at it (Fake Out, Sucker Punch, Aqua Jet, Extreme Speed, Grassy Glide ...).
+    # Moves aimed at an ally are exempt; the calc only models hits on a foe.
+    if field.terrain == "psychic" and (move.get("priority") or 0) > 0 and grounded_def:
+        return _result(move, [0] * 16, def_stats, defender, hits,
+                       notes + ["Psychic Terrain: priority move blocked (grounded target)"],
+                       max_ko_hits=max_ko_hits, move_type=move_type)
+    if move_name == "Steel Roller" and field.terrain == "none":
+        return _result(move, [0] * 16, def_stats, defender, hits,
+                       notes + ["Steel Roller fails when no terrain is active"],
+                       max_ko_hits=max_ko_hits)
 
     # --- base power ---
-    bp = bp_override or (100 if weather_ball else move["base_power"])
+    bp = bp_override or (100 if (weather_ball or terrain_pulse) else move["base_power"])
+    if move_name in WEIGHT_MOVES and bp_override is None:
+        weight_bp, why = weight_base_power(move_name, atk_mon, atk_ability, def_mon, def_ability)
+        notes.append(why)
+        if weight_bp is not None:
+            bp = weight_bp
     if move_name in VARIABLE_BP_MOVES and bp_override is None:
         notes.append(f"{move_name} has variable base power; pass bp_override "
                      f"for accuracy (using listed {bp})")
@@ -286,11 +367,15 @@ def calculate(attacker: Combatant, defender: Combatant, move_name: str,
         bp *= 2
     if move_name == "Knock Off" and defender.item is not None:
         bp = math.floor(bp * 1.5)
+    move["base_power_used"] = bp          # what the result reports (weight moves, Facade, Knock Off ...)
 
     bp_mods = []
     item = a_item
     if item and item.get("boost_type") == move_type:
         bp_mods.append(4915)                                   # type item x1.2
+    if item and item.get("gem_type") == move_type:             # Normal Gem x1.3, single use
+        bp_mods.append(_to_mod(item.get("gem_multiplier", 1.3)))
+        notes.append(f"{item['name']}: x{item.get('gem_multiplier', 1.3)} (consumed)")
     if item and item.get("category_boost") == move["category"]:
         bp_mods.append(_to_mod(item.get("category_multiplier", 1.1)))  # Muscle Band / Wise Glasses
     if item and item.get("streak_step"):                       # Metronome
@@ -320,10 +405,7 @@ def calculate(attacker: Combatant, defender: Combatant, move_name: str,
         bp_mods.append(5448)
     if field.dark_aura and move_type == "Dark":
         bp_mods.append(5448)
-    grounded_atk = field.gravity or (
-        "Flying" not in atk_mon["types"] and atk_ability not in ("Levitate", "Eelevate"))
-    grounded_def = ground_all or (
-        "Flying" not in def_mon["types"] and def_ability not in ("Levitate", "Eelevate"))
+    # --- terrain (Gen 8+ values: x1.3 for a grounded user's matching type) ---
     terrain_boost = {"electric": "Electric", "grassy": "Grass", "psychic": "Psychic"}
     if grounded_atk and terrain_boost.get(field.terrain) == move_type:
         bp_mods.append(5325)
@@ -333,6 +415,17 @@ def calculate(attacker: Combatant, defender: Combatant, move_name: str,
     if (field.terrain == "grassy" and grounded_def
             and move_name in ("Earthquake", "Bulldoze", "Magnitude")):
         bp_mods.append(2048)
+    # Moves powered by a terrain.
+    if move_name == "Expanding Force" and field.terrain == "psychic" and grounded_atk:
+        bp_mods.append(6144)
+        move["target"] = "allAdjacentFoes"          # it hits both opponents (spread)
+        notes.append("Expanding Force: x1.5 and hits both opponents on Psychic Terrain")
+    if move_name == "Rising Voltage" and field.terrain == "electric" and grounded_def:
+        bp_mods.append(8192)
+        notes.append("Rising Voltage: doubled into a grounded target on Electric Terrain")
+    if move_name == "Misty Explosion" and field.terrain == "misty" and grounded_atk:
+        bp_mods.append(6144)
+        notes.append("Misty Explosion: x1.5 on Misty Terrain")
     bp = max(1, apply_mod(bp, chain_mods(bp_mods)))
 
     # --- attack stat ---
@@ -366,8 +459,20 @@ def calculate(attacker: Combatant, defender: Combatant, move_name: str,
         atk_mods.append(6144)
     if def_ability == "Thick Fat" and move_type in ("Fire", "Ice"):
         atk_mods.append(2048)
+    # Water Bubble is an attack-stat modifier both ways (engine: onModifyAtk/SpA
+    # x2 for the holder's Water moves, onSourceModifyAtk/SpA x0.5 for Fire
+    # moves aimed at it), not a final damage modifier.
+    if atk_ability == "Water Bubble" and move_type == "Water":
+        atk_mods.append(8192)
+        notes.append("Water Bubble: Water-type attack doubled")
+    if def_ability == "Water Bubble" and move_type == "Fire":
+        atk_mods.append(2048)
+        notes.append("Water Bubble: Fire damage halved")
     if attacker.item == "Light Ball" and atk_mon["id"] == "pikachu":
         atk_mods.append(8192)
+    a_stat_mult = (a_item or {}).get("stat_multiplier") or {}
+    if a_stat_mult.get(atk_key):                               # Choice Band / Choice Specs
+        atk_mods.append(_to_mod(a_stat_mult[atk_key]))
     attack = max(1, apply_mod(attack, chain_mods(atk_mods)))
 
     # --- defense stat ---
@@ -376,6 +481,13 @@ def calculate(attacker: Combatant, defender: Combatant, move_name: str,
     else:
         def_key = "spd"
     def_stage = defender.stages.get(def_key, 0)
+    # A terrain Seed raises the stat by one stage the moment its terrain is up
+    # (single use); the calc grants it whenever the field's terrain matches.
+    seed = (d_item or {}).get("terrain_seed")
+    if seed and seed.get("terrain") == field.terrain and seed.get("stat") == def_key:
+        def_stage = min(6, def_stage + 1)
+        notes.append(f"{d_item['name']}: +1 {'Def' if def_key == 'def' else 'SpD'} "
+                     f"on {field.terrain.capitalize()} Terrain (single use)")
     if field.is_crit and def_stage > 0:
         def_stage = 0
     if atk_ability == "Unaware" or move_name in IGNORES_DEF_STAGES:
@@ -391,6 +503,9 @@ def calculate(attacker: Combatant, defender: Combatant, move_name: str,
         def_mods.append(8192)
     if def_ability == "Marvel Scale" and defender.status and def_key == "def":
         def_mods.append(6144)
+    d_stat_mult = (d_item or {}).get("stat_multiplier") or {}
+    if d_stat_mult.get(def_key):                               # Assault Vest
+        def_mods.append(_to_mod(d_stat_mult[def_key]))
     defense = max(1, apply_mod(defense, chain_mods(def_mods)))
 
     # --- base damage ---
@@ -434,8 +549,6 @@ def calculate(attacker: Combatant, defender: Combatant, move_name: str,
     if def_ability == "Heatproof" and move_type == "Fire":
         final_mods.append(2048)
         notes.append("Heatproof: Fire damage halved")
-    if def_ability == "Water Bubble" and move_type == "Fire":
-        final_mods.append(2048)
     if def_ability == "Purifying Salt" and move_type == "Ghost":
         final_mods.append(2048)
     if field.friend_guard:
@@ -467,6 +580,9 @@ def calculate(attacker: Combatant, defender: Combatant, move_name: str,
 
     burned = (attacker.status == "burn" and atk_ability != "Guts"
               and physical and move_name != "Facade")
+    if attacker.status == "burn" and atk_ability in BURN_IMMUNE_ABILITIES:
+        burned = False
+        notes.append(f"{atk_ability}: cannot be burned; burn status ignored")
 
     rolls = []
     for r in range(85, 101):
@@ -518,6 +634,7 @@ def _result(move, rolls, def_stats, defender, hits, notes, eff=1.0, max_ko_hits=
         "category": move["category"],
         "type": move_type or move["type"],   # effective type (Weather Ball, -ate abilities)
         "type_effectiveness": eff,
+        "base_power": move.get("base_power_used", move["base_power"]),
         "rolls": total_rolls,
         "damage_range": [lo, hi],
         "defender_hp": hp,

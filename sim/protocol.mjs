@@ -19,11 +19,14 @@ export function parsePos(pos) {
 }
 
 export function parseHP(cond) {
-  // "181/182 brn" | "75/100" | "0 fnt"
+  // "181/182 brn" | "75/100" | "0 fnt" | "50/100g" — the champions mod tags the
+  // opponent's HP with a bar colour letter at exactly 50% and 20% (g/y/r); skip it.
   const [hpPart, status] = String(cond || '').trim().split(' ');
   if (hpPart === '0' || status === 'fnt') return { hp: 0, maxhp: 100, status: 'fnt', fainted: true };
-  const [hp, maxhp] = hpPart.split('/').map(Number);
-  return { hp, maxhp: maxhp || 100, status: status || null, fainted: false };
+  const m = /^(\d+)(?:\/(\d+))?/.exec(hpPart || '');
+  const hp = m ? Number(m[1]) : 0;
+  const maxhp = m && m[2] ? Number(m[2]) : 100;
+  return { hp, maxhp, status: status || null, fainted: false };
 }
 
 export function speciesFromDetails(details) {

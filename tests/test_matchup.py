@@ -301,7 +301,10 @@ class TestRegulationAndFeatureEndpoints:
         r = TestClient(app).get("/api/regulations").json()
         tags = [x["regulation"] for x in r["regulations"]]
         assert tags == sorted(tags) and "M-B" in tags
-        assert r["default"] == dataio.DEFAULT_REGULATION == tags[-1]  # newest
+        published = [x["regulation"] for x in r["regulations"] if not x["experimental"]]
+        assert r["default"] == dataio.DEFAULT_REGULATION == published[-1]  # newest published
+        for x in r["regulations"]:
+            assert x["label"] and isinstance(x["experimental"], bool)
         assert all(x["forms"] > 0 for x in r["regulations"])
 
     def test_best_moves_endpoint_shape(self):
@@ -330,3 +333,27 @@ class TestRegulationAndFeatureEndpoints:
         assert j["ability"] == "Drought" and j["spikes"]
         wb = next(s for s in j["spikes"] if s["move"] == "Weather Ball")
         assert wb["self_enabled"] and wb["condition_key"] == "sun"
+
+
+def test_offense_scan_reduce_benchmark_uses_alignments_the_data_has():
+    # The "reduce" pool benchmark is modelled with a real -Def / -SpD alignment
+    # (Lonely, Naughty). Those were missing from alignments.json (the speed-calc
+    # source lists 15 of the game's 21), which silently emptied the scan.
+    from vgc_toolkit.core.matchup import offensive_scan
+    atk = Combatant("kingambit", spread=SPSpread(atk=32), alignment="Adamant")
+    for move in ["Iron Head", "Dark Pulse"]:            # physical and special
+        out = offensive_scan(atk, [move], pool_hp_sp=32, pool_def_sp=16, pool_alignment="reduce", top_n=5)
+        assert out["scanned"] > 0 and out["targets"], f"{move}: reduce benchmark produced nothing"
+    frail = offensive_scan(atk, ["Iron Head"], pool_alignment="reduce", top_n=100)
+    bulky = offensive_scan(atk, ["Iron Head"], pool_alignment="boost", top_n=100)
+    by = {t["target"]: t["pct_range"][1] for t in bulky["targets"]}
+    assert all(t["pct_range"][1] >= by[t["target"]] for t in frail["targets"] if t["target"] in by)
+
+
+def test_weight_based_moves_rank_with_their_real_power():
+    # Low Kick used to be skipped as a 0 BP move; into a 460 kg Snorlax it is a
+    # 120 BP super-effective hit and must outrank Kingambit's own Iron Head.
+    atk = Combatant("kingambit", spread=SPSpread(atk=32), alignment="Adamant")
+    ranked = {r["move"]: r for r in rank_moves(atk, Combatant("snorlax"), top_n=40)}
+    assert "Low Kick" in ranked and ranked["Low Kick"]["base_power"] == 120
+    assert ranked["Low Kick"]["pct_range"][1] > ranked["Iron Head"]["pct_range"][1]

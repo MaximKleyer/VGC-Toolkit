@@ -53,6 +53,23 @@ DAMAGE_ITEM_TAGS = {
     "Focus Sash": {"focus_sash": True},
     "Iron Ball": {"grounds_holder": True},
     "Light Ball": {"stat_double_for": "pikachu"},   # engine special-cases Pikachu
+    # Not in Champions yet (kept for when they arrive). stat_multiplier applies
+    # to the staged stat, like the engine's onModifyAtk / onModifySpA / onModifySpD.
+    "Choice Band": {"stat_multiplier": {"atk": 1.5}, "choice_lock": True},
+    "Choice Specs": {"stat_multiplier": {"spa": 1.5}, "choice_lock": True},
+    "Assault Vest": {"stat_multiplier": {"spd": 1.5}, "no_status_moves": True},
+    # Regulation M-C (2026-09-08, scripts/add_mc_release.py). Air Balloon: the
+    # holder floats (Ground immunity, like Levitate) until it is hit. Normal Gem:
+    # the first Normal move is x1.3. Leek: +2 crit stages for Farfetch'd / Sirfetch'd.
+    "Air Balloon": {"airborne": True},
+    "Normal Gem": {"gem_type": "Normal", "gem_multiplier": 1.3},
+    "Leek": {"crit_stage": 2, "crit_users": ["farfetch-d", "sirfetch-d"]},
+    # Terrain Seeds: +1 to the stat when the holder is on the matching terrain
+    # (single use). The calc applies the stage when the field's terrain matches.
+    "Grassy Seed": {"terrain_seed": {"terrain": "grassy", "stat": "def"}},
+    "Electric Seed": {"terrain_seed": {"terrain": "electric", "stat": "def"}},
+    "Psychic Seed": {"terrain_seed": {"terrain": "psychic", "stat": "spd"}},
+    "Misty Seed": {"terrain_seed": {"terrain": "misty", "stat": "spd"}},
 }
 
 

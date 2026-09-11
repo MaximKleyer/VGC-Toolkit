@@ -1,7 +1,16 @@
 import React, { createContext, useEffect, useState } from 'react';
+import { emptyTeam, padTeam, loadTeamLibrary, TEAMS_KEY } from './api.js';
 import { emptySlot } from './api.js';
 
 const CURRENT_TEAM_KEY = 'vgc-toolkit-team-current-v1';
+const OPP_TEAM_KEY = 'vgc-toolkit-opp-team-v1';   // the opponent team you are calcing against
+function restoreOppTeam() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(OPP_TEAM_KEY));
+    if (Array.isArray(raw) && raw.length) return padTeam(raw);
+  } catch { /* fall through */ }
+  return emptyTeam();
+}
 
 function restoreTeam() {
   try {
@@ -33,13 +42,25 @@ const TABS = [
 ];
 
 const REGULATION_KEY = 'vgc-toolkit-regulation-v1';
+const THEME_KEY = 'vgc-toolkit-theme-v1';
+const THEMES = [['navy', 'Navy'], ['ember', 'Ember'], ['arena', 'Arena'], ['volt', 'Volt'], ['crimson', 'Crimson'], ['daylight', 'Daylight']];
 const TAB_KEY = 'vgc-toolkit-tab-v1';
 
 export default function App() {
   const [staticData, setStaticData] = useState(null);
   const [pokemon, setPokemon] = useState(null);
   const [abilities, setAbilities] = useState([]);
+  // The item pool follows the regulation: experimental items exist only in theirs.
+  const [items, setItems] = useState([]);
   const [regs, setRegs] = useState([]);
+  // Colour theme: stamps data-theme on <html>; styles.css maps each name to a token set.
+  const [theme, setTheme] = useState(() => {
+    try { return localStorage.getItem(THEME_KEY) || 'navy'; } catch { return 'navy'; }
+  });
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    try { localStorage.setItem(THEME_KEY, theme); } catch { /* ignore */ }
+  }, [theme]);
   const [regulation, setRegulation] = useState(() => {
     try { return localStorage.getItem(REGULATION_KEY) || null; } catch { return null; }
   });
@@ -54,6 +75,24 @@ export default function App() {
   useEffect(() => { try { localStorage.setItem(TAB_KEY, tab); } catch { /* ignore */ } }, [tab]);
   const [team, setTeam] = useState(restoreTeam);
   const [calcPreset, setCalcPreset] = useState(null);
+  // The opponent team (Team Builder -> Opponent team) and the shared team library.
+  const [oppTeam, setOppTeam] = useState(restoreOppTeam);
+  useEffect(() => {
+    try { localStorage.setItem(OPP_TEAM_KEY, JSON.stringify(oppTeam)); } catch { /* ignore */ }
+  }, [oppTeam]);
+  const [teamLibrary, setTeamLibrary] = useState(loadTeamLibrary);
+  const persistLibrary = (next) => {
+    setTeamLibrary(next);
+    try { localStorage.setItem(TEAMS_KEY, JSON.stringify(next)); } catch { /* ignore */ }
+  };
+  // Save (or replace by name within its kind) a named team: {kind, name, slots}.
+  const saveTeamEntry = React.useCallback((entry) => {
+    const kind = entry.kind || 'mine';
+    const fresh = { id: `${Date.now()}`, savedAt: new Date().toISOString(), ...entry, kind };
+    const at = teamLibrary.findIndex((t) => (t.kind || 'mine') === kind && t.name === entry.name);
+    persistLibrary(at >= 0 ? teamLibrary.map((t, i) => (i === at ? { ...fresh, id: t.id } : t)) : [...teamLibrary, fresh]);
+  }, [teamLibrary]); // eslint-disable-line
+  const deleteTeamEntry = React.useCallback((id) => persistLibrary(teamLibrary.filter((t) => t.id !== id)), [teamLibrary]); // eslint-disable-line
 
   // autosave the working team
   useEffect(() => {
@@ -69,26 +108,25 @@ export default function App() {
     Promise.all([
       get('/regulations'),
       get('/alignments'),
-      get('/items'),
       get('/typechart'),
       get('/moves'),
       get('/meta/sets').catch(() => ({ info: {}, pokemon: {} })),
     ])
-      .then(([regInfo, alignments, items, typechart, moveList, metaSets]) => {
+      .then(([regInfo, alignments, typechart, moveList, metaSets]) => {
         const moves = {};
         for (const m of moveList) moves[m.name] = m;
         const available = regInfo.regulations.map((r) => r.regulation);
         setRegs(regInfo.regulations);
         // keep a saved choice only while it still exists; otherwise the newest
         setRegulation((cur) => (cur && available.includes(cur) ? cur : regInfo.default));
-        setStaticData({ alignments, items, typechart, moves, metaSets });
+        setStaticData({ alignments, typechart, moves, metaSets });
       })
       .catch((e) => setError(e.message));
   }, []);
 
-  // The legal roster for the selected regulation, plus the ability-name list
-  // (which grows when a custom ability is saved). Refetched when the
-  // regulation changes or server-side data is edited (dataVersion).
+  // The legal roster and item pool for the selected regulation, plus the
+  // ability-name list (which grows when a custom ability is saved). Refetched
+  // when the regulation changes or server-side data is edited (dataVersion).
   useEffect(() => {
     if (!regulation) return;
     try { localStorage.setItem(REGULATION_KEY, regulation); } catch { /* ignore */ }
@@ -96,12 +134,14 @@ export default function App() {
     Promise.all([
       get(`/pokemon?regulation=${encodeURIComponent(regulation)}`),
       get('/abilities').catch(() => []),
+      get(`/items?regulation=${encodeURIComponent(regulation)}`),
     ])
-      .then(([list, abilityNames]) => {
+      .then(([list, abilityNames, itemList]) => {
         if (!live) return;
         list.sort((a, b) => a.name.localeCompare(b.name));
         setPokemon(list);
         setAbilities(abilityNames);
+        setItems(itemList);
       })
       .catch((e) => live && setError(e.message));
     return () => { live = false; };
@@ -109,9 +149,11 @@ export default function App() {
 
   // Memoised so context consumers don't re-render on unrelated App state.
   const data = React.useMemo(
-    () => ({ ...staticData, pokemon, abilities, regulation, regulations: regs,
-             setRegulation, dataVersion, refreshData }),
-    [staticData, pokemon, abilities, regulation, regs, dataVersion, refreshData]);
+    () => ({ ...staticData, items, pokemon, abilities, regulation, regulations: regs,
+             setRegulation, dataVersion, refreshData,
+             oppTeam, setOppTeam, teamLibrary, saveTeamEntry, deleteTeamEntry }),
+    [staticData, items, pokemon, abilities, regulation, regs, dataVersion, refreshData,
+     oppTeam, teamLibrary, saveTeamEntry, deleteTeamEntry]);
 
   if (error)
     return (
@@ -147,10 +189,16 @@ export default function App() {
           Reg
           <select value={regulation} onChange={(e) => setRegulation(e.target.value)}>
             {regs.map((r) => (
-              <option key={r.regulation} value={r.regulation}>
-                {r.regulation} · {r.forms} forms
+              <option key={r.regulation} value={r.regulation} title={r.note || undefined}>
+                {r.label || r.regulation} · {r.forms} forms{r.experimental ? ' · predictions' : ''}
               </option>
             ))}
+          </select>
+        </label>
+        <label className="reg-badge" title="Colour theme (saved in this browser)">
+          Theme
+          <select value={theme} onChange={(e) => setTheme(e.target.value)}>
+            {THEMES.map(([id, label]) => <option key={id} value={id}>{label}</option>)}
           </select>
         </label>
       </header>

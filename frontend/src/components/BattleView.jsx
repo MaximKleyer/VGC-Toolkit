@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { TypeChip } from './shared.jsx';
+import { TypeChip, FieldEffects } from './shared.jsx';
 
 // Presentational pieces for the Battle tab: sprites, coloured names (you =
 // blue, opponent = red), HP, the field strip (weather / terrain / room / side
@@ -47,11 +47,21 @@ const STATUS_LABEL = { brn: 'BRN', par: 'PAR', psn: 'PSN', tox: 'TOX', slp: 'SLP
 const STATUS_VERB = { brn: 'burned', par: 'paralyzed', psn: 'poisoned', tox: 'badly poisoned', slp: 'put to sleep', frz: 'frozen' };
 const STAT_NAME = { atk: 'Attack', def: 'Defense', spa: 'Sp. Atk', spd: 'Sp. Def', spe: 'Speed', accuracy: 'accuracy', evasion: 'evasiveness' };
 
+// "149/182 brn" | "72/100" | "50/100g" | "0 fnt" -> numbers. The champions engine
+// mod tags the opponent's HP with a bar-colour letter at exactly 50% and 20%
+// ("50/100g"); reading that as a number is what used to print NaN.
+export function parseCond(cond) {
+  const [hpPart, status] = String(cond || '').trim().split(' ');
+  if (hpPart === '0' || status === 'fnt') return { hp: 0, maxhp: 100, pct: 0, exact: false, status: 'fnt', fainted: true };
+  const m = /^(\d+)(?:\/(\d+))?/.exec(hpPart || '');
+  const hp = m ? Number(m[1]) : 0;
+  const maxhp = m && m[2] ? Number(m[2]) : 100;
+  return { hp, maxhp, pct: Math.round((hp / maxhp) * 100), exact: maxhp !== 100, status: status || null, fainted: false };
+}
 export function hpText(cond) {
-  const [hp, rest] = String(cond || '').split(' ');
-  if (hp === '0' || rest === 'fnt') return '0 HP';
-  const [a, b] = hp.split('/').map(Number);
-  return b === 100 ? `${a}%` : `${a}/${b} HP (${Math.round((a / b) * 100)}%)`;
+  const h = parseCond(cond);
+  if (h.fainted) return '0 HP';
+  return h.exact ? `${h.hp}/${h.maxhp} HP (${h.pct}%)` : `${h.pct}%`;
 }
 
 export function HpBar({ mon, exact }) {
@@ -67,60 +77,88 @@ export function HpBar({ mon, exact }) {
   );
 }
 
-// anim: 'attack' | 'hit' | null
-export function MonCard({ mon, side, back, exact, anim }) {
-  if (!mon) return <div className={`battle-mon empty ${side}`}><span className="dim small">no Pokémon</span></div>;
+const STAT_SHORT = { atk: 'Atk', def: 'Def', spa: 'SpA', spd: 'SpD', spe: 'Spe', accuracy: 'Acc', evasion: 'Eva' };
+
+// One Pokémon on the field: a status plate (name, HP, status, stat stages, item /
+// ability) above its sprite. `targetable` makes it a click target while a move
+// is being aimed; `marks` are the actions already aimed at it; `badge` is the
+// action chosen for one of your own. anim: 'attack' | 'hit' | null.
+export function Battler({ mon, side, back, exact, anim, targetable, marks = [], onClick, badge }) {
+  const cls = ['battler', side, mon?.fainted && 'fainted', anim && `anim-${anim}`, targetable && 'targetable',
+    marks.length && 'targeted', !mon && 'empty'].filter(Boolean).join(' ');
+  if (!mon) return <div className={cls}><div className="battler-sprite"><span className="dim small">empty</span></div></div>;
   const boosts = Object.entries(mon.boosts || {}).filter(([, v]) => v);
+  const click = targetable ? onClick : undefined;
   return (
-    <div className={`battle-mon ${side} ${mon.fainted ? 'fainted' : ''} ${anim ? `anim-${anim}` : ''}`}>
-      <BattleSprite species={mon.species} back={back}
-        className={anim === 'attack' ? 'lunge' : anim === 'hit' ? 'shake' : ''} />
-      <div className="battle-mon-info">
-        <div className="battle-mon-name">
-          <Name side={side} name={mon.species} />{mon.mega ? ' ✦' : ''}
+    <div className={cls} onClick={click} role={targetable ? 'button' : undefined} tabIndex={targetable ? 0 : undefined}
+      onKeyDown={targetable ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick(); } } : undefined}>
+      <div className="plate">
+        <div className="plate-head">
+          <Name side={side} name={mon.species} />
+          {mon.mega ? <span className="mega-mark" title="Mega Evolved">✦</span> : null}
           {mon.status && mon.status !== 'fnt' && (
             <span className={`chip status-${mon.status}`}>{STATUS_LABEL[mon.status] || mon.status}</span>
           )}
         </div>
         <HpBar mon={mon} exact={exact} />
-        <div className="small dim">
-          {mon.item ? `@ ${mon.item}` : ''}{mon.ability ? ` · ${mon.ability}` : ''}
-          {boosts.length > 0 && ' · ' + boosts.map(([k, v]) => `${v > 0 ? '+' : ''}${v} ${k}`).join(' ')}
-        </div>
+        {(boosts.length > 0 || mon.item || mon.ability) && (
+          <div className="plate-meta">
+            {boosts.map(([k, v]) => (
+              <span key={k} className={`stage ${v > 0 ? 'up' : 'down'}`}>{STAT_SHORT[k] || k} {v > 0 ? '+' : '−'}{Math.abs(v)}</span>
+            ))}
+            {(mon.item || mon.ability) && (
+              <span className="dim small">{mon.item ? `@ ${mon.item}` : ''}{mon.item && mon.ability ? ' · ' : ''}{mon.ability || ''}</span>
+            )}
+          </div>
+        )}
       </div>
+      <div className="battler-sprite">
+        <BattleSprite species={mon.species} back={back} size={back ? 128 : 112}
+          className={anim === 'attack' ? 'lunge' : anim === 'hit' ? 'shake' : ''} />
+        {targetable && <div className="target-hint">target</div>}
+        {marks.length > 0 && <div className="target-mark">◎ {marks.join(' · ')}</div>}
+      </div>
+      {badge && <div className="battler-badge"><LogLine tokens={badge} inline /></div>}
     </div>
   );
 }
 
 // ---------------------------------------------------------------- field conditions
+// `key` indexes FIELD_EFFECTS (shared.jsx) for the effect listing on the card.
 export const WEATHER = {
-  SunnyDay: { label: 'Harsh sunlight', cls: 'w-sun', icon: '☀️', type: 'Fire' },
-  RainDance: { label: 'Rain', cls: 'w-rain', icon: '🌧️', type: 'Water' },
-  Sandstorm: { label: 'Sandstorm', cls: 'w-sand', icon: '🌪️', type: 'Rock' },
-  Snow: { label: 'Snow', cls: 'w-snow', icon: '❄️', type: 'Ice' },
-  Snowscape: { label: 'Snow', cls: 'w-snow', icon: '❄️', type: 'Ice' },
-  Hail: { label: 'Hail', cls: 'w-snow', icon: '❄️', type: 'Ice' },
+  SunnyDay: { label: 'Harsh sunlight', cls: 'w-sun', icon: '☀️', type: 'Fire', key: 'sun' },
+  RainDance: { label: 'Rain', cls: 'w-rain', icon: '🌧️', type: 'Water', key: 'rain' },
+  Sandstorm: { label: 'Sandstorm', cls: 'w-sand', icon: '🌪️', type: 'Rock', key: 'sand' },
+  Snow: { label: 'Snow', cls: 'w-snow', icon: '❄️', type: 'Ice', key: 'snow' },
+  Snowscape: { label: 'Snow', cls: 'w-snow', icon: '❄️', type: 'Ice', key: 'snow' },
+  Hail: { label: 'Hail', cls: 'w-snow', icon: '❄️', type: 'Ice', key: 'snow' },
 };
 export const TERRAIN = {
-  'Electric Terrain': { label: 'Electric Terrain', cls: 't-electric', icon: '⚡' },
-  'Grassy Terrain': { label: 'Grassy Terrain', cls: 't-grassy', icon: '🌿' },
-  'Psychic Terrain': { label: 'Psychic Terrain', cls: 't-psychic', icon: '🔮' },
-  'Misty Terrain': { label: 'Misty Terrain', cls: 't-misty', icon: '🌫️' },
+  'Electric Terrain': { label: 'Electric Terrain', cls: 't-electric', icon: '⚡', key: 'electric' },
+  'Grassy Terrain': { label: 'Grassy Terrain', cls: 't-grassy', icon: '🌿', key: 'grassy' },
+  'Psychic Terrain': { label: 'Psychic Terrain', cls: 't-psychic', icon: '🔮', key: 'psychic' },
+  'Misty Terrain': { label: 'Misty Terrain', cls: 't-misty', icon: '🌫️', key: 'misty' },
 };
 export const weatherInfo = (name) => (name ? WEATHER[name] || { label: name, cls: 'w-other', icon: '🌀' } : null);
 export const terrainInfo = (name) => (name ? TERRAIN[name] || { label: name, cls: 't-other', icon: '▦' } : null);
 
-const ATE = { Aerilate: 'Flying', Pixilate: 'Fairy', Refrigerate: 'Ice', Galvanize: 'Electric', Dragonize: 'Dragon' };
+// Keyed by ability id: the engine's request names abilities as ids ("aerilate").
+const ATE = { aerilate: 'Flying', pixilate: 'Fairy', refrigerate: 'Ice', galvanize: 'Electric', dragonize: 'Dragon' };
+const ABILITY_LABEL = { aerilate: 'Aerilate', pixilate: 'Pixilate', refrigerate: 'Refrigerate', galvanize: 'Galvanize',
+  dragonize: 'Dragonize', liquidvoice: 'Liquid Voice' };
 // The type a move will actually have right now (Weather Ball under weather,
-// Normal moves under an -ate ability). `why` explains the change.
-export function effectiveMoveType(moveName, baseType, weatherName, ability) {
+// Normal moves under an -ate ability, sound moves under Liquid Voice). `why`
+// explains the change; `flags` are the move's flags when the caller has them.
+export function effectiveMoveType(moveName, baseType, weatherName, ability, flags) {
   const w = weatherInfo(weatherName);
+  const ab = toID(ability);
   if (moveName === 'Weather Ball') {
     if (w?.type) return { type: w.type, why: `${w.label}: 100 BP` };
-    if (ATE[ability]) return { type: ATE[ability], why: ability };
+    if (ATE[ab]) return { type: ATE[ab], why: ABILITY_LABEL[ab] };
     return { type: 'Normal' };
   }
-  if (baseType === 'Normal' && ATE[ability]) return { type: ATE[ability], why: ability };
+  if (ab === 'liquidvoice' && flags?.sound && baseType !== 'Water') return { type: 'Water', why: ABILITY_LABEL[ab] };
+  if (baseType === 'Normal' && ATE[ab]) return { type: ATE[ab], why: ABILITY_LABEL[ab] };
   return { type: baseType };
 }
 
@@ -138,11 +176,12 @@ export function FieldStrip({ timers, field, sides }) {
       <div className={`field-card ${w ? w.cls : 'none'}`}>
         <div className="field-card-title">{w ? `${w.icon} ${w.label}` : '☁️ Clear skies'}</div>
         {w && <div className="field-card-turns">{turnsText(timers?.weather?.turns)}</div>}
-        {w?.type && <div className="small">Weather Ball → <TypeChip t={w.type} /></div>}
+        {w?.key && <FieldEffects kind="weather" k={w.key} className="small" />}
       </div>
       <div className={`field-card ${t ? t.cls : 'none'}`}>
         <div className="field-card-title">{t ? `${t.icon} ${t.label}` : '▦ No terrain'}</div>
         {t && <div className="field-card-turns">{turnsText(timers?.terrain?.turns)}</div>}
+        {t?.key && <FieldEffects kind="terrain" k={t.key} className="small" />}
       </div>
       {pseudo.map((p) => (
         <div key={p.name} className="field-card t-room">
@@ -168,99 +207,169 @@ const NOISE = new Set(['', 't:', 'j', 'l', 'request', 'inactive', 'inactiveoff',
   'seed', 'gametype', 'rated', 'c', 'chat', 'raw', 'html', 'uhtml', 'uhtmlchange', 'split', '-hint', 'n',
   'showteam', 'bigerror', 'error', 'callback', 'title', 'join', 'leave', 'name']);
 const N = (pos) => ({ name: who(pos), side: sideOfPos(pos) });
-const H = (cond) => ({ hp: hpText(cond) });
 const clean = (s) => String(s || '').replace(/^(move|ability|item): /, '');
 const isPos = (x) => /^p[12][a-c]?:/.test(x || '');
+// "[from] brn" -> "burn": what caused residual damage or healing, in words.
+const SOURCE = { brn: 'burn', psn: 'poison', tox: 'poison', sandstorm: 'sandstorm', hail: 'hail', snow: 'snow',
+  recoil: 'recoil', drain: 'drain', confusion: 'confusion' };
+function sourceOf(parts) {
+  const from = parts.slice(3).find((x) => String(x).startsWith('[from]'));
+  if (!from) return null;
+  const text = clean(from.slice(6).trim());
+  return SOURCE[text.toLowerCase()] || text;
+}
 
-// A log line -> array of tokens (string | {name, side} | {hp} | {em}) or null.
-export function formatLine(line) {
+// A log's HP memory (slot -> last known HP) so damage and heal lines can say
+// how much changed. LogView keeps one per render; the playback banner has none.
+export const newHpMemo = () => new Map();
+function hpToken(memo, pos, cond) {
+  const h = parseCond(cond);
+  const key = posKey(pos);
+  let delta = null;
+  if (memo && key) {
+    const prev = memo.get(key);
+    if (prev && !prev.fainted) {
+      if (prev.exact && (h.exact || h.fainted)) delta = { n: (h.fainted ? 0 : h.hp) - prev.hp, exact: true };
+      else if (!prev.exact && !h.exact) delta = { n: h.pct - prev.pct, exact: false };
+    }
+    memo.set(key, h);
+  }
+  return { hp: h, delta };
+}
+
+// A log line -> {kind, side?, eff?, tokens} or null. Tokens: string | {name, side} |
+// {hp, delta} | {move} | {status, text} | {stat, dir} | {src} | {em}. `kind` and
+// `side` (whose Pokémon the line is about) drive the log's typography.
+export function formatLine(line, memo) {
   const p = line.split('|');
   const c = p[1];
   if (NOISE.has(c)) return null;
-  const from = p.slice(3).find((x) => x.startsWith('[from]'));
-  const src = from ? ` (${clean(from.slice(6).trim())})` : '';
+  const mem = memo instanceof Map ? memo : null;
+  const src = sourceOf(p);
+  const srcTok = src ? [{ src }] : [];
   const sideName = (pos) => ({ name: sideOfPos(pos) === 'p1' ? 'your' : "the opponent's", side: sideOfPos(pos) });
+  const L = (kind, tokens, extra) => ({ kind, tokens, ...(extra || {}) });
+  const S = (pos) => ({ side: sideOfPos(pos) });
   switch (c) {
-    case 'turn': return [{ em: `Turn ${p[2]}` }];
+    case 'turn': return L('turn', [{ em: `Turn ${p[2]}` }]);
     case 'move': {
       const spread = p.slice(4).some((x) => String(x).startsWith('[spread]'));
       const self = isPos(p[4]) && posKey(p[4]) === posKey(p[2]);
-      if (spread) return [N(p[2]), ` used ${p[3]}`, { em: ' (spread)' }, '.'];
-      return [N(p[2]), ` used ${p[3]}`, ...(isPos(p[4]) && !self ? [' on ', N(p[4])] : []), '.'];
+      const tail = spread ? [{ em: ' (spread)' }] : isPos(p[4]) && !self ? [' on ', N(p[4])] : [];
+      return L('move', [N(p[2]), ' used ', { move: p[3] }, ...tail, '.'], S(p[2]));
     }
     case 'switch': case 'drag':
-      return [sideOfPos(p[2]) === 'p1' ? 'You sent out ' : 'The opponent sent out ', N(p[2]),
-        c === 'drag' ? ' (dragged in).' : '.'];
-    case 'replace': return [N(p[2]), ' revealed itself.'];
-    case 'detailschange': return [N(p[2]), ` became ${String(p[3]).split(',')[0]}!`];
-    case '-mega': return [N(p[2]), ' Mega Evolved!'];
-    case '-damage': return [N(p[2]), ' → ', H(p[3]), src];
-    case '-heal': return [N(p[2]), ' healed → ', H(p[3]), src];
-    case '-sethp': return [N(p[2]), ' → ', H(p[3])];
-    case 'faint': return [N(p[2]), ' fainted!'];
-    case '-status': return [N(p[2]), ` was ${STATUS_VERB[p[3]] || p[3]}!`];
-    case '-curestatus': return [N(p[2]), ` was cured of ${STATUS_LABEL[p[3]] || p[3]}.`];
-    case '-boost': return [N(p[2]), `'s ${STAT_NAME[p[3]] || p[3]} rose${Number(p[4]) > 1 ? ' sharply' : ''}!`];
-    case '-unboost': return [N(p[2]), `'s ${STAT_NAME[p[3]] || p[3]} fell${Number(p[4]) > 1 ? ' harshly' : ''}!`];
-    case '-crit': return ['A critical hit!'];
-    case '-supereffective': return isPos(p[2]) ? ["It's super effective on ", N(p[2]), '!'] : ["It's super effective!"];
-    case '-resisted': return isPos(p[2]) ? ["It's not very effective on ", N(p[2]), '…'] : ["It's not very effective…"];
-    case '-immune': return ["It doesn't affect ", N(p[2]), '.'];
-    case '-miss': return [N(p[2]), "'s attack missed", ...(isPos(p[3]) ? [' ', N(p[3])] : []), '.'];
-    case '-fail': return ['But it failed.'];
+      mem?.set(posKey(p[2]), parseCond(p[4]));
+      return L('switch', [sideOfPos(p[2]) === 'p1' ? 'You sent out ' : 'The opponent sent out ', N(p[2]),
+        c === 'drag' ? ' (dragged in).' : '.'], S(p[2]));
+    case 'replace':
+      mem?.set(posKey(p[2]), parseCond(p[4]));
+      return L('switch', [N(p[2]), ' revealed itself.'], S(p[2]));
+    case 'detailschange': return L('mega', [N(p[2]), ` became ${String(p[3]).split(',')[0]}!`], S(p[2]));
+    case '-mega': return L('mega', [N(p[2]), ' Mega Evolved!'], S(p[2]));
+    case '-damage': case '-sethp': return L('damage', [N(p[2]), ' ', hpToken(mem, p[2], p[3]), ...srcTok], S(p[2]));
+    case '-heal': return L('heal', [N(p[2]), ' ', hpToken(mem, p[2], p[3]), ...srcTok], S(p[2]));
+    case 'faint':
+      mem?.set(posKey(p[2]), parseCond('0 fnt'));
+      return L('faint', [N(p[2]), ' fainted!'], S(p[2]));
+    case '-status': return L('status', [N(p[2]), ' was ', { status: p[3], text: STATUS_VERB[p[3]] || p[3] }, '!'], S(p[2]));
+    case '-curestatus': return L('status', [N(p[2]), ` was cured of ${STATUS_LABEL[p[3]] || p[3]}.`], S(p[2]));
+    case '-boost':
+      return L('boost', [N(p[2]), "'s ", { stat: `${STAT_NAME[p[3]] || p[3]} rose${Number(p[4]) > 1 ? ' sharply' : ''}`, dir: 'up' }, '!'], S(p[2]));
+    case '-unboost':
+      return L('boost', [N(p[2]), "'s ", { stat: `${STAT_NAME[p[3]] || p[3]} fell${Number(p[4]) > 1 ? ' harshly' : ''}`, dir: 'down' }, '!'], S(p[2]));
+    case '-crit': return L('effect', ['A critical hit!'], { eff: 'crit' });
+    case '-supereffective': return L('effect', isPos(p[2]) ? ["It's super effective on ", N(p[2]), '!'] : ["It's super effective!"], { eff: 'super' });
+    case '-resisted': return L('effect', isPos(p[2]) ? ["It's not very effective on ", N(p[2]), '…'] : ["It's not very effective…"], { eff: 'resist' });
+    case '-immune': return L('effect', ["It doesn't affect ", N(p[2]), '.'], { eff: 'immune' });
+    case '-miss': return L('effect', [N(p[2]), "'s attack missed", ...(isPos(p[3]) ? [' ', N(p[3])] : []), '.'], { eff: 'miss' });
+    case '-fail': return L('effect', ['But it failed.'], { eff: 'fail' });
     case 'cant': {
       // |cant|POKEMON|REASON|MOVE|[of] SOURCE — blocked by an ability (Armor Tail, Dazzling, Damp …)
       // or unable to act (flinch, paralysis, sleep, recharge …).
       const reason = String(p[3] || '');
       const of = p.slice(4).find((x) => String(x).startsWith('[of] '));
       if (reason.startsWith('ability:') && of) {
-        return [N(p[2]), `'s ${clean(reason)} blocked `, N(of.slice(5)), `'s ${p[4]}!`];
+        return L('cant', [N(p[2]), `'s ${clean(reason)} blocked `, N(of.slice(5)), "'s ", { move: p[4] }, '!'], S(p[2]));
       }
       const why = { flinch: 'flinched and could not move!', par: 'is paralyzed! It cannot move!', slp: 'is fast asleep.',
         frz: 'is frozen solid!', recharge: 'must recharge!', 'ability: Truant': 'is loafing around!' }[reason];
-      return why ? [N(p[2]), ` ${why}`] : [N(p[2]), ` can't move (${clean(reason)}).`];
+      return L('cant', why ? [N(p[2]), ` ${why}`] : [N(p[2]), ` can't move (${clean(reason)}).`], S(p[2]));
     }
     case '-weather':
       if (p.includes('[upkeep]')) return null;
-      return [p[2] === 'none' ? 'The weather cleared.' : `${weatherInfo(p[2])?.label || p[2]} started.`];
-    case '-fieldstart': return [`${clean(p[2])} took effect.`];
-    case '-fieldend': return [`${clean(p[2])} ended.`];
-    case '-sidestart': return [`${clean(p[3])} started on `, sideName(p[2]), ' side.'];
-    case '-sideend': return [`${clean(p[3])} ended on `, sideName(p[2]), ' side.'];
-    case '-ability': return [N(p[2]), `'s ${p[3]}!`];
-    case '-item': return [N(p[2]), `'s ${p[3]}${src}.`];
-    case '-enditem': return [N(p[2]), ` used its ${p[3]}.`];
+      return L('field', [p[2] === 'none' ? 'The weather cleared.' : `${weatherInfo(p[2])?.label || p[2]} started.`]);
+    case '-fieldstart': return L('field', [`${clean(p[2])} took effect.`]);
+    case '-fieldend': return L('field', [`${clean(p[2])} ended.`]);
+    case '-sidestart': return L('field', [`${clean(p[3])} started on `, sideName(p[2]), ' side.']);
+    case '-sideend': return L('field', [`${clean(p[3])} ended on `, sideName(p[2]), ' side.']);
+    case '-ability': return L('ability', [N(p[2]), "'s ", { em: p[3] }, '!'], S(p[2]));
+    case '-item': return L('item', [N(p[2]), "'s ", { em: p[3] }, ...srcTok, '.'], S(p[2]));
+    case '-enditem': {
+      // Eaten ([eat]), knocked off / stolen ([from] move: ...), or simply consumed (Focus Sash).
+      const fromMove = p.slice(3).some((x) => /^\[from\] move:/.test(String(x)));
+      const verb = p.includes('[eat]') ? ' ate its ' : fromMove ? ' lost its ' : ' used its ';
+      return L('item', [N(p[2]), verb, { em: p[3] }, ...(fromMove ? srcTok : []), '.'], S(p[2]));
+    }
     case '-activate': {
       const what = clean(p[3]);
-      if (what === 'Protect' || what === 'Detect' || what === 'Endure') return [N(p[2]), ` is protected by ${what}!`];
-      return [N(p[2]), `: ${what}.`];
+      if (what === 'Protect' || what === 'Detect' || what === 'Endure') return L('protect', [N(p[2]), ` is protected by ${what}!`], S(p[2]));
+      if (String(p[3] || '').startsWith('ability:')) return L('ability', [N(p[2]), "'s ", { em: what }, '!'], S(p[2]));
+      return L('info', [N(p[2]), `: ${what}.`], S(p[2]));
     }
-    case '-hitcount': return [`Hit ${p[3]} time(s)!`];
-    case '-prepare': return [N(p[2]), ` is preparing ${p[3]}.`];
+    case '-hitcount': return L('info', [`Hit ${p[3]} time(s)!`]);
+    case '-prepare': return L('info', [N(p[2]), ` is preparing ${p[3]}.`], S(p[2]));
     case '-singleturn': case '-singlemove': {
       const what = clean(p[3]);
-      if (what === 'Protect') return [N(p[2]), ' protected itself.'];
-      if (what === 'Endure') return [N(p[2]), ' braced itself.'];
-      if (what === 'Wide Guard' || what === 'Quick Guard') return [`${what} shields `, sideName(p[2]), ' side!'];
-      if (what === 'Helping Hand') return [N(p[2]), ' is ready to be helped!'];
-      if (what === 'Focus Punch') return [N(p[2]), ' is tightening its focus.'];
-      return [N(p[2]), `: ${what}.`];
+      if (what === 'Protect') return L('protect', [N(p[2]), ' protected itself.'], S(p[2]));
+      if (what === 'Endure') return L('protect', [N(p[2]), ' braced itself.'], S(p[2]));
+      if (what === 'Wide Guard' || what === 'Quick Guard') return L('protect', [`${what} shields `, sideName(p[2]), ' side!'], S(p[2]));
+      if (what === 'Helping Hand') return L('info', [N(p[2]), ' is ready to be helped!'], S(p[2]));
+      if (what === 'Focus Punch') return L('info', [N(p[2]), ' is tightening its focus.'], S(p[2]));
+      return L('info', [N(p[2]), `: ${what}.`], S(p[2]));
     }
-    case '-message': case 'message': return [p[2]];
-    case 'win': return [{ em: `${p[2]} won the battle!` }];
-    case 'tie': return [{ em: 'The battle ended in a tie.' }];
-    default: return [`${c}: ${p.slice(2).join(' ')}`];
+    case '-message': case 'message': return L('info', [p[2]]);
+    case 'win': return L('result', [{ em: `${p[2]} won the battle!` }]);
+    case 'tie': return L('result', [{ em: 'The battle ended in a tie.' }]);
+    default: return L('info', [`${c}: ${p.slice(2).join(' ')}`]);
   }
 }
 
-export function LogLine({ tokens, inline }) {
-  const Tag = inline ? 'span' : 'div';
+const hpClass = (pct) => (pct > 50 ? 'ok' : pct > 20 ? 'warn' : 'bad');
+// "149/182 82% −33": exact HP (your side) in mono, the percentage as a coloured
+// pill, then the change since the last line about this slot.
+function HpToken({ hp: h, delta }) {
+  const change = delta && delta.n !== 0 ? (
+    <span className={`log-hp-delta ${delta.n < 0 ? 'down' : 'up'}`}>
+      {delta.n < 0 ? '−' : '+'}{Math.abs(delta.n)}{delta.exact ? '' : '%'}
+    </span>
+  ) : null;
+  if (h.fainted) return <span className="log-hp bad"><span className="log-hp-pct">0 HP</span>{change}</span>;
   return (
-    <Tag className="log-line">
-      {tokens.map((t, i) => {
+    <span className={`log-hp ${hpClass(h.pct)}`}>
+      {h.exact && <span className="log-hp-num">{h.hp}/{h.maxhp}</span>}
+      <span className="log-hp-pct">{h.pct}%</span>
+      {change}
+    </span>
+  );
+}
+
+// Renders a formatted line ({kind, side, eff, tokens}) or a bare token array.
+export function LogLine({ line, tokens, inline }) {
+  const toks = tokens || line?.tokens || [];
+  const Tag = inline ? 'span' : 'div';
+  const cls = ['log-line', line?.kind && `kind-${line.kind}`, line?.side && `side-${line.side}`, line?.eff && `eff-${line.eff}`]
+    .filter(Boolean).join(' ');
+  return (
+    <Tag className={cls}>
+      {toks.map((t, i) => {
         if (typeof t === 'string') return t;
         if (t.name !== undefined) return <b key={i} className={`mon-name ${t.side}`}>{t.name}</b>;
-        if (t.hp !== undefined) return <b key={i} className="log-hp">{t.hp}</b>;
+        if (t.hp !== undefined) return <HpToken key={i} hp={t.hp} delta={t.delta} />;
+        if (t.move !== undefined) return <b key={i} className="log-move">{t.move}</b>;
+        if (t.status !== undefined) return <b key={i} className={`log-status-word status-${t.status}`}>{t.text}</b>;
+        if (t.stat !== undefined) return <span key={i} className={`log-stat ${t.dir}`}>{t.stat}</span>;
+        if (t.src !== undefined) return <span key={i} className="log-src"> ({t.src})</span>;
         return <em key={i} className="log-em">{t.em}</em>;
       })}
     </Tag>
@@ -272,16 +381,16 @@ export function LogView({ log }) {
   const [showAll, setShowAll] = useState(false);
   const ref = useRef(null);
   useEffect(() => { if (ref.current) ref.current.scrollTop = ref.current.scrollHeight; }, [log.length, showAll]);
+  const memo = newHpMemo();
   const turns = [];
-  let cur = { turn: 0, lines: [] };
+  let cur = { turn: 0, items: [] };
   for (const line of log) {
-    if (line.startsWith('|turn|')) { turns.push(cur); cur = { turn: Number(line.split('|')[2]), lines: [] }; }
-    else cur.lines.push(line);
+    if (line.startsWith('|turn|')) { turns.push(cur); cur = { turn: Number(line.split('|')[2]), items: [] }; continue; }
+    const item = formatLine(line, memo);
+    if (item) cur.items.push(item);
   }
   turns.push(cur);
-  const blocks = turns
-    .map((t) => ({ ...t, items: t.lines.map(formatLine).filter(Boolean) }))
-    .filter((t) => t.items.length || t.turn > 0);
+  const blocks = turns.filter((t) => t.items.length || t.turn > 0);
   const shown = showAll ? blocks : blocks.slice(-2);
   return (
     <div className="battle-log" ref={ref}>
@@ -293,7 +402,7 @@ export function LogView({ log }) {
       {shown.map((b, bi) => (
         <div key={`${b.turn}:${bi}`} className={`log-turn ${bi === shown.length - 1 ? 'current' : ''}`}>
           <div className="log-turn-head">{b.turn > 0 ? `Turn ${b.turn}` : 'Battle start'}</div>
-          {b.items.map((tokens, i) => <LogLine key={i} tokens={tokens} />)}
+          {b.items.map((item, i) => <LogLine key={i} line={item} />)}
         </div>
       ))}
     </div>
@@ -317,7 +426,7 @@ export function StepBanner({ step, onSkip }) {
         ? <span className="step-order">{ORD[step.index] || `${step.index}th`}{step.total ? ` of ${step.total}` : ''}</span>
         : <span className="step-order dim">{STEP_LABEL[step.kind] || 'Event'}</span>}
       <div className="step-lines">
-        {step.tokens.length ? step.tokens.map((t, i) => <LogLine key={i} tokens={t} />) : <span className="dim">…</span>}
+        {step.tokens.length ? step.tokens.map((t, i) => <LogLine key={i} line={t} />) : <span className="dim">…</span>}
       </div>
       <button className="small" onClick={onSkip}>Skip ▸▸</button>
     </div>
@@ -352,6 +461,59 @@ export function PressurePanel({ data }) {
       </section>
     );
   }
+  // One table per attacker: its damaging moves down the side, the two targets
+  // across the top, the best move on each target in bold. Older sidecars send
+  // only the best hit, so fall back to the one-line form when `moves` is absent.
+  const cell = (h, best) => {
+    if (!h) return <span className="dim">—</span>;
+    if (h.blocked) return <span className="dim">no effect</span>;
+    return (
+      <span className={best ? 'hit best' : 'hit'}>
+        <span className="mono">{h.min}–{h.max}%</span>
+        {h.ko ? <span className={`hit-ko ${h.ko >= 50 ? 'hi' : ''}`}>KO {h.ko}%</span> : null}
+      </span>
+    );
+  };
+  const table = (attacker, attackerSide, targetSide) => {
+    const threats = attacker.threats || [];
+    if (!threats.length || !threats[0].moves) {
+      return threats.map((t) => (
+        <div key={`${attacker.species}-${t.target}`} className="small row-line">
+          <Name side={attackerSide} name={attacker.species} /> → <Name side={targetSide} name={t.target} />: {hit(t)}
+        </div>
+      ));
+    }
+    const moves = threats[0].moves.map((m) => m.move);
+    return (
+      <table key={`${attackerSide}${attacker.slot}`} className="hit-table">
+        <thead>
+          <tr>
+            <th><Name side={attackerSide} name={attacker.species} /></th>
+            {threats.map((t) => <th key={t.target}><Name side={targetSide} name={t.target} /></th>)}
+          </tr>
+        </thead>
+        <tbody>
+          {moves.map((mv) => {
+            const info = threats[0].moves.find((m) => m.move === mv);
+            return (
+              <tr key={mv}>
+                <td className="hit-move">
+                  {mv}{' '}
+                  {info?.type && <TypeChip t={info.type} />}
+                  {info?.spread ? <span className="dim" title="spread move: both targets, x0.75 each"> ⇶</span> : null}
+                  {info?.priority ? <span className="dim" title={`priority ${info.priority > 0 ? '+' : ''}${info.priority}`}> ⚡{info.priority > 0 ? '+' : ''}{info.priority}</span> : null}
+                </td>
+                {threats.map((t) => {
+                  const h = t.moves.find((m) => m.move === mv);
+                  return <td key={t.target}>{cell(h, !!h && !h.blocked && t.move === mv)}</td>;
+                })}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    );
+  };
   return (
     <section className="panel pressure">
       <div className="panel-title">Turn read{data.trickRoom ? ' · Trick Room' : ''}</div>
@@ -364,19 +526,11 @@ export function PressurePanel({ data }) {
       <div className="pressure-grid">
         <div>
           <div className="dim small">You threaten</div>
-          {data.ours.map((o) => o.threats.map((t) => (
-            <div key={`${o.species}-${t.target}`} className="small row-line">
-              <Name side="p1" name={o.species} /> → <Name side="p2" name={t.target} />: {hit(t)}
-            </div>
-          )))}
+          {data.ours.map((o) => table(o, 'p1', 'p2'))}
         </div>
         <div>
           <div className="dim small">They threaten</div>
-          {data.theirs.map((f) => f.threats.map((t) => (
-            <div key={`${f.species}-${t.target}`} className="small row-line">
-              <Name side="p2" name={f.species} /> → <Name side="p1" name={t.target} />: {hit(t)}
-            </div>
-          )))}
+          {data.theirs.map((f) => table(f, 'p2', 'p1'))}
         </div>
       </div>
       <div className="dim small">~ = estimated from base stats. Then ask: how can they respond to what I threaten, and how do I respond to what they threaten?</div>

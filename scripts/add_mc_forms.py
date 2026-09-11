@@ -43,17 +43,17 @@ LEARNSET_SOURCE = ("provisional: Gen 9 mainline learnset intersected with the "
 # Gen 9 mainline data for species absent from every Champions datamine file.
 MAINLINE = {
     "rillaboom": {
-        "name": "Rillaboom", "types": ["Grass"],
+        "name": "Rillaboom", "types": ["Grass"], "weight_kg": 90,
         "base": {"hp": 100, "atk": 125, "def": 90, "spa": 60, "spd": 70, "spe": 85},
         "abilities": ["Overgrow", "Grassy Surge"],
     },
     "salamence": {
-        "name": "Salamence", "types": ["Dragon", "Flying"],
+        "name": "Salamence", "types": ["Dragon", "Flying"], "weight_kg": 102.6,
         "base": {"hp": 95, "atk": 135, "def": 80, "spa": 110, "spd": 80, "spe": 100},
         "abilities": ["Intimidate", "Moxie"],
     },
     "salamence-mega": {
-        "name": "Mega Salamence", "types": ["Dragon", "Flying"],
+        "name": "Mega Salamence", "types": ["Dragon", "Flying"], "weight_kg": 112.6,
         "base": {"hp": 95, "atk": 145, "def": 130, "spa": 120, "spd": 90, "spe": 120},
         # Mainline ability; Champions has not confirmed it, so flagged provisional.
         "abilities": ["Aerilate"],
@@ -64,19 +64,19 @@ MAINLINE = {
 NEW_FORMS: list[tuple[str, dict]] = [
     ("rillaboom", {}),
     ("salamence", {"mega_forms": ["salamence-mega"]}),
-    ("golisopod", {"from_tab": True, "mega_forms": ["golisopod-mega"]}),
-    ("baxcalibur", {"from_tab": True, "mega_forms": ["baxcalibur-mega"]}),
+    ("golisopod", {"from_tab": True, "weight_kg": 108, "mega_forms": ["golisopod-mega"]}),
+    ("baxcalibur", {"from_tab": True, "weight_kg": 210, "mega_forms": ["baxcalibur-mega"]}),
     ("salamence-mega", {"mega_of": "salamence", "mega_stone": "Salamencite",
                         "abilities_provisional": True}),
     ("golisopod-mega", {"from_tab": True, "mega_of": "golisopod",
-                        "mega_stone": "Golisopodite"}),
+                        "mega_stone": "Golisopodite", "weight_kg": 148}),
     ("baxcalibur-mega", {"from_tab": True, "mega_of": "baxcalibur",
-                         "mega_stone": "Baxcaliburite"}),
-    ("absol-mega-z", {"from_tab": True, "mega_of": "absol", "mega_stone": "Absolite Z"}),
+                         "mega_stone": "Baxcaliburite", "weight_kg": 315}),
+    ("absol-mega-z", {"from_tab": True, "mega_of": "absol", "mega_stone": "Absolite Z", "weight_kg": 49}),
     ("garchomp-mega-z", {"from_tab": True, "mega_of": "garchomp",
-                         "mega_stone": "Garchompite Z"}),
+                         "mega_stone": "Garchompite Z", "weight_kg": 99}),
     ("lucario-mega-z", {"from_tab": True, "mega_of": "lucario",
-                        "mega_stone": "Lucarionite Z"}),
+                        "mega_stone": "Lucarionite Z", "weight_kg": 49.4}),
 ]
 NEW_SPECIES = ["rillaboom", "salamence", "golisopod", "baxcalibur"]
 
@@ -147,6 +147,11 @@ def build_entry(pid: str, spec: dict, tab: dict) -> dict:
     abilities = list(src.get("abilities", []))
     entry = {"id": pid, "name": src["name"], "types": list(src["types"]),
              "base": dict(src["base"]), "abilities": abilities}
+    # Weights (Low Kick / Grass Knot / Heavy Slam / Heat Crash): the pokemon-showdown
+    # champions mod's datamined values, hard-coded above; the megas tab has none.
+    weight = spec.get("weight_kg") or src.get("weight_kg")
+    if weight:
+        entry["weight_kg"] = weight
     if "mega_of" in spec:
         entry["mega_of"] = spec["mega_of"]
         entry["mega_stone"] = spec["mega_stone"]
@@ -194,6 +199,9 @@ def main() -> int:
             if REG not in regs:
                 regs.append(REG)
                 regs.sort()
+            weight = spec.get("weight_kg") or MAINLINE.get(pid, {}).get("weight_kg")
+            if weight and not dex[pid].get("weight_kg"):
+                dex[pid]["weight_kg"] = weight
             # Apply abilities confirmed after the form was first added.
             if pid in CONFIRMED_ABILITIES:
                 mon = dex[pid]

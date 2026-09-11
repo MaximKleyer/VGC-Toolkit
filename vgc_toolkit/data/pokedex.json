@@ -21,7 +21,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 18.6
  },
  "qwilfish": {
   "id": "qwilfish",
@@ -46,7 +47,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 3.9
  },
  "sceptile": {
   "id": "sceptile",
@@ -72,7 +74,8 @@
   ],
   "mega_forms": [
    "sceptile-mega"
-  ]
+  ],
+  "weight_kg": 52.2
  },
  "blaziken": {
   "id": "blaziken",
@@ -99,7 +102,8 @@
   ],
   "mega_forms": [
    "blaziken-mega"
-  ]
+  ],
+  "weight_kg": 52
  },
  "swampert": {
   "id": "swampert",
@@ -126,7 +130,8 @@
   ],
   "mega_forms": [
    "swampert-mega"
-  ]
+  ],
+  "weight_kg": 81.9
  },
  "mawile": {
   "id": "mawile",
@@ -154,7 +159,8 @@
   ],
   "mega_forms": [
    "mawile-mega"
-  ]
+  ],
+  "weight_kg": 11.5
  },
  "metagross": {
   "id": "metagross",
@@ -181,7 +187,8 @@
   ],
   "mega_forms": [
    "metagross-mega"
-  ]
+  ],
+  "weight_kg": 550
  },
  "staraptor": {
   "id": "staraptor",
@@ -208,7 +215,8 @@
   ],
   "mega_forms": [
    "staraptor-mega"
-  ]
+  ],
+  "weight_kg": 24.9
  },
  "musharna": {
   "id": "musharna",
@@ -232,7 +240,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 60.5
  },
  "scolipede": {
   "id": "scolipede",
@@ -260,7 +269,8 @@
   ],
   "mega_forms": [
    "scolipede-mega"
-  ]
+  ],
+  "weight_kg": 200.5
  },
  "scrafty": {
   "id": "scrafty",
@@ -288,7 +298,8 @@
   ],
   "mega_forms": [
    "scrafty-mega"
-  ]
+  ],
+  "weight_kg": 30
  },
  "eelektross": {
   "id": "eelektross",
@@ -313,7 +324,8 @@
   ],
   "mega_forms": [
    "eelektross-mega"
-  ]
+  ],
+  "weight_kg": 80.5
  },
  "pyroar": {
   "id": "pyroar",
@@ -341,7 +353,8 @@
   ],
   "mega_forms": [
    "pyroar-mega"
-  ]
+  ],
+  "weight_kg": 81.5
  },
  "malamar": {
   "id": "malamar",
@@ -369,7 +382,8 @@
   ],
   "mega_forms": [
    "malamar-mega"
-  ]
+  ],
+  "weight_kg": 47
  },
  "barbaracle": {
   "id": "barbaracle",
@@ -397,7 +411,8 @@
   ],
   "mega_forms": [
    "barbaracle-mega"
-  ]
+  ],
+  "weight_kg": 96
  },
  "dragalge": {
   "id": "dragalge",
@@ -425,7 +440,8 @@
   ],
   "mega_forms": [
    "dragalge-mega"
-  ]
+  ],
+  "weight_kg": 81.5
  },
  "grimmsnarl": {
   "id": "grimmsnarl",
@@ -450,7 +466,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 61
  },
  "falinks": {
   "id": "falinks",
@@ -476,7 +493,8 @@
   ],
   "mega_forms": [
    "falinks-mega"
-  ]
+  ],
+  "weight_kg": 62
  },
  "overqwil": {
   "id": "overqwil",
@@ -501,7 +519,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 60.5
  },
  "houndstone": {
   "id": "houndstone",
@@ -524,7 +543,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 15
  },
  "annihilape": {
   "id": "annihilape",
@@ -549,7 +569,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 56
  },
  "gholdengo": {
   "id": "gholdengo",
@@ -572,7 +593,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 30
  },
  "venusaur": {
   "id": "venusaur",
@@ -599,7 +621,8 @@
   ],
   "mega_forms": [
    "venusaur-mega"
-  ]
+  ],
+  "weight_kg": 100
  },
  "charizard": {
   "id": "charizard",
@@ -627,7 +650,8 @@
   "mega_forms": [
    "charizard-mega-x",
    "charizard-mega-y"
-  ]
+  ],
+  "weight_kg": 90.5
  },
  "blastoise": {
   "id": "blastoise",
@@ -653,7 +677,8 @@
   ],
   "mega_forms": [
    "blastoise-mega"
-  ]
+  ],
+  "weight_kg": 85.5
  },
  "beedrill": {
   "id": "beedrill",
@@ -680,7 +705,8 @@
   ],
   "mega_forms": [
    "beedrill-mega"
-  ]
+  ],
+  "weight_kg": 29.5
  },
  "pidgeot": {
   "id": "pidgeot",
@@ -708,7 +734,8 @@
   ],
   "mega_forms": [
    "pidgeot-mega"
-  ]
+  ],
+  "weight_kg": 39.5
  },
  "arbok": {
   "id": "arbok",
@@ -732,7 +759,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 65
  },
  "pikachu": {
   "id": "pikachu",
@@ -755,7 +783,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 6
  },
  "raichu": {
   "id": "raichu",
@@ -782,7 +811,8 @@
   "mega_forms": [
    "raichu-mega-x",
    "raichu-mega-y"
-  ]
+  ],
+  "weight_kg": 30
  },
  "raichu-alola": {
   "id": "raichu-alola",
@@ -805,7 +835,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 21
  },
  "clefable": {
   "id": "clefable",
@@ -832,7 +863,8 @@
   ],
   "mega_forms": [
    "clefable-mega"
-  ]
+  ],
+  "weight_kg": 40
  },
  "ninetales": {
   "id": "ninetales",
@@ -855,7 +887,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 19.9
  },
  "ninetales-alola": {
   "id": "ninetales-alola",
@@ -879,7 +912,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 19.9
  },
  "arcanine": {
   "id": "arcanine",
@@ -902,7 +936,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 155
  },
  "arcanine-hisui": {
   "id": "arcanine-hisui",
@@ -927,7 +962,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 168
  },
  "alakazam": {
   "id": "alakazam",
@@ -954,7 +990,8 @@
   ],
   "mega_forms": [
    "alakazam-mega"
-  ]
+  ],
+  "weight_kg": 48
  },
  "machamp": {
   "id": "machamp",
@@ -978,7 +1015,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 130
  },
  "victreebel": {
   "id": "victreebel",
@@ -1005,7 +1043,8 @@
   ],
   "mega_forms": [
    "victreebel-mega"
-  ]
+  ],
+  "weight_kg": 15.5
  },
  "slowbro": {
   "id": "slowbro",
@@ -1033,7 +1072,8 @@
   ],
   "mega_forms": [
    "slowbro-mega"
-  ]
+  ],
+  "weight_kg": 78.5
  },
  "slowbro-galar": {
   "id": "slowbro-galar",
@@ -1058,7 +1098,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 70.5
  },
  "gengar": {
   "id": "gengar",
@@ -1084,7 +1125,8 @@
   ],
   "mega_forms": [
    "gengar-mega"
-  ]
+  ],
+  "weight_kg": 40.5
  },
  "kangaskhan": {
   "id": "kangaskhan",
@@ -1111,7 +1153,8 @@
   ],
   "mega_forms": [
    "kangaskhan-mega"
-  ]
+  ],
+  "weight_kg": 80
  },
  "starmie": {
   "id": "starmie",
@@ -1139,7 +1182,8 @@
   ],
   "mega_forms": [
    "starmie-mega"
-  ]
+  ],
+  "weight_kg": 80
  },
  "pinsir": {
   "id": "pinsir",
@@ -1166,7 +1210,8 @@
   ],
   "mega_forms": [
    "pinsir-mega"
-  ]
+  ],
+  "weight_kg": 55
  },
  "tauros": {
   "id": "tauros",
@@ -1190,7 +1235,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 88.4
  },
  "tauros-paldea-combat": {
   "id": "tauros-paldea-combat",
@@ -1214,7 +1260,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 115
  },
  "tauros-paldea-aqua": {
   "id": "tauros-paldea-aqua",
@@ -1239,7 +1286,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 110
  },
  "tauros-paldea-blaze": {
   "id": "tauros-paldea-blaze",
@@ -1264,7 +1312,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 85
  },
  "gyarados": {
   "id": "gyarados",
@@ -1291,7 +1340,8 @@
   ],
   "mega_forms": [
    "gyarados-mega"
-  ]
+  ],
+  "weight_kg": 235
  },
  "ditto": {
   "id": "ditto",
@@ -1314,7 +1364,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 4
  },
  "vaporeon": {
   "id": "vaporeon",
@@ -1337,7 +1388,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 29
  },
  "jolteon": {
   "id": "jolteon",
@@ -1360,7 +1412,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 24.5
  },
  "flareon": {
   "id": "flareon",
@@ -1383,7 +1436,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 25
  },
  "aerodactyl": {
   "id": "aerodactyl",
@@ -1411,7 +1465,8 @@
   ],
   "mega_forms": [
    "aerodactyl-mega"
-  ]
+  ],
+  "weight_kg": 59
  },
  "snorlax": {
   "id": "snorlax",
@@ -1435,7 +1490,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 460
  },
  "dragonite": {
   "id": "dragonite",
@@ -1462,7 +1518,8 @@
   ],
   "mega_forms": [
    "dragonite-mega"
-  ]
+  ],
+  "weight_kg": 210
  },
  "meganium": {
   "id": "meganium",
@@ -1488,7 +1545,8 @@
   ],
   "mega_forms": [
    "meganium-mega"
-  ]
+  ],
+  "weight_kg": 100.5
  },
  "typhlosion": {
   "id": "typhlosion",
@@ -1511,7 +1569,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 79.5
  },
  "typhlosion-hisui": {
   "id": "typhlosion-hisui",
@@ -1535,7 +1594,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 69.8
  },
  "feraligatr": {
   "id": "feraligatr",
@@ -1561,7 +1621,8 @@
   ],
   "mega_forms": [
    "feraligatr-mega"
-  ]
+  ],
+  "weight_kg": 88.8
  },
  "ariados": {
   "id": "ariados",
@@ -1586,7 +1647,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 33.5
  },
  "ampharos": {
   "id": "ampharos",
@@ -1612,7 +1674,8 @@
   ],
   "mega_forms": [
    "ampharos-mega"
-  ]
+  ],
+  "weight_kg": 61.5
  },
  "azumarill": {
   "id": "azumarill",
@@ -1637,7 +1700,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 28.5
  },
  "politoed": {
   "id": "politoed",
@@ -1661,7 +1725,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 33.9
  },
  "espeon": {
   "id": "espeon",
@@ -1684,7 +1749,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 26.5
  },
  "umbreon": {
   "id": "umbreon",
@@ -1707,7 +1773,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 27
  },
  "slowking": {
   "id": "slowking",
@@ -1732,7 +1799,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 79.5
  },
  "slowking-galar": {
   "id": "slowking-galar",
@@ -1757,7 +1825,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 79.5
  },
  "forretress": {
   "id": "forretress",
@@ -1781,7 +1850,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 125.8
  },
  "steelix": {
   "id": "steelix",
@@ -1809,7 +1879,8 @@
   ],
   "mega_forms": [
    "steelix-mega"
-  ]
+  ],
+  "weight_kg": 400
  },
  "scizor": {
   "id": "scizor",
@@ -1837,7 +1908,8 @@
   ],
   "mega_forms": [
    "scizor-mega"
-  ]
+  ],
+  "weight_kg": 118
  },
  "heracross": {
   "id": "heracross",
@@ -1865,7 +1937,8 @@
   ],
   "mega_forms": [
    "heracross-mega"
-  ]
+  ],
+  "weight_kg": 54
  },
  "skarmory": {
   "id": "skarmory",
@@ -1893,7 +1966,8 @@
   ],
   "mega_forms": [
    "skarmory-mega"
-  ]
+  ],
+  "weight_kg": 50.5
  },
  "houndoom": {
   "id": "houndoom",
@@ -1921,7 +1995,8 @@
   ],
   "mega_forms": [
    "houndoom-mega"
-  ]
+  ],
+  "weight_kg": 35
  },
  "tyranitar": {
   "id": "tyranitar",
@@ -1948,7 +2023,8 @@
   ],
   "mega_forms": [
    "tyranitar-mega"
-  ]
+  ],
+  "weight_kg": 202
  },
  "pelipper": {
   "id": "pelipper",
@@ -1973,7 +2049,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 28
  },
  "gardevoir": {
   "id": "gardevoir",
@@ -2001,7 +2078,8 @@
   ],
   "mega_forms": [
    "gardevoir-mega"
-  ]
+  ],
+  "weight_kg": 48.4
  },
  "sableye": {
   "id": "sableye",
@@ -2029,7 +2107,8 @@
   ],
   "mega_forms": [
    "sableye-mega"
-  ]
+  ],
+  "weight_kg": 11
  },
  "aggron": {
   "id": "aggron",
@@ -2057,7 +2136,8 @@
   ],
   "mega_forms": [
    "aggron-mega"
-  ]
+  ],
+  "weight_kg": 360
  },
  "medicham": {
   "id": "medicham",
@@ -2084,7 +2164,8 @@
   ],
   "mega_forms": [
    "medicham-mega"
-  ]
+  ],
+  "weight_kg": 31.5
  },
  "manectric": {
   "id": "manectric",
@@ -2111,7 +2192,8 @@
   ],
   "mega_forms": [
    "manectric-mega"
-  ]
+  ],
+  "weight_kg": 40.2
  },
  "sharpedo": {
   "id": "sharpedo",
@@ -2138,7 +2220,8 @@
   ],
   "mega_forms": [
    "sharpedo-mega"
-  ]
+  ],
+  "weight_kg": 88.8
  },
  "camerupt": {
   "id": "camerupt",
@@ -2166,7 +2249,8 @@
   ],
   "mega_forms": [
    "camerupt-mega"
-  ]
+  ],
+  "weight_kg": 220
  },
  "torkoal": {
   "id": "torkoal",
@@ -2190,7 +2274,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 80.4
  },
  "altaria": {
   "id": "altaria",
@@ -2217,7 +2302,8 @@
   ],
   "mega_forms": [
    "altaria-mega"
-  ]
+  ],
+  "weight_kg": 20.6
  },
  "milotic": {
   "id": "milotic",
@@ -2241,7 +2327,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 162
  },
  "castform": {
   "id": "castform",
@@ -2263,7 +2350,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 0.8
  },
  "banette": {
   "id": "banette",
@@ -2290,7 +2378,8 @@
   ],
   "mega_forms": [
    "banette-mega"
-  ]
+  ],
+  "weight_kg": 12.5
  },
  "chimecho": {
   "id": "chimecho",
@@ -2315,7 +2404,8 @@
   ],
   "mega_forms": [
    "chimecho-mega"
-  ]
+  ],
+  "weight_kg": 1
  },
  "absol": {
   "id": "absol",
@@ -2343,7 +2433,8 @@
   "mega_forms": [
    "absol-mega",
    "absol-mega-z"
-  ]
+  ],
+  "weight_kg": 47
  },
  "glalie": {
   "id": "glalie",
@@ -2370,7 +2461,8 @@
   ],
   "mega_forms": [
    "glalie-mega"
-  ]
+  ],
+  "weight_kg": 256.5
  },
  "torterra": {
   "id": "torterra",
@@ -2394,7 +2486,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 310
  },
  "infernape": {
   "id": "infernape",
@@ -2418,7 +2511,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 55
  },
  "empoleon": {
   "id": "empoleon",
@@ -2442,7 +2536,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 84.5
  },
  "luxray": {
   "id": "luxray",
@@ -2466,7 +2561,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 42
  },
  "roserade": {
   "id": "roserade",
@@ -2491,7 +2587,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 14.5
  },
  "rampardos": {
   "id": "rampardos",
@@ -2514,7 +2611,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 102.5
  },
  "bastiodon": {
   "id": "bastiodon",
@@ -2538,7 +2636,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 149.5
  },
  "lopunny": {
   "id": "lopunny",
@@ -2565,7 +2664,8 @@
   ],
   "mega_forms": [
    "lopunny-mega"
-  ]
+  ],
+  "weight_kg": 33.3
  },
  "spiritomb": {
   "id": "spiritomb",
@@ -2589,7 +2689,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 108
  },
  "garchomp": {
   "id": "garchomp",
@@ -2617,7 +2718,8 @@
   "mega_forms": [
    "garchomp-mega",
    "garchomp-mega-z"
-  ]
+  ],
+  "weight_kg": 95
  },
  "lucario": {
   "id": "lucario",
@@ -2646,7 +2748,8 @@
   "mega_forms": [
    "lucario-mega",
    "lucario-mega-z"
-  ]
+  ],
+  "weight_kg": 54
  },
  "hippowdon": {
   "id": "hippowdon",
@@ -2669,7 +2772,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 300
  },
  "toxicroak": {
   "id": "toxicroak",
@@ -2694,7 +2798,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 44.4
  },
  "abomasnow": {
   "id": "abomasnow",
@@ -2721,7 +2826,8 @@
   ],
   "mega_forms": [
    "abomasnow-mega"
-  ]
+  ],
+  "weight_kg": 135.5
  },
  "weavile": {
   "id": "weavile",
@@ -2745,7 +2851,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 34
  },
  "rhyperior": {
   "id": "rhyperior",
@@ -2770,7 +2877,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 282.8
  },
  "leafeon": {
   "id": "leafeon",
@@ -2793,7 +2901,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 25.5
  },
  "glaceon": {
   "id": "glaceon",
@@ -2816,7 +2925,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 25.9
  },
  "gliscor": {
   "id": "gliscor",
@@ -2841,7 +2951,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 42.5
  },
  "mamoswine": {
   "id": "mamoswine",
@@ -2866,7 +2977,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 291
  },
  "gallade": {
   "id": "gallade",
@@ -2893,7 +3005,8 @@
   ],
   "mega_forms": [
    "gallade-mega"
-  ]
+  ],
+  "weight_kg": 52
  },
  "froslass": {
   "id": "froslass",
@@ -2920,7 +3033,8 @@
   ],
   "mega_forms": [
    "froslass-mega"
-  ]
+  ],
+  "weight_kg": 26.6
  },
  "rotom": {
   "id": "rotom",
@@ -2943,7 +3057,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 0.3
  },
  "serperior": {
   "id": "serperior",
@@ -2966,7 +3081,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 63
  },
  "emboar": {
   "id": "emboar",
@@ -2993,7 +3109,8 @@
   ],
   "mega_forms": [
    "emboar-mega"
-  ]
+  ],
+  "weight_kg": 150
  },
  "samurott": {
   "id": "samurott",
@@ -3016,7 +3133,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 94.6
  },
  "samurott-hisui": {
   "id": "samurott-hisui",
@@ -3040,7 +3158,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 58.2
  },
  "watchog": {
   "id": "watchog",
@@ -3064,7 +3183,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 27
  },
  "liepard": {
   "id": "liepard",
@@ -3088,7 +3208,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 37.5
  },
  "simisage": {
   "id": "simisage",
@@ -3111,7 +3232,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 30.5
  },
  "simisear": {
   "id": "simisear",
@@ -3134,7 +3256,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 28
  },
  "simipour": {
   "id": "simipour",
@@ -3157,7 +3280,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 29
  },
  "excadrill": {
   "id": "excadrill",
@@ -3185,7 +3309,8 @@
   ],
   "mega_forms": [
    "excadrill-mega"
-  ]
+  ],
+  "weight_kg": 40.4
  },
  "audino": {
   "id": "audino",
@@ -3212,7 +3337,8 @@
   ],
   "mega_forms": [
    "audino-mega"
-  ]
+  ],
+  "weight_kg": 31
  },
  "conkeldurr": {
   "id": "conkeldurr",
@@ -3236,7 +3362,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 87
  },
  "whimsicott": {
   "id": "whimsicott",
@@ -3261,7 +3388,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 6.6
  },
  "krookodile": {
   "id": "krookodile",
@@ -3286,7 +3414,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 96.3
  },
  "cofagrigus": {
   "id": "cofagrigus",
@@ -3308,7 +3437,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 76.5
  },
  "garbodor": {
   "id": "garbodor",
@@ -3332,7 +3462,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 107.3
  },
  "zoroark": {
   "id": "zoroark",
@@ -3354,7 +3485,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 81.1
  },
  "zoroark-hisui": {
   "id": "zoroark-hisui",
@@ -3377,7 +3509,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 73
  },
  "reuniclus": {
   "id": "reuniclus",
@@ -3401,7 +3534,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 20.1
  },
  "vanilluxe": {
   "id": "vanilluxe",
@@ -3425,7 +3559,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 57.5
  },
  "emolga": {
   "id": "emolga",
@@ -3449,7 +3584,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 5
  },
  "chandelure": {
   "id": "chandelure",
@@ -3477,7 +3613,8 @@
   ],
   "mega_forms": [
    "chandelure-mega"
-  ]
+  ],
+  "weight_kg": 34.3
  },
  "beartic": {
   "id": "beartic",
@@ -3501,7 +3638,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 260
  },
  "stunfisk": {
   "id": "stunfisk",
@@ -3526,7 +3664,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 11
  },
  "stunfisk-galar": {
   "id": "stunfisk-galar",
@@ -3549,7 +3688,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 20.5
  },
  "golurk": {
   "id": "golurk",
@@ -3577,7 +3717,8 @@
   ],
   "mega_forms": [
    "golurk-mega"
-  ]
+  ],
+  "weight_kg": 330
  },
  "hydreigon": {
   "id": "hydreigon",
@@ -3600,7 +3741,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 160
  },
  "volcarona": {
   "id": "volcarona",
@@ -3624,7 +3766,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 46
  },
  "chesnaught": {
   "id": "chesnaught",
@@ -3651,7 +3794,8 @@
   ],
   "mega_forms": [
    "chesnaught-mega"
-  ]
+  ],
+  "weight_kg": 90
  },
  "delphox": {
   "id": "delphox",
@@ -3678,7 +3822,8 @@
   ],
   "mega_forms": [
    "delphox-mega"
-  ]
+  ],
+  "weight_kg": 39
  },
  "greninja": {
   "id": "greninja",
@@ -3706,7 +3851,8 @@
   ],
   "mega_forms": [
    "greninja-mega"
-  ]
+  ],
+  "weight_kg": 40
  },
  "diggersby": {
   "id": "diggersby",
@@ -3731,7 +3877,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 42.4
  },
  "talonflame": {
   "id": "talonflame",
@@ -3755,7 +3902,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 24.5
  },
  "vivillon": {
   "id": "vivillon",
@@ -3780,7 +3928,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 17
  },
  "floette-eternal": {
   "id": "floette-eternal",
@@ -3806,7 +3955,8 @@
   ],
   "mega_forms": [
    "floette-eternal-mega"
-  ]
+  ],
+  "weight_kg": 0.9
  },
  "florges": {
   "id": "florges",
@@ -3829,7 +3979,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 10
  },
  "pangoro": {
   "id": "pangoro",
@@ -3854,7 +4005,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 136
  },
  "furfrou": {
   "id": "furfrou",
@@ -3876,7 +4028,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 28
  },
  "meowstic-m": {
   "id": "meowstic-m",
@@ -3903,7 +4056,8 @@
   ],
   "mega_forms": [
    "meowstic-m-mega"
-  ]
+  ],
+  "weight_kg": 8.5
  },
  "meowstic-f": {
   "id": "meowstic-f",
@@ -3930,7 +4084,8 @@
   ],
   "mega_forms": [
    "meowstic-f-mega"
-  ]
+  ],
+  "weight_kg": 8.5
  },
  "aegislash": {
   "id": "aegislash",
@@ -3953,7 +4108,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 53
  },
  "aromatisse": {
   "id": "aromatisse",
@@ -3976,7 +4132,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 15.5
  },
  "slurpuff": {
   "id": "slurpuff",
@@ -3999,7 +4156,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 5
  },
  "clawitzer": {
   "id": "clawitzer",
@@ -4021,7 +4179,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 35.3
  },
  "heliolisk": {
   "id": "heliolisk",
@@ -4046,7 +4205,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 21
  },
  "tyrantrum": {
   "id": "tyrantrum",
@@ -4070,7 +4230,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 270
  },
  "aurorus": {
   "id": "aurorus",
@@ -4094,7 +4255,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 225
  },
  "sylveon": {
   "id": "sylveon",
@@ -4117,7 +4279,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 23.5
  },
  "hawlucha": {
   "id": "hawlucha",
@@ -4145,7 +4308,8 @@
   ],
   "mega_forms": [
    "hawlucha-mega"
-  ]
+  ],
+  "weight_kg": 21.5
  },
  "dedenne": {
   "id": "dedenne",
@@ -4170,7 +4334,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 2.2
  },
  "goodra": {
   "id": "goodra",
@@ -4194,7 +4359,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 150.5
  },
  "goodra-hisui": {
   "id": "goodra-hisui",
@@ -4219,7 +4385,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 334.1
  },
  "klefki": {
   "id": "klefki",
@@ -4243,7 +4410,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 3
  },
  "trevenant": {
   "id": "trevenant",
@@ -4268,7 +4436,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 71
  },
  "gourgeist": {
   "id": "gourgeist",
@@ -4293,7 +4462,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 12.5
  },
  "avalugg": {
   "id": "avalugg",
@@ -4317,7 +4487,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 505
  },
  "avalugg-hisui": {
   "id": "avalugg-hisui",
@@ -4342,7 +4513,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 262.4
  },
  "noivern": {
   "id": "noivern",
@@ -4367,7 +4539,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 85
  },
  "decidueye": {
   "id": "decidueye",
@@ -4391,7 +4564,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 36.6
  },
  "decidueye-hisui": {
   "id": "decidueye-hisui",
@@ -4415,7 +4589,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 37
  },
  "incineroar": {
   "id": "incineroar",
@@ -4439,7 +4614,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 83
  },
  "primarina": {
   "id": "primarina",
@@ -4463,7 +4639,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 44
  },
  "toucannon": {
   "id": "toucannon",
@@ -4488,7 +4665,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 26
  },
  "crabominable": {
   "id": "crabominable",
@@ -4516,7 +4694,8 @@
   ],
   "mega_forms": [
    "crabominable-mega"
-  ]
+  ],
+  "weight_kg": 180
  },
  "lycanroc-day": {
   "id": "lycanroc-day",
@@ -4540,7 +4719,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 25
  },
  "lycanroc-dusk": {
   "id": "lycanroc-dusk",
@@ -4562,7 +4742,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 25
  },
  "toxapex": {
   "id": "toxapex",
@@ -4587,7 +4768,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 14.5
  },
  "mudsdale": {
   "id": "mudsdale",
@@ -4611,7 +4793,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 920
  },
  "araquanid": {
   "id": "araquanid",
@@ -4635,7 +4818,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 82
  },
  "salazzle": {
   "id": "salazzle",
@@ -4659,7 +4843,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 22.2
  },
  "tsareena": {
   "id": "tsareena",
@@ -4683,7 +4868,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 21.4
  },
  "oranguru": {
   "id": "oranguru",
@@ -4708,7 +4894,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 76
  },
  "passimian": {
   "id": "passimian",
@@ -4731,7 +4918,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 82.8
  },
  "mimikyu": {
   "id": "mimikyu",
@@ -4754,7 +4942,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 0.7
  },
  "drampa": {
   "id": "drampa",
@@ -4782,7 +4971,8 @@
   ],
   "mega_forms": [
    "drampa-mega"
-  ]
+  ],
+  "weight_kg": 185
  },
  "kommo-o": {
   "id": "kommo-o",
@@ -4807,7 +4997,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 78.2
  },
  "corviknight": {
   "id": "corviknight",
@@ -4832,7 +5023,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 75
  },
  "flapple": {
   "id": "flapple",
@@ -4857,7 +5049,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 1
  },
  "appletun": {
   "id": "appletun",
@@ -4882,7 +5075,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 13
  },
  "sandaconda": {
   "id": "sandaconda",
@@ -4906,7 +5100,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 65.5
  },
  "polteageist": {
   "id": "polteageist",
@@ -4929,7 +5124,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 0.4
  },
  "hatterene": {
   "id": "hatterene",
@@ -4954,7 +5150,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 5.1
  },
  "mr-rime": {
   "id": "mr-rime",
@@ -4979,7 +5176,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 58.2
  },
  "runerigus": {
   "id": "runerigus",
@@ -5002,7 +5200,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 66.6
  },
  "alcremie": {
   "id": "alcremie",
@@ -5025,7 +5224,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 0.5
  },
  "morpeko": {
   "id": "morpeko",
@@ -5048,7 +5248,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 3
  },
  "dragapult": {
   "id": "dragapult",
@@ -5073,7 +5274,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 50
  },
  "wyrdeer": {
   "id": "wyrdeer",
@@ -5098,7 +5300,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 95.1
  },
  "kleavor": {
   "id": "kleavor",
@@ -5123,7 +5326,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 89
  },
  "basculegion-m": {
   "id": "basculegion-m",
@@ -5147,7 +5351,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 110
  },
  "basculegion-f": {
   "id": "basculegion-f",
@@ -5171,7 +5376,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 110
  },
  "sneasler": {
   "id": "sneasler",
@@ -5196,7 +5402,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 43
  },
  "meowscarada": {
   "id": "meowscarada",
@@ -5220,7 +5427,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 31.2
  },
  "skeledirge": {
   "id": "skeledirge",
@@ -5244,7 +5452,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 326.5
  },
  "quaquaval": {
   "id": "quaquaval",
@@ -5268,7 +5477,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 61.9
  },
  "maushold": {
   "id": "maushold",
@@ -5292,7 +5502,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 2.3
  },
  "garganacl": {
   "id": "garganacl",
@@ -5316,7 +5527,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 240
  },
  "armarouge": {
   "id": "armarouge",
@@ -5340,7 +5552,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 85
  },
  "ceruledge": {
   "id": "ceruledge",
@@ -5364,7 +5577,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 62
  },
  "bellibolt": {
   "id": "bellibolt",
@@ -5388,7 +5602,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 113
  },
  "scovillain": {
   "id": "scovillain",
@@ -5416,7 +5631,8 @@
   ],
   "mega_forms": [
    "scovillain-mega"
-  ]
+  ],
+  "weight_kg": 15
  },
  "espathra": {
   "id": "espathra",
@@ -5440,7 +5656,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 90
  },
  "tinkaton": {
   "id": "tinkaton",
@@ -5465,7 +5682,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 112.8
  },
  "palafin-zero": {
   "id": "palafin-zero",
@@ -5487,7 +5705,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 60.2
  },
  "orthworm": {
   "id": "orthworm",
@@ -5510,7 +5729,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 310
  },
  "glimmora": {
   "id": "glimmora",
@@ -5537,7 +5757,8 @@
   ],
   "mega_forms": [
    "glimmora-mega"
-  ]
+  ],
+  "weight_kg": 45
  },
  "farigiraf": {
   "id": "farigiraf",
@@ -5562,7 +5783,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 160
  },
  "kingambit": {
   "id": "kingambit",
@@ -5587,7 +5809,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 120
  },
  "sinistcha": {
   "id": "sinistcha",
@@ -5611,7 +5834,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 2.2
  },
  "archaludon": {
   "id": "archaludon",
@@ -5635,7 +5859,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 60
  },
  "hydrapple": {
   "id": "hydrapple",
@@ -5660,7 +5885,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 93
  },
  "clefable-mega": {
   "id": "clefable-mega",
@@ -5685,7 +5911,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 42.3
  },
  "victreebel-mega": {
   "id": "victreebel-mega",
@@ -5710,7 +5937,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 125.5
  },
  "starmie-mega": {
   "id": "starmie-mega",
@@ -5735,7 +5963,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 80
  },
  "dragonite-mega": {
   "id": "dragonite-mega",
@@ -5760,7 +5989,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 290
  },
  "meganium-mega": {
   "id": "meganium-mega",
@@ -5785,7 +6015,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 201
  },
  "feraligatr-mega": {
   "id": "feraligatr-mega",
@@ -5810,7 +6041,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 108.8
  },
  "skarmory-mega": {
   "id": "skarmory-mega",
@@ -5835,7 +6067,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 40.4
  },
  "froslass-mega": {
   "id": "froslass-mega",
@@ -5860,7 +6093,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 29.6
  },
  "emboar-mega": {
   "id": "emboar-mega",
@@ -5885,7 +6119,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 180.3
  },
  "excadrill-mega": {
   "id": "excadrill-mega",
@@ -5910,7 +6145,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 60
  },
  "scolipede-mega": {
   "id": "scolipede-mega",
@@ -5935,7 +6171,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 230.5
  },
  "scrafty-mega": {
   "id": "scrafty-mega",
@@ -5960,7 +6197,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 31
  },
  "eelektross-mega": {
   "id": "eelektross-mega",
@@ -5984,7 +6222,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 180
  },
  "chandelure-mega": {
   "id": "chandelure-mega",
@@ -6009,7 +6248,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 69.6
  },
  "chesnaught-mega": {
   "id": "chesnaught-mega",
@@ -6034,7 +6274,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 90
  },
  "delphox-mega": {
   "id": "delphox-mega",
@@ -6059,7 +6300,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 39
  },
  "greninja-mega": {
   "id": "greninja-mega",
@@ -6084,7 +6326,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 40
  },
  "pyroar-mega": {
   "id": "pyroar-mega",
@@ -6109,7 +6352,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 93.3
  },
  "floette-eternal-mega": {
   "id": "floette-eternal-mega",
@@ -6133,7 +6377,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 100.8
  },
  "malamar-mega": {
   "id": "malamar-mega",
@@ -6158,7 +6403,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 69.8
  },
  "barbaracle-mega": {
   "id": "barbaracle-mega",
@@ -6183,7 +6429,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 100
  },
  "dragalge-mega": {
   "id": "dragalge-mega",
@@ -6208,7 +6455,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 100.3
  },
  "hawlucha-mega": {
   "id": "hawlucha-mega",
@@ -6233,7 +6481,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 25
  },
  "drampa-mega": {
   "id": "drampa-mega",
@@ -6258,7 +6507,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 240.5
  },
  "falinks-mega": {
   "id": "falinks-mega",
@@ -6282,7 +6532,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 99
  },
  "raichu-mega-x": {
   "id": "raichu-mega-x",
@@ -6306,7 +6557,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 38
  },
  "raichu-mega-y": {
   "id": "raichu-mega-y",
@@ -6330,7 +6582,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 26
  },
  "chimecho-mega": {
   "id": "chimecho-mega",
@@ -6355,7 +6608,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 8
  },
  "absol-mega": {
   "id": "absol-mega",
@@ -6379,7 +6633,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 49
  },
  "staraptor-mega": {
   "id": "staraptor-mega",
@@ -6404,7 +6659,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 50
  },
  "garchomp-mega": {
   "id": "garchomp-mega",
@@ -6429,7 +6685,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 95
  },
  "lucario-mega": {
   "id": "lucario-mega",
@@ -6454,7 +6711,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 57.5
  },
  "golurk-mega": {
   "id": "golurk-mega",
@@ -6479,7 +6737,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 330
  },
  "crabominable-mega": {
   "id": "crabominable-mega",
@@ -6504,7 +6763,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 252.8
  },
  "scovillain-mega": {
   "id": "scovillain-mega",
@@ -6529,7 +6789,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 22
  },
  "glimmora-mega": {
   "id": "glimmora-mega",
@@ -6554,7 +6815,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 77
  },
  "abomasnow-mega": {
   "id": "abomasnow-mega",
@@ -6579,7 +6841,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 185
  },
  "aegislash-blade": {
   "id": "aegislash-blade",
@@ -6603,7 +6866,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 53
  },
  "aerodactyl-mega": {
   "id": "aerodactyl-mega",
@@ -6628,7 +6892,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 79
  },
  "aggron-mega": {
   "id": "aggron-mega",
@@ -6652,7 +6917,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 395
  },
  "alakazam-mega": {
   "id": "alakazam-mega",
@@ -6676,7 +6942,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 48
  },
  "altaria-mega": {
   "id": "altaria-mega",
@@ -6701,7 +6968,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 20.6
  },
  "ampharos-mega": {
   "id": "ampharos-mega",
@@ -6726,7 +6994,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 61.5
  },
  "audino-mega": {
   "id": "audino-mega",
@@ -6751,7 +7020,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 32
  },
  "banette-mega": {
   "id": "banette-mega",
@@ -6775,7 +7045,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 13
  },
  "beedrill-mega": {
   "id": "beedrill-mega",
@@ -6800,7 +7071,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 40.5
  },
  "blastoise-mega": {
   "id": "blastoise-mega",
@@ -6824,7 +7096,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 101.1
  },
  "camerupt-mega": {
   "id": "camerupt-mega",
@@ -6849,7 +7122,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 320.5
  },
  "charizard-mega-x": {
   "id": "charizard-mega-x",
@@ -6874,7 +7148,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 110.5
  },
  "charizard-mega-y": {
   "id": "charizard-mega-y",
@@ -6899,7 +7174,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 100.5
  },
  "gallade-mega": {
   "id": "gallade-mega",
@@ -6924,7 +7200,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 56.4
  },
  "gardevoir-mega": {
   "id": "gardevoir-mega",
@@ -6949,7 +7226,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 48.4
  },
  "gengar-mega": {
   "id": "gengar-mega",
@@ -6974,7 +7252,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 40.5
  },
  "glalie-mega": {
   "id": "glalie-mega",
@@ -6998,7 +7277,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 350.2
  },
  "gyarados-mega": {
   "id": "gyarados-mega",
@@ -7023,7 +7303,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 305
  },
  "heracross-mega": {
   "id": "heracross-mega",
@@ -7048,7 +7329,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 62.5
  },
  "houndoom-mega": {
   "id": "houndoom-mega",
@@ -7073,7 +7355,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 49.5
  },
  "kangaskhan-mega": {
   "id": "kangaskhan-mega",
@@ -7097,7 +7380,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 100
  },
  "lopunny-mega": {
   "id": "lopunny-mega",
@@ -7122,7 +7406,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 28.3
  },
  "lycanroc-night": {
   "id": "lycanroc-night",
@@ -7147,7 +7432,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 25
  },
  "manectric-mega": {
   "id": "manectric-mega",
@@ -7171,7 +7457,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 44
  },
  "medicham-mega": {
   "id": "medicham-mega",
@@ -7196,7 +7483,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 31.5
  },
  "meowstic-f-mega": {
   "id": "meowstic-f-mega",
@@ -7220,7 +7508,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 10.1
  },
  "meowstic-m-mega": {
   "id": "meowstic-m-mega",
@@ -7244,7 +7533,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 10.1
  },
  "palafin-hero": {
   "id": "palafin-hero",
@@ -7267,7 +7557,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 97.4
  },
  "pidgeot-mega": {
   "id": "pidgeot-mega",
@@ -7292,7 +7583,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 50.5
  },
  "pinsir-mega": {
   "id": "pinsir-mega",
@@ -7317,7 +7609,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 59
  },
  "rotom-fan": {
   "id": "rotom-fan",
@@ -7341,7 +7634,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 0.3
  },
  "rotom-frost": {
   "id": "rotom-frost",
@@ -7365,7 +7659,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 0.3
  },
  "rotom-heat": {
   "id": "rotom-heat",
@@ -7389,7 +7684,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 0.3
  },
  "rotom-mow": {
   "id": "rotom-mow",
@@ -7413,7 +7709,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 0.3
  },
  "rotom-wash": {
   "id": "rotom-wash",
@@ -7437,7 +7734,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 0.3
  },
  "sableye-mega": {
   "id": "sableye-mega",
@@ -7462,7 +7760,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 161
  },
  "scizor-mega": {
   "id": "scizor-mega",
@@ -7487,7 +7786,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 125
  },
  "sharpedo-mega": {
   "id": "sharpedo-mega",
@@ -7512,7 +7812,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 130.3
  },
  "slowbro-mega": {
   "id": "slowbro-mega",
@@ -7537,7 +7838,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 120
  },
  "steelix-mega": {
   "id": "steelix-mega",
@@ -7562,7 +7864,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 740
  },
  "tyranitar-mega": {
   "id": "tyranitar-mega",
@@ -7587,7 +7890,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 255
  },
  "venusaur-mega": {
   "id": "venusaur-mega",
@@ -7612,7 +7916,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 155.5
  },
  "swampert-mega": {
   "id": "swampert-mega",
@@ -7637,7 +7942,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 102
  },
  "sceptile-mega": {
   "id": "sceptile-mega",
@@ -7662,7 +7968,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 55.2
  },
  "blaziken-mega": {
   "id": "blaziken-mega",
@@ -7687,7 +7994,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 52
  },
  "metagross-mega": {
   "id": "metagross-mega",
@@ -7712,7 +8020,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 942.9
  },
  "mawile-mega": {
   "id": "mawile-mega",
@@ -7737,7 +8046,8 @@
   "regulations": [
    "M-B",
    "M-C"
-  ]
+  ],
+  "weight_kg": 23.5
  },
  "rillaboom": {
   "id": "rillaboom",
@@ -7759,7 +8069,8 @@
   ],
   "regulations": [
    "M-C"
-  ]
+  ],
+  "weight_kg": 90
  },
  "salamence": {
   "id": "salamence",
@@ -7785,7 +8096,8 @@
   ],
   "mega_forms": [
    "salamence-mega"
-  ]
+  ],
+  "weight_kg": 102.6
  },
  "golisopod": {
   "id": "golisopod",
@@ -7810,7 +8122,8 @@
   ],
   "mega_forms": [
    "golisopod-mega"
-  ]
+  ],
+  "weight_kg": 108
  },
  "baxcalibur": {
   "id": "baxcalibur",
@@ -7836,7 +8149,8 @@
   ],
   "mega_forms": [
    "baxcalibur-mega"
-  ]
+  ],
+  "weight_kg": 210
  },
  "salamence-mega": {
   "id": "salamence-mega",
@@ -7860,7 +8174,8 @@
   "mega_stone": "Salamencite",
   "regulations": [
    "M-C"
-  ]
+  ],
+  "weight_kg": 112.6
  },
  "golisopod-mega": {
   "id": "golisopod-mega",
@@ -7877,13 +8192,15 @@
    "spd": 120,
    "spe": 40
   },
-  "abilities": [],
+  "abilities": [
+   "Tough Claws"
+  ],
   "mega_of": "golisopod",
   "mega_stone": "Golisopodite",
   "regulations": [
    "M-C"
   ],
-  "abilities_provisional": true
+  "weight_kg": 148
  },
  "baxcalibur-mega": {
   "id": "baxcalibur-mega",
@@ -7900,13 +8217,15 @@
    "spd": 101,
    "spe": 87
   },
-  "abilities": [],
+  "abilities": [
+   "Thermal Exchange"
+  ],
   "mega_of": "baxcalibur",
   "mega_stone": "Baxcaliburite",
   "regulations": [
    "M-C"
   ],
-  "abilities_provisional": true
+  "weight_kg": 315
  },
  "absol-mega-z": {
   "id": "absol-mega-z",
@@ -7930,7 +8249,8 @@
   "mega_stone": "Absolite Z",
   "regulations": [
    "M-C"
-  ]
+  ],
+  "weight_kg": 49
  },
  "garchomp-mega-z": {
   "id": "garchomp-mega-z",
@@ -7953,7 +8273,8 @@
   "mega_stone": "Garchompite Z",
   "regulations": [
    "M-C"
-  ]
+  ],
+  "weight_kg": 99
  },
  "lucario-mega-z": {
   "id": "lucario-mega-z",
@@ -7977,6 +8298,563 @@
   "mega_stone": "Lucarionite Z",
   "regulations": [
    "M-C"
-  ]
+  ],
+  "weight_kg": 49.4
+ },
+ "indeedee-m": {
+  "id": "indeedee-m",
+  "name": "Indeedee",
+  "types": [
+   "Psychic",
+   "Normal"
+  ],
+  "base": {
+   "hp": 60,
+   "atk": 65,
+   "def": 55,
+   "spa": 105,
+   "spd": 95,
+   "spe": 95
+  },
+  "abilities": [
+   "Inner Focus",
+   "Synchronize",
+   "Psychic Surge"
+  ],
+  "regulations": [
+   "M-C"
+  ],
+  "weight_kg": 28
+ },
+ "indeedee-f": {
+  "id": "indeedee-f",
+  "name": "Indeedee-F",
+  "types": [
+   "Psychic",
+   "Normal"
+  ],
+  "base": {
+   "hp": 70,
+   "atk": 55,
+   "def": 65,
+   "spa": 95,
+   "spd": 105,
+   "spe": 85
+  },
+  "abilities": [
+   "Own Tempo",
+   "Synchronize",
+   "Psychic Surge"
+  ],
+  "regulations": [
+   "M-C"
+  ],
+  "weight_kg": 28
+ },
+ "pincurchin": {
+  "id": "pincurchin",
+  "name": "Pincurchin",
+  "types": [
+   "Electric"
+  ],
+  "base": {
+   "hp": 48,
+   "atk": 101,
+   "def": 95,
+   "spa": 91,
+   "spd": 85,
+   "spe": 15
+  },
+  "abilities": [
+   "Lightning Rod",
+   "Electric Surge"
+  ],
+  "regulations": [
+   "M-C"
+  ],
+  "weight_kg": 1
+ },
+ "cinderace": {
+  "id": "cinderace",
+  "name": "Cinderace",
+  "types": [
+   "Fire"
+  ],
+  "base": {
+   "hp": 80,
+   "atk": 116,
+   "def": 75,
+   "spa": 65,
+   "spd": 75,
+   "spe": 119
+  },
+  "abilities": [
+   "Blaze",
+   "Libero"
+  ],
+  "regulations": [
+   "M-C"
+  ],
+  "weight_kg": 33
+ },
+ "inteleon": {
+  "id": "inteleon",
+  "name": "Inteleon",
+  "types": [
+   "Water"
+  ],
+  "base": {
+   "hp": 70,
+   "atk": 85,
+   "def": 65,
+   "spa": 125,
+   "spd": 65,
+   "spe": 120
+  },
+  "abilities": [
+   "Torrent",
+   "Sniper"
+  ],
+  "regulations": [
+   "M-C"
+  ],
+  "weight_kg": 45.2
+ },
+ "wigglytuff": {
+  "id": "wigglytuff",
+  "name": "Wigglytuff",
+  "types": [
+   "Normal",
+   "Fairy"
+  ],
+  "base": {
+   "hp": 140,
+   "atk": 70,
+   "def": 45,
+   "spa": 85,
+   "spd": 50,
+   "spe": 45
+  },
+  "abilities": [
+   "Cute Charm",
+   "Competitive",
+   "Frisk"
+  ],
+  "regulations": [
+   "M-C"
+  ],
+  "weight_kg": 12
+ },
+ "persian": {
+  "id": "persian",
+  "name": "Persian",
+  "types": [
+   "Normal"
+  ],
+  "base": {
+   "hp": 65,
+   "atk": 70,
+   "def": 60,
+   "spa": 65,
+   "spd": 65,
+   "spe": 115
+  },
+  "abilities": [
+   "Limber",
+   "Technician",
+   "Unnerve"
+  ],
+  "regulations": [
+   "M-C"
+  ],
+  "weight_kg": 32
+ },
+ "persian-alola": {
+  "id": "persian-alola",
+  "name": "Persian-Alola",
+  "types": [
+   "Dark"
+  ],
+  "base": {
+   "hp": 65,
+   "atk": 60,
+   "def": 60,
+   "spa": 75,
+   "spd": 65,
+   "spe": 115
+  },
+  "abilities": [
+   "Fur Coat",
+   "Technician",
+   "Rattled"
+  ],
+  "regulations": [
+   "M-C"
+  ],
+  "weight_kg": 33
+ },
+ "farfetch-d": {
+  "id": "farfetch-d",
+  "name": "Farfetch'd",
+  "types": [
+   "Normal",
+   "Flying"
+  ],
+  "base": {
+   "hp": 52,
+   "atk": 90,
+   "def": 55,
+   "spa": 58,
+   "spd": 62,
+   "spe": 60
+  },
+  "abilities": [
+   "Keen Eye",
+   "Inner Focus",
+   "Defiant"
+  ],
+  "regulations": [
+   "M-C"
+  ],
+  "weight_kg": 15
+ },
+ "mr-mime": {
+  "id": "mr-mime",
+  "name": "Mr. Mime",
+  "types": [
+   "Psychic",
+   "Fairy"
+  ],
+  "base": {
+   "hp": 40,
+   "atk": 45,
+   "def": 65,
+   "spa": 100,
+   "spd": 120,
+   "spe": 90
+  },
+  "abilities": [
+   "Soundproof",
+   "Filter",
+   "Technician"
+  ],
+  "regulations": [
+   "M-C"
+  ],
+  "weight_kg": 54.5
+ },
+ "swalot": {
+  "id": "swalot",
+  "name": "Swalot",
+  "types": [
+   "Poison"
+  ],
+  "base": {
+   "hp": 100,
+   "atk": 73,
+   "def": 83,
+   "spa": 73,
+   "spd": 83,
+   "spe": 55
+  },
+  "abilities": [
+   "Liquid Ooze",
+   "Sticky Hold",
+   "Gluttony"
+  ],
+  "regulations": [
+   "M-C"
+  ],
+  "weight_kg": 80
+ },
+ "gogoat": {
+  "id": "gogoat",
+  "name": "Gogoat",
+  "types": [
+   "Grass"
+  ],
+  "base": {
+   "hp": 123,
+   "atk": 100,
+   "def": 62,
+   "spa": 97,
+   "spd": 81,
+   "spe": 68
+  },
+  "abilities": [
+   "Sap Sipper",
+   "Grass Pelt"
+  ],
+  "regulations": [
+   "M-C"
+  ],
+  "weight_kg": 91
+ },
+ "thievul": {
+  "id": "thievul",
+  "name": "Thievul",
+  "types": [
+   "Dark"
+  ],
+  "base": {
+   "hp": 70,
+   "atk": 58,
+   "def": 58,
+   "spa": 87,
+   "spd": 92,
+   "spe": 90
+  },
+  "abilities": [
+   "Run Away",
+   "Unburden",
+   "Stakeout"
+  ],
+  "regulations": [
+   "M-C"
+  ],
+  "weight_kg": 19.9
+ },
+ "toxtricity": {
+  "id": "toxtricity",
+  "name": "Toxtricity",
+  "types": [
+   "Electric",
+   "Poison"
+  ],
+  "base": {
+   "hp": 75,
+   "atk": 98,
+   "def": 70,
+   "spa": 114,
+   "spd": 70,
+   "spe": 75
+  },
+  "abilities": [
+   "Punk Rock",
+   "Plus",
+   "Technician"
+  ],
+  "regulations": [
+   "M-C"
+  ],
+  "weight_kg": 40
+ },
+ "toxtricity-low-key": {
+  "id": "toxtricity-low-key",
+  "name": "Toxtricity-Low-Key",
+  "types": [
+   "Electric",
+   "Poison"
+  ],
+  "base": {
+   "hp": 75,
+   "atk": 98,
+   "def": 70,
+   "spa": 114,
+   "spd": 70,
+   "spe": 75
+  },
+  "abilities": [
+   "Punk Rock",
+   "Minus",
+   "Technician"
+  ],
+  "regulations": [
+   "M-C"
+  ],
+  "weight_kg": 40
+ },
+ "grapploct": {
+  "id": "grapploct",
+  "name": "Grapploct",
+  "types": [
+   "Fighting"
+  ],
+  "base": {
+   "hp": 80,
+   "atk": 118,
+   "def": 90,
+   "spa": 70,
+   "spd": 80,
+   "spe": 42
+  },
+  "abilities": [
+   "Limber",
+   "Technician"
+  ],
+  "regulations": [
+   "M-C"
+  ],
+  "weight_kg": 39
+ },
+ "perrserker": {
+  "id": "perrserker",
+  "name": "Perrserker",
+  "types": [
+   "Steel"
+  ],
+  "base": {
+   "hp": 70,
+   "atk": 110,
+   "def": 100,
+   "spa": 50,
+   "spd": 60,
+   "spe": 50
+  },
+  "abilities": [
+   "Battle Armor",
+   "Tough Claws",
+   "Steely Spirit"
+  ],
+  "regulations": [
+   "M-C"
+  ],
+  "weight_kg": 28
+ },
+ "sirfetch-d": {
+  "id": "sirfetch-d",
+  "name": "Sirfetch'd",
+  "types": [
+   "Fighting"
+  ],
+  "base": {
+   "hp": 62,
+   "atk": 135,
+   "def": 95,
+   "spa": 68,
+   "spd": 82,
+   "spe": 65
+  },
+  "abilities": [
+   "Steadfast",
+   "Scrappy"
+  ],
+  "regulations": [
+   "M-C"
+  ],
+  "weight_kg": 117
+ },
+ "arboliva": {
+  "id": "arboliva",
+  "name": "Arboliva",
+  "types": [
+   "Grass",
+   "Normal"
+  ],
+  "base": {
+   "hp": 78,
+   "atk": 69,
+   "def": 90,
+   "spa": 125,
+   "spd": 109,
+   "spe": 39
+  },
+  "abilities": [
+   "Seed Sower",
+   "Harvest"
+  ],
+  "regulations": [
+   "M-C"
+  ],
+  "weight_kg": 48.2
+ },
+ "pawmot": {
+  "id": "pawmot",
+  "name": "Pawmot",
+  "types": [
+   "Electric",
+   "Fighting"
+  ],
+  "base": {
+   "hp": 70,
+   "atk": 115,
+   "def": 70,
+   "spa": 70,
+   "spd": 60,
+   "spe": 105
+  },
+  "abilities": [
+   "Volt Absorb",
+   "Natural Cure",
+   "Iron Fist"
+  ],
+  "regulations": [
+   "M-C"
+  ],
+  "weight_kg": 41
+ },
+ "squawkabilly": {
+  "id": "squawkabilly",
+  "name": "Squawkabilly",
+  "types": [
+   "Normal",
+   "Flying"
+  ],
+  "base": {
+   "hp": 82,
+   "atk": 96,
+   "def": 51,
+   "spa": 45,
+   "spd": 51,
+   "spe": 92
+  },
+  "abilities": [
+   "Intimidate",
+   "Hustle",
+   "Guts"
+  ],
+  "regulations": [
+   "M-C"
+  ],
+  "weight_kg": 2.4
+ },
+ "squawkabilly-yellow": {
+  "id": "squawkabilly-yellow",
+  "name": "Squawkabilly-Yellow",
+  "types": [
+   "Normal",
+   "Flying"
+  ],
+  "base": {
+   "hp": 82,
+   "atk": 96,
+   "def": 51,
+   "spa": 45,
+   "spd": 51,
+   "spe": 92
+  },
+  "abilities": [
+   "Intimidate",
+   "Hustle",
+   "Sheer Force"
+  ],
+  "regulations": [
+   "M-C"
+  ],
+  "weight_kg": 2.4
+ },
+ "mabosstiff": {
+  "id": "mabosstiff",
+  "name": "Mabosstiff",
+  "types": [
+   "Dark"
+  ],
+  "base": {
+   "hp": 80,
+   "atk": 120,
+   "def": 90,
+   "spa": 60,
+   "spd": 70,
+   "spe": 85
+  },
+  "abilities": [
+   "Intimidate",
+   "Guard Dog",
+   "Stakeout"
+  ],
+  "regulations": [
+   "M-C"
+  ],
+  "weight_kg": 61
  }
 }

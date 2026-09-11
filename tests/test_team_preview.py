@@ -61,7 +61,7 @@ class TestTeamPreview:
         assert len(out["your_leads"]) == 3
         top = out["your_leads"][0]
         assert len(top["pair"]) == 2 and top["pair"][0] != top["pair"][1]
-        assert len(out["bring_four"]) == 2
+        assert len(out["bring_four"]) == 3          # three options, each with its rationale
         four = out["bring_four"][0]
         assert len(four["mons"]) == 4
         assert len(four["bench"]) == 2
@@ -98,3 +98,46 @@ class TestTeamPreview:
         rain_max = max(c["my_pct"] for c in rain["matrix"]["cells"][basc_row_rain])
         neu_max = max(c["my_pct"] for c in neutral["matrix"]["cells"][basc_row_neu])
         assert rain_max >= neu_max
+
+
+def _two_mega_team():
+    team = _rain_team()
+    # Garchomp holding its stone counts as a Mega slot, like the Mega Skarmory form.
+    team[5] = {**team[5], "item": "Garchompite"}
+    return team
+
+
+class TestMegaRuleAndReasons:
+    def test_only_one_mega_in_any_four_or_lead(self):
+        out = tp.team_preview(_two_mega_team(), _opp())
+        assert set(out["my_megas"]) == {"Mega Skarmory", "Garchomp"}
+        for b in out["bring_four"]:
+            megas = [m for m in b["mons"] if m in ("skarmory-mega", "garchomp")]
+            assert len(megas) <= 1, b["mons"]
+            assert b["mega"] in (None, "Mega Skarmory", "Garchomp")
+        for lo in out["your_leads"]:
+            assert not {"skarmory-mega", "garchomp"} <= set(lo["pair"]), lo["pair"]
+        # a four that carries a Mega says which one, and who stays home
+        with_mega = next(b for b in out["bring_four"] if b["mega"])
+        assert any(w.startswith("Mega: ") and "stays home" in w for w in with_mega["why"])
+
+    def test_bring_four_explains_answers_and_speed_control(self):
+        out = tp.team_preview(_rain_team(), _opp())
+        b = out["bring_four"][0]
+        assert b["why"] and b["why"][0].startswith("Two answers to ")
+        assert set(b["answers"]) == {m["name"] for m in out["opponent"]["mons"]}
+        for name, ans in b["answers"].items():
+            for a in ans:
+                assert a["mon"] in b["mon_names"] and a["pct"] > 0, (name, a)
+        assert any(w.startswith("Speed control") or w.startswith("No speed control") for w in b["why"])
+
+    def test_lead_reasons_name_speed_and_ohkos(self):
+        out = tp.team_preview(_rain_team(), _opp())
+        lo = out["your_leads"][0]
+        assert isinstance(lo["why"], list) and lo["why"]
+        assert any("outspeeds" in w or "slower than" in w or "OHKOs" in w for w in lo["why"])
+
+    def test_single_mega_team_is_unaffected(self):
+        out = tp.team_preview(_rain_team(), _opp())
+        assert out["my_megas"] == ["Mega Skarmory"]
+        assert len(out["bring_four"]) == 3

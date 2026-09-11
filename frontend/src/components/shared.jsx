@@ -10,6 +10,143 @@ export function TypeChip({ t }) {
   return <span className={`type-chip type-${t.toLowerCase()}`}>{t}</span>;
 }
 
+// ---- field effect listings (Damage Calc field panel, Battle tab field strip) ----
+export const FIELD_EFFECTS = {
+  terrain: {
+    electric: [
+      'Electric moves x1.3 from grounded users',
+      'Grounded Pokémon cannot fall asleep (Yawn fails on them)',
+      'Rising Voltage doubles into grounded targets · Terrain Pulse becomes Electric, 100 BP',
+      'Surge Surfer doubles Speed · Electric Seed gives +1 Def',
+    ],
+    grassy: [
+      'Grass moves x1.3 from grounded users',
+      'Grounded Pokémon heal 1/16 of their HP each turn',
+      'Earthquake, Bulldoze and Magnitude do half damage to grounded targets',
+      'Grassy Glide gets +1 priority (grounded user) · Terrain Pulse becomes Grass, 100 BP · Grassy Seed gives +1 Def',
+    ],
+    psychic: [
+      'Psychic moves x1.3 from grounded users',
+      'Grounded Pokémon cannot be hit by priority moves aimed at them: Fake Out, Sucker Punch, Aqua Jet, Extreme Speed, Prankster status moves (moves on an ally still work)',
+      'Expanding Force x1.5 and hits both opponents (grounded user) · Terrain Pulse becomes Psychic, 100 BP',
+      'Psychic Seed gives +1 SpD',
+    ],
+    misty: [
+      'Dragon moves do half damage to grounded targets',
+      'Grounded Pokémon cannot be statused or confused (a status they already have stays)',
+      'Misty Explosion x1.5 (grounded user) · Terrain Pulse becomes Fairy, 100 BP',
+      'Misty Seed gives +1 SpD',
+    ],
+  },
+  weather: {
+    sun: [
+      'Fire moves x1.5, Water moves x0.5 · nothing can be frozen',
+      'Solar Beam and Solar Blade skip their charge turn · Weather Ball is Fire, 100 BP',
+      'Chlorophyll doubles Speed · Solar Power, Flower Gift, Leaf Guard, Dry Skin (damage) apply',
+    ],
+    rain: [
+      'Water moves x1.5, Fire moves x0.5',
+      'Hurricane and Thunder never miss · Electro Shot skips its charge turn · Weather Ball is Water, 100 BP',
+      'Swift Swim doubles Speed · Rain Dish and Dry Skin heal',
+    ],
+    sand: [
+      'Rock types get x1.5 Sp. Def',
+      '1/16 chip damage each turn to anything not Rock, Ground or Steel (Overcoat, Sand Veil, Sand Rush, Sand Force are exempt)',
+      'Sand Rush doubles Speed · Sand Force x1.3 on Rock, Ground and Steel moves · Weather Ball is Rock, 100 BP',
+    ],
+    snow: [
+      'Ice types get x1.5 Defense',
+      'Blizzard never misses · Aurora Veil can be set · Weather Ball is Ice, 100 BP',
+      'Slush Rush doubles Speed · Ice Body heals',
+    ],
+  },
+};
+// Terrains and weather last 5 turns (8 with the matching Rock for weather).
+export function FieldEffects({ kind, k, className = '' }) {
+  const lines = FIELD_EFFECTS[kind]?.[k];
+  if (!lines) return null;
+  return (
+    <ul className={`field-effects ${className}`}>
+      {lines.map((l) => <li key={l}>{l}</li>)}
+    </ul>
+  );
+}
+
+// ---- move labels: category icon, the flags abilities and items key off, accuracy ----
+const CATEGORY_INFO = {
+  Physical: { glyph: '⚔', desc: 'Physical: Attack against Defense' },
+  Special: { glyph: '✦', desc: 'Special: Sp. Atk against Sp. Def' },
+  Status: { glyph: '◌', desc: 'Status: no damage' },
+};
+export function CategoryIcon({ category, withText = false }) {
+  const info = CATEGORY_INFO[category] || CATEGORY_INFO.Status;
+  return (
+    <span className={`cat-icon cat-${String(category || 'status').toLowerCase()}`} title={info.desc}>
+      {info.glyph}{withText && <span className="cat-text">{category}</span>}
+    </span>
+  );
+}
+// [flag, glyph, label, why it matters in Champions]
+const FLAG_TAGS = [
+  ['contact', '👊', 'Contact', 'Contact move: Rough Skin, Rocky Helmet, Poison Touch, Spicy Spray, Tough Claws and Aura Guard apply'],
+  ['sound', '🔊', 'Sound', 'Sound move: goes through Substitute; blocked by Soundproof; Liquid Voice makes it Water; Punk Rock'],
+  ['pulse', '🌀', 'Pulse', 'Pulse move: Mega Launcher x1.5'],
+  ['bullet', '⚫', 'Ball', 'Ball / bomb move: blocked by Bulletproof'],
+  ['punch', '🥊', 'Punch', 'Punch move: Iron Fist x1.2'],
+  ['bite', '🦷', 'Bite', 'Biting move: Strong Jaw x1.5'],
+  ['slicing', '🔪', 'Slicing', 'Slicing move: Sharpness x1.5'],
+  ['wind', '🌬', 'Wind', 'Wind move: Wind Rider / Wind Power'],
+  ['dance', '💃', 'Dance', 'Dance move: copied by Dancer'],
+  ['powder', '🌫', 'Powder', 'Powder move: Grass types, Overcoat and Safety Goggles are immune'],
+  ['charge', '⏳', 'Charge', 'Charges for a turn first (weather or Power Herb can skip it)'],
+  ['recharge', '💤', 'Recharge', 'Must recharge the turn after it hits'],
+];
+const SPREAD_TARGETS = { allAdjacentFoes: 'both opponents', allAdjacent: 'everyone else, your partner included' };
+export const accuracyLabel = (m) => (m == null || m.accuracy == null ? '—' : `${m.accuracy}%`);
+export function AccuracyLabel({ m }) {
+  if (!m) return null;
+  return (
+    <span className="move-acc mono" title={m.accuracy == null ? 'Never misses' : `${m.accuracy}% accuracy`}>
+      {accuracyLabel(m)}
+    </span>
+  );
+}
+// Category, spread / priority and flag tags for a move-db entry. `compact`
+// shows glyphs only (the tooltip keeps the words).
+export function moveTagList(m) {
+  if (!m) return [];
+  const flags = m.flags || {};
+  const out = [];
+  const spread = SPREAD_TARGETS[m.target];
+  if (spread) out.push({ key: 'spread', glyph: '⇶', label: 'Spread', desc: `Spread move: hits ${spread} (x0.75 with two targets)` });
+  if (m.priority) {
+    const p = `${m.priority > 0 ? '+' : ''}${m.priority}`;
+    out.push({ key: 'priority', glyph: `⚡${p}`, label: `Priority ${p}`, desc: `Priority ${p}: moves ${m.priority > 0 ? 'before' : 'after'} normal-priority moves` });
+  }
+  for (const [f, glyph, label, desc] of FLAG_TAGS) if (flags[f]) out.push({ key: f, glyph, label, desc });
+  return out;
+}
+// `compact` shows glyphs only (the tooltip keeps the words); `max` folds the
+// rest into a "+n" tag so rows stay one line.
+export function MoveTags({ m, compact = false, showCategory = true, showAccuracy = false, max = Infinity }) {
+  if (!m) return null;
+  const tags = moveTagList(m);
+  const shown = tags.slice(0, max);
+  const rest = tags.slice(max);
+  return (
+    <span className={`move-tags ${compact ? 'compact' : ''}`}>
+      {showCategory && <CategoryIcon category={m.category} withText={!compact} />}
+      {shown.map((t) => (
+        <span key={t.key} className={`move-tag flag-${t.key}`} title={t.desc}>{t.glyph}{!compact && ` ${t.label}`}</span>
+      ))}
+      {rest.length > 0 && (
+        <span className="move-tag more" title={rest.map((t) => t.label).join(', ')}>+{rest.length}</span>
+      )}
+      {showAccuracy && <AccuracyLabel m={m} />}
+    </span>
+  );
+}
+
 export function PokemonPicker({ value, onPick, placeholder = 'Search Pokémon…' }) {
   const { pokemon } = useContext(DataCtx);
   const [query, setQuery] = useState('');
@@ -55,6 +192,12 @@ export function PokemonPicker({ value, onPick, placeholder = 'Search Pokémon…
                   <span className="prov-tag" style={{ marginLeft: 6 }}
                     title="Champions hasn't announced this form's ability — set one in the Team Builder">
                     ability?
+                  </span>
+                )}
+                {p.experimental && (
+                  <span className="prov-tag" style={{ marginLeft: 6 }}
+                    title="A prediction from Reg M-C Experimental, not a confirmed Champions Pokémon">
+                    predicted
                   </span>
                 )}
               </span>
@@ -159,8 +302,10 @@ export function MoveSelect({ moves, value, onChange, placeholder = '— move —
             <span className="ms-name">{selected.name}</span>
             <span className="ms-meta">
               <TypeChip t={selected.type} />
-              <span className="ms-bp mono">{selected.category === 'Status'
-                ? 'Status' : selected.base_power}</span>
+              <CategoryIcon category={selected.category} />
+              <MoveTags m={selected} compact showCategory={false} max={3} />
+              <span className="ms-bp mono" title="base power">{pickerBp(selected)}</span>
+              <AccuracyLabel m={selected} />
             </span>
           </>
         ) : (
@@ -171,6 +316,11 @@ export function MoveSelect({ moves, value, onChange, placeholder = '— move —
         <div className="move-select-pop">
           <input autoFocus placeholder="Filter moves…" value={query}
             onChange={(e) => setQuery(e.target.value)} />
+          <div className="ms-head dim">
+            <span>Move</span><span>Type</span><span title="Physical / Special / Status">Cat</span>
+            <span title="Spread, priority, contact, sound, pulse, ball, punch, bite, slicing, wind, dance, powder, charge, recharge — hover a glyph">Flags</span>
+            <span title="base power">BP</span><span title="accuracy">Acc</span>
+          </div>
           <ul>
             {value && (
               <li className="ms-clear" onMouseDown={(e) => {
@@ -178,15 +328,17 @@ export function MoveSelect({ moves, value, onChange, placeholder = '— move —
               }}>× clear move</li>
             )}
             {shown.map((m) => (
-              <li key={m.name} title={m.category}
+              <li key={m.name} title={m.short_desc || m.category}
                 className={m.name === value ? 'active' : ''}
                 onMouseDown={(e) => {
                   e.preventDefault(); onChange(m.name); close();
                 }}>
                 <span className="ms-name">{m.name}</span>
                 <TypeChip t={m.type} />
-                <span className="ms-bp mono">{m.category === 'Status'
-                  ? 'Status' : m.base_power}</span>
+                <CategoryIcon category={m.category} />
+                <MoveTags m={m} compact showCategory={false} max={3} />
+                <span className="ms-bp mono" title="base power">{pickerBp(m)}</span>
+                <AccuracyLabel m={m} />
               </li>
             ))}
             {!shown.length && <li className="dim">no matches</li>}
@@ -195,6 +347,50 @@ export function MoveSelect({ moves, value, onChange, placeholder = '— move —
       )}
     </div>
   );
+}
+
+// Items scoped to an experimental regulation are labelled so a prediction is
+// never mistaken for a confirmed Champions item.
+export const itemLabel = (i) => (i.experimental ? `${i.name} · predicted` : i.name);
+
+// The Mega Stones a base form can hold: every stone whose mega form belongs to
+// this species (gender variants share one stone, so Meowstic-M can hold the
+// stone that lists meowstic-f-mega). A mega form itself has its stone locked.
+const speciesRoot = (id) => String(id || '').replace(/-mega(-[xyz])?$/, '').replace(/-(m|f)$/, '');
+export function stonesFor(mon, items) {
+  if (!mon || mon.mega_of || !items) return [];
+  const root = speciesRoot(mon.id);
+  return items.filter((i) => i.category === 'mega_stone' && i.mega_form && speciesRoot(i.mega_form) === root);
+}
+
+// The form a slot can switch to: a base form holding its own stone becomes
+// the Mega the stone names (the species' own gender variant when the stone
+// lists the other one); a Mega goes back to its base form. `mon` may be the
+// full pokedex entry or just {id}; `roster` is the /pokemon list, used to
+// resolve gendered megas when the full entry is not loaded.
+export function megaSwitchTarget(slot, mon, items, roster) {
+  const id = slot?.pokemonId;
+  if (!id) return null;
+  const isMega = !!(mon?.mega_of) || /-mega(-[xyz])?$/.test(id);
+  if (isMega) return { id: mon?.mega_of || id.replace(/-mega(-[xyz])?$/, ''), label: 'Base form', mega: false };
+  const stone = (items || []).find((i) => i.category === 'mega_stone' && i.name === slot.item);
+  if (!stone?.mega_form || speciesRoot(stone.mega_form) !== speciesRoot(id)) return null;
+  const forms = mon?.mega_forms || [];
+  const own = `${id}-mega`;
+  const known = (x) => forms.includes(x) || (roster || []).some((p) => p.id === x);
+  const target = forms.includes(stone.mega_form) ? stone.mega_form : (known(own) ? own : stone.mega_form);
+  return { id: target, label: 'Mega Evolve', mega: true };
+}
+
+// Switch a slot to another form of the same species, keeping spread, alignment,
+// moves, item and nickname. The ability follows the form: kept if the new form
+// has it, otherwise the form's first ability (blank for an unannounced one).
+export async function switchForm(slot, targetId) {
+  const full = await get(`/pokemon/${targetId}`);
+  const abilities = full.abilities || [];
+  const ability = abilities.includes(slot.ability) ? slot.ability : (abilities[0] || '');
+  return { ...slot, pokemonId: full.id, displayName: full.name, types: full.types, ability,
+           item: full.mega_stone || slot.item, itemUserSet: true };
 }
 
 export function CombatantPanel({ slot, onChange, title, withBattleState = false }) {
@@ -230,13 +426,13 @@ export function CombatantPanel({ slot, onChange, title, withBattleState = false 
               <select value={slot.item} onChange={(e) => upd({ item: e.target.value })}>
                 <option value="">None</option>
                 <optgroup label="Held items">
-                  {grouped.held.map((i) => <option key={i.id} value={i.name}>{i.name}</option>)}
+                  {grouped.held.map((i) => <option key={i.id} value={i.name}>{itemLabel(i)}</option>)}
                 </optgroup>
                 <optgroup label="Berries">
-                  {grouped.berry.map((i) => <option key={i.id} value={i.name}>{i.name}</option>)}
+                  {grouped.berry.map((i) => <option key={i.id} value={i.name}>{itemLabel(i)}</option>)}
                 </optgroup>
                 <optgroup label="Mega stones">
-                  {grouped.mega_stone.map((i) => <option key={i.id} value={i.name}>{i.name}</option>)}
+                  {grouped.mega_stone.map((i) => <option key={i.id} value={i.name}>{itemLabel(i)}</option>)}
                 </optgroup>
               </select>
             </label>
@@ -299,6 +495,8 @@ const SPRITE_FIXES = {
   'jangmo-o': 'jangmoo',
   'mr-rime': 'mrrime',
   'mr-mime': 'mrmime',
+  'farfetch-d': 'farfetchd',
+  'sirfetch-d': 'sirfetchd',
   'mime-jr': 'mimejr',
   'porygon-z': 'porygonz',
   'ho-oh': 'hooh',
@@ -475,3 +673,15 @@ export function Toggle({ checked, onChange, label, small }) {
     </label>
   );
 }
+
+// Base power label for move lists. Weight-based moves have no fixed number (Low
+// Kick into a 460 kg Snorlax is 120 BP; the calc works it out from the weights),
+// other variable-power moves show '?'.
+const WEIGHT_MOVES = new Set(['Low Kick', 'Grass Knot', 'Heavy Slam', 'Heat Crash']);
+export function bpLabel(m) {
+  if (m.category === 'Status') return 'Status';
+  if (m.base_power) return m.base_power;
+  return WEIGHT_MOVES.has(m.name) ? 'wt' : '?';
+}
+// The move picker shows the category as an icon, so its BP cell needs no word.
+const pickerBp = (m) => (m.category === 'Status' ? '—' : bpLabel(m));

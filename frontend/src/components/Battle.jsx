@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { DataCtx } from '../App.jsx';
-import { get, post, combatant } from '../api.js';
-import { TypeChip } from './shared.jsx';
+import { get, post, slotsFromImport, teamMembers } from '../api.js';
+import { TypeChip, CategoryIcon, MoveTags } from './shared.jsx';
 // The sidecar's own protocol reducer: replaying a turn client-side with it
 // guarantees the animation ends in exactly the server's state.
 import { applyLine, STALL_MOVES } from '../../../sim/protocol.mjs';
 import {
-  BattleSprite, MonCard, Name, FieldStrip, PressurePanel, LogView, LogLine, StepBanner, formatLine, hpText, who,
+  BattleSprite, Battler, Name, FieldStrip, PressurePanel, LogView, LogLine, StepBanner, formatLine, hpText, who,
   posKey, effectiveMoveType, weatherInfo, terrainInfo, toID,
 } from './BattleView.jsx';
 
@@ -26,6 +26,7 @@ const simPost = (p, b) => simFetch(p, {
 const DEFAULT_FORMAT = 'gen9championsvgc2026regmb';
 const BATTLE_KEY = 'vgc-toolkit-battle-id-v1';   // resume the running battle after a refresh
 const SETUP_KEY = 'vgc-toolkit-battle-setup-v1'; // remember the setup screen's choices
+const READS_KEY = 'vgc-toolkit-battle-reads-v1'; // turn read (speed order, threats, damage ranges) on / off
 function loadSetup() { try { return JSON.parse(localStorage.getItem(SETUP_KEY)) || {}; } catch { return {}; } }
 const SETUP = loadSetup();
 const TARGETED = new Set(['normal', 'any', 'adjacentFoe', 'adjacentAlly', 'adjacentAllyOrSelf']);
@@ -60,7 +61,14 @@ export function groupSteps(lines) {
 
 // ---------------------------------------------------------------- the tab
 export default function Battle({ team }) {
-  const { moves: moveDb, regulation, items } = useContext(DataCtx);
+  const { moves: moveDb, regulation, items, pokemon, teamLibrary, saveTeamEntry, oppTeam } = useContext(DataCtx);
+  const mine = (teamLibrary || []).filter((t) => (t.kind || 'mine') !== 'opponent');
+  const opps = (teamLibrary || []).filter((t) => t.kind === 'opponent');
+  const oppImported = (oppTeam || []).filter((s) => s.pokemonId);
+  // Builder slots -> a paste the sidecar accepts (members need at least one move).
+  const pasteFromSlots = (slots) => post('/team/export', {
+    team: teamMembers(slots).filter((m) => m.moves.length), regulation,
+  }).then((r) => r.paste);
   // The engine's request payload names items by id ("colburberry"); show names.
   const itemName = (id) => {
     if (!id) return 'no item';
@@ -72,7 +80,9 @@ export default function Battle({ team }) {
   const [format, setFormat] = useState(DEFAULT_FORMAT);
   const [bot, setBot] = useState(() => (SETUP.bot === 'greedy' ? 'smart' : SETUP.bot) || 'smart');
   const [myPaste, setMyPaste] = useState(() => SETUP.myPaste || '');
-  const [myMode, setMyMode] = useState(() => SETUP.myMode || 'builder');   // builder | paste
+  const [myMode, setMyMode] = useState(() => SETUP.myMode || 'builder');   // builder | paste | library
+  const [myLib, setMyLib] = useState(() => SETUP.myLib || '');             // library entry id for myMode 'library'
+  const [oppSaveName, setOppSaveName] = useState('');
   const [oppPaste, setOppPaste] = useState(() => SETUP.oppPaste || '');
   const [oppMembers, setOppMembers] = useState(() => SETUP.oppMembers || null);
   const [battle, setBattle] = useState(null);        // authoritative server state
@@ -81,11 +91,14 @@ export default function Battle({ team }) {
   // Wolfe's three questions for the turn (speed order, what you threaten, what
   // they threaten), computed by the sidecar from your view only.
   const [pressure, setPressure] = useState(null);
+  // The turn read is a coach; switch it off to practise reading the turn yourself.
+  const [showReads, setShowReads] = useState(() => { try { return localStorage.getItem(READS_KEY) !== 'off'; } catch { return true; } });
+  useEffect(() => { try { localStorage.setItem(READS_KEY, showReads ? 'on' : 'off'); } catch { /* ignore */ } }, [showReads]);
   useEffect(() => {
-    if (!battle?.id || battle.ended) { setPressure(null); return; }
+    if (!battle?.id || battle.ended || !showReads) { setPressure(null); return; }
     if (playing || !battle.request) return;
     simGet(`/battle/${battle.id}/pressure`).then(setPressure).catch(() => setPressure(null));
-  }, [battle?.id, battle?.request?.rqid, battle?.turn, battle?.ended, playing]); // eslint-disable-line
+  }, [battle?.id, battle?.request?.rqid, battle?.turn, battle?.ended, playing, showReads]); // eslint-disable-line
   const [step, setStep] = useState(null);            // current playback step banner
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(null);
@@ -113,25 +126,41 @@ export default function Battle({ team }) {
       .then((fs) => {
         const dbl = fs.filter((f) => f.gameType === 'doubles' && /VGC/.test(f.name) && !/Bo3/.test(f.name));
         setFormats(dbl);
-        const match = dbl.find((f) => f.name.includes(`Reg ${regulation}`));
+        // Whole-word match on the tag: "M-C" must not pick the "M-C-EXP" format.
+        const match = dbl.find((f) => f.name.split(/\s+/).includes(regulation));
         if (match) setFormat(match.id);
         else if (dbl.length && !dbl.some((f) => f.id === DEFAULT_FORMAT)) setFormat(dbl[dbl.length - 1].id);
       })
       .catch(() => setHealth(false));
   }, [regulation]);
 
-  // Your paste, derived from the Team Builder team.
+  // Your paste, derived from the Team Builder team or a saved team.
   useEffect(() => {
-    if (myMode !== 'builder') return;
-    const withMoves = filled.filter((s) => s.moves.some(Boolean));   // exporter needs >= 1 move
-    if (!withMoves.length) { setMyPaste(''); return; }
-    post('/team/export', {
-      team: withMoves.map((s) => ({ pokemon: combatant(s), moves: s.moves.filter(Boolean) })),
-      regulation,
-    })
-      .then((r) => setMyPaste(r.paste))
-      .catch((e) => setError(e.message));
-  }, [myMode, filledKey]);
+    if (myMode === 'paste') return;
+    const slots = myMode === 'library' ? (mine.find((t) => t.id === myLib)?.slots || []) : filled;
+    if (!slots.some((s) => s.pokemonId && s.moves?.some(Boolean))) { setMyPaste(''); return; }
+    pasteFromSlots(slots).then(setMyPaste).catch((e) => setError(e.message));
+  }, [myMode, myLib, filledKey, teamLibrary]); // eslint-disable-line
+  // Opponent from the library or the Team Builder's opponent team.
+  const loadOpp = (key) => {
+    if (!key) return;
+    const slots = key === 'current' ? oppTeam : teamLibrary.find((t) => t.id === key)?.slots;
+    if (!slots) return;
+    setBusy(true); setError(null);
+    pasteFromSlots(slots).then((p) => { setOppPaste(p); setOppMembers(null); })
+      .catch((e) => setError(e.message)).finally(() => setBusy(false));
+  };
+  const saveOpp = async () => {
+    const name = oppSaveName.trim();
+    if (!name || !oppPaste.trim()) return;
+    setBusy(true); setError(null);
+    try {
+      const r = await post('/team/import', { paste: oppPaste, regulation });
+      saveTeamEntry({ kind: 'opponent', name, slots: slotsFromImport(r, pokemon) });
+      setOppSaveName('');
+    } catch (e) { setError(e.message); }
+    setBusy(false);
+  };
 
   // Poll while the bot is acting (no pending request for you yet).
   useEffect(() => {
@@ -151,10 +180,10 @@ export default function Battle({ team }) {
   useEffect(() => {
     try {
       localStorage.setItem(SETUP_KEY, JSON.stringify({
-        bot, myMode, oppPaste, oppMembers, myPaste: myMode === 'paste' ? myPaste : '',
+        bot, myMode, myLib, oppPaste, oppMembers, myPaste: myMode === 'paste' ? myPaste : '',
       }));
     } catch { /* ignore */ }
-  }, [bot, myMode, oppPaste, oppMembers, myPaste]);
+  }, [bot, myMode, myLib, oppPaste, oppMembers, myPaste]);
   useEffect(() => {
     try {
       if (battle?.id && !battle.ended) localStorage.setItem(BATTLE_KEY, battle.id);
@@ -208,7 +237,7 @@ export default function Battle({ team }) {
           for (const s of steps) {
             for (const line of s.lines) { applyLine(work, line); work.log.push(line); }
             if (skipRef.current || s.kind === 'noise') continue;
-            const tokens = s.lines.map(formatLine).filter(Boolean);
+            const tokens = s.lines.map((l) => formatLine(l)).filter(Boolean);
             if (!tokens.length) continue;                 // nothing visible happened (e.g. quiet upkeep)
             if (s.kind === 'move') moveIdx += 1;
             work.anim = { attacker: s.attacker, hits: s.hits, kind: s.kind };
@@ -289,16 +318,48 @@ export default function Battle({ team }) {
           <h3 className="panel-title">Your team</h3>
           <div className="segmented">
             <button className={myMode === 'builder' ? 'on' : ''} onClick={() => setMyMode('builder')}>From Team Builder ({filled.length})</button>
+            <button className={myMode === 'library' ? 'on' : ''} onClick={() => setMyMode('library')}>Saved team ({mine.length})</button>
             <button className={myMode === 'paste' ? 'on' : ''} onClick={() => setMyMode('paste')}>Paste</button>
           </div>
-          <textarea className="mono" rows={12} value={myPaste} readOnly={myMode === 'builder'}
+          {myMode === 'library' && (
+            <select value={myLib} onChange={(e) => setMyLib(e.target.value)} style={{ marginTop: 8 }}>
+              <option value="">{mine.length ? '(choose a saved team…)' : '(no saved teams: Team Builder → My teams → Save)'}</option>
+              {mine.map((t) => (
+                <option key={t.id} value={t.id}>
+                  {t.name} · {t.slots.filter((s) => s.pokemonId).map((s) => s.displayName || s.pokemonId).join(', ')}
+                </option>
+              ))}
+            </select>
+          )}
+          <textarea className="mono" rows={12} value={myPaste} readOnly={myMode !== 'paste'}
             onChange={(e) => setMyPaste(e.target.value)}
-            placeholder={myMode === 'builder' ? 'Add Pokémon (with moves) in the Team Builder…' : 'Showdown paste (SP on the EVs line)…'} />
+            placeholder={myMode === 'builder' ? 'Add Pokémon (with moves) in the Team Builder…'
+              : myMode === 'library' ? 'Pick a saved team above…' : 'Showdown paste (SP on the EVs line)…'} />
         </section>
         <section className="panel">
           <h3 className="panel-title">Opponent (bot)</h3>
           <div className="row">
             <button onClick={rollOpponent} disabled={busy}>🎲 Random ladder team</button>
+            <label>Load a team
+              <select value="" onChange={(e) => loadOpp(e.target.value)} disabled={busy}>
+                <option value="">(choose…)</option>
+                {oppImported.length > 0 && (
+                  <option value="current">
+                    Opponent team from the Team Builder ({oppImported.map((s) => s.nickname || s.displayName).join(', ')})
+                  </option>
+                )}
+                {opps.length > 0 && (
+                  <optgroup label="Saved opponent teams">
+                    {opps.map((t) => <option key={t.id} value={t.id}>{t.name}</option>)}
+                  </optgroup>
+                )}
+                {mine.length > 0 && (
+                  <optgroup label="My saved teams (as the opponent)">
+                    {mine.map((t) => <option key={t.id} value={t.id}>{t.name}</option>)}
+                  </optgroup>
+                )}
+              </select>
+            </label>
             <label>Bot
               <select value={bot} onChange={(e) => setBot(e.target.value)}>
                 <option value="smart">Smart (damage calc + threat model)</option>
@@ -314,6 +375,11 @@ export default function Battle({ team }) {
               </select>
             </label>
           </div>
+          <label className="small dim" style={{ display: 'block', margin: '6px 0' }}>
+            <input type="checkbox" checked={showReads} onChange={(e) => setShowReads(e.target.checked)} />
+            {' '}Show the turn read during battles (speed order, what each side threatens, damage ranges, KO odds).
+            Off = practise reading the turn yourself; you can toggle it mid-battle too.
+          </label>
           {health && !(health.bots || []).includes(bot) && (
             <p className="small" style={{ color: 'var(--warn)' }}>
               ⚠ The simulator sidecar on port 8001 is running older code that does not know the
@@ -323,9 +389,9 @@ export default function Battle({ team }) {
           )}
           {formats.find((f) => f.id === format)?.provisional && (
             <p className="small dim">
-              Provisional M-C: Showdown has no M-C format yet, so this is Reg M-B with its
-              species/learnset legality checks off (clauses, Level 50 and pick-4 still apply) and
-              the confirmed M-C mega abilities patched in.
+              {formats.find((f) => f.id === format)?.experimental
+                ? 'Reg M-C Experimental: the provisional M-C format (Reg M-B with species/learnset legality checks off), which also lets the predicted Pokémon and items in. Nothing here is a confirmed Champions addition.'
+                : 'Provisional M-C: Showdown has no M-C format yet, so this is Reg M-B with its species/learnset legality checks off (clauses, Level 50 and pick-4 still apply) and the confirmed M-C mega abilities patched in.'}
             </p>
           )}
           {oppMembers && (
@@ -334,13 +400,17 @@ export default function Battle({ team }) {
             </p>
           )}
           <textarea className="mono" rows={10} value={oppPaste} onChange={(e) => setOppPaste(e.target.value)}
-            placeholder="Roll a random ladder team or paste one…" />
-          <div className="row">
+            placeholder="Roll a random ladder team, load one above, or paste one…" />
+          <div className="row" style={{ alignItems: 'center' }}>
             <button className="primary" onClick={start} disabled={busy || !myPaste.trim() || !oppPaste.trim()}>
               Start battle
             </button>
-            {error && <span className="small danger">{error}</span>}
+            <span className="spacer" />
+            <input placeholder="Save this opponent as…" value={oppSaveName} onChange={(e) => setOppSaveName(e.target.value)}
+              style={{ minWidth: 200 }} />
+            <button onClick={saveOpp} disabled={busy || !oppSaveName.trim() || !oppPaste.trim()}>Save opponent team</button>
           </div>
+          {error && <div className="small danger">{error}</div>}
           {problems && <ul className="notes">{problems.map((p, i) => <li key={i}>{p}</li>)}</ul>}
         </section>
       </div>
@@ -389,12 +459,67 @@ export default function Battle({ team }) {
     else { setChoices((prev) => ({ ...prev, [slot]: base(prev) })); setPicking(slot); }
   };
 
+  const bench = req?.side?.pokemon
+    ? req.side.pokemon.map((p, idx) => ({ p, idx })).filter(({ p }) => !p.active && !p.condition.endsWith(' fnt'))
+    : [];
+  // A benched Pokémon can fill only one slot: what the other slot has not taken.
+  const benchFor = (slot) => bench.filter(({ idx }) =>
+    !Object.entries(choices).some(([k, c]) => Number(k) !== slot && c?.switch === idx + 1));
+
+  // Aiming on the field: while a slot is picking, each legal target position
+  // ("p2a", "p1b" ...) maps to its option; clicking that Pokémon chooses it.
+  const posOf = (v) => (v > 0 ? `p2${'ab'[v - 1]}` : `p1${'ab'[-v - 1]}`);
+  const targets = {};
+  if (picking !== null && req?.active?.[picking] && choices[picking]?.move !== undefined) {
+    const m = req.active[picking].moves[choices[picking].move];
+    if (m) for (const o of targetOptions(m, picking)) targets[posOf(o.v)] = o;
+  }
+  const chooseTarget = (pk) => {
+    const o = targets[pk];
+    if (!o) return;
+    setChoices((prev) => ({ ...prev, [picking]: { ...(prev[picking] || {}), target: o.v } }));
+    setPicking(null);
+  };
+  // What is already aimed at a position, e.g. "Golisopod ▸ Iron Head".
+  const marksFor = (pk) => {
+    if (!req?.active || req.forceSwitch) return [];
+    return req.active.flatMap((a, i) => {
+      const c = choices[i];
+      if (!a || !c || c.move === undefined || c.target === undefined || posOf(c.target) !== pk) return [];
+      return [`${who(req.side.pokemon[i]?.ident)} ▸ ${a.moves[c.move]?.move}`];
+    });
+  };
+  // The action chosen for one of your own, shown under its sprite.
+  const badgeFor = (s) => {
+    if (!req?.active || req.forceSwitch) return null;
+    const c = choices[s];
+    if (!c) return null;
+    if (c.switch) return ['▸ switch to ', { name: who(req.side.pokemon[c.switch - 1]?.ident), side: 'p1' }];
+    if (c.move === undefined) return c.mega ? ['✦ Mega Evolve'] : null;
+    const m = req.active[s]?.moves[c.move];
+    if (!m) return null;
+    const out = [c.mega ? '✦ ' : '▸ ', { em: m.move }];
+    if (c.target !== undefined) {
+      out.push(' → ', c.target > 0 ? { name: foeName(c.target - 1), side: 'p2' }
+        : { name: c.target === -(s + 1) ? 'itself' : who(req.side.pokemon[s === 0 ? 1 : 0]?.ident), side: 'p1' });
+    } else if (TARGETED.has(m.target) && targetOptions(m, s).length > 1) {
+      out.push(' → ?');
+    }
+    return out;
+  };
+
   const choiceString = () => {
     if (!req) return null;
     if (req.teamPreview) return preview.length >= (battle.teamPreview?.pick || 4) ? `team ${preview.map((i) => i + 1).join('')}` : null;
     const parts = [];
     if (req.forceSwitch) {
-      req.forceSwitch.forEach((must, i) => parts.push(!must ? 'pass' : choices[i]?.switch ? `switch ${choices[i].switch}` : null));
+      // Fewer living replacements than emptied slots: the extra slot passes
+      // (Showdown expects "switch 3, pass", never the same Pokémon twice).
+      req.forceSwitch.forEach((must, i) => {
+        if (!must) parts.push('pass');
+        else if (choices[i]?.switch) parts.push(`switch ${choices[i].switch}`);
+        else parts.push(benchFor(i).length ? null : 'pass');
+      });
     } else if (req.active) {
       req.active.forEach((a, i) => {
         if (!a || ownFainted(i)) { parts.push('pass'); return; }
@@ -411,9 +536,6 @@ export default function Battle({ team }) {
     return parts.length && parts.every(Boolean) ? parts.join(', ') : null;
   };
   const ready = choiceString();
-  const bench = req?.side?.pokemon
-    ? req.side.pokemon.map((p, idx) => ({ p, idx })).filter(({ p }) => !p.active && !p.condition.endsWith(' fnt'))
-    : [];
 
   // "Your plan" showcase: one line per slot once everything is chosen.
   const planLines = () => {
@@ -450,6 +572,10 @@ export default function Battle({ team }) {
         <strong>Turn {view.turn}</strong>
         <span className="dim small">{format.replace('gen9champions', '')} · bot: {battle.bot}</span>
         <span className="spacer" />
+        <button onClick={() => setShowReads(!showReads)}
+          title="The turn read: speed order, what each side threatens, damage ranges and KO odds. Off = read the turn yourself.">
+          {showReads ? '👁 Turn read: on' : '🙈 Turn read: off'}
+        </button>
         <button onClick={start} disabled={busy}>Rematch</button>
         <button onClick={() => dropBattle()}>New setup</button>
       </div>
@@ -502,20 +628,32 @@ export default function Battle({ team }) {
       {/* field + conditions */}
       {view.started && (
         <div className="battle-arena">
-          <section className={`panel battle-field ${conditionsClass}`}>
-            <div className="battle-row foe">
-              <MonCard mon={foe.active[0]} side="p2" anim={animFor('p2a')} />
-              <MonCard mon={foe.active[1]} side="p2" anim={animFor('p2b')} />
+          <section className={`panel battle-field ${conditionsClass} ${picking !== null ? 'picking' : ''}`}>
+            <div className="battle-side foe">
+              {[0, 1].map((s) => {
+                const pk = `p2${'ab'[s]}`;
+                return <Battler key={pk} mon={foe.active[s]} side="p2" anim={animFor(pk)}
+                  targetable={!!targets[pk]} onClick={() => chooseTarget(pk)} marks={marksFor(pk)} />;
+              })}
             </div>
-            <div className="battle-row">
-              <MonCard mon={me.active[0]} side="p1" back exact anim={animFor('p1a')} />
-              <MonCard mon={me.active[1]} side="p1" back exact anim={animFor('p1b')} />
+            <div className="battle-side me">
+              {[0, 1].map((s) => {
+                const pk = `p1${'ab'[s]}`;
+                return <Battler key={pk} mon={me.active[s]} side="p1" back exact anim={animFor(pk)}
+                  targetable={!!targets[pk]} onClick={() => chooseTarget(pk)} marks={marksFor(pk)} badge={badgeFor(s)} />;
+              })}
             </div>
+            {picking !== null && req?.active?.[picking] && choices[picking]?.move !== undefined && (
+              <div className="field-hint">
+                <Name side="p1" name={who(req.side.pokemon[picking]?.ident)} /> ▸ <b>{req.active[picking].moves[choices[picking].move]?.move}</b>
+                <span className="dim"> · click a Pokémon on the field to aim it</span>
+              </div>
+            )}
           </section>
           <FieldStrip timers={view.fieldTimers} field={view.field} sides={view.sides} />
         </div>
       )}
-      {pressure && !playing && <PressurePanel data={pressure} />}
+      {showReads && pressure && !playing && <PressurePanel data={pressure} />}
 
       {/* playback banner */}
       <StepBanner step={step} onSkip={() => { skipRef.current = true; }} />
@@ -533,12 +671,15 @@ export default function Battle({ team }) {
                   <div key={i} className="battle-slot">
                     <div>Replace <Name side="p1" name={mon ? who(mon.ident) : `slot ${i + 1}`} /></div>
                     <div className="battle-bench">
-                      {bench.map(({ p, idx }) => (
+                      {benchFor(i).map(({ p, idx }) => (
                         <button key={p.ident} className={c.switch === idx + 1 ? 'on' : ''}
                           onClick={() => setChoices((prev) => ({ ...prev, [i]: { switch: idx + 1 } }))}>
                           <Name side="p1" name={who(p.ident)} /> <span className="dim small">{hpText(p.condition)}</span>
                         </button>
                       ))}
+                      {!benchFor(i).length && !c.switch && (
+                        <span className="dim small">No Pokémon left to switch in: this slot stays empty.</span>
+                      )}
                     </div>
                   </div>
                 );
@@ -551,21 +692,24 @@ export default function Battle({ team }) {
                     <b className="dim small">{hpText(mon.condition)}</b>
                     <span className="spacer" />
                     {slotReq.canMegaEvo && (
-                      <label className="small"><input type="checkbox" checked={!!c.mega}
-                        onChange={(e) => {
-                          // Only one Pokémon can Mega Evolve per battle: ticking one clears the other.
-                          const on = e.target.checked;
+                      <button type="button" className={`mega-toggle ${c.mega ? 'on' : ''}`} disabled={busy}
+                        title={c.mega ? 'Mega Evolving this turn (click to cancel)' : 'Mega Evolve this turn: one Pokémon per battle'}
+                        onClick={() => {
+                          // Only one Pokémon can Mega Evolve per battle: arming one clears the other.
+                          const on = !c.mega;
                           setChoices((prev) => {
                             const next = { ...prev, [i]: { ...(prev[i] || {}), mega: on } };
                             if (on) for (const k of Object.keys(next)) if (Number(k) !== i && next[k]) next[k] = { ...next[k], mega: false };
                             return next;
                           });
-                        }} /> Mega Evolve</label>
+                        }}>
+                        ✦ {c.mega ? 'Mega Evolving' : 'Mega Evolve'}
+                      </button>
                     )}
                   </div>
                   <div className="battle-moves">
                     {slotReq.moves.map((m, idx) => {
-                      const et = effectiveMoveType(m.move, moveDb?.[m.move]?.type, weatherName, ownAbility(i));
+                      const et = effectiveMoveType(m.move, moveDb?.[m.move]?.type, weatherName, ownAbility(i), moveDb?.[m.move]?.flags);
                       // Consecutive Protect odds (1/3, 1/9, ...) and first-turn-only moves.
                       const mine = view.sides.p1.active[i];
                       const mid = toID(m.move);
@@ -574,11 +718,14 @@ export default function Battle({ team }) {
                       const warn = streak ? `${Math.round(100 / 3 ** streak)}% chance (${streak} in a row)`
                         : firstTurnOnly ? 'fails after the first turn out' : null;
                       return (
-                        <button key={m.id} className={`battle-move ${c.move === idx ? 'on' : ''}`} disabled={m.disabled || busy}
+                        <button key={m.id} className={`battle-move move-type-${String(et.type || 'normal').toLowerCase()} ${c.move === idx ? 'on' : ''}`} disabled={m.disabled || busy}
                           title={m.disabled ? 'disabled' : `target: ${m.target}`} onClick={() => pickMove(i, idx, m)}>
-                          <span className="battle-move-name">{m.move}</span>
+                          <span className="battle-move-name">
+                            <CategoryIcon category={moveDb?.[m.move]?.category} /> {m.move}
+                          </span>
                           <span className="small dim">
                             {et.type && <TypeChip t={et.type} />}
+                            <MoveTags m={moveDb?.[m.move]} compact showCategory={false} showAccuracy />
                             {et.why && <span className="move-type-note"> {et.why}</span>}
                             {warn && <span className="move-type-note"> ⚠ {warn}</span>}
                             {' '}{m.pp}/{m.maxpp} PP
@@ -589,7 +736,7 @@ export default function Battle({ team }) {
                   </div>
                   {picking === i && c.move !== undefined && (
                     <div className="battle-targets">
-                      <span className="small dim">Target:</span>
+                      <span className="small dim">Target (or click it on the field):</span>
                       {targetOptions(slotReq.moves[c.move], i).map((o) => (
                         <button key={o.v} className={c.target === o.v ? 'on' : ''}
                           onClick={() => { setChoices((prev) => ({ ...prev, [i]: { ...(prev[i] || {}), target: o.v } })); setPicking(null); }}>
@@ -598,10 +745,10 @@ export default function Battle({ team }) {
                       ))}
                     </div>
                   )}
-                  {!slotReq.trapped && bench.length > 0 && (
+                  {!slotReq.trapped && benchFor(i).length > 0 && (
                     <div className="battle-bench">
                       <span className="small dim">Switch:</span>
-                      {bench.map(({ p, idx }) => (
+                      {benchFor(i).map(({ p, idx }) => (
                         <button key={p.ident} className={c.switch === idx + 1 ? 'on' : ''}
                           onClick={() => { setChoices((prev) => ({ ...prev, [i]: { switch: idx + 1 } })); setPicking(null); }}>
                           <Name side="p1" name={who(p.ident)} /> <span className="dim small">{hpText(p.condition)}</span>
@@ -637,7 +784,10 @@ export default function Battle({ team }) {
 
       {/* log */}
       <section className="panel">
-        <h3 className="panel-title" style={{ margin: 0 }}>Battle log</h3>
+        <div className="row" style={{ alignItems: 'baseline' }}>
+          <h3 className="panel-title" style={{ margin: 0 }}>Battle log</h3>
+          <span className="small dim log-legend"><Name side="p1" name="You" /> · <Name side="p2" name="Opponent" /></span>
+        </div>
         <LogView log={view.log} />
       </section>
     </div>

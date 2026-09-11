@@ -1,7 +1,8 @@
 import React, { useContext, useMemo, useState } from 'react';
 import { DataCtx } from '../App.jsx';
-import { post, combatant, emptySlot } from '../api.js';
+import { post, combatant, emptySlot, padTeam } from '../api.js';
 import { PokemonPicker, Sprite, TypeChip } from './shared.jsx';
+import SimLab from './SimLab.jsx';
 
 const FIELD_OPTIONS = [
   ['auto', 'Auto (your setter)'],
@@ -49,20 +50,48 @@ function PairSprites({ ids }) {
   );
 }
 
-export default function TeamPreview({ team, sendToCalc }) {
-  const { metaSets, regulation } = useContext(DataCtx);
-  const metaAvailable = Object.keys(metaSets?.pokemon || {}).length > 0;
-  const myFilled = useMemo(() => team.filter((s) => s.pokemonId), [team]);
+// A slot with moves is a scouted set and is analysed as such; a bare
+// {pokemonId} is read from the ladder's most-likely set.
+const toOppMon = (s) => ((s.moves || []).some(Boolean)
+  ? { pokemon_id: s.pokemonId, spread: s.spread, alignment: s.alignment, ability: s.ability || null,
+      item: s.item || null, moves: (s.moves || []).filter(Boolean) }
+  : { pokemon_id: s.pokemonId });
 
+export default function TeamPreview({ team, sendToCalc }) {
+  const { metaSets, regulation, oppTeam, teamLibrary } = useContext(DataCtx);
+  const oppImported = (oppTeam || []).filter((s) => s.pokemonId);
+  const metaAvailable = Object.keys(metaSets?.pokemon || {}).length > 0;
+  const library = teamLibrary || [];
+  const savedMine = library.filter((t) => (t.kind || 'mine') !== 'opponent');
+  const savedOpp = library.filter((t) => t.kind === 'opponent');
+
+  // Your side: the Team Builder's working team, or any saved team.
+  const [mySource, setMySource] = useState('builder');
+  const mySlots = useMemo(() => {
+    if (mySource === 'builder') return team;
+    const t = library.find((x) => x.id === mySource);
+    return t ? padTeam(t.slots) : team;
+  }, [mySource, team, library]);
+  const myFilled = useMemo(() => mySlots.filter((s) => s.pokemonId), [mySlots]);
+
+  // Their side: six slots that may carry full sets (imported or saved teams) or just a species.
   const [opp, setOpp] = useState(Array(6).fill(null));
+  const [oppSource, setOppSource] = useState('');
   const [fieldMode, setFieldMode] = useState('auto');
   const [result, setResult] = useState(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(null);
 
   const oppFilled = opp.filter(Boolean);
-  const setOppAt = (i, id) =>
-    setOpp((o) => o.map((x, idx) => (idx === i ? id : x)));
+  const setOppAt = (i, slot) =>
+    setOpp((o) => o.map((x, idx) => (idx === i ? slot : x)));
+  const loadOpp = (key) => {
+    setOppSource(key);
+    if (!key) return;
+    const slots = key === 'current' ? oppImported : (library.find((t) => t.id === key)?.slots || []).filter((s) => s.pokemonId);
+    setOpp(Array(6).fill(null).map((_, i) => (slots[i] ? { ...emptySlot(), ...slots[i] } : null)));
+  };
+  const scouted = oppFilled.filter((s) => (s.moves || []).some(Boolean)).length;
 
   const analyze = async () => {
     setBusy(true); setError(null);
@@ -71,7 +100,7 @@ export default function TeamPreview({ team, sendToCalc }) {
         my_team: myFilled.map((s) => ({
           ...combatant(s), moves: (s.moves || []).filter(Boolean),
         })),
-        opp_team: oppFilled.map((id) => ({ pokemon_id: id })),
+        opp_team: oppFilled.map(toOppMon),
         regulation,
       };
       if (fieldMode !== 'auto') {
@@ -103,7 +132,16 @@ export default function TeamPreview({ team, sendToCalc }) {
 
         <div className="tp-teams">
           <div>
-            <h4 className="tp-h4">Your team ({myFilled.length})</h4>
+            <h4 className="tp-h4">
+              Your team ({myFilled.length})
+              {savedMine.length > 0 && (
+                <select value={mySource} onChange={(e) => setMySource(e.target.value)} style={{ marginLeft: 10 }}
+                  title="Analyse the Team Builder's team or one of your saved teams">
+                  <option value="builder">Team Builder</option>
+                  {savedMine.map((t) => <option key={t.id} value={t.id}>{t.name}</option>)}
+                </select>
+              )}
+            </h4>
             {myFilled.length === 0 ? (
               <p className="dim small">Build a team in the Builder tab first.</p>
             ) : (
@@ -120,14 +158,41 @@ export default function TeamPreview({ team, sendToCalc }) {
           </div>
 
           <div>
-            <h4 className="tp-h4">Opponent ({oppFilled.length})</h4>
+            <h4 className="tp-h4">
+              Opponent ({oppFilled.length}{scouted ? `, ${scouted} with real sets` : ''})
+              <select value={oppSource} onChange={(e) => loadOpp(e.target.value)} style={{ marginLeft: 10 }}
+                title="Load a team: the Team Builder's imported opponent, or any saved team. Saved sets are analysed with their real spreads and moves.">
+                <option value="">Load a team…</option>
+                {oppImported.length > 0 && (
+                  <option value="current">Team Builder opponent ({oppImported.map((s) => s.nickname || s.displayName).join(', ')})</option>
+                )}
+                {savedOpp.length > 0 && (
+                  <optgroup label="Saved opponent teams">
+                    {savedOpp.map((t) => <option key={t.id} value={t.id}>{t.name}</option>)}
+                  </optgroup>
+                )}
+                {savedMine.length > 0 && (
+                  <optgroup label="My saved teams (as the opponent)">
+                    {savedMine.map((t) => <option key={t.id} value={t.id}>{t.name}</option>)}
+                  </optgroup>
+                )}
+              </select>
+              {oppFilled.length > 0 && (
+                <button className="small" style={{ marginLeft: 8 }} onClick={() => { setOpp(Array(6).fill(null)); setOppSource(''); }}>Clear</button>
+              )}
+            </h4>
             <div className="tp-opp-grid">
-              {opp.map((id, i) => (
-                <PokemonPicker key={i} value={id}
+              {opp.map((s, i) => (
+                <PokemonPicker key={i} value={s?.pokemonId || null}
                   placeholder={`Opp #${i + 1}`}
-                  onPick={(p) => setOppAt(i, p.id)} />
+                  onPick={(p) => { setOppAt(i, { ...emptySlot(), pokemonId: p.id, displayName: p.name, types: p.types }); setOppSource(''); }} />
               ))}
             </div>
+            {oppFilled.length > 0 && (
+              <div className="dim small" style={{ marginTop: 6 }}>
+                {oppFilled.map((s) => `${s.nickname || s.displayName || s.pokemonId}${(s.moves || []).some(Boolean) ? '' : ' (ladder set)'}`).join(' · ')}
+              </div>
+            )}
           </div>
         </div>
 
@@ -254,6 +319,11 @@ export default function TeamPreview({ team, sendToCalc }) {
                       )}
                     </div>
                   </div>
+                  {lo.why?.length > 0 && (
+                    <ul className="tp-notes small">
+                      {lo.why.map((w, k) => <li key={k} className={w.startsWith('watch') ? 'danger' : ''}>{w}</li>)}
+                    </ul>
+                  )}
                   {lo.beats.length > 0 && (
                     <div className="tp-rec-line">
                       <span className="dim small">beats</span>
@@ -277,25 +347,29 @@ export default function TeamPreview({ team, sendToCalc }) {
 
           <section className="panel">
             <h3 className="panel-title">Recommended four to bring</h3>
+            {result.my_megas?.length > 1 && (
+              <p className="dim small">Your team carries {result.my_megas.length} Megas ({result.my_megas.join(', ')}); only one Pokémon can Mega Evolve per game, so every four below brings at most one of them.</p>
+            )}
             <div className="tp-rec-grid">
               {result.bring_four.map((b, i) => (
                 <div key={i} className="tp-rec-card">
                   <div className="tp-bring-mons">
-                    {b.mons.map((id) => (
+                    {b.mons.map((id, k) => (
                       <div key={id} className="tp-bring-mon"
-                        title={b.lead && b.lead.includes(id) ? 'lead' : 'bring'}>
+                        title={`${b.mon_names[k]}${b.lead && b.lead.includes(id) ? ' · lead' : ''}${b.mega === b.mon_names[k] ? ' · Mega Evolves' : ''}`}>
                         <Sprite id={id} size={40} />
                         {b.lead && b.lead.includes(id) &&
                           <span className="tp-lead-tag">LEAD</span>}
+                        {b.mega === b.mon_names[k] && <span className="tp-mega-tag">✦</span>}
                       </div>
                     ))}
                   </div>
                   <div className="tp-bench dim small">
                     bench: {b.bench_names.join(', ')}
                   </div>
-                  {b.notes.length > 0 && (
+                  {(b.why || b.notes).length > 0 && (
                     <ul className="tp-notes small">
-                      {b.notes.map((n, k) => <li key={k}>{n}</li>)}
+                      {(b.why || b.notes).map((n, k) => <li key={k}>{n}</li>)}
                     </ul>
                   )}
                   {b.lead && (
@@ -322,6 +396,8 @@ export default function TeamPreview({ team, sendToCalc }) {
               ))}
             </div>
           </section>
+
+          <SimLab mySlots={myFilled} oppMons={result.opponent?.mons || []} regulation={regulation} />
         </>
       )}
     </div>

@@ -3,7 +3,8 @@ import { DataCtx } from '../App.jsx';
 import { post, combatant, emptySlot, SETS_KEY, loadSets } from '../api.js';
 import {
   MoveSelect, PokemonPicker, Sprite, StatPointsEditor, TypeChip,
-  useFullMon, useLearnset, Toggle, HpBarFull } from './shared.jsx';
+  useFullMon, useLearnset, Toggle, HpBarFull, itemLabel, stonesFor, CategoryIcon, MoveTags, FieldEffects
+} from './shared.jsx';
 
 const emptySide = () => ({ ...emptySlot(), hpPct: 100 });
 const WEATHER_ABILITIES = { Drought: 'sun', Drizzle: 'rain',
@@ -143,7 +144,9 @@ function SidePanel({ label, side, setSide, sets, onSaveSet, onDeleteSet, teamStr
     upd({ moves: next });
   };
 
+  const stones = stonesFor(mon, items);
   const groupedItems = {
+    ...(stones.length ? { 'Mega Stone': stones } : {}),
     'Held items': items.filter((i) => i.category === 'held'),
     Berries: items.filter((i) => i.category === 'berry'),
   };
@@ -204,7 +207,7 @@ function SidePanel({ label, side, setSide, sets, onSaveSet, onDeleteSet, teamStr
                   <option value="">None</option>
                   {Object.entries(groupedItems).map(([g, list]) => (
                     <optgroup key={g} label={g}>
-                      {list.map((i) => <option key={i.id} value={i.name}>{i.name}</option>)}
+                      {list.map((i) => <option key={i.id} value={i.name}>{itemLabel(i)}</option>)}
                     </optgroup>
                   ))}
                 </select>
@@ -360,6 +363,8 @@ function FieldPanel({ field, setField, left, setLeft, right, setRight }) {
         onChange={(weather) => setField({ ...field, weather })} />
       <Seg options={['none', 'electric', 'grassy', 'misty', 'psychic']} value={field.terrain}
         onChange={(terrain) => setField({ ...field, terrain })} />
+      <FieldEffects kind="weather" k={field.weather} className="small dim" />
+      <FieldEffects kind="terrain" k={field.terrain} className="small dim" />
       <div className="row toggles" style={{ justifyContent: 'center' }}>
         {[['gravity', 'Gravity'], ['fairyAura', 'Fairy Aura'], ['darkAura', 'Dark Aura']].map(([k, label]) => (
           <Toggle key={k} checked={field[k]} label={label}
@@ -443,6 +448,7 @@ function CustomSets({ sets, onSave, onDelete }) {
 
 /* ---------------- move list (top of page, per side) ---------------- */
 function MoveList({ sideKey, side, title, results, selected, setSelected }) {
+  const { moves: moveDb } = useContext(DataCtx) || {};
   return (
     <div className="movelist">
       <div className="dim small">{title}</div>
@@ -453,7 +459,10 @@ function MoveList({ sideKey, side, title, results, selected, setSelected }) {
           <button key={i}
             className={`movelist-row ${selected === `${sideKey}-${i}` ? 'on' : ''}`}
             onClick={() => setSelected(`${sideKey}-${i}`)}>
-            <span>{m}</span>
+            <span className="movelist-name">
+              <CategoryIcon category={moveDb?.[m]?.category} /> {m}
+              <MoveTags m={moveDb?.[m]} compact showCategory={false} showAccuracy />
+            </span>
             <span className="mono">
               {r ? (r.category === 'Status' ? '—'
                 : `${r.pct_range[0]} – ${r.pct_range[1]}%`) : '…'}
@@ -467,6 +476,7 @@ function MoveList({ sideKey, side, title, results, selected, setSelected }) {
 
 /* ---------------- main ---------------- */
 export default function DamageCalc({ team, preset, onPresetConsumed }) {
+  const { oppTeam } = useContext(DataCtx);   // Team Builder -> Opponent team
   const [p1, setP1] = useState(emptySide());
   const [p2, setP2] = useState(emptySide());
   const [field, setField] = useState({ mode: 'Doubles', weather: 'none',
@@ -571,6 +581,22 @@ export default function DamageCalc({ team, preset, onPresetConsumed }) {
     </div>
   );
 
+  // The opponent team's six as a strip for Pokémon 2, mirroring your team's strip on Pokémon 1.
+  const oppStrip = oppTeam?.some((s) => s.pokemonId) ? (
+    <div className="team-strip" title="Opponent team (Team Builder → Opponent team): click to load that set">
+      {oppTeam.map((slot, i) => (
+        <button key={i} className="team-strip-btn opp" disabled={!slot.pokemonId}
+          title={slot.pokemonId
+            ? `${slot.nickname ? `${slot.nickname} · ` : ''}${slot.displayName || slot.pokemonId}${slot.item ? ` @ ${slot.item}` : ''}`
+            : `Slot ${i + 1}`}
+          onClick={() => setP2({ ...emptySide(), ...slot, hpPct: 100 })}>
+          {slot.pokemonId ? <Sprite id={slot.pokemonId} size={34} />
+            : <span className="dim">{i + 1}</span>}
+        </button>
+      ))}
+    </div>
+  ) : null;
+
   return (
     <div className="page calc-page">
       <section className="panel results-top">
@@ -619,7 +645,7 @@ export default function DamageCalc({ team, preset, onPresetConsumed }) {
           <CustomSets sets={sets} onSave={saveSet} onDelete={deleteSet} />
         </div>
         <SidePanel label="Pokémon 2" side={p2} setSide={setP2} sets={sets}
-          onSaveSet={saveSet} onDeleteSet={deleteSet} teamStrip={null}
+          onSaveSet={saveSet} onDeleteSet={deleteSet} teamStrip={oppStrip}
           onAbility={onAbility} opponent={p1} attackField={buildField(s2, s1)} />
       </div>
     </div>

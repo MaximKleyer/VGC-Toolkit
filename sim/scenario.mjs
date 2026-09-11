@@ -79,4 +79,8 @@ export const CORVIKNIGHT = { species: 'Corviknight', item: 'Leftovers', ability:
 export const FARIGIRAF = { species: 'Farigiraf', item: 'Throat Spray', ability: 'Armor Tail', moves: ['Trick Room', 'Psychic', 'Helping Hand', 'Protect'], evs: { hp: 252, spa: 252 } };
 export const TORKOAL = { species: 'Torkoal', item: 'Charcoal', ability: 'Drought', moves: ['Eruption', 'Heat Wave', 'Earth Power', 'Protect'], evs: { hp: 252, spa: 252 } };
 
+export const STARAPTOR = { species: 'Staraptor', item: 'Staraptite', ability: 'Intimidate', moves: ['Close Combat', 'Protect', 'Brave Bird', 'Tailwind'], evs: { hp: 232, atk: 8, spe: 252 }, plus: 'spe' };
+export const PRIMARINA = { species: 'Primarina', item: 'Expert Belt', ability: 'Liquid Voice', moves: ['Hyper Voice', 'Moonblast', 'Icy Wind', 'Protect'], evs: { hp: 252, spa: 252 }, plus: 'spa' };
+export const SINISTCHA = { species: 'Sinistcha', item: 'Colbur Berry', ability: 'Heatproof', moves: ['Matcha Gotcha', 'Rage Powder', 'Trick Room', 'Protect'], evs: { hp: 252, def: 112, spd: 144 } };
+export const GOLISOPOD = { species: 'Golisopod', item: 'Golisopite', ability: 'Emergency Exit', moves: ['First Impression', 'Iron Head', 'Close Combat', 'Rock Slide'], evs: { hp: 252, atk: 252 }, plus: 'atk' };
 export const WHIMSICOTT = { species: 'Whimsicott', item: 'Focus Sash', ability: 'Prankster', moves: ['Tailwind', 'Moonblast', 'Encore', 'Protect'], evs: { spa: 252, spe: 252 }, plus: 'spe' };
